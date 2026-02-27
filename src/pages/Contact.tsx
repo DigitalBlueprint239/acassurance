@@ -54,7 +54,7 @@ const Contact = () => (
           <div id="estimate-form">
             <div className="bg-card border border-border rounded-lg p-6 md:p-8">
               <h3 className="font-heading font-bold text-xl text-foreground mb-4">Send Us a Message</h3>
-              <EstimateForm showMessage leadSource="contact" />
+              <EstimateForm showMessage showHearAboutUs leadSource="contact" />
             </div>
           </div>
         </div>

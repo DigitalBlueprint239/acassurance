@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 
 interface EstimateFormProps {
   showMessage?: boolean;
+  showHearAboutUs?: boolean;
   leadSource?: string;
 }
 
@@ -21,29 +22,78 @@ const serviceOptions = [
   "Other",
 ];
 
-const EstimateForm = ({ showMessage = false, leadSource = "website" }: EstimateFormProps) => {
+const hearAboutUsOptions = [
+  "Google",
+  "Facebook",
+  "Referral",
+  "Yard Sign",
+  "Other",
+];
+
+const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
+
+const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website" }: EstimateFormProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setLoading(false);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      serviceNeeded: formData.get("service") as string,
+      message: (formData.get("message") as string) || "",
+      hearAboutUs: (formData.get("hear_about_us") as string) || "",
+      leadSource,
+      pagePath: window.location.pathname,
+      timestamp: new Date().toISOString(),
+    };
+
+    if (!WEBHOOK_URL) {
+      // No webhook configured — show success and log payload for dev
+      console.warn("VITE_LEAD_WEBHOOK_URL not configured. Lead payload:", payload);
       toast({
         title: "Request Submitted",
         description: "Thank you! We'll be in touch shortly.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+      form.reset();
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      toast({
+        title: "Request Submitted",
+        description: "Thank you! We'll be in touch shortly.",
+      });
+      form.reset();
+    } catch (err) {
+      console.error("Form submission error:", err);
+      toast({
+        title: "Something went wrong",
+        description: "Please call us directly or try again shortly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input type="hidden" name="lead_source" value={leadSource} />
-
       <div>
         <Input
           name="name"
@@ -88,6 +138,21 @@ const EstimateForm = ({ showMessage = false, leadSource = "website" }: EstimateF
             rows={3}
             className="bg-background"
           />
+        </div>
+      )}
+
+      {showHearAboutUs && (
+        <div>
+          <select
+            name="hear_about_us"
+            className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
+            defaultValue=""
+          >
+            <option value="" disabled>How did you hear about us?</option>
+            {hearAboutUsOptions.map((s) => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
         </div>
       )}
 
