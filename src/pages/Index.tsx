@@ -16,8 +16,8 @@ const Index = () => {
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative container py-16 md:py-24">
           <div className="max-w-2xl animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-primary-foreground leading-tight mb-4">
-              Cape Coral, FL AC Repair &amp; HVAC Service
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-primary-foreground leading-[1.15] mb-5">
+              Cape Coral, FL<br className="hidden sm:inline" /> AC Repair &amp; HVAC Service
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/90 mb-2">
               24/7 Emergency Service Available — Fast, Reliable, Licensed
@@ -29,13 +29,16 @@ const Index = () => {
               <Button asChild size="lg" className="text-base">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
-                  Call {PHONE}
+                  Call Now
                 </a>
               </Button>
-              <Button asChild size="lg" variant="secondary" className="text-base">
+              <Button asChild size="lg" variant="outline" className="text-base border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                 <a href="#estimate-form">Request Free Estimate</a>
               </Button>
             </div>
+            <p className="mt-4 text-xs sm:text-sm text-primary-foreground/70 tracking-wide">
+              Licensed • Financing Available • Serving Cape Coral &amp; Southwest Florida
+            </p>
           </div>
         </div>
       </section>
