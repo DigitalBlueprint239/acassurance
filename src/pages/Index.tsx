@@ -115,31 +115,18 @@ const Index = () => {
       {/* Reviews Preview */}
       <section className="py-12 md:py-16 section-blue">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="flex justify-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-brand-orange text-brand-orange" />
+              ))}
+            </div>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">What Our Customers Say</h2>
-            <p className="text-muted-foreground">Trusted by homeowners across Cape Coral and Southwest Florida</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              { name: "Sarah M.", location: "Cape Coral", text: "AC Assurance responded quickly when our AC went out on a Saturday. The technician was professional and had us back up and running the same day." },
-              { name: "James R.", location: "Fort Myers", text: "Fair pricing and honest service. They explained what was needed and didn't try to upsell. Will definitely use them again for maintenance." },
-              { name: "Linda K.", location: "Estero", text: "Had a new system installed and the whole process was smooth — from the estimate to the installation. Financing made it easy." },
-            ].map((review) => (
-              <div key={review.name} className="bg-card rounded-lg border border-border p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-brand-orange text-brand-orange" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground mb-4">"{review.text}"</p>
-                <div className="text-sm font-medium text-foreground">{review.name}</div>
-                <div className="text-xs text-muted-foreground">{review.location}</div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button asChild variant="outline">
-              <Link to="/reviews">See All Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            <p className="text-muted-foreground mb-6">
+              See why Cape Coral homeowners trust AC Assurance for reliable HVAC service.
+            </p>
+            <Button asChild size="lg">
+              <Link to="/reviews">See Our Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
             </Button>
           </div>
         </div>
