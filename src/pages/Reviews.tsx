@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
-const GOOGLE_REVIEWS_URL = "#"; // TODO: Replace with actual Google Business reviews URL
+const GOOGLE_REVIEWS_URL = "https://search.google.com/local/reviews?placeid=ChIJE8TtywtrFoURR_hlGn8DkRQ";
 
 const Reviews = () => (
   <Layout>
