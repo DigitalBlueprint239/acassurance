@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
-const GOOGLE_REVIEWS_URL = "https://search.google.com/local/reviews?placeid=ChIJE8TtywtrFoURR_hlGn8DkRQ";
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/?q=place_id:ChIJE8TtywtrFoURR_hlGn8DkRQ";
 
 const Reviews = () => (
   <Layout>
