@@ -46,7 +46,7 @@ const Header = () => {
             {PHONE}
           </a>
           <Button asChild className="brand-gradient-teal text-primary-foreground hover:opacity-90">
-            <a href="#estimate-form">Get a Free Quote</a>
+            <Link to="/contact#estimate-form">Get a Free Quote</Link>
           </Button>
         </div>
 
@@ -76,7 +76,7 @@ const Header = () => {
             ))}
             <div className="pt-3 mt-2 border-t border-border flex flex-col gap-2">
               <Button asChild className="w-full brand-gradient-teal text-primary-foreground">
-                <a href="#estimate-form">Get a Free Quote</a>
+                <Link to="/contact#estimate-form" onClick={() => setMenuOpen(false)}>Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">
                 <a href={PHONE_LINK}>

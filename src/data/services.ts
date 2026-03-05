@@ -1,4 +1,4 @@
-import { Wrench, Snowflake, Settings, Flame, Wind, Shield, Building2, AlertTriangle, Thermometer, Fan } from "lucide-react";
+import { Wrench, Snowflake, Settings, Flame, Wind, Shield, AlertTriangle, Thermometer, Fan } from "lucide-react";
 
 export interface ServiceData {
   slug: string;

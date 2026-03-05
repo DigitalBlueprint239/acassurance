@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blog";
 
 const Blog = () => (
   <Layout>
+    <SEOHead
+      title="HVAC Tips & Blog | AC Assurance Cooling & Heating"
+      description="Helpful HVAC tips, maintenance advice, and AC repair information for Cape Coral and Fort Myers homeowners from AC Assurance."
+    />
     <section className="brand-gradient py-12 md:py-16">
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Tips &amp; Blog</h1>

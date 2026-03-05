@@ -1,10 +1,15 @@
 import { MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import { serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
 
 const ServiceAreas = () => (
   <Layout>
+    <SEOHead
+      title="HVAC Service Areas | Cape Coral, Fort Myers & SWFL | AC Assurance"
+      description="AC Assurance serves Cape Coral, Fort Myers, Lehigh Acres, Bonita Springs, Estero, Naples, and North Fort Myers with professional HVAC services."
+    />
     <section className="brand-gradient py-12 md:py-16">
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Service Areas</h1>
