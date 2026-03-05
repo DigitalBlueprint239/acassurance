@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PHONE, PHONE_LINK } from "@/data/services";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
   { label: "Financing", to: "/financing" },
-  { label: "Service Areas", to: "/service-areas" },
   { label: "Reviews", to: "/reviews" },
   { label: "About", to: "/about" },
-  { label: "Blog", to: "/blog" },
   { label: "Contact", to: "/contact" },
+  { label: "Blog", to: "/blog" },
 ];
 
 const Header = () => {
@@ -23,13 +23,7 @@ const Header = () => {
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full brand-gradient flex items-center justify-center">
-            <span className="text-primary-foreground font-heading font-extrabold text-lg md:text-xl">AC</span>
-          </div>
-          <div className="hidden sm:block">
-            <div className="font-heading font-bold text-sm md:text-base leading-tight text-foreground">AC Assurance</div>
-            <div className="text-xs text-muted-foreground leading-tight">Cooling &amp; Heating</div>
-          </div>
+          <img src={logo} alt="AC Assurance Cooling & Heating" className="h-10 md:h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -38,7 +32,7 @@ const Header = () => {
             <Link
               key={link.to}
               to={link.to}
-              className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-md"
+              className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md"
             >
               {link.label}
             </Link>
@@ -47,12 +41,12 @@ const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href={PHONE_LINK} className="flex items-center gap-2 text-primary font-bold text-sm">
+          <a href={PHONE_LINK} className="flex items-center gap-2 text-foreground font-bold text-sm">
             <Phone className="w-4 h-4" />
             {PHONE}
           </a>
-          <Button asChild>
-            <a href={PHONE_LINK}>Call Now</a>
+          <Button asChild className="brand-gradient-teal text-primary-foreground hover:opacity-90">
+            <a href="#estimate-form">Get a Free Quote</a>
           </Button>
         </div>
 
@@ -81,7 +75,10 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-3 mt-2 border-t border-border flex flex-col gap-2">
-              <Button asChild className="w-full">
+              <Button asChild className="w-full brand-gradient-teal text-primary-foreground">
+                <a href="#estimate-form">Get a Free Quote</a>
+              </Button>
+              <Button asChild variant="outline" className="w-full">
                 <a href={PHONE_LINK}>
                   <Phone className="w-4 h-4 mr-2" />
                   Call {PHONE}

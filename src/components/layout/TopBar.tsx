@@ -1,11 +1,17 @@
-import { LICENSE } from "@/data/services";
+import { Phone } from "lucide-react";
+import { LICENSE, PHONE, PHONE_LINK } from "@/data/services";
 
 const TopBar = () => (
-  <div className="brand-gradient text-primary-foreground py-2 text-xs sm:text-sm">
+  <div className="section-navy text-primary-foreground py-2 text-xs sm:text-sm">
     <div className="container flex items-center justify-between gap-4">
-      <span className="hidden sm:inline">License #{LICENSE}</span>
-      <span className="font-medium">Serving Cape Coral &amp; Southwest Florida</span>
-      <span className="hidden sm:inline">Financing Available</span>
+      <span className="hidden sm:inline">
+        24/7 Emergency Service <span className="mx-2 opacity-40">|</span> Licensed {LICENSE}
+      </span>
+      <span className="sm:hidden font-medium">24/7 Emergency Service</span>
+      <a href={PHONE_LINK} className="flex items-center gap-1.5 font-semibold hover:underline">
+        <Phone className="w-3.5 h-3.5" />
+        {PHONE}
+      </a>
     </div>
   </div>
 );

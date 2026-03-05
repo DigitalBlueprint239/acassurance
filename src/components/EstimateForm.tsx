@@ -13,12 +13,13 @@ interface EstimateFormProps {
 const serviceOptions = [
   "AC Repair",
   "AC Installation / Replacement",
+  "Heating Services",
+  "Mini Split Systems",
   "Maintenance / Tune-Up",
-  "Emergency Repair",
-  "Ductless Mini-Split",
+  "Duct Cleaning",
   "Indoor Air Quality",
-  "Commercial HVAC",
-  "Heating",
+  "Commercial Refrigeration",
+  "Emergency Service",
   "Other",
 ];
 
@@ -46,6 +47,7 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
     const payload = {
       name: formData.get("name") as string,
       phone: formData.get("phone") as string,
+      email: (formData.get("email") as string) || "",
       serviceNeeded: formData.get("service") as string,
       message: (formData.get("message") as string) || "",
       hearAboutUs: (formData.get("hear_about_us") as string) || "",
@@ -55,7 +57,6 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
     };
 
     if (!WEBHOOK_URL) {
-      // No webhook configured — show success and log payload for dev
       console.warn("VITE_LEAD_WEBHOOK_URL not configured. Lead payload:", payload);
       toast({
         title: "Request Submitted",
@@ -94,70 +95,47 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <Input
-          name="name"
-          placeholder="Your Name *"
-          required
-          maxLength={100}
-          className="bg-background"
-        />
-      </div>
+      <Input name="name" placeholder="Your Name *" required maxLength={100} className="bg-background" />
+      <Input name="phone" type="tel" placeholder="Phone Number *" required maxLength={20} className="bg-background" />
+      <Input name="email" type="email" placeholder="Email Address (optional)" maxLength={100} className="bg-background" />
 
-      <div>
-        <Input
-          name="phone"
-          type="tel"
-          placeholder="Phone Number *"
-          required
-          maxLength={20}
-          className="bg-background"
-        />
-      </div>
-
-      <div>
-        <select
-          name="service"
-          required
-          className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
-          defaultValue=""
-        >
-          <option value="" disabled>Service Needed *</option>
-          {serviceOptions.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
-      </div>
+      <select
+        name="service"
+        required
+        className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
+        defaultValue=""
+      >
+        <option value="" disabled>Service Needed *</option>
+        {serviceOptions.map((s) => (
+          <option key={s} value={s}>{s}</option>
+        ))}
+      </select>
 
       {showMessage && (
-        <div>
-          <Textarea
-            name="message"
-            placeholder="Additional Details (optional)"
-            maxLength={1000}
-            rows={3}
-            className="bg-background"
-          />
-        </div>
+        <Textarea
+          name="message"
+          placeholder="Additional Details (optional)"
+          maxLength={1000}
+          rows={3}
+          className="bg-background"
+        />
       )}
 
       {showHearAboutUs && (
-        <div>
-          <select
-            name="hear_about_us"
-            className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
-            defaultValue=""
-          >
-            <option value="" disabled>How did you hear about us?</option>
-            {hearAboutUsOptions.map((s) => (
-              <option key={s} value={s}>{s}</option>
-            ))}
-          </select>
-        </div>
+        <select
+          name="hear_about_us"
+          className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
+          defaultValue=""
+        >
+          <option value="" disabled>How did you hear about us?</option>
+          {hearAboutUsOptions.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
       )}
 
-      <Button type="submit" className="w-full" size="lg" disabled={loading}>
-        {loading ? "Submitting..." : "Request Free Estimate"}
+      <Button type="submit" className="w-full brand-gradient-teal text-primary-foreground hover:opacity-90" size="lg" disabled={loading}>
+        {loading ? "Submitting..." : "Submit Request"}
       </Button>
     </form>
   );
