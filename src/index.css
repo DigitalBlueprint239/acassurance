@@ -6,13 +6,13 @@
   :root {
     /* AC Assurance Brand — Navy / Teal / Orange */
     --background: 0 0% 100%;
-    --foreground: 216 73% 15%;
+    --foreground: 222 20% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 73% 15%;
+    --card-foreground: 222 20% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 73% 15%;
+    --popover-foreground: 222 20% 14%;
 
     /* Primary Navy #0A1F3F ≈ 216 73% 15% */
     --primary: 216 73% 15%;
@@ -20,10 +20,10 @@
 
     /* Light Gray #F2F4F6 */
     --secondary: 210 20% 96%;
-    --secondary-foreground: 216 73% 15%;
+    --secondary-foreground: 222 20% 14%;
 
     --muted: 210 14% 95%;
-    --muted-foreground: 216 15% 46%;
+    --muted-foreground: 215 14% 46%;
 
     /* Accent Teal #00A19A ≈ 177 100% 32% */
     --accent: 177 100% 32%;
