@@ -6,6 +6,21 @@ import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
 import heroBg from "@/assets/hero-bg.jpg";
+import workCondenser from "@/assets/work/condenser-coil.png";
+import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
+import workDuctless from "@/assets/work/ductless-system.png";
+import workGarageMiniSplit from "@/assets/work/garage-mini-split.png";
+import workAirHandler from "@/assets/work/air-handler.png";
+import workGarageDuctless from "@/assets/work/garage-ductless.png";
+
+const workPhotos = [
+  { src: workCondenser, caption: "Clean Condenser Coil Detail" },
+  { src: workMiniSplitOutdoor, caption: "Mini-Split Outdoor Unit Install" },
+  { src: workDuctless, caption: "Ductless System Installation" },
+  { src: workGarageMiniSplit, caption: "Garage Mini-Split Installation" },
+  { src: workAirHandler, caption: "New Air Handler Installation" },
+  { src: workGarageDuctless, caption: "Garage Ductless Cooling" },
+];
 
 const Index = () => {
   return (
@@ -116,8 +131,35 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 5. REVIEWS SECTION */}
+      {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Recent HVAC Work</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Real installations and repairs completed by our team across Southwest Florida.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {workPhotos.map((photo) => (
+              <div key={photo.caption} className="bg-card border border-border rounded overflow-hidden shadow-sm">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={photo.src}
+                    alt={photo.caption}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-medium text-foreground">{photo.caption}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. REVIEWS SECTION */}
+      <section className="py-14 md:py-20 section-light">
         <div className="container">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">What Our Customers Say</h2>
           <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">See why Southwest Florida homeowners trust AC Assurance for all their HVAC needs.</p>
