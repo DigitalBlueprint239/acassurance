@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Plus Jakarta Sans", "Inter", "system-ui", "sans-serif"],
+        sans: ["Open Sans", "system-ui", "sans-serif"],
+        heading: ["Montserrat", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -55,13 +55,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         brand: {
-          blue: "hsl(var(--brand-blue))",
-          "blue-dark": "hsl(var(--brand-blue-dark))",
-          "blue-light": "hsl(var(--brand-blue-light))",
-          "blue-pale": "hsl(var(--brand-blue-pale))",
           navy: "hsl(var(--brand-navy))",
+          "navy-light": "hsl(var(--brand-navy-light))",
+          teal: "hsl(var(--brand-teal))",
+          "teal-light": "hsl(var(--brand-teal-light))",
           orange: "hsl(var(--brand-orange))",
-          green: "hsl(var(--brand-green))",
+          "orange-dark": "hsl(var(--brand-orange-dark))",
           gray: "hsl(var(--brand-gray))",
           "gray-light": "hsl(var(--brand-gray-light))",
         },

@@ -3,6 +3,7 @@ import TopBar from "./TopBar";
 import Header from "./Header";
 import Footer from "./Footer";
 import StickyMobileCTA from "./StickyMobileCTA";
+import FloatingServiceButton from "@/components/FloatingServiceButton";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,7 @@ const Layout = ({ children }: LayoutProps) => (
     <main className="flex-1 pb-16 md:pb-0">{children}</main>
     <Footer />
     <StickyMobileCTA />
+    <FloatingServiceButton />
   </div>
 );
 
