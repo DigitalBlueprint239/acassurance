@@ -31,7 +31,7 @@ const Index = () => {
               <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call {PHONE}
