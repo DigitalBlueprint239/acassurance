@@ -19,10 +19,10 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-background border-b border-border sticky top-0 z-50">
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="AC Assurance Cooling & Heating" className="h-14 md:h-16 w-auto" />
+    <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
+      <div className="container flex items-center justify-between h-20 md:h-24">
+        <Link to="/" className="flex items-center gap-2 shrink-0 -my-2">
+          <img src={logo} alt="AC Assurance Cooling & Heating" className="h-16 md:h-20 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
