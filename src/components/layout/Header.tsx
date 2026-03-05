@@ -22,7 +22,7 @@ const Header = () => {
     <header className="bg-background border-b border-border sticky top-0 z-50">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="AC Assurance Cooling & Heating" className="h-10 md:h-12 w-auto" />
+          <img src={logo} alt="AC Assurance Cooling & Heating" className="h-14 md:h-16 w-auto" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
