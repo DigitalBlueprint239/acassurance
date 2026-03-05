@@ -138,7 +138,7 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
         </select>
       )}
 
-      <Button type="submit" className="w-full brand-gradient-teal text-primary-foreground hover:opacity-90" size="lg" disabled={loading}>
+      <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={loading}>
         {loading ? "Submitting..." : "Submit Request"}
       </Button>
     </form>

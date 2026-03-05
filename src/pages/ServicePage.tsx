@@ -27,18 +27,17 @@ const ServicePage = () => {
         title={`${service.title} | AC Assurance Cooling & Heating`}
         description={service.description}
       />
-      {/* Hero */}
-      <section className="brand-gradient py-12 md:py-16">
+      <section className="section-navy py-12 md:py-16">
         <div className="container">
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">{service.title}</h1>
             <p className="text-primary-foreground/90 text-lg mb-6">{service.heroDescription}</p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" variant="secondary">
-                <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE}</a>
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <a href="#estimate-form">Request Estimate</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                <a href="#estimate-form">Request Estimate</a>
+                <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE}</a>
               </Button>
             </div>
           </div>
@@ -53,7 +52,7 @@ const ServicePage = () => {
                 <p key={i} className="text-foreground leading-relaxed">{p}</p>
               ))}
               <div className="mt-8">
-                <h2 className="text-xl font-heading font-bold text-foreground mb-4">What's Included</h2>
+                <h2 className="text-xl font-heading font-bold mb-4">What's Included</h2>
                 <ul className="space-y-3">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-3">
@@ -65,8 +64,8 @@ const ServicePage = () => {
               </div>
             </div>
             <div id="estimate-form">
-              <div className="sticky top-28 bg-card border border-border rounded-lg p-6">
-                <h3 className="font-heading font-bold text-lg text-foreground mb-4">Get a Free Estimate</h3>
+              <div className="sticky top-28 bg-card border border-border rounded p-6">
+                <h3 className="font-heading font-bold text-lg mb-4">Get a Free Estimate</h3>
                 <EstimateForm showMessage showHearAboutUs leadSource={service.slug} />
               </div>
             </div>

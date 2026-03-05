@@ -14,7 +14,7 @@ const NotFound = () => {
 
   return (
     <Layout>
-      <section className="brand-gradient py-12 md:py-16">
+      <section className="section-navy py-12 md:py-16">
         <div className="container">
           <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Page Not Found</h1>
           <p className="text-primary-foreground/90 text-lg">The page you're looking for doesn't exist or has been moved.</p>
@@ -27,7 +27,7 @@ const NotFound = () => {
             Let's get you back on track. You can return to our homepage or give us a call.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="brand-gradient-teal text-primary-foreground hover:opacity-90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
               <Link to="/">Back to Home</Link>
             </Button>
             <Button asChild size="lg" variant="outline">

@@ -19,38 +19,34 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
+    <header className="bg-background border-b border-border sticky top-0 z-50">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
           <img src={logo} alt="AC Assurance Cooling & Heating" className="h-10 md:h-12 w-auto" />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md"
+              className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href={PHONE_LINK} className="flex items-center gap-2 text-foreground font-bold text-sm">
+          <a href={PHONE_LINK} className="flex items-center gap-2 text-primary font-bold text-sm">
             <Phone className="w-4 h-4" />
             {PHONE}
           </a>
-          <Button asChild className="brand-gradient-teal text-primary-foreground hover:opacity-90">
+          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link to="/contact#estimate-form">Get a Free Quote</Link>
           </Button>
         </div>
 
-        {/* Mobile menu toggle */}
         <button
           className="lg:hidden p-2 text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -60,7 +56,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {menuOpen && (
         <div className="lg:hidden border-t border-border bg-background">
           <nav className="container py-4 flex flex-col gap-1">
@@ -69,13 +64,13 @@ const Header = () => {
                 key={link.to}
                 to={link.to}
                 onClick={() => setMenuOpen(false)}
-                className="px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                className="px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <div className="pt-3 mt-2 border-t border-border flex flex-col gap-2">
-              <Button asChild className="w-full brand-gradient-teal text-primary-foreground">
+              <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 <Link to="/contact#estimate-form" onClick={() => setMenuOpen(false)}>Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" className="w-full">

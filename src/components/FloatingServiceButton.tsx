@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MessageSquare, X } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import EstimateForm from "@/components/EstimateForm";
 
@@ -10,7 +10,7 @@ const FloatingServiceButton = () => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-20 md:bottom-6 right-4 z-40 w-14 h-14 rounded-full brand-gradient-teal text-primary-foreground shadow-lg hover:shadow-xl transition-shadow flex items-center justify-center"
+        className="fixed bottom-20 md:bottom-6 right-4 z-40 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all flex items-center justify-center"
         aria-label="Request Service"
       >
         <MessageSquare className="w-6 h-6" />

@@ -10,7 +10,7 @@ const ServiceAreas = () => (
       title="HVAC Service Areas | Cape Coral, Fort Myers & SWFL | AC Assurance"
       description="AC Assurance serves Cape Coral, Fort Myers, Lehigh Acres, Bonita Springs, Estero, Naples, and North Fort Myers with professional HVAC services."
     />
-    <section className="brand-gradient py-12 md:py-16">
+    <section className="section-navy py-12 md:py-16">
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Service Areas</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
@@ -25,7 +25,7 @@ const ServiceAreas = () => (
           {serviceAreas.map((area) => (
             <div
               key={area.name}
-              className={`flex items-center gap-3 p-5 rounded-lg border ${
+              className={`flex items-center gap-3 p-5 rounded border ${
                 area.primary ? "border-primary bg-primary/5" : "border-border bg-card"
               }`}
             >
