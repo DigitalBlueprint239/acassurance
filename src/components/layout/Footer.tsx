@@ -7,7 +7,6 @@ const Footer = () => (
   <footer className="section-navy text-primary-foreground">
     <div className="container py-12 md:py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        {/* Company */}
         <div>
           <div className="flex items-center gap-2 mb-4">
             <img src={logo} alt="AC Assurance" className="h-10 w-auto brightness-0 invert" />
@@ -16,9 +15,8 @@ const Footer = () => (
           <p className="text-xs opacity-60">License #{LICENSE}</p>
         </div>
 
-        {/* Contact */}
         <div>
-          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider">Contact</h3>
+          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-primary-foreground">Contact</h3>
           <div className="space-y-3 text-sm">
             <a href={PHONE_LINK} className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
               <Phone className="w-4 h-4 shrink-0" /> {PHONE}
@@ -33,9 +31,8 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Services */}
         <div>
-          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider">Services</h3>
+          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-primary-foreground">Services</h3>
           <div className="space-y-2 text-sm">
             <Link to="/ac-repair-cape-coral" className="block opacity-80 hover:opacity-100 transition-opacity">AC Repair</Link>
             <Link to="/ac-installation-replacement" className="block opacity-80 hover:opacity-100 transition-opacity">AC Installation</Link>
@@ -48,9 +45,8 @@ const Footer = () => (
           </div>
         </div>
 
-        {/* Service Areas */}
         <div>
-          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider">Service Areas</h3>
+          <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-primary-foreground">Service Areas</h3>
           <div className="space-y-2 text-sm">
             {serviceAreas.map((area) => (
               <div key={area.name} className={`opacity-80 ${area.primary ? "font-semibold opacity-100" : ""}`}>

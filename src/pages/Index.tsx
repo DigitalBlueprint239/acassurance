@@ -14,9 +14,10 @@ const Index = () => {
         title="AC Repair Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
         description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
       />
+
       {/* 1. HERO */}
       <section className="relative min-h-[520px] md:min-h-[600px] flex items-center">
-        <img src={heroBg} alt="Modern HVAC system — IMAGE PLACEHOLDER: Replace with technician or comfortable home photo" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
+        <img src={heroBg} alt="HVAC system — IMAGE PLACEHOLDER: Replace with technician or comfortable home photo" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
         <div className="absolute inset-0 hero-overlay" />
         <div className="relative container py-16 md:py-24">
           <div className="max-w-2xl animate-fade-in">
@@ -27,22 +28,21 @@ const Index = () => {
               Licensed HVAC professionals serving Southwest Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="text-base brand-gradient-teal text-primary-foreground hover:opacity-90">
+              <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
-              <Button asChild size="lg" className="text-base brand-gradient-orange text-primary-foreground hover:opacity-90">
+              <Button asChild size="lg" variant="outline" className="text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call {PHONE}
                 </a>
               </Button>
             </div>
-            {/* Trust badges */}
             <div className="flex flex-wrap gap-4 mt-8">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Service" },
-                { icon: Shield, label: "Satisfaction Guaranteed" },
+                { icon: Shield, label: "BBB Accredited" },
               ].map((badge) => (
                 <div key={badge.label} className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-primary-foreground text-sm font-medium">
                   <badge.icon className="w-4 h-4" />
@@ -55,34 +55,34 @@ const Index = () => {
       </section>
 
       {/* 2. SOCIAL PROOF BAR */}
-      <section className="section-light py-6">
+      <section className="section-light py-6 border-b border-border">
         <div className="container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-          <span className="font-heading font-bold text-foreground">Trusted by Southwest Florida Homeowners</span>
+          <span className="font-heading font-bold text-primary">Trusted by Southwest Florida Homeowners</span>
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 fill-brand-orange text-brand-orange" />
+              <Star key={i} className="w-5 h-5 fill-accent text-accent" />
             ))}
           </div>
-          <span className="font-heading font-bold text-foreground">5-Star Rated</span>
+          <span className="font-heading font-bold text-primary">5-Star Rated</span>
         </div>
       </section>
 
       {/* 3. SERVICES GRID */}
-      <section className="py-12 md:py-16 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">Our HVAC Services</h2>
+            <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Our HVAC Services</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">From routine maintenance to emergency repairs, AC Assurance provides comprehensive HVAC services for Southwest Florida homeowners and businesses.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => (
               <Link
                 key={service.slug}
                 to={`/${service.slug}`}
-                className="group rounded-lg bg-card border border-border p-5 hover:shadow-md hover:border-accent/40 transition-all"
+                className="group bg-card border border-border rounded p-6 hover:shadow-md hover:border-accent/40 transition-all"
               >
-                <service.icon className="w-8 h-8 text-accent mb-3" />
-                <h3 className="font-heading font-bold text-foreground mb-1 group-hover:text-accent transition-colors">{service.shortTitle}</h3>
+                <service.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-accent transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
                 <span className="inline-flex items-center gap-1 text-accent text-sm font-medium mt-3">
                   Learn more <ChevronRight className="w-4 h-4" />
@@ -94,10 +94,10 @@ const Index = () => {
       </section>
 
       {/* 4. WHY CHOOSE US */}
-      <section className="py-12 md:py-16 section-light">
+      <section className="py-14 md:py-20 section-light">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center text-foreground mb-10">Why Choose AC Assurance</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Why Choose AC Assurance</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
               { icon: DollarSign, title: "Transparent Pricing", desc: "Upfront quotes with no hidden fees. You know the cost before we start." },
@@ -105,10 +105,10 @@ const Index = () => {
               { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." },
             ].map((item) => (
               <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full brand-gradient-teal flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-full section-navy flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2">{item.title}</h3>
+                <h3 className="font-heading font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
@@ -117,41 +117,24 @@ const Index = () => {
       </section>
 
       {/* 5. REVIEWS SECTION */}
-      <section className="py-12 md:py-16 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center text-foreground mb-10">What Our Customers Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              { text: "Great service. Very prompt and professional. Highly recommend AC Assurance for any HVAC needs.", name: "— PLACEHOLDER: Replace with real customer name" },
-              { text: "Highly recommend AC Assurance. They were honest, affordable, and got our AC fixed the same day.", name: "— PLACEHOLDER: Replace with real customer name" },
-              { text: "The team showed up on time, explained everything clearly, and did a fantastic job. Will use again!", name: "— PLACEHOLDER: Replace with real customer name" },
-            ].map((review, i) => (
-              <div key={i} className="bg-card border border-border rounded-lg p-6">
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-brand-orange text-brand-orange" />
-                  ))}
-                </div>
-                <p className="text-sm text-foreground mb-3 italic">"{review.text}"</p>
-                <p className="text-xs text-muted-foreground">{review.name}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">What Our Customers Say</h2>
+          <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">See why Southwest Florida homeowners trust AC Assurance for all their HVAC needs.</p>
+          <div className="text-center">
             <Button asChild size="lg" variant="outline">
-              <Link to="/reviews">Read More Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              <Link to="/reviews">Read Our Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* 6. SERVICE AREAS */}
-      <section className="py-12 md:py-16 section-light">
+      <section className="py-14 md:py-20 section-light">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center text-foreground mb-3">Areas We Serve</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Areas We Serve</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">Proudly serving homeowners and businesses across Southwest Florida.</p>
-          {/* Map placeholder */}
-          <div className="max-w-2xl mx-auto mb-8 bg-card border border-border rounded-lg h-48 flex items-center justify-center text-muted-foreground text-sm">
+          <div className="max-w-2xl mx-auto mb-8 bg-card border border-border rounded h-48 flex items-center justify-center text-muted-foreground text-sm">
             IMAGE PLACEHOLDER — Replace with service area map
           </div>
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
@@ -160,7 +143,7 @@ const Index = () => {
                 key={area.name}
                 className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
                   area.primary
-                    ? "bg-accent text-accent-foreground border-accent"
+                    ? "bg-primary text-primary-foreground border-primary"
                     : "bg-card text-foreground border-border"
                 }`}
               >
@@ -172,22 +155,22 @@ const Index = () => {
       </section>
 
       {/* 7. FINANCING */}
-      <section className="py-12 md:py-16 bg-background">
+      <section className="py-14 md:py-20 bg-background">
         <div className="container text-center max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">Flexible HVAC Financing Available</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
           <p className="text-muted-foreground mb-6">Affordable monthly payment plans through Synchrony Financial. Don't let budget stop you from staying comfortable.</p>
-          <Button asChild size="lg" className="brand-gradient-teal text-primary-foreground hover:opacity-90">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>
       </section>
 
       {/* 8. EMERGENCY CTA BAND */}
-      <section className="section-navy py-12 md:py-16">
+      <section className="section-navy py-14 md:py-20">
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-4">AC Emergency? We're On It.</h2>
           <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Don't sweat it. Our 24/7 emergency team is ready to restore your comfort fast.</p>
-          <Button asChild size="lg" className="brand-gradient-orange text-primary-foreground hover:opacity-90">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
             <a href={PHONE_LINK}>
               <Phone className="w-5 h-5 mr-2" />
               Call {PHONE}
@@ -197,14 +180,14 @@ const Index = () => {
       </section>
 
       {/* 9. SERVICE REQUEST FORM */}
-      <section id="estimate-form" className="py-12 md:py-16 bg-background">
+      <section id="estimate-form" className="py-14 md:py-20 bg-background">
         <div className="container">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">Request a Free Estimate</h2>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Tell Us What's Going On</h2>
               <p className="text-muted-foreground">Fill out the form below and we'll get back to you promptly.</p>
             </div>
-            <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-sm">
+            <div className="bg-card border border-border rounded p-6 md:p-8">
               <EstimateForm showMessage showHearAboutUs leadSource="homepage" />
             </div>
           </div>

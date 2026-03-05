@@ -11,7 +11,7 @@ const Financing = () => (
       title="HVAC Financing Cape Coral | AC Assurance Cooling & Heating"
       description="Affordable HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Get the comfort you need with manageable monthly payments."
     />
-    <section className="brand-gradient py-12 md:py-16">
+    <section className="section-navy py-12 md:py-16">
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Financing in Cape Coral</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
@@ -24,12 +24,12 @@ const Financing = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-2xl font-heading font-bold text-foreground">How HVAC Financing Works</h2>
+            <h2 className="text-2xl font-heading font-bold">How HVAC Financing Works</h2>
             <p className="text-foreground leading-relaxed">
               A new air conditioning system is a significant investment. Financing through Synchrony allows qualified Cape Coral homeowners to spread the cost over time with monthly payments, rather than paying the full amount upfront.
             </p>
 
-            <h3 className="text-xl font-heading font-bold text-foreground mt-8">The Process</h3>
+            <h3 className="text-xl font-heading font-bold mt-8">The Process</h3>
             <ol className="space-y-4">
               {[
                 "Contact us for a free in-home estimate on your new HVAC system.",
@@ -37,7 +37,7 @@ const Financing = () => (
                 "If approved, we schedule your installation. You make monthly payments according to your plan terms.",
               ].map((step, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="w-7 h-7 rounded-full brand-gradient flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="w-7 h-7 rounded-full section-navy flex items-center justify-center shrink-0 mt-0.5">
                     <span className="text-primary-foreground font-bold text-sm">{i + 1}</span>
                   </span>
                   <span className="text-foreground">{step}</span>
@@ -45,7 +45,7 @@ const Financing = () => (
               ))}
             </ol>
 
-            <h3 className="text-xl font-heading font-bold text-foreground mt-8">What to Consider</h3>
+            <h3 className="text-xl font-heading font-bold mt-8">What to Consider</h3>
             <ul className="space-y-3">
               {[
                 "Total cost over the life of the financing plan",
@@ -60,11 +60,11 @@ const Financing = () => (
               ))}
             </ul>
 
-            <div className="bg-muted rounded-lg p-6 mt-8">
+            <div className="bg-muted rounded p-6 mt-8">
               <div className="flex items-start gap-3">
                 <CreditCard className="w-6 h-6 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-heading font-bold text-foreground mb-1">Financing by Synchrony</h4>
+                  <h4 className="font-heading font-bold mb-1">Financing by Synchrony</h4>
                   <p className="text-sm text-muted-foreground">
                     Synchrony is one of the nation's premier consumer financial services companies. Financing is subject to credit approval. Contact us for current terms and details.
                   </p>
@@ -80,8 +80,8 @@ const Financing = () => (
           </div>
 
           <div id="estimate-form">
-            <div className="sticky top-28 bg-card border border-border rounded-lg p-6">
-              <h3 className="font-heading font-bold text-lg text-foreground mb-4">Request a Financing Consultation</h3>
+            <div className="sticky top-28 bg-card border border-border rounded p-6">
+              <h3 className="font-heading font-bold text-lg mb-4">Request a Financing Consultation</h3>
               <EstimateForm showMessage showHearAboutUs leadSource="financing" />
             </div>
           </div>

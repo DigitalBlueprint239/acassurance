@@ -23,18 +23,18 @@ const Reviews = () => (
 
     <section className="py-12 md:py-16 bg-background">
       <div className="container max-w-4xl">
-        <div className="bg-card border border-border rounded-lg p-8 md:p-12 text-center">
+        <div className="bg-card border border-border rounded p-8 md:p-12 text-center">
           <div className="flex justify-center gap-1 mb-4">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-brand-orange text-brand-orange" />
+              <Star key={i} className="w-6 h-6 fill-accent text-accent" />
             ))}
           </div>
-          <h2 className="text-2xl font-heading font-bold text-foreground mb-3">See Our Latest Reviews</h2>
+          <h2 className="text-2xl font-heading font-bold mb-3">See Our Latest Reviews</h2>
           <p className="text-muted-foreground mb-6">
             Check out our latest reviews on Google to see why Southwest Florida homeowners trust AC Assurance for all their HVAC needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="brand-gradient-teal text-primary-foreground hover:opacity-90">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
               <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Read Reviews on Google

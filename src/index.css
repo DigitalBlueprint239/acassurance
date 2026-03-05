@@ -4,58 +4,57 @@
 
 @layer base {
   :root {
-    /* AC Assurance Brand — Navy / Teal / Orange */
+    /* AC Assurance Brand — Navy / Steel Blue / CTA Blue / Gray */
     --background: 0 0% 100%;
-    --foreground: 222 20% 14%;
+    --foreground: 220 10% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 20% 14%;
+    --card-foreground: 220 10% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 20% 14%;
+    --popover-foreground: 220 10% 18%;
 
-    /* Primary Navy #0A1F3F ≈ 216 73% 15% */
-    --primary: 216 73% 15%;
+    /* Primary Navy #0F2F57 ≈ 213 70% 20% */
+    --primary: 213 70% 20%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light Gray #F2F4F6 */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 222 20% 14%;
+    /* Light Gray background */
+    --secondary: 210 12% 97%;
+    --secondary-foreground: 220 10% 18%;
 
-    --muted: 210 14% 95%;
-    --muted-foreground: 215 14% 46%;
+    --muted: 210 10% 96%;
+    --muted-foreground: 215 10% 50%;
 
-    /* Accent Teal #00A19A ≈ 177 100% 32% */
-    --accent: 177 100% 32%;
+    /* Accent CTA Blue #1E5EA8 ≈ 213 70% 39% */
+    --accent: 213 70% 39%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 18% 90%;
-    --input: 210 18% 90%;
-    --ring: 177 100% 32%;
+    /* Neutral Metallic Gray #B7BDC4 ≈ 213 8% 75% */
+    --border: 213 8% 85%;
+    --input: 213 8% 85%;
+    --ring: 213 70% 39%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
     /* Brand tokens */
-    --brand-navy: 216 73% 15%;
-    --brand-navy-light: 216 50% 25%;
-    --brand-teal: 177 100% 32%;
-    --brand-teal-light: 177 60% 45%;
-    --brand-orange: 18 100% 60%;
-    --brand-orange-dark: 18 100% 50%;
-    --brand-gray: 216 15% 46%;
-    --brand-gray-light: 210 20% 96%;
+    --brand-navy: 213 70% 20%;
+    --brand-navy-light: 213 45% 30%;
+    --brand-steel: 213 30% 34%;
+    --brand-accent: 213 70% 39%;
+    --brand-gray: 213 8% 75%;
+    --brand-gray-light: 210 12% 97%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 216 73% 15%;
+    --sidebar-foreground: 220 10% 18%;
+    --sidebar-primary: 213 70% 20%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 177 100% 32%;
+    --sidebar-accent: 213 70% 39%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 18% 90%;
-    --sidebar-ring: 177 100% 32%;
+    --sidebar-border: 213 8% 85%;
+    --sidebar-ring: 213 70% 39%;
   }
 }
 
@@ -69,7 +68,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-tight;
+    @apply font-heading font-bold tracking-tight text-primary;
   }
 }
 
@@ -78,27 +77,15 @@
     text-wrap: balance;
   }
 
-  .brand-gradient {
-    background: linear-gradient(135deg, hsl(216, 73%, 15%), hsl(216, 50%, 25%));
-  }
-
-  .brand-gradient-teal {
-    background: linear-gradient(135deg, hsl(177, 100%, 32%), hsl(177, 60%, 45%));
-  }
-
-  .brand-gradient-orange {
-    background: linear-gradient(135deg, hsl(18, 100%, 60%), hsl(18, 100%, 50%));
-  }
-
-  .hero-overlay {
-    background: linear-gradient(135deg, hsl(216, 73%, 15%, 0.88), hsl(177, 100%, 32%, 0.6));
+  .section-navy {
+    background: hsl(213, 70%, 20%);
   }
 
   .section-light {
-    background: hsl(210, 20%, 96%);
+    background: hsl(210, 12%, 97%);
   }
 
-  .section-navy {
-    background: hsl(216, 73%, 15%);
+  .hero-overlay {
+    background: linear-gradient(180deg, hsl(213, 70%, 20%, 0.90), hsl(213, 70%, 20%, 0.75));
   }
 }
