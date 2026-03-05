@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Shield, Clock, DollarSign, Star, MapPin, ChevronRight, ArrowRight, Users, BadgeCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -9,6 +10,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 const Index = () => {
   return (
     <Layout>
+      <SEOHead
+        title="AC Repair Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
+        description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
+      />
       {/* 1. HERO */}
       <section className="relative min-h-[520px] md:min-h-[600px] flex items-center">
         <img src={heroBg} alt="Modern HVAC system — IMAGE PLACEHOLDER: Replace with technician or comfortable home photo" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
@@ -37,7 +42,7 @@ const Index = () => {
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Service" },
-                { icon: Shield, label: "BBB Accredited" },
+                { icon: Shield, label: "Satisfaction Guaranteed" },
               ].map((badge) => (
                 <div key={badge.label} className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-primary-foreground text-sm font-medium">
                   <badge.icon className="w-4 h-4" />

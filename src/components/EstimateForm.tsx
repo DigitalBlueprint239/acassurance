@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -35,6 +36,7 @@ const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
 
 const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website" }: EstimateFormProps) => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -64,6 +66,7 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
       });
       form.reset();
       setLoading(false);
+      navigate("/thank-you");
       return;
     }
 
@@ -81,6 +84,7 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
         description: "Thank you! We'll be in touch shortly.",
       });
       form.reset();
+      navigate("/thank-you");
     } catch (err) {
       console.error("Form submission error:", err);
       toast({

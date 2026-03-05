@@ -1,11 +1,16 @@
 import { Phone, CreditCard, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
 const Financing = () => (
   <Layout>
+    <SEOHead
+      title="HVAC Financing Cape Coral | AC Assurance Cooling & Heating"
+      description="Affordable HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Get the comfort you need with manageable monthly payments."
+    />
     <section className="brand-gradient py-12 md:py-16">
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Financing in Cape Coral</h1>
@@ -49,7 +54,7 @@ const Financing = () => (
                 "New system comes with manufacturer warranty coverage",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                   <span className="text-foreground">{item}</span>
                 </li>
               ))}
@@ -77,7 +82,7 @@ const Financing = () => (
           <div id="estimate-form">
             <div className="sticky top-28 bg-card border border-border rounded-lg p-6">
               <h3 className="font-heading font-bold text-lg text-foreground mb-4">Request a Financing Consultation</h3>
-              <EstimateForm leadSource="financing" />
+              <EstimateForm showMessage showHearAboutUs leadSource="financing" />
             </div>
           </div>
         </div>

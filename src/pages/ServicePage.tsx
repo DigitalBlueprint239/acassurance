@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, PHONE, PHONE_LINK } from "@/data/services";
 
@@ -22,6 +23,10 @@ const ServicePage = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title={`${service.title} | AC Assurance Cooling & Heating`}
+        description={service.description}
+      />
       {/* Hero */}
       <section className="brand-gradient py-12 md:py-16">
         <div className="container">
@@ -52,7 +57,7 @@ const ServicePage = () => {
                 <ul className="space-y-3">
                   {service.features.map((f) => (
                     <li key={f} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                       <span className="text-foreground">{f}</span>
                     </li>
                   ))}
@@ -62,7 +67,7 @@ const ServicePage = () => {
             <div id="estimate-form">
               <div className="sticky top-28 bg-card border border-border rounded-lg p-6">
                 <h3 className="font-heading font-bold text-lg text-foreground mb-4">Get a Free Estimate</h3>
-                <EstimateForm leadSource={service.slug} />
+                <EstimateForm showMessage showHearAboutUs leadSource={service.slug} />
               </div>
             </div>
           </div>
