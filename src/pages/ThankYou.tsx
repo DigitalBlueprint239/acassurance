@@ -1,10 +1,23 @@
+import { useEffect } from "react";
 import { CheckCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
-const ThankYou = () => (
+const ThankYou = () => {
+  useEffect(() => {
+    let meta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "robots");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", "noindex, nofollow");
+    return () => { meta?.remove(); };
+  }, []);
+
+  return (
   <Layout>
     <section className="py-16 md:py-24">
       <div className="container max-w-lg text-center">
