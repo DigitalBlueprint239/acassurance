@@ -42,6 +42,7 @@ const ThankYou = () => {
       </div>
     </section>
   </Layout>
-);
+  );
+};
 
 export default ThankYou;
