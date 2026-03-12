@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const BASE_URL = "https://acassurancefl.com";
+const BASE_URL = "https://www.acassurancefl.com";
 
 interface SEOHeadProps {
   title: string;
