@@ -15,7 +15,9 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import LocalLandingPage from "./pages/LocalLandingPage";
 import { services } from "./data/services";
+import { localPages } from "./data/localPages";
 
 const serviceSlugs = services.map((s) => s.slug);
 
@@ -44,6 +46,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          {localPages.map((p) => (
+            <Route key={p.slug} path={`/${p.slug}`} element={<LocalLandingPage />} />
+          ))}
           <Route path="/:slug" element={<ServicePageWrapper />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
