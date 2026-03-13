@@ -195,13 +195,13 @@ export const services: ServiceData[] = [
 ];
 
 export const serviceAreas = [
-  { name: "Cape Coral", primary: true },
-  { name: "Fort Myers", primary: true },
-  { name: "Lehigh Acres", primary: false },
-  { name: "Bonita Springs", primary: false },
-  { name: "Estero", primary: false },
-  { name: "Naples", primary: false },
-  { name: "North Fort Myers", primary: false },
+  { name: "Naples", primary: true, slug: "/ac-repair-naples" },
+  { name: "Fort Myers", primary: true, slug: "/ac-repair-fort-myers" },
+  { name: "Cape Coral", primary: true, slug: "/ac-repair-cape-coral" },
+  { name: "Bonita Springs", primary: false, slug: "" },
+  { name: "Estero", primary: false, slug: "" },
+  { name: "Lehigh Acres", primary: false, slug: "" },
+  { name: "North Fort Myers", primary: false, slug: "" },
 ];
 
 export const PHONE = "(239) 365-3090";

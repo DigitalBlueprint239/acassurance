@@ -180,18 +180,22 @@ const Index = () => {
             IMAGE PLACEHOLDER — Replace with service area map
           </div>
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
-            {serviceAreas.map((area) => (
-              <span
-                key={area.name}
-                className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
-                  area.primary
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-foreground border-border"
-                }`}
-              >
-                <MapPin className="w-3.5 h-3.5" /> {area.name}
-              </span>
-            ))}
+            {serviceAreas.map((area) => {
+              const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
+                area.primary
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-foreground border-border"
+              }`;
+              return area.slug ? (
+                <Link key={area.name} to={area.slug} className={`${cls} hover:opacity-90 transition-opacity`}>
+                  <MapPin className="w-3.5 h-3.5" /> {area.name}
+                </Link>
+              ) : (
+                <span key={area.name} className={cls}>
+                  <MapPin className="w-3.5 h-3.5" /> {area.name}
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>
