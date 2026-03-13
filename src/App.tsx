@@ -15,7 +15,9 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import LocalLandingPage from "./pages/LocalLandingPage";
 import { services } from "./data/services";
+import { localPages } from "./data/localPages";
 
 const serviceSlugs = services.map((s) => s.slug);
 
