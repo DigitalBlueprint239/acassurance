@@ -1,39 +1,37 @@
 
 
-## Add Real Job Photos to Homepage
+## Canonical & Indexability Audit — Results
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+### Check #1: Canonical Tags — PASS (all 13 pages covered)
 
-### Photos to Use
+The `SEOHead` component (used by every page) dynamically generates a self-referencing canonical tag on every route:
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+```
+const cleanPath = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+const canonicalUrl = "https://www.acassurancefl.com" + cleanPath;
+```
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+It creates or updates `<link rel="canonical">` in the document head on every navigation. This means:
 
-### Implementation
+- `/ac-repair-naples` → `https://www.acassurancefl.com/ac-repair-naples`
+- `/trane-air-conditioners` → `https://www.acassurancefl.com/trane-air-conditioners`
+- All 13 Phase 2 pages get correct, unique, self-referencing canonicals automatically.
 
-**1. Copy 6 photos to `src/assets/work/`**
+No trailing slash issues — the regex strips them. No manual per-page canonical needed.
 
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+### Check #2: Indexability — PASS (no accidental noindex)
 
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+- The **only** `noindex` tag in the entire codebase is in `src/pages/ThankYou.tsx`, which correctly applies `noindex, nofollow` and removes it on unmount. This is intentional and correct.
+- `index.html` contains no `noindex` meta tag.
+- `robots.txt` is `Allow: /` with no `Disallow` rules — nothing is blocked.
 
-### Files Changed
+### Summary
 
-| File | Change |
-|------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| Check | Result | Detail |
+|-------|--------|--------|
+| Canonical on all 13 pages | PASS | SEOHead auto-generates per-route canonical using `useLocation()` |
+| No accidental noindex | PASS | Only ThankYou.tsx has noindex (correct, with cleanup on unmount) |
+| robots.txt clear | PASS | `Allow: /`, no Disallow rules |
+
+No changes needed. Both SEO safeguards are already handled by the existing Phase 1 infrastructure.
 
