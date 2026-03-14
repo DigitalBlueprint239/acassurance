@@ -131,6 +131,27 @@ const Index = () => {
         </div>
       </section>
 
+      {/* TRANE SECTION */}
+      <section className="py-14 md:py-20 bg-background">
+        <div className="container text-center max-w-3xl">
+          <span className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm font-medium text-foreground mb-4">
+            <Shield className="w-4 h-4 text-primary" /> Independent Trane Dealer
+          </span>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Trusted Trane Air Conditioning Systems</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+            AC Assurance installs and services Trane air conditioning systems — built for durability and engineered to handle Southwest Florida's heat, humidity, and coastal conditions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button asChild size="lg" variant="outline">
+              <Link to="/trane-air-conditioners">Trane Air Conditioners <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link to="/trane-heat-pumps">Trane Heat Pumps <ArrowRight className="w-4 h-4 ml-2" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
         <div className="container">

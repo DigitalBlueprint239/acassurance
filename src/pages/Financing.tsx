@@ -76,6 +76,9 @@ const Financing = () => (
               <Button asChild size="lg">
                 <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE} to Discuss</a>
               </Button>
+              <p className="text-sm text-muted-foreground mt-3">
+                Special financing available. Subject to credit approval. Call for details.
+              </p>
             </div>
           </div>
 
