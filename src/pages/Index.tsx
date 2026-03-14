@@ -185,18 +185,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 6. REVIEWS SECTION */}
-      <section className="py-14 md:py-20 section-light">
-        <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">What Our Customers Say</h2>
-          <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">See why Southwest Florida homeowners trust AC Assurance for all their HVAC needs.</p>
-          <div className="text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link to="/reviews">Read Our Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewSection />
 
       {/* 6. SERVICE AREAS */}
       <section className="py-14 md:py-20 section-light">
