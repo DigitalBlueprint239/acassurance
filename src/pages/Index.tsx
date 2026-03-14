@@ -227,19 +227,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 8. EMERGENCY CTA BAND */}
-      <section className="section-navy py-14 md:py-20">
-        <div className="container text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-4">AC Emergency? We're On It.</h2>
-          <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Don't sweat it. Our 24/7 emergency team is ready to restore your comfort fast.</p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <a href={PHONE_LINK}>
-              <Phone className="w-5 h-5 mr-2" />
-              Call {PHONE}
-            </a>
-          </Button>
-        </div>
-      </section>
+      <EmergencyCallout />
 
       {/* 9. SERVICE REQUEST FORM */}
       <section id="estimate-form" className="py-14 md:py-20 bg-background">
