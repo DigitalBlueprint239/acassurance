@@ -243,6 +243,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <ScrollCallReminder />
     </Layout>
   );
 };

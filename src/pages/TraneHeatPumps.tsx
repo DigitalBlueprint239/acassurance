@@ -143,6 +143,7 @@ const TraneHeatPumps = () => (
         </p>
       </div>
     </section>
+    <ScrollCallReminder />
   </Layout>
 );
 

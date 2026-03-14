@@ -264,6 +264,7 @@ const LocalLandingPage = () => {
           </div>
         </div>
       </section>
+      <ScrollCallReminder />
     </Layout>
   );
 };
