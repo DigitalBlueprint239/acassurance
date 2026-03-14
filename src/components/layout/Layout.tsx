@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import TopBar from "./TopBar";
 import Header from "./Header";
 import Footer from "./Footer";
-import StickyMobileCTA from "./StickyMobileCTA";
+import StickyCallBar from "@/components/StickyCallBar";
 import FloatingServiceButton from "@/components/FloatingServiceButton";
 
 interface LayoutProps {
