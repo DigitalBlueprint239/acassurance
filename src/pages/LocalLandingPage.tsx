@@ -8,6 +8,9 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import NotFound from "./NotFound";
+import TrustBadgeStrip from "@/components/TrustBadgeStrip";
+import ScrollCallReminder from "@/components/ScrollCallReminder";
+import EmergencyCallout from "@/components/EmergencyCallout";
 import { localPages, type LocalPageSection } from "@/data/localPages";
 import { PHONE, PHONE_LINK, COMPANY, LICENSE } from "@/data/services";
 
@@ -191,6 +194,8 @@ const LocalLandingPage = () => {
         </div>
       </section>
 
+      <TrustBadgeStrip />
+
       {/* CONTENT + SIDEBAR */}
       <section className="py-12 md:py-16 bg-background">
         <div className="container">
@@ -235,6 +240,8 @@ const LocalLandingPage = () => {
         </div>
       </section>
 
+      {slug?.startsWith("emergency-") && <EmergencyCallout />}
+
       {/* CTA BAND */}
       <section id="estimate-form" className={`py-12 md:py-16 ${isUrgent ? "bg-destructive" : "section-navy"}`}>
         <div className="container text-center">
@@ -259,6 +266,7 @@ const LocalLandingPage = () => {
           </div>
         </div>
       </section>
+      <ScrollCallReminder />
     </Layout>
   );
 };

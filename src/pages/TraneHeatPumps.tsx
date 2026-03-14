@@ -5,6 +5,8 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK } from "@/data/services";
+import TrustBadgeStrip from "@/components/TrustBadgeStrip";
+import ScrollCallReminder from "@/components/ScrollCallReminder";
 
 const trustSignals = [
   { icon: Shield, label: "Independent Trane Dealer" },
@@ -44,6 +46,8 @@ const TraneHeatPumps = () => (
         </div>
       </div>
     </section>
+
+    <TrustBadgeStrip />
 
     {/* Body */}
     <section className="py-12 md:py-16">
@@ -139,6 +143,7 @@ const TraneHeatPumps = () => (
         </p>
       </div>
     </section>
+    <ScrollCallReminder />
   </Layout>
 );
 

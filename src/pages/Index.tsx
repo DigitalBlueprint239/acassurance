@@ -5,6 +5,10 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
+import TrustBadgeStrip from "@/components/TrustBadgeStrip";
+import ReviewSection from "@/components/ReviewSection";
+import EmergencyCallout from "@/components/EmergencyCallout";
+import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroBg from "@/assets/hero-bg.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
@@ -44,7 +48,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
-                <a href="#estimate-form">Get My Free Quote</a>
+                <a href="#estimate-form">Request Estimate</a>
               </Button>
               <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
                 <a href={PHONE_LINK}>
@@ -68,6 +72,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadgeStrip />
 
       {/* 2. SOCIAL PROOF BAR */}
       <section className="section-light py-6 border-b border-border">
@@ -179,18 +185,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 6. REVIEWS SECTION */}
-      <section className="py-14 md:py-20 section-light">
-        <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">What Our Customers Say</h2>
-          <p className="text-center text-muted-foreground mb-10 max-w-lg mx-auto">See why Southwest Florida homeowners trust AC Assurance for all their HVAC needs.</p>
-          <div className="text-center">
-            <Button asChild size="lg" variant="outline">
-              <Link to="/reviews">Read Our Reviews <ArrowRight className="w-4 h-4 ml-2" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ReviewSection />
 
       {/* 6. SERVICE AREAS */}
       <section className="py-14 md:py-20 section-light">
@@ -232,19 +227,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 8. EMERGENCY CTA BAND */}
-      <section className="section-navy py-14 md:py-20">
-        <div className="container text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-4">AC Emergency? We're On It.</h2>
-          <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">Don't sweat it. Our 24/7 emergency team is ready to restore your comfort fast.</p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <a href={PHONE_LINK}>
-              <Phone className="w-5 h-5 mr-2" />
-              Call {PHONE}
-            </a>
-          </Button>
-        </div>
-      </section>
+      <EmergencyCallout />
 
       {/* 9. SERVICE REQUEST FORM */}
       <section id="estimate-form" className="py-14 md:py-20 bg-background">
@@ -260,6 +243,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <ScrollCallReminder />
     </Layout>
   );
 };
