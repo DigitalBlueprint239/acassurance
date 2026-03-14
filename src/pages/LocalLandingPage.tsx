@@ -240,6 +240,8 @@ const LocalLandingPage = () => {
         </div>
       </section>
 
+      {slug?.startsWith("emergency-") && <EmergencyCallout />}
+
       {/* CTA BAND */}
       <section id="estimate-form" className={`py-12 md:py-16 ${isUrgent ? "bg-destructive" : "section-navy"}`}>
         <div className="container text-center">
