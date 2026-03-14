@@ -194,6 +194,8 @@ const LocalLandingPage = () => {
         </div>
       </section>
 
+      <TrustBadgeStrip />
+
       {/* CONTENT + SIDEBAR */}
       <section className="py-12 md:py-16 bg-background">
         <div className="container">
