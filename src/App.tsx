@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import ServicePage from "./pages/ServicePage";
 import Financing from "./pages/Financing";
+import TraneAirConditioners from "./pages/TraneAirConditioners";
+import TraneHeatPumps from "./pages/TraneHeatPumps";
 import ServiceAreas from "./pages/ServiceAreas";
 import Reviews from "./pages/Reviews";
 import About from "./pages/About";
@@ -39,6 +41,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/financing" element={<Financing />} />
+          <Route path="/trane-air-conditioners" element={<TraneAirConditioners />} />
+          <Route path="/trane-heat-pumps" element={<TraneHeatPumps />} />
           <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/about" element={<About />} />
