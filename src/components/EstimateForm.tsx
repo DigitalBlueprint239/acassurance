@@ -99,9 +99,9 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <Input name="name" placeholder="Your Name *" required maxLength={100} className="bg-background" />
-      <Input name="phone" type="tel" placeholder="Phone Number *" required maxLength={20} className="bg-background" />
-      <Input name="email" type="email" placeholder="Email Address (optional)" maxLength={100} className="bg-background" />
+      <Input name="name" placeholder="Your Name *" required maxLength={100} className="h-12 md:h-10 bg-background" />
+      <Input name="phone" type="tel" placeholder="Phone Number *" required maxLength={20} className="h-12 md:h-10 bg-background" />
+      <Input name="email" type="email" placeholder="Email Address (optional)" maxLength={100} className="h-12 md:h-10 bg-background" />
 
       <select
         name="service"
