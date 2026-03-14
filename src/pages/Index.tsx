@@ -73,6 +73,8 @@ const Index = () => {
         </div>
       </section>
 
+      <TrustBadgeStrip />
+
       {/* 2. SOCIAL PROOF BAR */}
       <section className="section-light py-6 border-b border-border">
         <div className="container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
