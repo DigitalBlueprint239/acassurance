@@ -8,6 +8,9 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import NotFound from "./NotFound";
+import TrustBadgeStrip from "@/components/TrustBadgeStrip";
+import ScrollCallReminder from "@/components/ScrollCallReminder";
+import EmergencyCallout from "@/components/EmergencyCallout";
 import { localPages, type LocalPageSection } from "@/data/localPages";
 import { PHONE, PHONE_LINK, COMPANY, LICENSE } from "@/data/services";
 
