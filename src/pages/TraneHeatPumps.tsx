@@ -47,6 +47,8 @@ const TraneHeatPumps = () => (
       </div>
     </section>
 
+    <TrustBadgeStrip />
+
     {/* Body */}
     <section className="py-12 md:py-16">
       <div className="container">
