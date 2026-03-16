@@ -1,39 +1,16 @@
 
 
-## Add Real Job Photos to Homepage
+## Generate Favicon from AC Assurance Logo
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+The `index.html` already references `/favicon.png` correctly on line 5. The issue is that the current `public/favicon.png` file is likely empty or invalid from the previous copy attempt.
 
-### Photos to Use
+### Plan
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+1. **Generate a favicon-sized version** of the AC Assurance logo (`src/assets/logo.png`) — crop to just the hexagon icon mark (no text), resize to 32x32 or 64x64 pixels, and save as `public/favicon.png`
+2. Since we can't do image processing in-browser, we'll use the **AI image generation API** to create a clean 64x64 favicon based on the existing logo design — a navy hexagon with "AC" letters in silver/white
+3. Save the generated image to `public/favicon.png`
+4. No changes needed to `index.html` — the link tag on line 5 already points to `/favicon.png`
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
-
-### Implementation
-
-**1. Copy 6 photos to `src/assets/work/`**
-
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
-
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
-
-### Files Changed
-
-| File | Change |
-|------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+### Files Modified
+- `public/favicon.png` — replaced with a proper favicon-sized image generated from the brand logo
 
