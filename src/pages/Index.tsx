@@ -40,17 +40,18 @@ const Index = () => {
         <img
           src={heroOwner}
           alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[70%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-[75%_center]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
         <div className="relative container flex items-center min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              Trusted AC &amp; Heating Service in Southwest Florida
+              Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.15] mb-5">
-              Fast, Reliable AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
+            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-5">
+              Fast, Reliable AC Repair &amp; Installation<br />
+              in Fort Myers, Cape Coral &amp; Naples
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed">
               Licensed HVAC experts serving Southwest Florida.<br />
@@ -58,12 +59,12 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-                <a href="#estimate-form">Get Free Estimate</a>
+                <a href="#estimate-form">Get My Free Quote</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
-                  Call {PHONE}
+                  Call Now {PHONE}
                 </a>
               </Button>
             </div>
@@ -79,7 +80,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Need help fast? Call now for same-day service.</p>
+            <p className="text-white/70 text-sm mt-4">Your comfort matters. Same-day service available.</p>
           </div>
         </div>
       </section>
@@ -89,10 +90,11 @@ const Index = () => {
         <div className="container py-12">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              Trusted AC &amp; Heating Service in Southwest Florida
+              Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.15] mb-5">
-              Fast, Reliable AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
+            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-5">
+              Fast, Reliable AC Repair &amp; Installation<br />
+              in Fort Myers, Cape Coral &amp; Naples
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed">
               Licensed HVAC experts serving Southwest Florida.<br />
@@ -100,12 +102,12 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-                <a href="#estimate-form">Get Free Estimate</a>
+                <a href="#estimate-form">Get My Free Quote</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
-                  Call {PHONE}
+                  Call Now {PHONE}
                 </a>
               </Button>
             </div>
@@ -121,7 +123,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Need help fast? Call now for same-day service.</p>
+            <p className="text-white/70 text-sm mt-4">Your comfort matters. Same-day service available.</p>
           </div>
         </div>
         <div className="h-[300px]">
