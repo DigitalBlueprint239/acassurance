@@ -1,50 +1,39 @@
 
 
-## Refine Homepage Hero Section
+## Add Real Job Photos to Homepage
+
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+
+### Photos to Use
+
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+
+### Implementation
+
+**1. Copy 6 photos to `src/assets/work/`**
+
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/assets/hero-owner.jpg` | Copy uploaded owner photo |
-| `src/pages/Index.tsx` | Rewrite hero section (lines 37–74 only), update imports |
-| `src/index.css` | Update `.hero-overlay`, add hero gradient utilities |
-
-### Implementation Details
-
-**1. Copy image**
-- `user-uploads://Copy_of_IMG_0323.JPG` → `src/assets/hero-owner.jpg`
-- Import as `heroOwner` in Index.tsx; keep `heroBg` import if referenced elsewhere
-
-**2. Hero section layout (replaces lines 37–74 in Index.tsx)**
-
-Desktop (md+):
-- Flex row on a `bg-[#0A1F3F]` navy foundation
-- Left column (~55%): eyebrow, h1, subheadline, CTAs, trust pills — all white text, left-aligned, padded
-- Right column (~45%): `heroOwner` image with `object-cover object-right`, full height of hero
-- A pseudo-element or absolute gradient div on the left edge of the image fading from `#0A1F3F` → transparent so the photo blends into the navy text area
-
-Mobile:
-- Flex column, stacked: text block first (navy bg, padded), then image below
-- Image constrained to `h-[250px] md:h-auto` with `object-cover object-[50%_25%]` for face-centered crop
-- No overlay on mobile image — clean and intentional
-
-**3. Hero copy (exact text)**
-- Eyebrow: `"Trusted AC & Heating Service in Southwest Florida"` — `text-xs uppercase tracking-widest text-white/80`
-- H1: `"Fast, Reliable AC Repair & Installation in Fort Myers & Cape Coral"` — `text-3xl sm:text-4xl md:text-5xl font-extrabold text-white`
-- Subheadline: two lines as specified — `text-lg text-white/85`
-
-**4. CTA buttons**
-- Primary: "Get Free Estimate" — `bg-[#00A19A] text-white hover:bg-[#00A19A]/90`, large, links to `#estimate-form`
-- Secondary: "Call (239) 365-3090" — outline/ghost with `border-white text-white`, Phone icon, links to `PHONE_LINK`
-- Flex row on desktop, stack on mobile, gap-3
-
-**5. Trust pills**
-- 3 pills: Licensed & Insured (BadgeCheck), 24/7 Emergency Service (Clock), BBB Accredited (Shield)
-- Style: `bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm` — subtle, clean
-- Flex wrap row below CTAs with `mt-6`
-
-**6. CSS updates in `src/index.css`**
-- Update `.hero-overlay` to: `background: linear-gradient(to right, #0A1F3F 0%, #0A1F3F 10%, transparent 60%);` for desktop blend
-- No other homepage sections touched
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 

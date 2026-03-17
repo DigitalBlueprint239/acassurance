@@ -57,8 +57,10 @@ export default {
         brand: {
           navy: "hsl(var(--brand-navy))",
           "navy-light": "hsl(var(--brand-navy-light))",
+          "navy-deep": "hsl(var(--brand-navy-deep))",
           steel: "hsl(var(--brand-steel))",
           accent: "hsl(var(--brand-accent))",
+          teal: "hsl(var(--brand-teal))",
           gray: "hsl(var(--brand-gray))",
           "gray-light": "hsl(var(--brand-gray-light))",
         },

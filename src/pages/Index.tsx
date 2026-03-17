@@ -9,7 +9,7 @@ import TrustBadgeStrip from "@/components/TrustBadgeStrip";
 import ReviewSection from "@/components/ReviewSection";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroOwner from "@/assets/hero-owner.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
@@ -35,40 +35,60 @@ const Index = () => {
       />
 
       {/* 1. HERO */}
-      <section className="relative min-h-[520px] md:min-h-[600px] flex items-center">
-        <img src={heroBg} alt="HVAC system — IMAGE PLACEHOLDER: Replace with technician or comfortable home photo" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 hero-overlay" />
-        <div className="relative container py-16 md:py-24">
-          <div className="max-w-2xl animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-primary-foreground leading-[1.15] mb-5">
-              24/7 AC Repair &amp; Installation<br className="hidden sm:inline" /> Fort Myers &amp; Cape Coral
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-              Licensed HVAC professionals serving Southwest Florida.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
-                <a href="#estimate-form">Request Estimate</a>
-              </Button>
-              <Button asChild size="lg" className="text-base bg-accent text-accent-foreground hover:bg-accent/90">
-                <a href={PHONE_LINK}>
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call {PHONE}
-                </a>
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-4 mt-8">
-              {[
-                { icon: BadgeCheck, label: "Licensed & Insured" },
-                { icon: Clock, label: "24/7 Service" },
-                { icon: Shield, label: "BBB Accredited" },
-              ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm rounded-full px-4 py-2 text-primary-foreground text-sm font-medium">
-                  <badge.icon className="w-4 h-4" />
-                  {badge.label}
+      <section className="bg-brand-navy-deep">
+        <div className="flex flex-col md:flex-row">
+          {/* Left — Text content */}
+          <div className="flex-1 md:w-[55%] flex items-center">
+            <div className="container py-12 md:py-20 lg:py-24 max-w-xl md:max-w-none md:pl-8 lg:pl-12 md:pr-0">
+              <div className="max-w-lg">
+                <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
+                  Trusted AC &amp; Heating Service in Southwest Florida
+                </p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.15] mb-5">
+                  Fast, Reliable AC Repair &amp; Installation
+                  <br className="hidden sm:inline" />
+                  <span className="block sm:inline"> in Fort Myers &amp; Cape Coral</span>
+                </h1>
+                <p className="text-lg text-white/85 mb-8 leading-relaxed">
+                  Licensed HVAC experts serving Southwest Florida.<br />
+                  Honest service. Fast response. Done right the first time.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
+                    <a href="#estimate-form">Get Free Estimate</a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
+                    <a href={PHONE_LINK}>
+                      <Phone className="w-5 h-5 mr-2" />
+                      Call {PHONE}
+                    </a>
+                  </Button>
                 </div>
-              ))}
+                <div className="flex flex-wrap gap-3 mt-6">
+                  {[
+                    { icon: BadgeCheck, label: "Licensed & Insured" },
+                    { icon: Clock, label: "24/7 Emergency Service" },
+                    { icon: Shield, label: "BBB Accredited" },
+                  ].map((badge) => (
+                    <div key={badge.label} className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
+                      <badge.icon className="w-4 h-4 text-white/70" />
+                      {badge.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+          </div>
+          {/* Right — Owner image */}
+          <div className="relative md:w-[45%] h-[260px] md:h-auto md:min-h-[520px]">
+            <img
+              src={heroOwner}
+              alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
+              className="w-full h-full object-cover object-[50%_25%] md:object-right"
+              loading="eager"
+            />
+            {/* Desktop blend gradient */}
+            <div className="hidden md:block absolute inset-0 hero-image-blend" />
           </div>
         </div>
       </section>
