@@ -1,40 +1,39 @@
 
 
-## Implement Final Hero Redesign
+## Add Real Job Photos to Homepage
 
-Three files to change. Asset replacement + hero layout conversion + CSS gradient update.
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### 1. `src/assets/hero-owner.jpg`
-Overwrite with `user-uploads://image-12.png`.
+### Photos to Use
 
-### 2. `src/pages/Index.tsx` — Replace hero section (lines 37–94)
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-Convert from split-layout to full-width background image with text overlay.
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-**Desktop**: Single container with background image (`object-cover`, `object-[70%_center]`), `min-h-[600px]`. Left gradient overlay for text readability. Text block constrained to `max-w-lg` on the left.
+### Implementation
 
-**Mobile**: Stacked — text on navy bg first, image below at `h-[300px]` with `object-[60%_40%]`.
+**1. Copy 6 photos to `src/assets/work/`**
 
-**Copy** (final approved):
-- Eyebrow: `Trusted AC & Heating Service in Southwest Florida`
-- H1: `Fast, Reliable AC Repair & Installation in Fort Myers & Cape Coral`
-- Sub: `Licensed HVAC experts serving Southwest Florida. Same-day service. Honest pricing. No surprises.`
-- CTA1: Get Free Estimate (teal)
-- CTA2: Call (239) 365-3090 (outline)
-- Badges: Licensed & Insured · 24/7 Emergency Service · BBB Accredited (3 only)
-- Urgency: `Need help fast? Call now for same-day service.` — `text-white/70 text-sm mt-4`
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
 
-No animations. No offer strip.
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
-### 3. `src/index.css` — Update `.hero-image-blend`
+### Files Changed
 
-Change gradient for full-width background coverage:
-```css
-.hero-image-blend {
-  background: linear-gradient(to right, hsl(216, 75%, 14%) 0%, hsl(216, 75%, 14%, 0.9) 25%, hsl(216, 75%, 14%, 0.4) 50%, transparent 65%);
-}
-```
-
-### No changes to
-All other homepage sections, TrustBadgeStrip, footer, header, layout.
+| File | Change |
+|------|--------|
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 
