@@ -84,7 +84,7 @@ const Index = () => {
             <img
               src={heroOwner}
               alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-              className="w-full h-full object-cover object-[35%_30%] md:object-[40%_25%]"
+              className="w-full h-full object-cover object-[50%_30%] md:object-[55%_25%]"
               loading="eager"
             />
             {/* Desktop blend gradient */}
