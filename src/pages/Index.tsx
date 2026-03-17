@@ -102,7 +102,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-                <a href="#estimate-form">Get Free Estimate</a>
+                <a href="#estimate-form">Get My Free Quote</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
