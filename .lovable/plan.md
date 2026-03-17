@@ -1,39 +1,33 @@
 
 
-## Add Real Job Photos to Homepage
-
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
-
-### Photos to Use
-
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
-
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
-
-### Implementation
-
-**1. Copy 6 photos to `src/assets/work/`**
-
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
-
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+## Hero Section Refinement — Image, Gradient & Trust Pills
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| `src/pages/Index.tsx` | Adjust image object-position, increase image column width, lighten trust pills |
+| `src/index.css` | Reduce gradient width and opacity |
+
+### Changes
+
+**1. Image crop/position (Index.tsx line 83-88)**
+- Change image column from `md:w-[45%]` → `md:w-[48%]` for more image presence
+- Change `object-[50%_25%]` → `object-[35%_30%]` on mobile to shift focal point left toward Jason's face/torso, cropping out ladder/rack
+- Change `md:object-right` → `md:object-[40%_25%]` on desktop to center Jason in the frame rather than pushing him off-screen, keeping van partially visible
+
+**2. Gradient overlay (index.css line 94-96)**
+- Reduce `.hero-image-blend` gradient: shrink solid coverage from 8% → 3%, and fade-out from 55% → 35%
+- Reduce opacity by blending to transparent sooner
+- New value: `linear-gradient(to right, hsl(216, 75%, 14%) 0%, hsl(216, 75%, 14%, 0.85) 3%, transparent 35%)`
+
+**3. Trust pills (Index.tsx line 73)**
+- Change `bg-white/10` → `bg-white/[0.06]` for softer, lighter feel
+- Change icon `text-white/70` → `text-white/60` for subtler contrast
+
+**4. Text column width adjustment**
+- Change left column from `md:w-[55%]` (implicit via flex-1) — keep flex-1 but the image column growing slightly will naturally rebalance
+
+### No Changes To
+- Headline, subheadline, CTA text, CTA hierarchy, layout structure, section spacing, any other homepage sections
 
