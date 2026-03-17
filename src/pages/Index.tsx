@@ -47,10 +47,11 @@ const Index = () => {
         <div className="relative container flex items-center min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              Trusted AC &amp; Heating Service in Southwest Florida
+              Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.15] mb-5">
-              Fast, Reliable AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
+            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-5">
+              Fast, Reliable AC Repair &amp; Installation<br />
+              in Fort Myers, Cape Coral &amp; Naples
             </h1>
             <p className="text-lg text-white/85 mb-8 leading-relaxed">
               Licensed HVAC experts serving Southwest Florida.<br />
