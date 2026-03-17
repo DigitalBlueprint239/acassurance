@@ -80,11 +80,11 @@ const Index = () => {
             </div>
           </div>
           {/* Right — Owner image */}
-          <div className="relative md:w-[48%] h-[260px] md:h-auto md:min-h-[520px]">
+          <div className="relative md:w-[48%] h-[300px] md:h-auto md:min-h-[520px]">
             <img
               src={heroOwner}
               alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-              className="w-full h-full object-cover object-[50%_30%] md:object-[55%_25%]"
+              className="w-full h-full object-cover object-[50%_65%] md:object-[50%_55%]"
               loading="eager"
             />
             {/* Desktop blend gradient */}
