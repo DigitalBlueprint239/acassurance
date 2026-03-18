@@ -1,33 +1,39 @@
 
 
-## SEO-First Hero Rebuild
+## Add Real Job Photos to Homepage
 
-Executing the approved plan with the peer review note: `text-shadow` at `rgba(0,0,0,0.5)` — subtle lift, not a heavy drop-shadow.
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### Changes in `src/pages/Index.tsx`
+### Photos to Use
 
-**Desktop hero (lines 50-84):**
-1. Eyebrow → `⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832`
-2. H1 → `Expert AC Repair & Installation in Fort Myers & Cape Coral` — remove `<br/>`, add `style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}`
-3. Subheadline → `Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.` — remove `<br/>`
-4. Trust badges — add 4th: `{ icon: Star, label: "5-Star Rated on Google" }`
-5. Micro-line → `🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.`
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-**Mobile hero (lines 93-127):**
-- Same copy changes as desktop
-- Line 104: change `flex-col sm:flex-row` → `flex-col` (always stacked for thumb targets)
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-### Changes in `src/index.css`
+### Implementation
 
-Strengthen left overlay slightly (line 95):
-```css
-background: linear-gradient(to right, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.92) 35%, rgba(0,0,0,0.68) 60%, rgba(0,0,0,0.35) 75%, transparent 90%);
-```
+**1. Copy 6 photos to `src/assets/work/`**
+
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/pages/Index.tsx` | Hero copy (eyebrow, H1 with subtle text-shadow, sub, 4th badge, micro-line), mobile button stack |
-| `src/index.css` | Slightly heavier left-side overlay gradient |
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 

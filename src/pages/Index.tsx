@@ -48,15 +48,13 @@ const Index = () => {
         <div className="relative container flex items-center min-h-[540px] lg:min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              Trusted AC &amp; Heating Service Across Southwest Florida
+              ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4">
-              AC Repair &amp; Installation<br />
-              Done Right the First Time
+            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+              Expert AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
-              Owner-led HVAC service across Southwest Florida.<br />
-              Same-day help from a licensed local team.
+              Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
@@ -74,6 +72,7 @@ const Index = () => {
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
                 { icon: Shield, label: "BBB Accredited" },
+                { icon: Star, label: "5-Star Rated on Google" },
               ].map((badge) => (
                  <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
                    <badge.icon className="w-4 h-4 text-white/50" />
@@ -81,7 +80,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-             <p className="text-white/70 text-sm mt-3">Need help fast? Same-day service available.</p>
+             <p className="text-white/70 text-sm mt-3">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
           </div>
         </div>
       </section>
@@ -91,17 +90,15 @@ const Index = () => {
         <div className="container py-12">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              Trusted AC &amp; Heating Service Across Southwest Florida
+              ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
             </p>
-            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4">
-              AC Repair &amp; Installation<br />
-              Done Right the First Time
+            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+              Expert AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
-              Owner-led HVAC service across Southwest Florida.<br />
-              Same-day help from a licensed local team.
+              Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
@@ -117,6 +114,7 @@ const Index = () => {
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
                 { icon: Shield, label: "BBB Accredited" },
+                { icon: Star, label: "5-Star Rated on Google" },
               ].map((badge) => (
                  <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
                    <badge.icon className="w-4 h-4 text-white/50" />
@@ -124,7 +122,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-3">Need help fast? Same-day service available.</p>
+            <p className="text-white/70 text-sm mt-3">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
           </div>
         </div>
         <div className="h-[300px]">
