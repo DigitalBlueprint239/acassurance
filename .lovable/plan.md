@@ -1,41 +1,39 @@
 
 
-## Hero Split Layout — Refinements
+## Add Real Job Photos to Homepage
 
-These optimizations layer on top of the approved Split Layout plan to add depth, premium typography, and mobile polish.
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### 1. Grid Ratio Update (`src/pages/Index.tsx` — Desktop Hero)
+### Photos to Use
 
-Change grid from `grid-cols-[45fr_55fr]` to `grid-cols-[42fr_58fr]` — gives the photo more breathing room.
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-### 2. Visual Bridge — Urgency Pill Overflow
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-The urgency pill at the bottom of the text column gets `relative z-10 ml-auto mr-[-20px]` so it visually overlaps onto the image side, creating depth between the two columns.
+### Implementation
 
-### 3. Premium Typography
+**1. Copy 6 photos to `src/assets/work/`**
 
-- **Eyebrow**: `tracking-[0.2em]` (wide luxury spacing) instead of `tracking-widest`
-- **H1**: `tracking-tight leading-[1.1]` stays. Teal span changes from `text-teal-400` to `text-teal-600` for better contrast on light background
-- **Subheadline updated copy**: "Southwest Florida's premier team for 24/7 emergency repairs and high-efficiency installs. Serving all of Lee County with honest pricing and owner-backed quality."
-- No text-shadow needed (dark text on light bg)
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
 
-### 4. Trust Badges — Physical "Seal" Style
-
-Change from glass pills to: `bg-white shadow-sm border border-slate-200 rounded-full px-4 py-2 text-slate-700 text-xs font-medium` with `text-teal-600` icons. Looks like embossed seals on the light background.
-
-### 5. Image Position
-
-`object-[25%_center]` — keeps the owner (Jason) as focal point in the right column.
-
-### 6. Mobile — Soft Transition
-
-- Replace `h-[300px]` with `aspect-[4/3]`
-- Add `rounded-t-3xl overflow-hidden` to the image container for a soft transition from white text area to photo
-- Image uses `object-cover object-center`
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/pages/Index.tsx` | Grid ratio, visual bridge overflow, typography refinements, seal-style badges, image position, mobile aspect ratio + rounded top |
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 
