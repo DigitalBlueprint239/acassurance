@@ -36,16 +36,16 @@ const Index = () => {
 
       {/* 1. HERO */}
       {/* Desktop: full-width background image with left gradient overlay */}
-      <section className="relative hidden md:block bg-brand-navy-deep min-h-[600px]">
+      <section className="relative hidden md:block bg-brand-navy-deep min-h-[540px] lg:min-h-[600px]">
         <img
           src={heroTeam}
           alt="AC Assurance Cooling & Heating team standing in front of branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[60%_35%]"
+          className="absolute inset-0 w-full h-full object-cover object-[68%_35%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
         <div className="absolute inset-0 hero-top-overlay" />
-        <div className="relative container flex items-center min-h-[600px] py-20">
+        <div className="relative container flex items-center min-h-[540px] lg:min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
               Trusted AC &amp; Heating Service Across Southwest Florida
@@ -56,20 +56,20 @@ const Index = () => {
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
               Owner-led HVAC service across Southwest Florida.<br />
-               Same-day help. Honest pricing. No surprises.
+              Same-day help from a licensed local team.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-white/35 text-white/90 hover:bg-white/10 hover:border-white/60 bg-transparent">
+              <Button asChild size="lg" variant="outline" className="text-base border-white/30 text-white/80 hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now {PHONE}
                 </a>
               </Button>
             </div>
-             <div className="flex flex-wrap gap-3 mt-3">
+             <div className="flex flex-wrap gap-3 mt-2">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
@@ -99,20 +99,20 @@ const Index = () => {
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
               Owner-led HVAC service across Southwest Florida.<br />
-              Same-day help. Honest pricing. No surprises.
+              Same-day help from a licensed local team.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
+              <Button asChild size="lg" variant="outline" className="text-base border-white/30 text-white/80 hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now {PHONE}
                 </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-3 mt-4">
+            <div className="flex flex-wrap gap-3 mt-2">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
@@ -254,11 +254,8 @@ const Index = () => {
       {/* 6. SERVICE AREAS */}
       <section className="py-14 md:py-20 section-light">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Areas We Serve</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">Proudly serving homeowners and businesses across Southwest Florida.</p>
-          <div className="max-w-2xl mx-auto mb-8 bg-card border border-border rounded h-48 flex items-center justify-center text-muted-foreground text-sm">
-            IMAGE PLACEHOLDER — Replace with service area map
-          </div>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Proudly Serving Southwest Florida</h2>
+          <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">We provide fast, reliable HVAC services across Lee County and surrounding areas.</p>
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
             {serviceAreas.map((area) => {
               const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
