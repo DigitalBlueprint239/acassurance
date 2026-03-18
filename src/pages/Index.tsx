@@ -9,7 +9,7 @@ import TrustBadgeStrip from "@/components/TrustBadgeStrip";
 import ReviewSection from "@/components/ReviewSection";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
-import heroOwner from "@/assets/hero-owner-jason.jpg";
+import heroTeam from "@/assets/hero-team-edited.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
