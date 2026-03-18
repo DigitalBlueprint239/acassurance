@@ -40,10 +40,11 @@ const Index = () => {
         <img
           src={heroOwner}
           alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[82%_40%]"
+          className="absolute inset-0 w-full h-full object-cover object-[78%_40%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
+        <div className="absolute inset-0 hero-top-overlay" />
         <div className="relative container flex items-center min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
@@ -61,14 +62,14 @@ const Index = () => {
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
                 <a href="#estimate-form">Get My Free Quote</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-white/40 text-white hover:bg-white/10 hover:border-white/60 bg-transparent">
+              <Button asChild size="lg" variant="outline" className="text-base border-white/35 text-white/90 hover:bg-white/10 hover:border-white/60 bg-transparent">
                 <a href={PHONE_LINK}>
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now {PHONE}
                 </a>
               </Button>
             </div>
-             <div className="flex flex-wrap gap-3 mt-4">
+             <div className="flex flex-wrap gap-3 mt-3">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
