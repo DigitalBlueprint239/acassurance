@@ -40,7 +40,7 @@ const Index = () => {
         <img
           src={heroOwner}
           alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[82%_40%]"
+          className="absolute inset-0 w-full h-full object-cover object-[78%_40%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
