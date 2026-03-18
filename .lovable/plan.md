@@ -1,39 +1,51 @@
 
 
-## Add Real Job Photos to Homepage
+## Homepage Production Lock — Final Refinements
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+### Summary
 
-### Photos to Use
+Three targeted changes: hero polish (new full team photo, updated overlay/positioning/copy/spacing), service area placeholder removal, and mobile CTA alignment.
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+---
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+### 1. Replace Hero Image with Full Team Photo
 
-### Implementation
+Copy `user-uploads://IMG_0308-2.JPG` to `src/assets/hero-team-edited.jpg` (overwrite). This uses the full uncropped team photo as requested — no members cut out.
 
-**1. Copy 6 photos to `src/assets/work/`**
+### 2. Hero Section Updates (`src/pages/Index.tsx`)
 
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+**Desktop hero:**
+- `min-h-[600px]` → `min-h-[540px] lg:min-h-[600px]` (both the section and inner container)
+- Image `object-[60%_35%]` → `object-[68%_35%]`
+- Subheadline: "Same-day help. Honest pricing. No surprises." → "Same-day help from a licensed local team."
+- Secondary CTA: `border-white/35 text-white/90` → `border-white/30 text-white/80`
+- Trust badge row: `mt-3` → `mt-2`
 
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+**Mobile hero:**
+- Secondary CTA: `border-white/40 text-white` → `border-white/30 text-white/80`
+- Trust badge row: `mt-4` → `mt-2`
+
+### 3. Overlay Gradient Update (`src/index.css`)
+
+Update `.hero-image-blend` gradient to stronger left-side values:
+```css
+background: linear-gradient(to right, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.90) 35%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.35) 75%, transparent 90%);
+```
+`.hero-top-overlay` remains unchanged (already matches spec).
+
+### 4. Service Area — Remove Placeholder (`src/pages/Index.tsx`)
+
+Delete the gray placeholder box (lines 259-261). Replace with a clean headline/subtext and styled city grid:
+- Headline: "Proudly Serving Southwest Florida"
+- Subtext: "We provide fast, reliable HVAC services across Lee County and surrounding areas."
+- Keep existing city pill/badge list (already has MapPin icons and links)
+- Remove the old "Areas We Serve" h2/p since the new headline replaces them
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| `src/assets/hero-team-edited.jpg` | Overwrite with full uncropped team photo |
+| `src/index.css` | Update `.hero-image-blend` gradient opacity values |
+| `src/pages/Index.tsx` | Hero positioning, copy, spacing, CTA styling; remove service area placeholder |
 
