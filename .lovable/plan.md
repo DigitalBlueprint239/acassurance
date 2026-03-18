@@ -1,46 +1,39 @@
 
 
-## Hero "High-Definition Scrim" Refinement
+## Add Real Job Photos to Homepage
 
-Transition from heavy overlay to a lighter, clearer scrim that reveals the team photo while boosting glass card contrast for legibility.
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### 1. `src/index.css` — Lighter gradient
+### Photos to Use
 
-Replace `.hero-image-blend` (lines 94-100):
-```css
-.hero-image-blend {
-  background: linear-gradient(to right,
-    rgba(8, 25, 46, 0.85) 0%,
-    rgba(8, 25, 46, 0.4) 45%,
-    transparent 70%);
-}
-```
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-### 2. `src/index.css` — Update `.glass-hero-card`
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-Boost contrast: change from `bg-white/5` to `bg-black/25` and `backdrop-blur-md` to `backdrop-blur-xl`:
-```css
-.glass-hero-card {
-  @apply backdrop-blur-xl bg-black/25 border-l-4 border-teal-500/60 p-6 md:p-8 rounded-r-2xl;
-}
-```
+### Implementation
 
-### 3. `src/pages/Index.tsx` — Desktop hero (line 43)
+**1. Copy 6 photos to `src/assets/work/`**
 
-Image position: `object-[80%_35%]` → `object-[75%_35%]`
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
 
-### 4. `src/pages/Index.tsx` — Desktop H1 (line 54)
-
-Strengthen text-shadow: `0 2px 8px rgba(0,0,0,0.5)` → `0 4px 12px rgba(0,0,0,0.6)`
-
-### 5. `src/pages/Index.tsx` — Mobile H1 (around line 102)
-
-Same text-shadow update for mobile H1.
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/index.css` | Lighter scrim gradient, darker glass card with stronger blur |
-| `src/pages/Index.tsx` | Image position to 75%, stronger text-shadow on both hero blocks |
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 
