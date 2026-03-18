@@ -123,7 +123,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Your comfort matters. Same-day service available.</p>
+            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
           </div>
         </div>
         <div className="h-[300px]">
