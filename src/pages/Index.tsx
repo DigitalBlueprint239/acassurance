@@ -18,21 +18,21 @@ import workAirHandler from "@/assets/work/air-handler.png";
 import workGarageDuctless from "@/assets/work/garage-ductless.png";
 
 const workPhotos = [
-  { src: workCondenser, caption: "Clean Condenser Coil Detail" },
-  { src: workMiniSplitOutdoor, caption: "Mini-Split Outdoor Unit Install" },
-  { src: workDuctless, caption: "Ductless System Installation" },
-  { src: workGarageMiniSplit, caption: "Garage Mini-Split Installation" },
-  { src: workAirHandler, caption: "New Air Handler Installation" },
-  { src: workGarageDuctless, caption: "Garage Ductless Cooling" },
-];
+{ src: workCondenser, caption: "Clean Condenser Coil Detail" },
+{ src: workMiniSplitOutdoor, caption: "Mini-Split Outdoor Unit Install" },
+{ src: workDuctless, caption: "Ductless System Installation" },
+{ src: workGarageMiniSplit, caption: "Garage Mini-Split Installation" },
+{ src: workAirHandler, caption: "New Air Handler Installation" },
+{ src: workGarageDuctless, caption: "Garage Ductless Cooling" }];
+
 
 const Index = () => {
   return (
     <Layout>
       <SEOHead
         title="AC Repair Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
-        description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
-      />
+        description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090." />
+      
 
       {/* 1. HERO — Stacked Editorial */}
       <section className="bg-[hsl(210,40%,98%)]">
@@ -57,7 +57,7 @@ const Index = () => {
               </a>
             </Button>
           </div>
-          <p className="text-foreground/80 text-sm bg-teal-50 rounded-full px-4 py-2 inline-block font-medium">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
+          
         </div>
 
         {/* Full-Width Team Photo Card */}
@@ -66,8 +66,8 @@ const Index = () => {
             src={heroTeam}
             alt="AC Assurance Cooling & Heating team standing in front of branded service van"
             className="w-full aspect-[4/3] md:aspect-[21/9] object-cover object-center"
-            loading="eager"
-          />
+            loading="eager" />
+          
           {/* Owner Badge */}
           <div className="absolute bottom-16 right-4 md:right-16 bg-teal-600 text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
             Owner-Operated &amp; On-Site
@@ -76,16 +76,16 @@ const Index = () => {
           <div className="absolute bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md py-3 px-4">
             <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-6">
               {[
-                { icon: BadgeCheck, label: "Licensed & Insured" },
-                { icon: Star, label: "5-Star Google Rating" },
-                { icon: Shield, label: "BBB Accredited" },
-                { icon: Clock, label: "24/7 Emergency Service" },
-              ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium justify-center">
+              { icon: BadgeCheck, label: "Licensed & Insured" },
+              { icon: Star, label: "5-Star Google Rating" },
+              { icon: Shield, label: "BBB Accredited" },
+              { icon: Clock, label: "24/7 Emergency Service" }].
+              map((badge) =>
+              <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium justify-center">
                   <badge.icon className="w-4 h-4 text-teal-600 shrink-0" />
                   {badge.label}
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
@@ -98,9 +98,9 @@ const Index = () => {
         <div className="container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <span className="font-heading font-bold text-primary">Trusted by Southwest Florida Homeowners</span>
           <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-            ))}
+            {[...Array(5)].map((_, i) =>
+            <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+            )}
           </div>
           <span className="font-heading font-bold text-primary">5-Star Rated</span>
         </div>
@@ -114,12 +114,12 @@ const Index = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">From routine maintenance to emergency repairs, AC Assurance provides comprehensive HVAC services for Southwest Florida homeowners and businesses.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                to={`/${service.slug}`}
-                className="group bg-card border border-border rounded p-6 hover:shadow-md hover:border-accent/40 transition-all"
-              >
+            {services.map((service) =>
+            <Link
+              key={service.slug}
+              to={`/${service.slug}`}
+              className="group bg-card border border-border rounded p-6 hover:shadow-md hover:border-accent/40 transition-all">
+              
                 <service.icon className="w-8 h-8 text-primary mb-3" />
                 <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-accent transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
@@ -127,7 +127,7 @@ const Index = () => {
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -138,19 +138,19 @@ const Index = () => {
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Why Choose AC Assurance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
-              { icon: DollarSign, title: "Transparent Pricing", desc: "Upfront quotes with no hidden fees. You know the cost before we start." },
-              { icon: Shield, title: "Licensed & Insured", desc: "Fully licensed (CAC1823832) and insured for your peace of mind." },
-              { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." },
-            ].map((item) => (
-              <div key={item.title} className="text-center p-6">
+            { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
+            { icon: DollarSign, title: "Transparent Pricing", desc: "Upfront quotes with no hidden fees. You know the cost before we start." },
+            { icon: Shield, title: "Licensed & Insured", desc: "Fully licensed (CAC1823832) and insured for your peace of mind." },
+            { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
+            map((item) =>
+            <div key={item.title} className="text-center p-6">
                 <div className="w-14 h-14 rounded-full section-navy flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h3 className="font-heading font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -184,21 +184,21 @@ const Index = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">Real installations and repairs completed by our team across Southwest Florida.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {workPhotos.map((photo) => (
-              <div key={photo.caption} className="bg-card border border-border rounded overflow-hidden shadow-sm">
+            {workPhotos.map((photo) =>
+            <div key={photo.caption} className="bg-card border border-border rounded overflow-hidden shadow-sm">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src={photo.src}
-                    alt={photo.caption}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  src={photo.src}
+                  alt={photo.caption}
+                  className="w-full h-full object-cover"
+                  loading="lazy" />
+                
                 </div>
                 <div className="p-4">
                   <p className="text-sm font-medium text-foreground">{photo.caption}</p>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -213,19 +213,19 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
             {serviceAreas.map((area) => {
               const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
-                area.primary
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-foreground border-border"
-              }`;
-              return area.slug ? (
-                <Link key={area.name} to={area.slug} className={`${cls} hover:opacity-90 transition-opacity`}>
+              area.primary ?
+              "bg-primary text-primary-foreground border-primary" :
+              "bg-card text-foreground border-border"}`;
+
+              return area.slug ?
+              <Link key={area.name} to={area.slug} className={`${cls} hover:opacity-90 transition-opacity`}>
                   <MapPin className="w-3.5 h-3.5" /> {area.name}
-                </Link>
-              ) : (
-                <span key={area.name} className={cls}>
+                </Link> :
+
+              <span key={area.name} className={cls}>
                   <MapPin className="w-3.5 h-3.5" /> {area.name}
-                </span>
-              );
+                </span>;
+
             })}
           </div>
         </div>
@@ -259,8 +259,8 @@ const Index = () => {
         </div>
       </section>
       <ScrollCallReminder />
-    </Layout>
-  );
+    </Layout>);
+
 };
 
 export default Index;
