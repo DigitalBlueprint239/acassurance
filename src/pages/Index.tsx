@@ -44,6 +44,7 @@ const Index = () => {
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
+        <div className="absolute inset-0 hero-top-overlay" />
         <div className="relative container flex items-center min-h-[600px] py-20">
           <div className="max-w-lg">
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
