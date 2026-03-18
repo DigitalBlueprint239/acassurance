@@ -74,9 +74,9 @@ const Index = () => {
                 { icon: Clock, label: "24/7 Emergency Service" },
                 { icon: Shield, label: "BBB Accredited" },
               ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
-                  <badge.icon className="w-4 h-4 text-white/60" />
-                  {badge.label}
+                 <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
+                   <badge.icon className="w-4 h-4 text-white/50" />
+                   {badge.label}
                 </div>
               ))}
             </div>
