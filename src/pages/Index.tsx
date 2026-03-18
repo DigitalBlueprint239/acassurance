@@ -129,9 +129,9 @@ const Index = () => {
         </div>
         <div className="h-[300px]">
           <img
-            src={heroOwner}
-            alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-            className="w-full h-full object-cover object-[50%_30%]"
+            src={heroTeam}
+            alt="AC Assurance Cooling & Heating team standing in front of branded service van"
+            className="w-full h-full object-cover object-[50%_35%]"
             loading="eager"
           />
         </div>
