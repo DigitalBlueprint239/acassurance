@@ -80,7 +80,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
+             <p className="text-white/70 text-sm mt-3">Need help fast? Same-day service available.</p>
           </div>
         </div>
       </section>
