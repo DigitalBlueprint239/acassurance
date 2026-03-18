@@ -1,37 +1,39 @@
 
 
-## Final Hero Polish — Positioning, Overlay, and Spacing
+## Add Real Job Photos to Homepage
 
-Three targeted edits. No image changes. No layout changes. No other sections touched.
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### 1. `src/index.css` (line 95) — Stronger overlay
+### Photos to Use
 
-Replace current gradient with the specified stronger version:
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-```css
-background: linear-gradient(to right, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.85) 35%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.25) 75%, transparent 90%);
-```
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-Extends dark zone further right, eliminates van text competition.
+### Implementation
 
-### 2. `src/pages/Index.tsx` — Desktop hero (lines 43, 56-58, 71, 77-78, 83)
+**1. Copy 6 photos to `src/assets/work/`**
 
-| Line | Current | New |
-|------|---------|-----|
-| 43 | `object-[70%_30%]` | `object-[82%_40%]` — pushes Jason right, crops lower to reduce sky/ladder |
-| 58 | `Same-day service.` | `Same-day help.` |
-| 71 | `mt-6` | `mt-4` — tighten gap between CTAs and badges |
-| 77 | `text-sm` | `text-xs` — slightly smaller badges |
-| 77 | `text-white/60` on icon | `text-white/50` — subtler badge icons |
-| 83 | `mt-4` | `mt-3` — tighten micro-line |
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
 
-### 3. `src/pages/Index.tsx` — Mobile hero (lines 101, 114, 120, 126, 133)
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
-| Line | Current | New |
-|------|---------|-----|
-| 101 | `Same-day service.` | `Same-day help.` |
-| 114 | `mt-6` | `mt-4` |
-| 120 | `text-sm` | `text-xs` |
-| 126 | `mt-4` | `mt-3` |
-| 133 | `object-[50%_35%]` | `object-[50%_30%]` — slightly tighter face crop |
+### Files Changed
+
+| File | Change |
+|------|--------|
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 

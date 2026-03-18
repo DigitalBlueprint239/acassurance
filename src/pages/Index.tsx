@@ -40,7 +40,7 @@ const Index = () => {
         <img
           src={heroOwner}
           alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[70%_30%]"
+          className="absolute inset-0 w-full h-full object-cover object-[82%_40%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
@@ -55,7 +55,7 @@ const Index = () => {
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
               Owner-led HVAC service across Southwest Florida.<br />
-              Same-day service. Honest pricing. No surprises.
+               Same-day help. Honest pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
@@ -68,19 +68,19 @@ const Index = () => {
                 </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-3 mt-6">
+             <div className="flex flex-wrap gap-3 mt-4">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
                 { icon: Shield, label: "BBB Accredited" },
               ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
-                  <badge.icon className="w-4 h-4 text-white/60" />
-                  {badge.label}
+                 <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
+                   <badge.icon className="w-4 h-4 text-white/50" />
+                   {badge.label}
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
+             <p className="text-white/70 text-sm mt-3">Need help fast? Same-day service available.</p>
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ const Index = () => {
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
               Owner-led HVAC service across Southwest Florida.<br />
-              Same-day service. Honest pricing. No surprises.
+              Same-day help. Honest pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
@@ -111,26 +111,26 @@ const Index = () => {
                 </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-3 mt-6">
+            <div className="flex flex-wrap gap-3 mt-4">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
                 { icon: Shield, label: "BBB Accredited" },
               ].map((badge) => (
-                <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
-                  <badge.icon className="w-4 h-4 text-white/60" />
-                  {badge.label}
+                 <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
+                   <badge.icon className="w-4 h-4 text-white/50" />
+                   {badge.label}
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
+            <p className="text-white/70 text-sm mt-3">Need help fast? Same-day service available.</p>
           </div>
         </div>
         <div className="h-[300px]">
           <img
             src={heroOwner}
             alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-            className="w-full h-full object-cover object-[50%_35%]"
+            className="w-full h-full object-cover object-[50%_30%]"
             loading="eager"
           />
         </div>
