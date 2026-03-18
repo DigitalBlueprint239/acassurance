@@ -49,12 +49,12 @@ const Index = () => {
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
               Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-5">
-              Fast, Reliable AC Repair &amp; Installation<br />
-              in Fort Myers, Cape Coral &amp; Naples
+            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4">
+              AC Repair &amp; Installation<br />
+              Done Right the First Time
             </h1>
-            <p className="text-lg text-white/85 mb-8 leading-relaxed">
-              Licensed HVAC experts serving Southwest Florida.<br />
+            <p className="text-lg text-white/85 mb-6 leading-relaxed">
+              Owner-led HVAC service across Southwest Florida.<br />
               Same-day service. Honest pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
