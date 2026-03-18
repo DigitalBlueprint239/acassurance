@@ -1,32 +1,39 @@
 
 
-## Revised Hero Section — Brand-Infused Glassmorphism Refinement
+## Add Real Job Photos to Homepage
 
-Same plan as previously approved, with one revision:
+Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
 
-### Revision
+### Photos to Use
 
-**Urgency line spacing**: Add `mt-4` to the urgency line container (the `backdrop-blur-sm bg-white/[0.04] rounded-full px-4 py-2 inline-block` element) on both desktop and mobile hero blocks. This gives the floating pill breathing room below the trust badges.
+From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
 
-### All Changes (Complete)
+| File | Caption | Description |
+|------|---------|-------------|
+| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
+| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
+| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
+| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
+| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
+| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
 
-**`src/index.css`**:
-- `.hero-image-blend` — shift from `rgba(0,0,0,...)` to deep navy `rgba(8,25,46,...)`
-- `.hero-top-overlay` — match navy tone
-- Add `.glass-hero-card` utility: `backdrop-blur-md bg-white/5 border-l-4 border-teal-500/40 p-6 md:p-8 rounded-r-2xl`
+### Implementation
 
-**`src/pages/Index.tsx`**:
-- Desktop image position: `object-[68%_35%]` → `object-[80%_35%]`
-- Wrap H1 + subheadline in `<div className="glass-hero-card mb-6">`
-- Teal accent in H1: `<span className="text-teal-400">Fort Myers &amp; Cape Coral</span>`
-- Trust badge icons: `text-white/50` → `text-teal-400/70`
-- Urgency line: `backdrop-blur-sm bg-white/[0.04] rounded-full px-4 py-2 inline-block mt-4`
-- Apply all above to both desktop and mobile hero blocks
+**1. Copy 6 photos to `src/assets/work/`**
+
+**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+
+- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
+- Headline: "Recent HVAC Work"
+- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
+- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
+- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
+- Images imported as ES6 modules from `@/assets/work/`
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/index.css` | Navy gradients, glass-hero-card utility |
-| `src/pages/Index.tsx` | Image position, glass card, teal H1 accent, badge icons, urgency line with mt-4 |
+| `src/assets/work/` | 6 new photo files |
+| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
 
