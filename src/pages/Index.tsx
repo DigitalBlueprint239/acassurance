@@ -254,11 +254,8 @@ const Index = () => {
       {/* 6. SERVICE AREAS */}
       <section className="py-14 md:py-20 section-light">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Areas We Serve</h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">Proudly serving homeowners and businesses across Southwest Florida.</p>
-          <div className="max-w-2xl mx-auto mb-8 bg-card border border-border rounded h-48 flex items-center justify-center text-muted-foreground text-sm">
-            IMAGE PLACEHOLDER — Replace with service area map
-          </div>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Proudly Serving Southwest Florida</h2>
+          <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">We provide fast, reliable HVAC services across Lee County and surrounding areas.</p>
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
             {serviceAreas.map((area) => {
               const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
