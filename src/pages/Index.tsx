@@ -9,7 +9,7 @@ import TrustBadgeStrip from "@/components/TrustBadgeStrip";
 import ReviewSection from "@/components/ReviewSection";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
-import heroOwner from "@/assets/hero-owner-jason.jpg";
+import heroTeam from "@/assets/hero-team-edited.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
@@ -38,9 +38,9 @@ const Index = () => {
       {/* Desktop: full-width background image with left gradient overlay */}
       <section className="relative hidden md:block bg-brand-navy-deep min-h-[600px]">
         <img
-          src={heroOwner}
-          alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[78%_40%]"
+          src={heroTeam}
+          alt="AC Assurance Cooling & Heating team standing in front of branded service van"
+          className="absolute inset-0 w-full h-full object-cover object-[60%_35%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
@@ -129,9 +129,9 @@ const Index = () => {
         </div>
         <div className="h-[300px]">
           <img
-            src={heroOwner}
-            alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-            className="w-full h-full object-cover object-[50%_30%]"
+            src={heroTeam}
+            alt="AC Assurance Cooling & Heating team standing in front of branded service van"
+            className="w-full h-full object-cover object-[50%_35%]"
             loading="eager"
           />
         </div>
