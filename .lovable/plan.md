@@ -1,39 +1,60 @@
 
 
-## Add Real Job Photos to Homepage
+## Hero "Stacked Editorial" Redesign
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+Replace the split two-column hero with a full-width stacked layout: centered text on top, full-width team photo below, with a floating trust ribbon overlapping the photo's bottom edge.
 
-### Photos to Use
+### 1. Desktop Hero — Full-Width Stacked (`src/pages/Index.tsx`)
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+Remove the `hidden md:grid grid-cols-[42fr_58fr]` section entirely. Replace with a single unified section for both desktop and mobile:
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+**Text Block** (top):
+- `bg-[hsl(210,40%,98%)]` full-width, `text-center`, padded `py-14 md:py-20`
+- Eyebrow: centered, same copy, `tracking-[0.2em]`
+- H1: `text-4xl md:text-5xl lg:text-6xl`, centered, `tracking-tight leading-[1.1]`, teal-600 span
+- Subheadline: centered, `max-w-2xl mx-auto`
+- CTAs: centered row `justify-center`
+- Urgency pill: centered below CTAs
 
-### Implementation
+**Team Photo** (below text):
+- Full-width container with `relative` positioning
+- Image: `w-full aspect-[21/9] md:aspect-[21/9] object-cover object-center` on desktop; `aspect-[4/3]` on mobile via responsive class
+- Container: `rounded-3xl overflow-hidden shadow-2xl mx-4 md:mx-8 lg:mx-16 -mt-4` — creates the floating card effect with slight negative margin overlap
+- Zero overlays, zero gradients
 
-**1. Copy 6 photos to `src/assets/work/`**
+**Trust Ribbon** (overlapping photo bottom):
+- `absolute bottom-0 left-0 right-0` inside the photo container
+- `bg-white/80 backdrop-blur-md` ribbon
+- Contains trust badges (Licensed, 5-Star, BBB, 24/7) in a centered flex row
+- Sits over the van/pavement area, never over faces
 
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+### 2. Mobile Adaptation
 
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+Same stacked structure, no separate mobile section needed:
+- Text section: slightly smaller type (`text-3xl`), CTAs stack vertically
+- Photo: switches to `aspect-[4/3]` via `aspect-[4/3] md:aspect-[21/9]`
+- Trust ribbon: wraps to 2-column grid on small screens
+- Rounded card margins reduce: `mx-4` on mobile
+
+### 3. Remove Duplicate Sections
+
+- Delete the separate `hidden md:grid` desktop hero (lines 39-86)
+- Delete the separate `md:hidden` mobile hero (lines 88-136)
+- Replace with one unified responsive section
+
+### 4. Owner Badge (Optional Enhancement)
+
+- Small absolute-positioned badge near bottom-right of photo: `bg-teal-600 text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg`
+- Text: "Owner-Operated & On-Site"
+- Positioned `absolute bottom-16 right-8 md:right-16`
+
+### 5. TrustBadgeStrip
+
+Keep `<TrustBadgeStrip />` below — now acts as secondary reinforcement rather than primary trust display.
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| `src/pages/Index.tsx` | Replace split hero with single stacked editorial section — centered text, full-width photo card, trust ribbon overlay, owner badge |
 
