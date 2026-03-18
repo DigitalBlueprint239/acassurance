@@ -56,7 +56,7 @@ const Index = () => {
             </h1>
             <p className="text-lg text-white/85 mb-6 leading-relaxed">
               Owner-led HVAC service across Southwest Florida.<br />
-               Same-day help. Honest pricing. No surprises.
+              Same-day help from a licensed local team.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
