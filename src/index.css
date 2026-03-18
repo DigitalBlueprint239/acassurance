@@ -92,6 +92,6 @@
   }
 
   .hero-image-blend {
-    background: linear-gradient(to right, hsl(216, 75%, 14%) 0%, hsl(216, 75%, 14%, 0.95) 30%, hsl(216, 75%, 14%, 0.7) 55%, hsl(216, 75%, 14%, 0.2) 70%, transparent 80%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.4) 55%, rgba(0, 0, 0, 0.15) 70%, transparent 85%);
   }
 }

@@ -9,7 +9,7 @@ import TrustBadgeStrip from "@/components/TrustBadgeStrip";
 import ReviewSection from "@/components/ReviewSection";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
-import heroOwner from "@/assets/hero-owner.jpg";
+import heroOwner from "@/assets/hero-owner-jason.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
@@ -40,7 +40,7 @@ const Index = () => {
         <img
           src={heroOwner}
           alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[75%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_30%]"
           loading="eager"
         />
         <div className="absolute inset-0 hero-image-blend" />
@@ -49,12 +49,12 @@ const Index = () => {
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
               Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-5">
-              Fast, Reliable AC Repair &amp; Installation<br />
-              in Fort Myers, Cape Coral &amp; Naples
+            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4">
+              AC Repair &amp; Installation<br />
+              Done Right the First Time
             </h1>
-            <p className="text-lg text-white/85 mb-8 leading-relaxed">
-              Licensed HVAC experts serving Southwest Florida.<br />
+            <p className="text-lg text-white/85 mb-6 leading-relaxed">
+              Owner-led HVAC service across Southwest Florida.<br />
               Same-day service. Honest pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -80,7 +80,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Your comfort matters. Same-day service available.</p>
+            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
           </div>
         </div>
       </section>
@@ -92,12 +92,12 @@ const Index = () => {
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
               Trusted AC &amp; Heating Service Across Southwest Florida
             </p>
-            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-5">
-              Fast, Reliable AC Repair &amp; Installation<br />
-              in Fort Myers, Cape Coral &amp; Naples
+            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4">
+              AC Repair &amp; Installation<br />
+              Done Right the First Time
             </h1>
-            <p className="text-lg text-white/85 mb-8 leading-relaxed">
-              Licensed HVAC experts serving Southwest Florida.<br />
+            <p className="text-lg text-white/85 mb-6 leading-relaxed">
+              Owner-led HVAC service across Southwest Florida.<br />
               Same-day service. Honest pricing. No surprises.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -123,14 +123,14 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-4">Your comfort matters. Same-day service available.</p>
+            <p className="text-white/70 text-sm mt-4">Need help fast? Same-day service available.</p>
           </div>
         </div>
         <div className="h-[300px]">
           <img
             src={heroOwner}
             alt="Jason, owner of AC Assurance Cooling & Heating, standing next to branded service van"
-            className="w-full h-full object-cover object-[60%_40%]"
+            className="w-full h-full object-cover object-[50%_35%]"
             loading="eager"
           />
         </div>
