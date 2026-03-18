@@ -36,7 +36,7 @@ const Index = () => {
 
       {/* 1. HERO */}
       {/* Desktop: full-width background image with left gradient overlay */}
-      <section className="relative hidden md:block bg-brand-navy-deep min-h-[600px]">
+      <section className="relative hidden md:block bg-brand-navy-deep min-h-[540px] lg:min-h-[600px]">
         <img
           src={heroTeam}
           alt="AC Assurance Cooling & Heating team standing in front of branded service van"
