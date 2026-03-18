@@ -50,12 +50,14 @@ const Index = () => {
             <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
               ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
             </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-              Expert AC Repair &amp; Installation in Fort Myers &amp; Cape Coral
-            </h1>
-            <p className="text-lg text-white/85 mb-6 leading-relaxed">
-              Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
-            </p>
+            <div className="glass-hero-card mb-6">
+              <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+                Expert AC Repair &amp; Installation in <span className="text-teal-400">Fort Myers &amp; Cape Coral</span>
+              </h1>
+              <p className="text-lg text-white/85 leading-relaxed">
+                Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
                 <a href="#estimate-form">Get My Free Quote</a>
