@@ -111,7 +111,7 @@ const Index = () => {
                 </a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-3 mt-6">
+            <div className="flex flex-wrap gap-3 mt-4">
               {[
                 { icon: BadgeCheck, label: "Licensed & Insured" },
                 { icon: Clock, label: "24/7 Emergency Service" },
