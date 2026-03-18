@@ -1,39 +1,53 @@
 
 
-## Add Real Job Photos to Homepage
+## Final Production Hero — Locked Execution
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+Three changes: copy new image, update CSS overlay, update hero copy/spacing. No other sections touched.
 
-### Photos to Use
+### 1. Copy uploaded image to project
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+Copy `user-uploads://IMG_0304.JPG` → `src/assets/hero-owner-jason.jpg`
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+Update the import in Index.tsx from `hero-owner.jpg` to `hero-owner-jason.jpg`.
 
-### Implementation
+### 2. `src/index.css` — Replace overlay gradient (line 94-95)
 
-**1. Copy 6 photos to `src/assets/work/`**
+Replace the current HSL-based gradient with the specified black-based overlay:
 
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+```css
+.hero-image-blend {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.75) 30%,
+    rgba(0, 0, 0, 0.4) 55%,
+    rgba(0, 0, 0, 0.15) 70%,
+    transparent 85%
+  );
+}
+```
 
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+### 3. `src/pages/Index.tsx` — Hero section only
 
-### Files Changed
+**Desktop (lines 39-85):**
+- Image positioning: `object-[75%_center]` → `object-[70%_30%]` — shift Jason right, crop lower to reduce sky/ladder noise
+- H1: Replace with `AC Repair & Installation<br />Done Right the First Time` — forced two-line split, `leading-[1.1]`, `mb-4`
+- Sub: `Owner-led HVAC service across Southwest Florida.<br />Same-day service. Honest pricing. No surprises.` — `mb-6`
+- Urgency: `Need help fast? Same-day service available.`
+
+**Mobile (lines 88-135):**
+- Same copy updates
+- H1: `mb-4`, Sub: `mb-6`
+- Image: `h-[300px]` → `h-[300px]` (keep), adjust crop to `object-[50%_35%]` for tighter face/torso framing
+- Urgency: same update
+
+**No changes to:** CTAs, trust badges, button styling, layout structure, or any other section.
+
+### Files changed
 
 | File | Change |
 |------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| `src/assets/hero-owner-jason.jpg` | New hero image (copied from upload) |
+| `src/index.css` | Simpler rgba-based overlay |
+| `src/pages/Index.tsx` | New image import, hero copy, spacing, image crop |
 
