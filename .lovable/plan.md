@@ -1,39 +1,33 @@
 
 
-## Add Real Job Photos to Homepage
+## Edit Team Photo for Hero Background
 
-Copy the uploaded field photos into the project and add a "Recent HVAC Work" gallery section to the homepage between the Why Choose Us and Reviews sections.
+### Approach
 
-### Photos to Use
+I'll use the Lovable AI image editing API (`google/gemini-3-pro-image-preview`) to process the uploaded photo with a detailed editing prompt covering all your requirements. The edited image will be saved as a project asset for your review before integrating it into the hero section.
 
-From the 9 uploads, selecting 6 distinct photos (removing duplicates of the garage mini-split):
+### Steps
 
-| File | Caption | Description |
-|------|---------|-------------|
-| image-2.png | Clean Condenser Coil Detail | Close-up of condenser unit |
-| image-3.png | Mini-Split Outdoor Unit Install | Mitsubishi outdoor unit with line set cover |
-| image-4.png | Ductless System Installation | Mitsubishi outdoor condenser with clean line routing |
-| image-5.png | Garage Mini-Split Installation | Wall-mounted indoor unit in garage |
-| image-6.png | New Air Handler Installation | Indoor air handler unit replacement |
-| image-8.png | Garage Ductless Cooling | Wall-mounted mini-split in garage space |
+1. **Call the image editing model** with the uploaded photo and a consolidated prompt covering:
+   - Crop to center group (owner + 2-3 team members, head to mid-torso)
+   - Owner slightly right of center as primary focal point
+   - Subtle depth-of-field (sharp faces, slightly softened background)
+   - Reduce prominence of van text, QR code, ladder (subtle blur/contrast reduction)
+   - Increase face contrast, normalize skin tones, reduce harsh highlights
+   - Darken overall by 10-15% for overlay readiness
+   - Maintain full photorealism — no filters, no artificial effects
 
-### Implementation
+2. **Save the result** to `src/assets/hero-team-edited.jpg`
 
-**1. Copy 6 photos to `src/assets/work/`**
+3. **Do not integrate** into the hero section yet — deliver for review first
 
-**2. Add "Recent HVAC Work" section to `src/pages/Index.tsx`**
+### Important Caveat
 
-- Insert after "Why Choose Us" (section 4), before Reviews (section 5)
-- Headline: "Recent HVAC Work"
-- Subtext: "Real installations and repairs completed by our team across Southwest Florida."
-- 2x3 responsive grid (1 col mobile, 2 col tablet, 3 col desktop)
-- Each card: white bg, border, subtle shadow, image with `object-cover`, caption below
-- Images imported as ES6 modules from `@/assets/work/`
+AI image editing models have limitations with photorealistic edits on real photos. The model may not perfectly execute all requests simultaneously (especially selective cropping + selective blur + lighting adjustments). If the result isn't satisfactory, a dedicated photo editor (Photoshop/Lightroom) would give more precise control. We'll attempt it and you can evaluate.
 
 ### Files Changed
 
 | File | Change |
 |------|--------|
-| `src/assets/work/` | 6 new photo files |
-| `src/pages/Index.tsx` | New gallery section with 6 real job photos |
+| `src/assets/hero-team-edited.jpg` | New edited team photo |
 
