@@ -95,7 +95,7 @@ const Index = () => {
               ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
             </p>
             <div className="glass-hero-card mb-6">
-              <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+              <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
                 Expert AC Repair &amp; Installation in <span className="text-teal-400">Fort Myers &amp; Cape Coral</span>
               </h1>
               <p className="text-lg text-white/85 leading-relaxed">
