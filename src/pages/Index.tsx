@@ -121,12 +121,12 @@ const Index = () => {
                 { icon: Star, label: "5-Star Rated on Google" },
               ].map((badge) => (
                  <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
-                   <badge.icon className="w-4 h-4 text-white/50" />
+                   <badge.icon className="w-4 h-4 text-teal-400/70" />
                    {badge.label}
                 </div>
               ))}
             </div>
-            <p className="text-white/70 text-sm mt-3">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
+            <p className="text-white/70 text-sm mt-4 backdrop-blur-sm bg-white/[0.04] rounded-full px-4 py-2 inline-block">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
           </div>
         </div>
         <div className="h-[300px]">
