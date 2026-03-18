@@ -34,106 +34,102 @@ const Index = () => {
         description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
       />
 
-      {/* 1. HERO */}
-      {/* Desktop: full-width background image with left gradient overlay */}
-      <section className="relative hidden md:block bg-brand-navy-deep min-h-[540px] lg:min-h-[600px]">
-        <img
-          src={heroTeam}
-          alt="AC Assurance Cooling & Heating team standing in front of branded service van"
-          className="absolute inset-0 w-full h-full object-cover object-[75%_35%]"
-          loading="eager"
-        />
-        <div className="absolute inset-0 hero-image-blend" />
-        <div className="absolute inset-0 hero-top-overlay" />
-        <div className="relative container flex items-center min-h-[540px] lg:min-h-[600px] py-20">
-          <div className="max-w-lg">
-            <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
-            </p>
-            <div className="glass-hero-card mb-6">
-              <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
-                Expert AC Repair &amp; Installation in <span className="text-teal-400">Fort Myers &amp; Cape Coral</span>
-              </h1>
-              <p className="text-lg text-white/85 leading-relaxed">
-                Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-                <a href="#estimate-form">Get My Free Quote</a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-white/30 text-white/80 hover:bg-white/10 hover:border-white/60 bg-transparent">
-                <a href={PHONE_LINK}>
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now {PHONE}
-                </a>
-              </Button>
-            </div>
-             <div className="flex flex-wrap gap-3 mt-2">
-              {[
-                { icon: BadgeCheck, label: "Licensed & Insured" },
-                { icon: Clock, label: "24/7 Emergency Service" },
-                { icon: Shield, label: "BBB Accredited" },
-                { icon: Star, label: "5-Star Rated on Google" },
-              ].map((badge) => (
-                 <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
-                   <badge.icon className="w-4 h-4 text-teal-400/70" />
-                   {badge.label}
-                </div>
-              ))}
-            </div>
-             <p className="text-white/70 text-sm mt-4 backdrop-blur-sm bg-white/[0.04] rounded-full px-4 py-2 inline-block">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
+      {/* 1. HERO — Split Layout */}
+      {/* Desktop: asymmetric grid, text left on light bg, unfiltered photo right */}
+      <section className="hidden md:grid grid-cols-[42fr_58fr] min-h-[540px] lg:min-h-[600px]">
+        {/* Text Column */}
+        <div className="bg-[hsl(210,40%,98%)] flex flex-col justify-center px-8 lg:px-16 py-16 relative z-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
+            ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
+          </p>
+          <h1 className="text-4xl lg:text-5xl font-heading font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
+            Expert AC Repair &amp; Installation in <span className="text-teal-600">Fort Myers &amp; Cape Coral</span>
+          </h1>
+          <p className="text-lg text-foreground/70 leading-relaxed mb-6">
+            Southwest Florida's premier team for 24/7 emergency repairs and high-efficiency installs. Serving all of Lee County with honest pricing and owner-backed quality.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 mb-4">
+            <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
+              <a href="#estimate-form">Get My Free Quote</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
+              <a href={PHONE_LINK}>
+                <Phone className="w-5 h-5 mr-2" />
+                Call Now {PHONE}
+              </a>
+            </Button>
           </div>
-        </div>
-      </section>
-
-      {/* Mobile: stacked — text first, image second */}
-      <section className="md:hidden bg-brand-navy-deep">
-        <div className="container py-12">
-          <div className="max-w-lg">
-            <p className="text-xs uppercase tracking-widest text-white/80 font-medium mb-4">
-              ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
-            </p>
-            <div className="glass-hero-card mb-6">
-              <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white leading-[1.1] mb-4" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.6)' }}>
-                Expert AC Repair &amp; Installation in <span className="text-teal-400">Fort Myers &amp; Cape Coral</span>
-              </h1>
-              <p className="text-lg text-white/85 leading-relaxed">
-                Southwest Florida's trusted team for 24/7 emergency repairs and energy-efficient installs. Honest pricing, fast response, and owner-backed quality.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
-              <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-                <a href="#estimate-form">Get My Free Quote</a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-base border-white/30 text-white/80 hover:bg-white/10 hover:border-white/60 bg-transparent">
-                <a href={PHONE_LINK}>
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now {PHONE}
-                </a>
-              </Button>
-            </div>
-            <div className="flex flex-wrap gap-3 mt-2">
-              {[
-                { icon: BadgeCheck, label: "Licensed & Insured" },
-                { icon: Clock, label: "24/7 Emergency Service" },
-                { icon: Shield, label: "BBB Accredited" },
-                { icon: Star, label: "5-Star Rated on Google" },
-              ].map((badge) => (
-                 <div key={badge.label} className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-2 text-white text-xs font-medium">
-                   <badge.icon className="w-4 h-4 text-teal-400/70" />
-                   {badge.label}
-                </div>
-              ))}
-            </div>
-            <p className="text-white/70 text-sm mt-4 backdrop-blur-sm bg-white/[0.04] rounded-full px-4 py-2 inline-block">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { icon: BadgeCheck, label: "Licensed & Insured" },
+              { icon: Clock, label: "24/7 Emergency Service" },
+              { icon: Shield, label: "BBB Accredited" },
+              { icon: Star, label: "5-Star Rated on Google" },
+            ].map((badge) => (
+              <div key={badge.label} className="flex items-center gap-2 bg-white shadow-sm border border-slate-200 rounded-full px-4 py-2 text-slate-700 text-xs font-medium">
+                <badge.icon className="w-4 h-4 text-teal-600" />
+                {badge.label}
+              </div>
+            ))}
           </div>
+          <p className="relative z-10 ml-auto mr-[-20px] text-foreground/80 text-sm mt-4 bg-teal-50 rounded-full px-4 py-2 inline-block font-medium">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
         </div>
-        <div className="h-[300px]">
+        {/* Image Column — zero overlays */}
+        <div className="relative overflow-hidden">
           <img
             src={heroTeam}
             alt="AC Assurance Cooling & Heating team standing in front of branded service van"
-            className="w-full h-full object-cover object-[50%_35%]"
+            className="absolute inset-0 w-full h-full object-cover object-[25%_center]"
+            loading="eager"
+          />
+        </div>
+      </section>
+
+      {/* Mobile: stacked — text on white, then unfiltered photo */}
+      <section className="md:hidden bg-[hsl(210,40%,98%)]">
+        <div className="container py-12">
+          <div className="max-w-lg">
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
+              ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
+            </p>
+            <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-foreground tracking-tight leading-[1.1] mb-4">
+              Expert AC Repair &amp; Installation in <span className="text-teal-600">Fort Myers &amp; Cape Coral</span>
+            </h1>
+            <p className="text-lg text-foreground/70 leading-relaxed mb-6">
+              Southwest Florida's premier team for 24/7 emergency repairs and high-efficiency installs. Serving all of Lee County with honest pricing and owner-backed quality.
+            </p>
+            <div className="flex flex-col gap-3 mb-4">
+              <Button asChild size="lg" className="text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
+                <a href="#estimate-form">Get My Free Quote</a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
+                <a href={PHONE_LINK}>
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now {PHONE}
+                </a>
+              </Button>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { icon: BadgeCheck, label: "Licensed & Insured" },
+                { icon: Clock, label: "24/7 Emergency Service" },
+                { icon: Shield, label: "BBB Accredited" },
+                { icon: Star, label: "5-Star Rated on Google" },
+              ].map((badge) => (
+                <div key={badge.label} className="flex items-center gap-2 bg-white shadow-sm border border-slate-200 rounded-full px-4 py-2 text-slate-700 text-xs font-medium">
+                  <badge.icon className="w-4 h-4 text-teal-600" />
+                  {badge.label}
+                </div>
+              ))}
+            </div>
+            <p className="text-foreground/80 text-sm mt-4 bg-teal-50 rounded-full px-4 py-2 inline-block font-medium">🔥 High Demand: 3 slots remaining for Same-Day Service in Lee County.</p>
+          </div>
+        </div>
+        <div className="rounded-t-3xl overflow-hidden">
+          <img
+            src={heroTeam}
+            alt="AC Assurance Cooling & Heating team standing in front of branded service van"
+            className="w-full aspect-[4/3] object-cover object-center"
             loading="eager"
           />
         </div>
