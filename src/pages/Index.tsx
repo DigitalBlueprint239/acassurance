@@ -286,7 +286,7 @@ const Index = () => {
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
           <p className="text-muted-foreground mb-6">Affordable monthly payment plans through Synchrony Financial. Don't let budget stop you from staying comfortable.</p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>
