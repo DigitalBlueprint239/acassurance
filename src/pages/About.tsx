@@ -3,6 +3,7 @@ import { Phone, Mail, Shield, Users, Clock, Award, Wrench, Heart } from "lucide-
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
+import ownerPhoto from "@/assets/owner-team.jpg";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
 
 const About = () => (
