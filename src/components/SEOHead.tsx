@@ -6,9 +6,10 @@ const BASE_URL = "https://www.acassurancefl.com";
 interface SEOHeadProps {
   title: string;
   description: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const SEOHead = ({ title, description }: SEOHeadProps) => {
+const SEOHead = ({ title, description, schema }: SEOHeadProps) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -36,7 +37,24 @@ const SEOHead = ({ title, description }: SEOHeadProps) => {
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonicalUrl);
-  }, [title, description, pathname]);
+
+    // JSON-LD schema injection
+    const SCHEMA_ID = "seohead-jsonld";
+    let scriptEl = document.getElementById(SCHEMA_ID) as HTMLScriptElement | null;
+    if (schema) {
+      const schemas = Array.isArray(schema) ? schema : [schema];
+      const jsonStr = JSON.stringify(schemas.length === 1 ? schemas[0] : schemas);
+      if (!scriptEl) {
+        scriptEl = document.createElement("script");
+        scriptEl.id = SCHEMA_ID;
+        scriptEl.type = "application/ld+json";
+        document.head.appendChild(scriptEl);
+      }
+      scriptEl.textContent = jsonStr;
+    } else if (scriptEl) {
+      scriptEl.remove();
+    }
+  }, [title, description, pathname, schema]);
 
   return null;
 };
