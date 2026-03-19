@@ -98,7 +98,7 @@ const Index = () => {
             </span>
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
-            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving Lee County with 5-star precision.
+            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
