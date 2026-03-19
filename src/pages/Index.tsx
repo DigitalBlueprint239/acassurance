@@ -122,7 +122,7 @@ const Index = () => {
         <div className={`relative mx-4 md:mx-8 lg:mx-16 -mt-8 md:-mt-12 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform ${shouldAnimate ? "animate-scale-in" : ""}`}>
           <img
             src={heroTeam}
-            alt="AC Assurance professional HVAC team providing expert AC repair and installation in Fort Myers and Cape Coral"
+            alt="AC Assurance team providing expert HVAC services from Naples to Cape Coral and throughout Southwest Florida"
             className="w-full aspect-[4/3] md:aspect-[21/9] object-cover object-center"
             width={1600}
             height={686}
