@@ -52,8 +52,33 @@ const Index = () => {
   return (
     <Layout>
       <SEOHead
-        title="AC Repair Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
-        description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090." />
+        title="AC Repair Naples, Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
+        description="24/7 AC repair, installation, and HVAC services in Naples, Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HVACBusiness",
+            "name": "AC Assurance Cooling & Heating",
+            "telephone": "+1-239-365-3090",
+            "email": "acassurancefl@gmail.com",
+            "url": "https://www.acassurancefl.com",
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "FL",
+              "addressCountry": "US"
+            },
+            "areaServed": ["Naples", "Fort Myers", "Cape Coral", "Bonita Springs", "Estero", "Lehigh Acres", "North Fort Myers"],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "ratingCount": "50"
+            }
+          }
+        ]}
+      />
       
 
       {/* 1. HERO — Elite Editorial */}
