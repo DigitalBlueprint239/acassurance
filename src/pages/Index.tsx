@@ -92,9 +92,9 @@ const Index = () => {
             className="font-heading font-extrabold text-foreground tracking-tighter leading-[1.1] mb-4 max-w-4xl mx-auto"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
-            Expert AC Repair & Installation in{' '}
+            Expert AC Repair & Installation{' '}
             <span className="text-brand-teal" style={{ textShadow: '0 0 20px rgba(20, 184, 166, 0.1)' }}>
-              Fort Myers & Cape Coral
+              From Naples to Cape Coral
             </span>
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
