@@ -155,18 +155,6 @@ const Index = () => {
 
       <TrustBadgeStrip />
 
-      {/* 2. SOCIAL PROOF BAR */}
-      <section className="section-light py-6 border-b border-border">
-        <div className="container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-          <span className="font-heading font-bold text-primary">Trusted by Southwest Florida Homeowners</span>
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) =>
-            <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-            )}
-          </div>
-          <span className="font-heading font-bold text-primary">5-Star Rated</span>
-        </div>
-      </section>
 
       {/* 3. SERVICES GRID */}
       <section className="py-14 md:py-20 bg-background">
