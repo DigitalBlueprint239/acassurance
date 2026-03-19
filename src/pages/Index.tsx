@@ -241,6 +241,8 @@ const Index = () => {
                   src={photo.src}
                   alt={photo.caption}
                   className="w-full h-full object-cover"
+                  width={600}
+                  height={450}
                   loading="lazy" />
                 
                 </div>
