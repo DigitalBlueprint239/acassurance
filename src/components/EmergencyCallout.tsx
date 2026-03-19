@@ -25,7 +25,7 @@ const EmergencyCallout = () => {
           Fast diagnostic service available across Southwest Florida. Don't wait in the heat — get help now.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
             <a href={PHONE_LINK}>
               <Phone className="w-5 h-5 mr-2" />
               Call Now — {PHONE}

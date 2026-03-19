@@ -2,7 +2,7 @@ import { Phone } from "lucide-react";
 import { LICENSE, PHONE, PHONE_LINK } from "@/data/services";
 
 const TopBar = () => (
-  <div className="section-navy text-primary-foreground py-2 text-xs sm:text-sm">
+  <div className="section-navy-deep text-primary-foreground py-2 text-xs sm:text-sm">
     <div className="container flex items-center justify-between gap-4">
       <span className="hidden sm:inline opacity-90">
         24/7 Emergency Service <span className="mx-2 opacity-40">|</span> Licensed {LICENSE}

@@ -85,7 +85,7 @@ const Index = () => {
       <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
         <div className={`container text-center py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
-            <Star className="w-4 h-4 text-amber-500 fill-amber-500 inline align-text-bottom mr-1" />
+            <Star className="w-4 h-4 text-brand-teal fill-brand-teal inline align-text-bottom mr-1" />
             TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
           </p>
           <h1
@@ -168,12 +168,12 @@ const Index = () => {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group bg-card border border-border rounded p-6 hover:shadow-md hover:border-accent/40 transition-all">
+              className="group frost-card p-6 hover:shadow-md hover:border-brand-teal/40 transition-all">
               
-                <service.icon className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-accent transition-colors">{service.shortTitle}</h3>
+                <service.icon className="w-8 h-8 text-brand-teal mb-3" />
+                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-brand-teal transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
-                <span className="inline-flex items-center gap-1 text-accent text-sm font-medium mt-3">
+                <span className="inline-flex items-center gap-1 text-brand-teal text-sm font-medium mt-3">
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -182,10 +182,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE US */}
-      <section className="py-14 md:py-20 section-light">
+      {/* 4. WHY CHOOSE US — Navy Trust Break */}
+      <section className="py-14 md:py-20 section-navy">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Why Choose AC Assurance</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10 text-primary-foreground">Why Choose AC Assurance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
             { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
@@ -194,11 +194,11 @@ const Index = () => {
             { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
             map((item) =>
             <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full section-navy flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-full bg-brand-teal flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="font-heading font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <h3 className="font-heading font-bold text-lg mb-2 text-primary-foreground">{item.title}</h3>
+                <p className="text-sm text-primary-foreground/70">{item.desc}</p>
               </div>
             )}
           </div>
@@ -209,7 +209,7 @@ const Index = () => {
       <section className="py-14 md:py-20 bg-background">
         <div className="container text-center max-w-3xl">
           <span className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm font-medium text-foreground mb-4">
-            <Shield className="w-4 h-4 text-primary" /> Independent Trane Dealer
+            <Shield className="w-4 h-4 text-brand-teal" /> Independent Trane Dealer
           </span>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Trusted Trane Air Conditioning Systems</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-6">
@@ -286,7 +286,7 @@ const Index = () => {
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
           <p className="text-muted-foreground mb-6">Affordable monthly payment plans through Synchrony Financial. Don't let budget stop you from staying comfortable.</p>
-          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>
