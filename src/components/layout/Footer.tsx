@@ -49,9 +49,15 @@ const Footer = () => (
           <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-primary-foreground">Service Areas</h3>
           <div className="space-y-2 text-sm">
             {serviceAreas.map((area) => (
-              <div key={area.name} className={`opacity-80 ${area.primary ? "font-semibold opacity-100" : ""}`}>
-                {area.name}{area.primary ? " ★" : ""}
-              </div>
+              area.slug ? (
+                <Link key={area.name} to={area.slug} className={`block hover:opacity-100 transition-opacity ${area.primary ? "font-semibold opacity-100" : "opacity-80"}`}>
+                  {area.name}{area.primary ? " ★" : ""}
+                </Link>
+              ) : (
+                <div key={area.name} className={`opacity-80 ${area.primary ? "font-semibold opacity-100" : ""}`}>
+                  {area.name}{area.primary ? " ★" : ""}
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -61,7 +67,7 @@ const Footer = () => (
     <div className="border-t border-primary-foreground/10">
       <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-60">
         <p>&copy; {new Date().getFullYear()} {COMPANY}. All rights reserved.</p>
-        <p>Serving Fort Myers, Cape Coral &amp; Southwest Florida</p>
+        <p>Serving Naples, Fort Myers, Cape Coral &amp; Southwest Florida</p>
       </div>
     </div>
   </footer>

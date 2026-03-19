@@ -97,7 +97,7 @@ const Index = () => {
               From Naples to Cape Coral
             </span>
           </h1>
-          <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-primary/70 leading-relaxed mb-6 max-w-2xl mx-auto">
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
@@ -112,7 +112,7 @@ const Index = () => {
             </Button>
           </div>
           {/* Urgency Pill */}
-          <div className="inline-flex items-center gap-2 bg-amber-50/80 backdrop-blur-sm border border-amber-200/60 rounded-full px-4 py-2 text-sm text-amber-800 font-medium">
+          <div className="inline-flex items-center gap-2 bg-teal-50/80 backdrop-blur-sm border border-teal-200/60 rounded-full px-4 py-2 text-sm text-teal-800 font-medium">
             <span className="animate-pulse-soft">🔥</span>
             {urgencyText}
           </div>
@@ -168,7 +168,7 @@ const Index = () => {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group frost-card p-6 hover:shadow-md hover:border-brand-teal/40 transition-all">
+              className="group frost-card p-6 hover:shadow-md hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all">
               
                 <service.icon className="w-8 h-8 text-brand-teal mb-3" />
                 <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-brand-teal transition-colors">{service.shortTitle}</h3>
