@@ -85,7 +85,7 @@ const Index = () => {
       <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
         <div className={`container text-center py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
-            <Star className="w-4 h-4 text-amber-500 fill-amber-500 inline align-text-bottom mr-1" />
+            <Star className="w-4 h-4 text-brand-teal fill-brand-teal inline align-text-bottom mr-1" />
             TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
           </p>
           <h1
