@@ -43,9 +43,11 @@ const Index = () => {
 
   const urgencyText = day === 0
     ? "Priority Monday Morning Scheduling Available"
-    : hour < 14
-      ? "Same-Day Service Available — Call before 2:00 PM"
-      : "Priority Next-Day Scheduling Available";
+    : day === 6
+      ? "Weekend Emergency Line Open — Call Now"
+      : hour < 14
+        ? "Same-Day Service Available — Call before 2:00 PM"
+        : "Priority Next-Day Scheduling Available";
 
   return (
     <Layout>
