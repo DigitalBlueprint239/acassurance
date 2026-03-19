@@ -107,4 +107,22 @@
   .glass-hero-card {
     @apply backdrop-blur-xl bg-black/25 border-l-4 border-teal-500/60 p-6 md:p-8 rounded-r-2xl;
   }
+
+  .shimmer-btn {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 5s ease-in-out infinite;
+  }
 }
