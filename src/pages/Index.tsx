@@ -43,15 +43,42 @@ const Index = () => {
 
   const urgencyText = day === 0
     ? "Priority Monday Morning Scheduling Available"
-    : hour < 14
-      ? "Same-Day Service Available — Call before 2:00 PM"
-      : "Priority Next-Day Scheduling Available";
+    : day === 6
+      ? "Weekend Emergency Line Open — Call Now"
+      : hour < 14
+        ? "Same-Day Service Available — Call before 2:00 PM"
+        : "Priority Next-Day Scheduling Available";
 
   return (
     <Layout>
       <SEOHead
-        title="AC Repair Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
-        description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090." />
+        title="AC Repair Naples, Fort Myers & Cape Coral | AC Assurance Cooling & Heating"
+        description="24/7 AC repair, installation, and HVAC services in Naples, Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090."
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HVACBusiness",
+            "name": "AC Assurance Cooling & Heating",
+            "telephone": "+1-239-365-3090",
+            "email": "acassurancefl@gmail.com",
+            "url": "https://www.acassurancefl.com",
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": "FL",
+              "addressCountry": "US"
+            },
+            "areaServed": ["Naples", "Fort Myers", "Cape Coral", "Bonita Springs", "Estero", "Lehigh Acres", "North Fort Myers"],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "bestRating": "5",
+              "ratingCount": "50"
+            }
+          }
+        ]}
+      />
       
 
       {/* 1. HERO — Elite Editorial */}
@@ -65,13 +92,13 @@ const Index = () => {
             className="font-heading font-extrabold text-foreground tracking-tighter leading-[1.1] mb-4 max-w-4xl mx-auto"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
-            Expert AC Repair & Installation in{' '}
+            Expert AC Repair & Installation{' '}
             <span className="text-brand-teal" style={{ textShadow: '0 0 20px rgba(20, 184, 166, 0.1)' }}>
-              Fort Myers & Cape Coral
+              From Naples to Cape Coral
             </span>
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
-            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving Lee County with 5-star precision.
+            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
@@ -95,7 +122,7 @@ const Index = () => {
         <div className={`relative mx-4 md:mx-8 lg:mx-16 -mt-8 md:-mt-12 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform ${shouldAnimate ? "animate-scale-in" : ""}`}>
           <img
             src={heroTeam}
-            alt="AC Assurance professional HVAC team providing expert AC repair and installation in Fort Myers and Cape Coral"
+            alt="AC Assurance team providing expert HVAC services from Naples to Cape Coral and throughout Southwest Florida"
             className="w-full aspect-[4/3] md:aspect-[21/9] object-cover object-center"
             width={1600}
             height={686}
@@ -128,18 +155,6 @@ const Index = () => {
 
       <TrustBadgeStrip />
 
-      {/* 2. SOCIAL PROOF BAR */}
-      <section className="section-light py-6 border-b border-border">
-        <div className="container flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
-          <span className="font-heading font-bold text-primary">Trusted by Southwest Florida Homeowners</span>
-          <div className="flex gap-0.5">
-            {[...Array(5)].map((_, i) =>
-            <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-            )}
-          </div>
-          <span className="font-heading font-bold text-primary">5-Star Rated</span>
-        </div>
-      </section>
 
       {/* 3. SERVICES GRID */}
       <section className="py-14 md:py-20 bg-background">
@@ -280,7 +295,7 @@ const Index = () => {
       <EmergencyCallout />
 
       {/* 9. SERVICE REQUEST FORM */}
-      <section id="estimate-form" className="py-14 md:py-20 bg-background">
+      <section id="estimate-form" className="py-14 md:py-20 bg-background scroll-mt-20">
         <div className="container">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
