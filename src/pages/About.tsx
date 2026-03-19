@@ -3,6 +3,7 @@ import { Phone, Mail, Shield, Users, Clock, Award, Wrench, Heart } from "lucide-
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
+import ownerPhoto from "@/assets/owner-team.jpg";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
 
 const About = () => (
@@ -25,9 +26,7 @@ const About = () => (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2 space-y-8">
             <div className="flex flex-col sm:flex-row gap-6 items-start">
-              <div className="w-32 h-32 rounded bg-muted flex items-center justify-center shrink-0 text-muted-foreground text-xs text-center border border-border">
-                PHOTO PLACEHOLDER — Owner/Team
-              </div>
+              <img src={ownerPhoto} alt="AC Assurance owner and team" className="w-32 h-32 sm:w-40 sm:h-40 rounded object-cover shrink-0" />
               <div>
                 <h2 className="text-2xl font-heading font-bold mb-3">Owner-Operated. Quality-Driven.</h2>
                 <p className="text-foreground leading-relaxed">
