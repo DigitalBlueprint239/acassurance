@@ -79,7 +79,15 @@
   }
 
   .section-navy {
-    background: hsl(213, 70%, 20%);
+    background: hsl(var(--brand-navy));
+  }
+
+  .section-navy-deep {
+    background: hsl(var(--brand-navy-deep));
+  }
+
+  .frost-card {
+    @apply bg-white/60 backdrop-blur-md border border-white/40 shadow-sm rounded-xl;
   }
 
   .section-light {
