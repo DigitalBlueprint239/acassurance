@@ -97,7 +97,7 @@ const Index = () => {
               From Naples to Cape Coral
             </span>
           </h1>
-          <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-primary/70 leading-relaxed mb-6 max-w-2xl mx-auto">
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
