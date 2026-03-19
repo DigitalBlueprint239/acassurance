@@ -182,10 +182,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE US */}
-      <section className="py-14 md:py-20 section-light">
+      {/* 4. WHY CHOOSE US — Navy Trust Break */}
+      <section className="py-14 md:py-20 section-navy">
         <div className="container">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10">Why Choose AC Assurance</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10 text-primary-foreground">Why Choose AC Assurance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
             { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
@@ -194,11 +194,11 @@ const Index = () => {
             { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
             map((item) =>
             <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full section-navy flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-full bg-brand-teal flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="font-heading font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <h3 className="font-heading font-bold text-lg mb-2 text-primary-foreground">{item.title}</h3>
+                <p className="text-sm text-primary-foreground/70">{item.desc}</p>
               </div>
             )}
           </div>
