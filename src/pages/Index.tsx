@@ -295,7 +295,7 @@ const Index = () => {
       <EmergencyCallout />
 
       {/* 9. SERVICE REQUEST FORM */}
-      <section id="estimate-form" className="py-14 md:py-20 bg-background">
+      <section id="estimate-form" className="py-14 md:py-20 bg-background scroll-mt-20">
         <div className="container">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
