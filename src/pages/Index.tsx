@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Shield, Clock, DollarSign, Star, MapPin, ChevronRight, ArrowRight, Users, BadgeCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,25 @@ const workPhotos = [
 
 
 const Index = () => {
+  const [shouldAnimate, setShouldAnimate] = useState(false);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("heroAnimated")) {
+      setShouldAnimate(true);
+      sessionStorage.setItem("heroAnimated", "1");
+    }
+  }, []);
+
+  const now = new Date();
+  const hour = now.getHours();
+  const day = now.getDay();
+
+  const urgencyText = day === 0
+    ? "Priority Monday Morning Scheduling Available"
+    : hour < 14
+      ? "Same-Day Service Available — Call before 2:00 PM"
+      : "Priority Next-Day Scheduling Available";
+
   return (
     <Layout>
       <SEOHead
@@ -34,30 +54,31 @@ const Index = () => {
         description="24/7 AC repair, installation, and HVAC services in Fort Myers, Cape Coral, and Southwest Florida. Licensed (CAC1823832), insured, and financing available. Call (239) 365-3090." />
       
 
-      {/* 1. HERO — World-Class Editorial */}
-      <section className="bg-[hsl(210,40%,98%)]">
-        <div className="container text-center py-14 md:py-20 px-6 md:px-4 animate-slide-up">
+      {/* 1. HERO — Elite Editorial */}
+      <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
+        <div className={`container text-center py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
-            ⭐ TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
+            <Star className="w-4 h-4 text-amber-500 fill-amber-500 inline align-text-bottom mr-1" />
+            TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
           </p>
           <h1
             className="font-heading font-extrabold text-foreground tracking-tighter leading-[1.1] mb-4 max-w-4xl mx-auto"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
-            Expert AC Repair &amp; Installation in{' '}
+            Expert AC Repair & Installation in{' '}
             <span className="text-brand-teal" style={{ textShadow: '0 0 20px rgba(20, 184, 166, 0.1)' }}>
-              Fort Myers &amp; Cape Coral
+              Fort Myers & Cape Coral
             </span>
           </h1>
           <p className="text-lg text-foreground/70 leading-relaxed mb-6 max-w-2xl mx-auto">
-            Southwest Florida's premier team for 24/7 emergency repairs and high-efficiency installs. Serving all of Lee County with honest pricing and owner-backed quality.
+            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving Lee County with 5-star precision.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
-              <a href="#estimate-form">Get My Free Quote</a>
+              <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
-              <a href={PHONE_LINK}>
+              <a href={PHONE_LINK} aria-label="Call AC Assurance">
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now {PHONE}
               </a>
@@ -66,26 +87,28 @@ const Index = () => {
           {/* Urgency Pill */}
           <div className="inline-flex items-center gap-2 bg-amber-50/80 backdrop-blur-sm border border-amber-200/60 rounded-full px-4 py-2 text-sm text-amber-800 font-medium">
             <span className="animate-pulse-soft">🔥</span>
-            High Demand — 3 slots remaining for Same-Day Service in Lee County.
+            {urgencyText}
           </div>
         </div>
 
         {/* Full-Width Team Photo Card */}
-        <div className="relative mx-4 md:mx-8 lg:mx-16 -mt-8 md:-mt-12 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform animate-scale-in">
+        <div className={`relative mx-4 md:mx-8 lg:mx-16 -mt-8 md:-mt-12 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform ${shouldAnimate ? "animate-scale-in" : ""}`}>
           <img
             src={heroTeam}
-            alt="AC Assurance Cooling & Heating team standing in front of branded service van"
+            alt="AC Assurance professional HVAC team providing expert AC repair and installation in Fort Myers and Cape Coral"
             className="w-full aspect-[4/3] md:aspect-[21/9] object-cover object-center"
             width={1600}
             height={686}
-            loading="eager" />
+            loading="eager"
+            fetchPriority="high"
+            decoding="async" />
           
           {/* Owner Badge */}
-          <div className="absolute bottom-16 right-4 md:right-16 bg-brand-teal text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
-            Owner-Operated &amp; On-Site
+          <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-brand-teal text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
+            Owner-Operated & On-Site
           </div>
           {/* Trust Ribbon */}
-          <div className="absolute bottom-0 left-0 right-0 bg-white/70 backdrop-blur-xl border-t border-white/40 py-3 px-4">
+          <div className="absolute z-10 bottom-0 left-0 right-0 bg-white/70 backdrop-blur-xl border-t border-white/40 py-3 px-4">
             <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-6">
               {[
               { icon: BadgeCheck, label: "Licensed & Insured" },
@@ -101,7 +124,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       <TrustBadgeStrip />
 
