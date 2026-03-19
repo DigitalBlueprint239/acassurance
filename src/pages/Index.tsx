@@ -168,12 +168,12 @@ const Index = () => {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group bg-card border border-border rounded p-6 hover:shadow-md hover:border-accent/40 transition-all">
+              className="group frost-card p-6 hover:shadow-md hover:border-brand-teal/40 transition-all">
               
-                <service.icon className="w-8 h-8 text-primary mb-3" />
-                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-accent transition-colors">{service.shortTitle}</h3>
+                <service.icon className="w-8 h-8 text-brand-teal mb-3" />
+                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-brand-teal transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
-                <span className="inline-flex items-center gap-1 text-accent text-sm font-medium mt-3">
+                <span className="inline-flex items-center gap-1 text-brand-teal text-sm font-medium mt-3">
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
