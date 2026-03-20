@@ -1,3 +1,4 @@
+// About page
 import { Link } from "react-router-dom";
 import { Phone, Mail, Shield, Users, Clock, Award, Wrench, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
