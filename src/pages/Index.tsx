@@ -10,6 +10,7 @@ import TrustBadgeStrip from "@/components/TrustBadgeStrip";
 import TrustBar from "@/components/TrustBar";
 import FeaturedReviews from "@/components/FeaturedReviews";
 import SWFLServiceMap from "@/components/SWFLServiceMap";
+import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroTeam from "@/assets/hero-team-edited.jpg";
 import workCondenser from "@/assets/work/condenser-coil.png";
