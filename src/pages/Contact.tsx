@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SWFLServiceMap from "@/components/SWFLServiceMap";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
@@ -78,18 +79,7 @@ const Contact = () => (
               </div>
             </div>
 
-            <div className="rounded overflow-hidden border border-border">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925829842!2d-82.03573!3d26.6276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x867f7886f3e66a5d%3A0x5cb6c8cf0f5fd5b2!2sCape%20Coral%2C%20FL!5e0!3m2!1sen!2sus!4v1700000000000"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="AC Assurance Service Area — Cape Coral, FL"
-              />
-            </div>
+            <SWFLServiceMap />
 
             <p className="text-sm text-muted-foreground mt-4">License #{LICENSE}</p>
           </div>

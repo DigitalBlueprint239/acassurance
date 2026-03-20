@@ -7,7 +7,9 @@ import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
 import TrustBadgeStrip from "@/components/TrustBadgeStrip";
+import TrustBar from "@/components/TrustBar";
 import FeaturedReviews from "@/components/FeaturedReviews";
+import SWFLServiceMap from "@/components/SWFLServiceMap";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroTeam from "@/assets/hero-team-edited.jpg";
@@ -153,6 +155,7 @@ const Index = () => {
         </div>
       </header>
 
+      <TrustBar />
       <TrustBadgeStrip />
 
 
@@ -262,6 +265,11 @@ const Index = () => {
         <div className="container">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-3">Proudly Serving Southwest Florida</h2>
           <p className="text-center text-muted-foreground mb-8 max-w-lg mx-auto">We provide fast, reliable HVAC services across Lee County and surrounding areas.</p>
+
+          <div className="max-w-2xl mx-auto mb-10">
+            <SWFLServiceMap />
+          </div>
+
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
             {serviceAreas.map((area) => {
               const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
