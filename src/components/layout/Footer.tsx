@@ -70,6 +70,14 @@ const Footer = () => (
         <p>Serving Naples, Fort Myers, Cape Coral &amp; Southwest Florida</p>
       </div>
     </div>
+
+    <div className="bg-gray-900 py-3">
+      <div className="container text-center">
+        <p className="text-xs text-gray-400">
+          Florida State Certified License: CAC1823832 | Proudly serving homeowners across Collier and Lee Counties with integrity.
+        </p>
+      </div>
+    </div>
   </footer>
 );
 
