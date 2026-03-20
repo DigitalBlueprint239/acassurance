@@ -7,7 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
 import TrustBadgeStrip from "@/components/TrustBadgeStrip";
-import ReviewSection from "@/components/ReviewSection";
+import FeaturedReviews from "@/components/FeaturedReviews";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroTeam from "@/assets/hero-team-edited.jpg";
