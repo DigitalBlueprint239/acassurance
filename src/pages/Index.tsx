@@ -154,6 +154,7 @@ const Index = () => {
         </div>
       </header>
 
+      <TrustBar />
       <TrustBadgeStrip />
 
 
