@@ -23,6 +23,16 @@ const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const LocalLandingPage = lazy(() => import("./pages/LocalLandingPage"));
 
+const AcRepairPage = lazy(() => import("./pages/AcRepairPage"));
+const AcInstallationPage = lazy(() => import("./pages/AcInstallationPage"));
+const EmergencyAcPage = lazy(() => import("./pages/EmergencyAcPage"));
+const HeatingServicesPage = lazy(() => import("./pages/HeatingServicesPage"));
+const MiniSplitPage = lazy(() => import("./pages/MiniSplitPage"));
+const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
+const DuctCleaningPage = lazy(() => import("./pages/DuctCleaningPage"));
+const IndoorAirQualityPage = lazy(() => import("./pages/IndoorAirQualityPage"));
+const CommercialRefrigPage = lazy(() => import("./pages/CommercialRefrigPage"));
+
 const serviceSlugs = services.map((s) => s.slug);
 
 const ServicePageWrapper = () => {
@@ -53,6 +63,15 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/ac-repair-cape-coral" element={<AcRepairPage />} />
+            <Route path="/ac-installation-replacement" element={<AcInstallationPage />} />
+            <Route path="/emergency-ac-repair" element={<EmergencyAcPage />} />
+            <Route path="/heating-services" element={<HeatingServicesPage />} />
+            <Route path="/ductless-mini-split" element={<MiniSplitPage />} />
+            <Route path="/ac-maintenance-tune-up" element={<MaintenancePage />} />
+            <Route path="/duct-cleaning" element={<DuctCleaningPage />} />
+            <Route path="/indoor-air-quality" element={<IndoorAirQualityPage />} />
+            <Route path="/commercial-refrigeration" element={<CommercialRefrigPage />} />
             {localPages.map((p) => (
               <Route key={p.slug} path={`/${p.slug}`} element={<LocalLandingPage />} />
             ))}

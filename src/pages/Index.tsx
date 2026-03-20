@@ -255,7 +255,7 @@ const Index = () => {
         </div>
       </section>
 
-      <ReviewSection />
+      <FeaturedReviews />
 
       {/* 6. SERVICE AREAS */}
       <section className="py-14 md:py-20 section-light">
