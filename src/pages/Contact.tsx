@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SWFLServiceMap from "@/components/SWFLServiceMap";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
