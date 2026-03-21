@@ -108,7 +108,7 @@ const Index = () => {
             Serving Southwest Florida Since February 2025 · Owner-Operated · 5-Star Rated
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-            <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
+            <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg">
               <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
