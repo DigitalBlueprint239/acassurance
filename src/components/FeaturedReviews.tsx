@@ -107,7 +107,7 @@ const FeaturedReviews = () => {
               onClick={() => setCurrent(i)}
               aria-label={`Go to review ${i + 1}`}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                i === current ? "bg-brand-teal" : "bg-border hover:bg-muted-foreground/40"
+                i === current ? "bg-primary" : "bg-border hover:bg-muted-foreground/40"
               }`}
             />
           ))}
