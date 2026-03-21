@@ -151,7 +151,7 @@ const Index = () => {
               { icon: Clock, label: "24/7 Emergency Service" }].
               map((badge) =>
               <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
-                  <badge.icon className="w-4 h-4 text-brand-teal shrink-0" />
+                  <badge.icon className="w-4 h-4 text-primary shrink-0" />
                   {badge.label}
                 </div>
               )}
