@@ -62,8 +62,8 @@ const TraneProducts = () => (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyTrane.map((item) => (
             <div key={item.title} className="bg-card border border-border rounded-lg p-6 text-center">
-              <div className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center mx-auto mb-4">
-                <item.icon className="w-6 h-6 text-brand-teal" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(239,60,19,0.1)' }}>
+                <item.icon className="w-6 h-6" style={{ color: '#EF3C13' }} />
               </div>
               <h3 className="font-heading font-bold mb-2">{item.title}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>
