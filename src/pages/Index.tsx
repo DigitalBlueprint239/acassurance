@@ -119,7 +119,7 @@ const Index = () => {
             </Button>
           </div>
           {/* Urgency Pill */}
-          <div className="inline-flex items-center gap-2 bg-teal-50/80 backdrop-blur-sm border border-teal-200/60 rounded-full px-4 py-2 text-sm text-teal-800 font-medium">
+          <div className="inline-flex items-center gap-2 bg-gray-100 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium">
             <span className="animate-pulse-soft">🔥</span>
             {urgencyText}
           </div>
