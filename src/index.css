@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* AC Assurance Brand — Deep Navy / Teal / White */
+    /* AC Assurance Brand — Deep Navy / White */
     --background: 0 0% 100%;
     --foreground: 220 10% 18%;
 
@@ -25,8 +25,8 @@
     --muted: 210 10% 96%;
     --muted-foreground: 215 10% 50%;
 
-    /* Accent — Brand Teal #14b8a6 ≈ 173 80% 40% */
-    --accent: 173 80% 40%;
+    /* Accent — Brand Navy (same as primary) */
+    --accent: 220 72% 15%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -34,7 +34,7 @@
 
     --border: 213 8% 85%;
     --input: 213 8% 85%;
-    --ring: 173 80% 40%;
+    --ring: 220 72% 15%;
 
     --radius: 0.375rem;
 
@@ -43,8 +43,8 @@
     --brand-navy-light: 220 45% 25%;
     --brand-navy-deep: 222 78% 10%;
     --brand-steel: 213 30% 34%;
-    --brand-accent: 173 80% 40%;
-    --brand-teal: 173 80% 40%;
+    --brand-accent: 220 72% 15%;
+    --brand-teal: 220 72% 15%;
     --brand-gray: 213 8% 75%;
     --brand-gray-light: 210 12% 97%;
 
