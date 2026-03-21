@@ -96,7 +96,7 @@ const Index = () => {
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
             Expert AC Repair & Installation{' '}
-            <span className="text-brand-teal" style={{ textShadow: '0 0 20px rgba(20, 184, 166, 0.1)' }}>
+            <span className="text-primary">
               From Naples to Cape Coral
             </span>
           </h1>
