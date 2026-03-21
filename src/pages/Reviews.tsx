@@ -40,7 +40,7 @@ const Reviews = () => (
     </section>
 
     {/* Stats Bar */}
-    <section className="bg-brand-teal py-5">
+    <section className="bg-primary py-5">
       <div className="container">
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-center text-white">
           <div className="text-sm font-semibold">4.9★ Average Rating</div>

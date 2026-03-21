@@ -119,7 +119,7 @@ const FeaturedReviews = () => {
             href="https://www.google.com/maps/place/AC+Assurance+Cooling+%26+Heating/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-brand-teal hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
             Read All Reviews on Google
             <ChevronRight className="w-4 h-4" />

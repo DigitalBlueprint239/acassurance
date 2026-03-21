@@ -96,19 +96,19 @@ export default function ServicePageShell({
         </section>
       )}
 
-      <section className="bg-teal-600 py-12 px-4 text-center">
+      <section className="bg-primary py-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to Schedule Service?</h2>
-        <p className="mt-2 text-teal-100">Serving Naples, Fort Myers, Cape Coral and all of Southwest Florida.</p>
+        <p className="mt-2 text-primary-foreground/80">Serving Naples, Fort Myers, Cape Coral and all of Southwest Florida.</p>
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
           <Link
             to="/contact"
-            className="rounded-lg bg-white px-6 py-3 text-base font-semibold text-teal-700 shadow transition hover:bg-gray-100"
+            className="rounded-lg bg-white px-6 py-3 text-base font-semibold text-primary shadow transition hover:bg-gray-100"
           >
             Request Service Online
           </Link>
           <a
             href="tel:+12393653090"
-            className="rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-teal-700"
+            className="rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-primary/80"
           >
             Call Now — (239) 365-3090
           </a>

@@ -73,7 +73,7 @@ const ReviewSection = () => (
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-2xl mx-auto mb-8">
         {reviews.slice(3).map((review) => (
-          <div key={review.name} className="frost-card p-6 hover:shadow-md hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all">
+          <div key={review.name} className="frost-card p-6 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 transition-all">
             <StarRating rating={review.rating} />
             <p className="text-sm text-foreground leading-relaxed mb-4">"{review.text}"</p>
             <p className="text-xs font-heading font-bold text-muted-foreground">

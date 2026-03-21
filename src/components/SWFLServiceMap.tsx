@@ -28,9 +28,9 @@ const SWFLServiceMap = () => (
       {/* Pulsing radar marker at center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="relative">
-          <div className="absolute -inset-4 rounded-full bg-brand-teal/20 animate-ping" />
-          <div className="absolute -inset-2 rounded-full bg-brand-teal/30 animate-pulse" />
-          <div className="w-4 h-4 rounded-full bg-brand-teal border-2 border-white shadow-lg" />
+          <div className="absolute -inset-4 rounded-full bg-primary/20 animate-ping" />
+          <div className="absolute -inset-2 rounded-full bg-primary/30 animate-pulse" />
+          <div className="w-4 h-4 rounded-full bg-primary border-2 border-white shadow-lg" />
         </div>
       </div>
     </div>

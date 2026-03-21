@@ -330,7 +330,7 @@ const Index = () => {
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
           <p className="text-muted-foreground mb-6">Convenient monthly payment plans through Synchrony Financial. Special financing available. Subject to credit approval. Call for details.</p>
-          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+          <Button asChild size="lg" className="shimmer-btn bg-white text-primary hover:bg-white/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>

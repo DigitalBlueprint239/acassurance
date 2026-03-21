@@ -80,7 +80,7 @@ const Header = () => {
               </Link>
             ))}
             <div className="pt-3 mt-2 border-t border-primary-foreground/10 flex flex-col gap-2">
-              <Button asChild className="w-full shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+              <Button asChild className="w-full shimmer-btn bg-white text-primary hover:bg-white/90">
                 <Link to="/contact#estimate-form" onClick={() => setMenuOpen(false)}>Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
