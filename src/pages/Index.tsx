@@ -158,6 +158,35 @@ const Index = () => {
       <TrustBar />
       <TrustBadgeStrip />
 
+      {/* TRANE INDEPENDENT DEALER */}
+      <section className="py-10 md:py-14 bg-background">
+        <div className="container max-w-4xl">
+          <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row" style={{ borderLeft: '4px solid hsl(var(--brand-teal))' }}>
+            <div className="flex items-center justify-center px-8 py-6 md:py-0 md:border-r border-border bg-muted/30">
+              <span className="font-heading font-extrabold text-3xl md:text-4xl tracking-tight text-primary">TRANE</span>
+            </div>
+            <div className="px-6 py-6 md:px-8 flex-1">
+              <h2 className="font-heading font-bold text-lg md:text-xl mb-2 text-primary">Proud Independent Trane Dealer</h2>
+              <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                AC Assurance is an authorized independent dealer of Trane heating and cooling systems — engineered for durability and performance in Southwest Florida's demanding climate.
+              </p>
+              <p className="text-sm italic text-muted-foreground mb-4">It's Hard To Stop A Trane®</p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild size="sm" className="bg-brand-teal text-white hover:bg-brand-teal/90">
+                  <Link to="/trane-products">View Trane Products <ArrowRight className="w-4 h-4 ml-1" /></Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/trane-air-conditioners">Trane Air Conditioners</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline">
+                  <Link to="/trane-heat-pumps">Trane Heat Pumps</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* 3. SERVICES GRID */}
       <section className="py-14 md:py-20 bg-background">
@@ -208,26 +237,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* TRANE SECTION */}
-      <section className="py-14 md:py-20 bg-background">
-        <div className="container text-center max-w-3xl">
-          <span className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-2 text-sm font-medium text-foreground mb-4">
-            <Shield className="w-4 h-4 text-brand-teal" /> Independent Trane Dealer
-          </span>
-          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Trusted Trane Air Conditioning Systems</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto mb-6">
-            AC Assurance installs and services Trane air conditioning systems — built for durability and engineered to handle Southwest Florida's heat, humidity, and coastal conditions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" variant="outline">
-              <Link to="/trane-air-conditioners">Trane Air Conditioners <ArrowRight className="w-4 h-4 ml-2" /></Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link to="/trane-heat-pumps">Trane Heat Pumps <ArrowRight className="w-4 h-4 ml-2" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Old Trane section removed — moved to TR-1 above services grid */}
 
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
@@ -295,7 +305,7 @@ const Index = () => {
       <section className="py-14 md:py-20 bg-background">
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
-          <p className="text-muted-foreground mb-6">Affordable monthly payment plans through Synchrony Financial. Don't let budget stop you from staying comfortable.</p>
+          <p className="text-muted-foreground mb-6">Convenient monthly payment plans through Synchrony Financial. Special financing available. Subject to credit approval. Call for details.</p>
           <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>

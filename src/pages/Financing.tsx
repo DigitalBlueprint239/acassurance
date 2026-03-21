@@ -9,7 +9,7 @@ const Financing = () => (
   <Layout>
     <SEOHead
       title="HVAC Financing Cape Coral | AC Assurance Cooling & Heating"
-      description="Affordable HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Get the comfort you need with manageable monthly payments."
+      description="Convenient HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Get the comfort you need with manageable monthly payments."
     />
     <section className="section-navy py-12 md:py-16">
       <div className="container">

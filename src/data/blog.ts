@@ -9,6 +9,22 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "why-ac-assurance-chooses-trane",
+    title: "Why AC Assurance Chooses Trane for Southwest Florida Homes",
+    excerpt: "Discover why AC Assurance is proud to be an Independent Trane Dealer and how Trane systems are built to handle Southwest Florida's demanding climate.",
+    date: "2026-03-05",
+    readTime: "4 min read",
+    content: [
+      "At AC Assurance, we're proud to be an Independent Trane Dealer serving Naples, Fort Myers, Cape Coral, and all of Southwest Florida. Choosing which HVAC brands to install and recommend is one of the most important decisions an HVAC company can make — and for us, Trane was the clear choice.",
+      "Southwest Florida's climate is uniquely demanding on air conditioning systems. The combination of extreme heat, relentless humidity, and salt air from the Gulf creates conditions that can shorten the lifespan of lesser equipment. Trane systems are engineered specifically to handle these challenges, with corrosion-resistant components and designs that maintain performance even under the most punishing conditions.",
+      "The phrase 'It's Hard To Stop A Trane®' isn't just a tagline — it reflects a genuine engineering philosophy. Every Trane unit undergoes thousands of hours of rigorous testing before it ever reaches a customer's home. They test for extreme temperatures, humidity levels, and continuous operation scenarios that simulate years of real-world use. The result is equipment that homeowners can depend on when they need it most — which in Florida means every single day.",
+      "From an efficiency standpoint, Trane's lineup offers some of the highest SEER2 ratings in the industry. For Southwest Florida homeowners, where air conditioning can account for 40-60% of monthly electricity costs, this translates to meaningful savings. Variable-speed compressors and advanced humidity control features ensure your home stays comfortable without wasting energy.",
+      "Trane also offers one of the most comprehensive warranty programs in the HVAC industry. When combined with regular professional maintenance, a Trane system can provide reliable comfort for 15-20 years or more — a significant return on investment for any homeowner.",
+      "As an Independent Trane Dealer, AC Assurance has access to the full Trane product line, including central air conditioners, heat pumps, and air handlers. We can help you select the right system for your home's specific needs, whether you're replacing an aging unit or building new construction.",
+      "We chose Trane because we believe our customers deserve equipment that matches the quality of our service — reliable, efficient, and built to last in Florida's toughest conditions. If you're considering a new HVAC system, contact AC Assurance at (239) 365-3090 to learn more about our Trane options. It's Hard To Stop A Trane® — and it's hard to beat the service you'll get from AC Assurance.",
+    ],
+  },
+  {
     slug: "ac-not-cooling-cape-coral",
     title: "AC Not Cooling in Cape Coral? 7 Quick Checks Before You Call",
     excerpt: "Before scheduling a service call, try these seven troubleshooting steps that could get your AC working again.",
@@ -61,7 +77,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "hvac-financing-cape-coral",
     title: "HVAC Financing in Cape Coral: What Homeowners Should Know",
-    excerpt: "Explore financing options for HVAC projects in Cape Coral. Learn how to make a new AC system affordable.",
+    excerpt: "Explore financing options for HVAC projects in Cape Coral. Learn how to make a new AC system manageable.",
     date: "2026-01-30",
     readTime: "4 min read",
     content: [

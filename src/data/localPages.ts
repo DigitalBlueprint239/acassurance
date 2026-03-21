@@ -871,7 +871,7 @@ export const localPages: LocalPageData[] = [
       {
         type: "paragraph",
         heading: "Financing Options",
-        content: "AC Assurance offers financing through Synchrony to make new AC installations affordable. Flexible monthly payment plans let you install the right system without delaying your comfort. Ask about available options during your free estimate."
+        content: "AC Assurance offers financing through Synchrony to make new AC installations manageable. Flexible monthly payment plans let you install the right system without delaying your comfort. Special financing available. Subject to credit approval. Call for details."
       },
       {
         type: "trust-signals",

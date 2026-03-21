@@ -13,6 +13,7 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const Financing = lazy(() => import("./pages/Financing"));
 const TraneAirConditioners = lazy(() => import("./pages/TraneAirConditioners"));
 const TraneHeatPumps = lazy(() => import("./pages/TraneHeatPumps"));
+const TraneProducts = lazy(() => import("./pages/TraneProducts"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const About = lazy(() => import("./pages/About"));
@@ -56,6 +57,7 @@ const App = () => (
             <Route path="/financing" element={<Financing />} />
             <Route path="/trane-air-conditioners" element={<TraneAirConditioners />} />
             <Route path="/trane-heat-pumps" element={<TraneHeatPumps />} />
+            <Route path="/trane-products" element={<TraneProducts />} />
             <Route path="/service-areas" element={<ServiceAreas />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/about" element={<About />} />
