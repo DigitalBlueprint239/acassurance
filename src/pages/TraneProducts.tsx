@@ -28,7 +28,11 @@ const TraneProducts = () => (
     {/* Hero */}
     <section className="section-navy py-14 md:py-20">
       <div className="container text-center max-w-3xl">
-        <span className="inline-flex items-center gap-2 bg-primary-foreground/10 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground mb-4">
+        <div className="flex items-center justify-center gap-3 mb-4">
+          <svg width="36" height="36" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#EF3C13"/><rect x="6" y="8" width="16" height="2" rx="1" fill="white"/><rect x="6" y="13" width="16" height="2" rx="1" fill="white"/><rect x="6" y="18" width="16" height="2" rx="1" fill="white"/></svg>
+          <span className="font-heading font-black text-3xl tracking-widest" style={{ color: '#EF3C13' }}>TRANE</span>
+        </div>
+        <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-foreground mb-4" style={{ backgroundColor: 'rgba(239,60,19,0.2)' }}>
           <Shield className="w-4 h-4" /> Independent Trane Dealer
         </span>
         <h1 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
@@ -38,7 +42,7 @@ const TraneProducts = () => (
           As an Independent Trane Dealer, AC Assurance brings Southwest Florida homeowners the most durable, efficient HVAC systems available.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+          <Button asChild size="lg" className="shimmer-btn text-white hover:opacity-90" style={{ backgroundColor: '#EF3C13' }}>
             <Link to="/contact#estimate-form">Get a Free Quote</Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
