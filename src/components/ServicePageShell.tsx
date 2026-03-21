@@ -46,7 +46,7 @@ export default function ServicePageShell({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/contact"
-              className="rounded-lg bg-teal-500 px-6 py-3 text-base font-semibold text-white shadow transition hover:bg-teal-600"
+              className="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow transition hover:bg-primary/90"
             >
               {ctaText}
             </Link>
