@@ -13,7 +13,7 @@ const Blog = () => (
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Tips &amp; Blog</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
-          Helpful information for Cape Coral homeowners on AC maintenance, repair, and making smart HVAC decisions.
+          HVAC tips, maintenance guides, and local service updates for homeowners in Naples, Fort Myers, Cape Coral, and all of Southwest Florida.
         </p>
       </div>
     </section>

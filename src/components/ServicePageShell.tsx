@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
 import TrustBar from './TrustBar';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
 
 interface ServicePageShellProps {
   title: string;
@@ -9,6 +15,7 @@ interface ServicePageShellProps {
   description: string;
   benefits: string[];
   ctaText?: string;
+  faqs?: FAQ[];
 }
 
 export default function ServicePageShell({
@@ -19,6 +26,7 @@ export default function ServicePageShell({
   description,
   benefits,
   ctaText = 'Get a Free Quote',
+  faqs,
 }: ServicePageShellProps) {
   return (
     <main>
@@ -73,6 +81,20 @@ export default function ServicePageShell({
           ))}
         </div>
       </section>
+
+      {faqs && faqs.length > 0 && (
+        <section className="mx-auto max-w-4xl px-4 pb-16">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently Asked Questions</h2>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`}>
+                <AccordionTrigger className="text-left text-base font-medium">{faq.question}</AccordionTrigger>
+                <AccordionContent className="text-sm text-gray-600 leading-relaxed">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
+      )}
 
       <section className="bg-teal-600 py-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to Schedule Service?</h2>

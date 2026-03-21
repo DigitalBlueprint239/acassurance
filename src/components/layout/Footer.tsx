@@ -70,7 +70,11 @@ const Footer = () => (
     <div className="border-t border-primary-foreground/10">
       <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs opacity-60">
         <p>&copy; {new Date().getFullYear()} {COMPANY}. All rights reserved.</p>
-        <p>Serving Naples, Fort Myers, Cape Coral &amp; Southwest Florida</p>
+        <div className="flex items-center gap-3">
+          <Link to="/privacy-policy" className="hover:opacity-100 transition-opacity">Privacy Policy</Link>
+          <span>·</span>
+          <p>Serving Naples, Fort Myers, Cape Coral &amp; Southwest Florida</p>
+        </div>
       </div>
     </div>
 

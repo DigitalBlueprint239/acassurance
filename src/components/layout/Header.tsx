@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,9 +18,16 @@ const navLinks = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="bg-primary border-b border-primary-foreground/10 sticky top-0 z-50 shadow-sm">
+    <header className={`bg-primary border-b border-primary-foreground/10 sticky top-0 z-50 transition-shadow ${scrolled ? "shadow-md" : ""}`}>
       <div className="container flex items-center justify-between h-20 md:h-24">
         <Link to="/" className="flex items-center gap-2 shrink-0 -my-2">
           <div className="bg-white rounded-md px-2 py-1">

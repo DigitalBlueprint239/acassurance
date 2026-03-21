@@ -20,6 +20,13 @@ const AcInstallationPage = () => (
         "Manufacturer warranty support included",
         "Energy-efficient options to lower utility bills",
       ]}
+      faqs={[
+        { question: "How long does AC installation take?", answer: "Most residential AC installations are completed in one day — typically 4 to 8 hours depending on the complexity of the job. We'll give you a clear timeline during your free in-home estimate." },
+        { question: "What size AC do I need for my Florida home?", answer: "Proper sizing depends on your home's square footage, insulation, window exposure, and layout. We perform a detailed Manual J load calculation to ensure your new system is perfectly sized — not too big, not too small." },
+        { question: "Do you install Trane systems?", answer: "Yes — AC Assurance is a proud Independent Trane Dealer. We install the full Trane product line including central air conditioners, heat pumps, and air handlers, all backed by comprehensive manufacturer warranties." },
+        { question: "What's included in a new AC installation?", answer: "Our installations include the new equipment, professional installation by licensed technicians, thermostat setup, system testing, cleanup, and a walkthrough of your new system. We also handle permit coordination when required." },
+        { question: "Do you offer financing for new AC systems?", answer: "Yes — we offer financing through Synchrony Financial with convenient monthly payment options. Special financing available, subject to credit approval. Call us for current terms and details." },
+      ]}
     />
   </Layout>
 );

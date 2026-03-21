@@ -159,6 +159,25 @@ const Index = () => {
         </div>
       </header>
 
+      {/* SOCIAL PROOF STATS BAR */}
+      <section className="section-navy py-8">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            {[
+              { value: "500+", label: "SWFL Homes Served" },
+              { value: "4.9★", label: "Google Rating" },
+              { value: "< 2 hrs", label: "Average Response Time" },
+              { value: "100%", label: "Owner-Supervised Jobs" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="text-2xl md:text-3xl font-heading font-extrabold text-brand-teal">{stat.value}</div>
+                <div className="text-xs md:text-sm text-primary-foreground/70 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <TrustBar />
       <TrustBadgeStrip />
 
