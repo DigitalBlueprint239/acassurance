@@ -13,6 +13,7 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const Financing = lazy(() => import("./pages/Financing"));
 const TraneAirConditioners = lazy(() => import("./pages/TraneAirConditioners"));
 const TraneHeatPumps = lazy(() => import("./pages/TraneHeatPumps"));
+const TraneProducts = lazy(() => import("./pages/TraneProducts"));
 const ServiceAreas = lazy(() => import("./pages/ServiceAreas"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const About = lazy(() => import("./pages/About"));
