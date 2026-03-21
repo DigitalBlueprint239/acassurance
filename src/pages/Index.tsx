@@ -229,7 +229,7 @@ const Index = () => {
                 <service.icon className="w-8 h-8 text-primary mb-3" />
                 <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-primary/80 transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
-                <span className="inline-flex items-center gap-1 text-brand-teal text-sm font-medium mt-3">
+                <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3">
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
