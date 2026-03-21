@@ -22,6 +22,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const LocalLandingPage = lazy(() => import("./pages/LocalLandingPage"));
 
 const AcRepairPage = lazy(() => import("./pages/AcRepairPage"));
