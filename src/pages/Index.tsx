@@ -184,9 +184,12 @@ const Index = () => {
       {/* TRANE INDEPENDENT DEALER */}
       <section className="py-10 md:py-14 bg-background">
         <div className="container max-w-4xl">
-          <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row" style={{ borderLeft: '4px solid hsl(var(--brand-teal))' }}>
+          <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row" style={{ borderLeft: '4px solid #EF3C13' }}>
             <div className="flex items-center justify-center px-8 py-6 md:py-0 md:border-r border-border bg-muted/30">
-              <span className="font-heading font-extrabold text-3xl md:text-4xl tracking-tight text-primary">TRANE</span>
+              <div className="flex items-center gap-2">
+                <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="14" fill="#EF3C13"/><rect x="6" y="8" width="16" height="2" rx="1" fill="white"/><rect x="6" y="13" width="16" height="2" rx="1" fill="white"/><rect x="6" y="18" width="16" height="2" rx="1" fill="white"/></svg>
+                <span className="font-heading font-extrabold text-3xl md:text-4xl tracking-tight" style={{ color: '#EF3C13' }}>TRANE</span>
+              </div>
             </div>
             <div className="px-6 py-6 md:px-8 flex-1">
               <h2 className="font-heading font-bold text-lg md:text-xl mb-2 text-primary">Proud Independent Trane Dealer</h2>
@@ -195,7 +198,7 @@ const Index = () => {
               </p>
               <p className="text-sm italic text-muted-foreground mb-4">It's Hard To Stop A Trane®</p>
               <div className="flex flex-wrap gap-3">
-                <Button asChild size="sm" className="bg-brand-teal text-white hover:bg-brand-teal/90">
+                <Button asChild size="sm" style={{ backgroundColor: '#EF3C13' }} className="text-white hover:opacity-90">
                   <Link to="/trane-products">View Trane Products <ArrowRight className="w-4 h-4 ml-1" /></Link>
                 </Button>
                 <Button asChild size="sm" variant="outline">
