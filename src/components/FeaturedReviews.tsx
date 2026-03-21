@@ -68,7 +68,7 @@ const FeaturedReviews = () => {
           <div className="frost-card p-8 md:p-10 text-center min-h-[260px] flex flex-col justify-center">
             <div className="flex justify-center gap-0.5 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-brand-teal text-brand-teal" />
+                <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
               ))}
             </div>
             <p className="text-foreground leading-relaxed mb-6 text-base">
