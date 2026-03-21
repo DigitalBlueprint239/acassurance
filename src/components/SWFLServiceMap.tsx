@@ -19,8 +19,8 @@ const SWFLServiceMap = () => (
         {/* Service area polygon overlay */}
         <polygon
           points="30,20 70,20 75,35 72,55 65,75 50,80 35,75 28,55 25,35"
-          fill="rgba(20, 184, 166, 0.12)"
-          stroke="rgba(20, 184, 166, 0.5)"
+          fill="rgba(10, 31, 68, 0.12)"
+          stroke="rgba(10, 31, 68, 0.5)"
           strokeWidth="0.5"
         />
       </svg>
@@ -28,9 +28,9 @@ const SWFLServiceMap = () => (
       {/* Pulsing radar marker at center */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="relative">
-          <div className="absolute -inset-4 rounded-full bg-brand-teal/20 animate-ping" />
-          <div className="absolute -inset-2 rounded-full bg-brand-teal/30 animate-pulse" />
-          <div className="w-4 h-4 rounded-full bg-brand-teal border-2 border-white shadow-lg" />
+          <div className="absolute -inset-4 rounded-full bg-primary/20 animate-ping" />
+          <div className="absolute -inset-2 rounded-full bg-primary/30 animate-pulse" />
+          <div className="w-4 h-4 rounded-full bg-primary border-2 border-white shadow-lg" />
         </div>
       </div>
     </div>

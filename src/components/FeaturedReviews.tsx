@@ -68,7 +68,7 @@ const FeaturedReviews = () => {
           <div className="frost-card p-8 md:p-10 text-center min-h-[260px] flex flex-col justify-center">
             <div className="flex justify-center gap-0.5 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-brand-teal text-brand-teal" />
+                <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
               ))}
             </div>
             <p className="text-foreground leading-relaxed mb-6 text-base">
@@ -107,7 +107,7 @@ const FeaturedReviews = () => {
               onClick={() => setCurrent(i)}
               aria-label={`Go to review ${i + 1}`}
               className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                i === current ? "bg-brand-teal" : "bg-border hover:bg-muted-foreground/40"
+                i === current ? "bg-primary" : "bg-border hover:bg-muted-foreground/40"
               }`}
             />
           ))}
@@ -119,7 +119,7 @@ const FeaturedReviews = () => {
             href="https://www.google.com/maps/place/AC+Assurance+Cooling+%26+Heating/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-brand-teal hover:underline"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
             Read All Reviews on Google
             <ChevronRight className="w-4 h-4" />

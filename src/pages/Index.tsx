@@ -88,7 +88,7 @@ const Index = () => {
       <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
         <div className={`container text-center py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
           <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
-            <Star className="w-4 h-4 text-brand-teal fill-brand-teal inline align-text-bottom mr-1" />
+            <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline align-text-bottom mr-1" />
             TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
           </p>
           <h1
@@ -96,7 +96,7 @@ const Index = () => {
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
             Expert AC Repair & Installation{' '}
-            <span className="text-brand-teal" style={{ textShadow: '0 0 20px rgba(20, 184, 166, 0.1)' }}>
+            <span className="text-primary">
               From Naples to Cape Coral
             </span>
           </h1>
@@ -104,11 +104,11 @@ const Index = () => {
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
           <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5">
-            <Star className="w-4 h-4 text-brand-teal fill-brand-teal" />
+            <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
             Serving Southwest Florida Since February 2025 · Owner-Operated · 5-Star Rated
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-            <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
+            <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg">
               <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
@@ -119,7 +119,7 @@ const Index = () => {
             </Button>
           </div>
           {/* Urgency Pill */}
-          <div className="inline-flex items-center gap-2 bg-teal-50/80 backdrop-blur-sm border border-teal-200/60 rounded-full px-4 py-2 text-sm text-teal-800 font-medium">
+          <div className="inline-flex items-center gap-2 bg-gray-100 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium">
             <span className="animate-pulse-soft">🔥</span>
             {urgencyText}
           </div>
@@ -138,7 +138,7 @@ const Index = () => {
             decoding="async" />
           
           {/* Owner Badge */}
-          <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-brand-teal text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
+          <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-primary text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
             Owner-Operated & On-Site
           </div>
           {/* Trust Ribbon */}
@@ -151,7 +151,7 @@ const Index = () => {
               { icon: Clock, label: "24/7 Emergency Service" }].
               map((badge) =>
               <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
-                  <badge.icon className="w-4 h-4 text-brand-teal shrink-0" />
+                  <badge.icon className="w-4 h-4 text-primary shrink-0" />
                   {badge.label}
                 </div>
               )}
@@ -171,7 +171,7 @@ const Index = () => {
               { value: "100%", label: "Owner-Supervised Jobs" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl md:text-3xl font-heading font-extrabold text-brand-teal">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-heading font-extrabold text-white">{stat.value}</div>
                 <div className="text-xs md:text-sm text-primary-foreground/70 mt-1">{stat.label}</div>
               </div>
             ))}
@@ -224,12 +224,12 @@ const Index = () => {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group frost-card p-6 hover:shadow-md hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all">
+              className="group frost-card p-6 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 transition-all">
               
-                <service.icon className="w-8 h-8 text-brand-teal mb-3" />
-                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-brand-teal transition-colors">{service.shortTitle}</h3>
+                <service.icon className="w-8 h-8 text-primary mb-3" />
+                <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-primary/80 transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
-                <span className="inline-flex items-center gap-1 text-brand-teal text-sm font-medium mt-3">
+                <span className="inline-flex items-center gap-1 text-primary text-sm font-medium mt-3">
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -250,7 +250,7 @@ const Index = () => {
             { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
             map((item) =>
             <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full bg-brand-teal flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="font-heading font-bold text-lg mb-2 text-primary-foreground">{item.title}</h3>
@@ -330,7 +330,7 @@ const Index = () => {
         <div className="container text-center max-w-2xl">
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
           <p className="text-muted-foreground mb-6">Convenient monthly payment plans through Synchrony Financial. Special financing available. Subject to credit approval. Call for details.</p>
-          <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+          <Button asChild size="lg" className="shimmer-btn bg-white text-primary hover:bg-white/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>

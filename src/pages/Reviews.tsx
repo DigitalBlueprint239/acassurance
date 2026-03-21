@@ -29,7 +29,7 @@ const Reviews = () => (
       <div className="container text-center">
         <div className="flex justify-center gap-1 mb-4">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-6 h-6 fill-brand-teal text-brand-teal" />
+            <Star key={i} className="w-6 h-6 fill-amber-400 text-amber-400" />
           ))}
         </div>
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">What Our Customers Are Saying</h1>
@@ -40,7 +40,7 @@ const Reviews = () => (
     </section>
 
     {/* Stats Bar */}
-    <section className="bg-brand-teal py-5">
+    <section className="bg-primary py-5">
       <div className="container">
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-center text-white">
           <div className="text-sm font-semibold">4.9★ Average Rating</div>
