@@ -8,6 +8,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "Trane Systems", to: "/trane-products" },
   { label: "Financing", to: "/financing" },
   { label: "Reviews", to: "/reviews" },
   { label: "About", to: "/about" },

@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "hvac-financing-cape-coral",
     title: "HVAC Financing in Cape Coral: What Homeowners Should Know",
-    excerpt: "Explore financing options for HVAC projects in Cape Coral. Learn how to make a new AC system affordable.",
+    excerpt: "Explore financing options for HVAC projects in Cape Coral. Learn how to make a new AC system manageable.",
     date: "2026-01-30",
     readTime: "4 min read",
     content: [

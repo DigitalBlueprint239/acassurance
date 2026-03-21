@@ -31,7 +31,7 @@ const About = () => (
               <div>
                 <h2 className="text-2xl font-heading font-bold mb-3">Owner-Operated. Quality-Driven.</h2>
                 <p className="text-foreground leading-relaxed">
-                  AC Assurance Cooling &amp; Heating is a locally owned and operated HVAC company based in Cape Coral, Florida. Every job gets personal attention from ownership — no middlemen, no runaround. We built this company on the principle that HVAC service should be honest, affordable, and done right the first time.
+                  AC Assurance Cooling &amp; Heating is a locally owned and operated HVAC company based in Cape Coral, Florida. Every job gets personal attention from ownership — no middlemen, no runaround. We built this company on the principle that HVAC service should be honest, dependable, and done right the first time.
                 </p>
               </div>
             </div>

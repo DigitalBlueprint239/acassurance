@@ -13,6 +13,9 @@ const Footer = () => (
           </div>
           <p className="text-sm opacity-80 mb-4">Professional HVAC services for Fort Myers, Cape Coral, and Southwest Florida. Licensed, reliable, and committed to your comfort.</p>
           <p className="text-xs opacity-60">License #{LICENSE}</p>
+          <span className="text-xs opacity-50 mt-2 inline-block bg-primary-foreground/10 rounded-full px-3 py-1">
+            Independent Trane Dealer | It's Hard To Stop A Trane®
+          </span>
         </div>
 
         <div>
