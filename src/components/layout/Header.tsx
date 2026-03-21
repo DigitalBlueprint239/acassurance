@@ -52,7 +52,7 @@ const Header = () => {
             <Phone className="w-4 h-4" />
             {PHONE}
           </a>
-          <Button asChild className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90 hover:shadow-[0_0_20px_hsl(173_80%_40%/0.3)]">
+          <Button asChild className="shimmer-btn bg-white text-primary hover:bg-white/90">
             <Link to="/contact#estimate-form">Get a Free Quote</Link>
           </Button>
         </div>
