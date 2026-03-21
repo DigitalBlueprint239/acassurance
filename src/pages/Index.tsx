@@ -62,7 +62,7 @@ const Index = () => {
             "@type": "HVACBusiness",
             "name": "AC Assurance Cooling & Heating",
             "telephone": "+1-239-365-3090",
-            "email": "acassurancefl@gmail.com",
+            "email": "service@acassurancefl.com",
             "url": "https://www.acassurancefl.com",
             "priceRange": "$$",
             "openingHours": "Mo-Su 00:00-23:59",
