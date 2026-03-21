@@ -171,7 +171,7 @@ const Index = () => {
               { value: "100%", label: "Owner-Supervised Jobs" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl md:text-3xl font-heading font-extrabold text-brand-teal">{stat.value}</div>
+                <div className="text-2xl md:text-3xl font-heading font-extrabold text-white">{stat.value}</div>
                 <div className="text-xs md:text-sm text-primary-foreground/70 mt-1">{stat.label}</div>
               </div>
             ))}
