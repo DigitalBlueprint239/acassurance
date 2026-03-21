@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
-import heroImg from "@/assets/ac-repair.webp";
+import heroImg from "@/assets/service-repair.webp";
 
 const HeatingServicesPage = () => (
   <Layout>
