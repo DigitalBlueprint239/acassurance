@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import TrustBar from './TrustBar';
 
 interface ServicePageShellProps {
   title: string;
@@ -28,8 +29,9 @@ export default function ServicePageShell({
           width={1920}
           height={1080}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-60"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h1>
           <p className="mt-4 max-w-xl text-lg text-gray-200">{subtitle}</p>
@@ -49,6 +51,8 @@ export default function ServicePageShell({
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       <section className="mx-auto max-w-4xl px-4 py-16">
         <p className="text-lg leading-relaxed text-gray-700">{description}</p>
