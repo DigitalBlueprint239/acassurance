@@ -125,7 +125,7 @@ const TraneProducts = () => (
         <p className="text-primary-foreground/80 mb-8">
           Schedule a free in-home estimate with AC Assurance. We'll help you choose the right Trane system for your home and budget.
         </p>
-        <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+        <Button asChild size="lg" className="shimmer-btn text-white hover:opacity-90" style={{ backgroundColor: '#EF3C13' }}>
           <Link to="/contact#estimate-form">Get a Free In-Home Estimate <ArrowRight className="w-4 h-4 ml-2" /></Link>
         </Button>
         <p className="text-xs text-primary-foreground/50 mt-4">
