@@ -1,15 +1,22 @@
 
 
-# Replace About Page Photo Placeholder
+# Final Production Audit & Master Alignment
 
-## Changes
+## Step 1: Asset Replacement
 
-### 1. Copy uploaded image to project
-- Copy `user-uploads://Copy_of_IMG_0323-2.JPG` to `src/assets/owner-team.jpg`
+**Fetch 5 images** from the provided URLs and save to `src/assets/`:
+- `service-installation.webp`
+- `service-repair.webp`
+- `service-ducts.webp`
+- `service-maintenance.webp`
+- `service-emergency.webp`
 
-### 2. Update `src/pages/About.tsx`
-- Add import: `import ownerPhoto from "@/assets/owner-team.jpg";`
-- Replace the placeholder `<div>` (lines 28-30) with a responsive `<img>`:
-  - Classes: `w-32 h-32 sm:w-40 sm:h-40 rounded object-cover shrink-0`
-  - Alt text describing the owner/team photo
+**Delete** the old AI-generated images that are no longer needed: `ac-installation.webp`, `ac-repair.webp`, `emergency-hvac.webp` (replaced by the new authentic photos).
 
+## Step 2: Update 5 Service Pages (images + SEO)
+
+Each page gets a new hero image import and updated SEO title/description:
+
+| Page | New Image | New Title |
+|------|-----------|-----------|
+| `AcInstallationPage.tsx` | `service-installation.webp` | "AC Installation & Replacement in Naples & Cape Coral \
