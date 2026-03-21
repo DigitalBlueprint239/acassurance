@@ -18,7 +18,7 @@ const SWFLServiceMap = () => (
       <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
         {/* Service area polygon overlay */}
         <polygon
-21:           points="30,20 70,20 75,35 72,55 65,75 50,80 35,75 28,55 25,35"
+          points="30,20 70,20 75,35 72,55 65,75 50,80 35,75 28,55 25,35"
           fill="rgba(10, 31, 68, 0.12)"
           stroke="rgba(10, 31, 68, 0.5)"
           strokeWidth="0.5"
