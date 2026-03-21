@@ -250,7 +250,7 @@ const Index = () => {
             { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
             map((item) =>
             <div key={item.title} className="text-center p-6">
-                <div className="w-14 h-14 rounded-full bg-brand-teal flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="font-heading font-bold text-lg mb-2 text-primary-foreground">{item.title}</h3>
