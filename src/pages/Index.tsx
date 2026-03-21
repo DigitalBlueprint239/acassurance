@@ -102,6 +102,10 @@ const Index = () => {
           <p className="text-lg text-primary/70 leading-relaxed mb-6 max-w-2xl mx-auto">
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
+          <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5">
+            <Star className="w-4 h-4 text-brand-teal fill-brand-teal" />
+            Serving Southwest Florida Since February 2025 · Owner-Operated · 5-Star Rated
+          </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-brand-teal text-white hover:bg-brand-teal/90 font-semibold shadow-lg">
               <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
