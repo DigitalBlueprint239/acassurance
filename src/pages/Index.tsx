@@ -224,7 +224,7 @@ const Index = () => {
             <Link
               key={service.slug}
               to={`/${service.slug}`}
-              className="group frost-card p-6 hover:shadow-md hover:shadow-brand-teal/10 hover:border-brand-teal/40 transition-all">
+              className="group frost-card p-6 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 transition-all">
               
                 <service.icon className="w-8 h-8 text-brand-teal mb-3" />
                 <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-brand-teal transition-colors">{service.shortTitle}</h3>
