@@ -83,12 +83,12 @@ const TraneProducts = () => (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {products.map((product) => (
             <div key={product.title} className="bg-card border border-border rounded-lg p-6 flex flex-col">
-              <div className="w-12 h-12 rounded-full bg-brand-teal/10 flex items-center justify-center mb-4">
-                <product.icon className="w-6 h-6 text-brand-teal" />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: 'rgba(239,60,19,0.1)' }}>
+                <product.icon className="w-6 h-6" style={{ color: '#EF3C13' }} />
               </div>
               <h3 className="font-heading font-bold mb-2">{product.title}</h3>
               <p className="text-sm text-muted-foreground mb-4 flex-1">{product.desc}</p>
-              <Button asChild variant="outline" className="w-full">
+              <Button asChild className="w-full text-white hover:opacity-90" style={{ backgroundColor: '#EF3C13' }}>
                 <Link to={product.link}>Request a Quote <ArrowRight className="w-4 h-4 ml-1" /></Link>
               </Button>
             </div>
