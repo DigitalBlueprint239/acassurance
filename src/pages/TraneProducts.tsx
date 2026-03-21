@@ -104,7 +104,7 @@ const TraneProducts = () => (
         <p className="text-muted-foreground mb-6">
           Convenient monthly payment options available through Synchrony Financial. Special financing available — subject to credit approval. Call for details.
         </p>
-        <Button asChild size="lg" className="shimmer-btn bg-brand-teal text-white hover:bg-brand-teal/90">
+        <Button asChild size="lg" className="shimmer-btn text-white hover:opacity-90" style={{ backgroundColor: '#EF3C13' }}>
           <a href={PHONE_LINK}>
             <Phone className="w-5 h-5 mr-2" />
             Call {PHONE} for Current Offers
