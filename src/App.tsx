@@ -22,6 +22,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const LocalLandingPage = lazy(() => import("./pages/LocalLandingPage"));
 
 const AcRepairPage = lazy(() => import("./pages/AcRepairPage"));
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/ac-repair-cape-coral" element={<AcRepairPage />} />
             <Route path="/ac-installation-replacement" element={<AcInstallationPage />} />
             <Route path="/emergency-ac-repair" element={<EmergencyAcPage />} />

@@ -20,6 +20,13 @@ const AcRepairPage = () => (
         "24/7 emergency repair line",
         "Honest diagnostics — we fix what's broken, nothing more",
       ]}
+      faqs={[
+        { question: "How quickly can you respond to AC repair in Naples?", answer: "We offer same-day and next-day AC repair appointments throughout Naples and Southwest Florida. For emergencies, our 24/7 line means we can often be at your door within 2 hours." },
+        { question: "What brands do you repair?", answer: "We service and repair all major AC brands including Trane, Carrier, Lennox, Rheem, Goodman, York, and more. Our technicians are trained and experienced with every common system in SWFL homes." },
+        { question: "Do you offer same-day repair in Cape Coral?", answer: "Yes — if you call before 2:00 PM, we can typically schedule same-day AC repair service in Cape Coral. After-hours emergency service is also available." },
+        { question: "How much does AC repair cost in SWFL?", answer: "AC repair costs vary depending on the issue. We provide upfront pricing before starting any work, so you'll know the exact cost with no surprises. Diagnostic fees are applied toward the repair if you proceed." },
+        { question: "Should I repair or replace my AC?", answer: "As a general rule, if your system is over 10-15 years old and the repair costs more than 50% of a new system, replacement often makes more sense. We'll give you an honest assessment and never push a replacement when a repair will do." },
+      ]}
     />
   </Layout>
 );

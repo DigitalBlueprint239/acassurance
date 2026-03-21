@@ -9,6 +9,51 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ac-repair-naples-fl",
+    title: "AC Repair in Naples, FL: What to Expect from AC Assurance",
+    excerpt: "Learn what Naples homeowners can expect when they call AC Assurance for fast, reliable AC repair service.",
+    date: "2026-02-10",
+    readTime: "3 min read",
+    content: [
+      "Naples, Florida is one of the most desirable places to live in Southwest Florida — but the heat and humidity put serious demands on your air conditioning system. When your AC stops working or starts underperforming, you need a repair team that understands the local climate and can respond fast.",
+      "AC Assurance provides professional AC repair throughout Naples and Collier County. Our licensed technicians are experienced with every major HVAC brand and arrive prepared with diagnostic tools and common replacement parts to resolve most issues in a single visit.",
+      "Common AC problems we see in Naples homes include refrigerant leaks caused by corrosion from salt air, clogged condensate drain lines from high humidity, capacitor and contactor failures from constant summer operation, and dirty evaporator coils reducing cooling capacity.",
+      "When you call AC Assurance, here's what to expect: a real person answers the phone — not a call center. We'll schedule a convenient appointment, often same-day if you call before 2 PM. Our technician will diagnose the issue, explain it clearly, and provide upfront pricing before any work begins.",
+      "We believe Naples homeowners deserve honest, transparent HVAC service without the runaround. That's why owner Jason Rizzo personally oversees every job and stands behind every repair. No upsells, no unnecessary replacements — just reliable AC repair done right the first time.",
+      "If your AC isn't keeping up with Naples heat, call AC Assurance at (239) 365-3090. We offer same-day service, 24/7 emergency repairs, and transparent pricing you can trust.",
+    ],
+  },
+  {
+    slug: "ac-installation-fort-myers",
+    title: "New AC Installation in Fort Myers: A Complete Guide",
+    excerpt: "Everything Fort Myers homeowners need to know about installing a new AC system — from sizing to financing.",
+    date: "2026-02-20",
+    readTime: "3 min read",
+    content: [
+      "If your air conditioning system in Fort Myers is over 10 years old, breaking down frequently, or driving up your energy bills, it may be time for a new installation. Choosing the right system and the right installer makes all the difference in your long-term comfort and costs.",
+      "The first step in any AC installation is proper sizing. In Fort Myers, where homes face extreme heat from April through October, an undersized system will run constantly without adequately cooling your home, while an oversized system will short-cycle and fail to control humidity. AC Assurance performs detailed Manual J load calculations to get it right.",
+      "Energy efficiency matters in Fort Myers. With AC accounting for up to 60% of monthly electricity costs, upgrading to a high-SEER2 system can deliver significant savings. Modern Trane systems offer variable-speed compressors that adjust output to match demand, keeping your home comfortable while using less energy.",
+      "As an Independent Trane Dealer, AC Assurance installs systems engineered specifically for demanding climates like Southwest Florida. Trane's corrosion-resistant components and rigorous testing program — reflected in their tagline 'It's Hard To Stop A Trane®' — mean your investment is built to last.",
+      "Our installation process includes a free in-home estimate with system recommendations, professional installation by licensed technicians, thermostat setup and system testing, complete cleanup, and a walkthrough of your new system. Most installations are completed in a single day.",
+      "Financing is available through Synchrony Financial with convenient monthly payment options. Special financing available, subject to credit approval. Call AC Assurance at (239) 365-3090 to schedule your free estimate and learn about current promotions.",
+    ],
+  },
+  {
+    slug: "hvac-maintenance-cape-coral",
+    title: "Why Cape Coral Homeowners Need Twice-Yearly AC Maintenance",
+    excerpt: "Cape Coral's salt air and humidity make regular AC maintenance essential. Here's what every homeowner should know.",
+    date: "2026-03-01",
+    readTime: "3 min read",
+    content: [
+      "Cape Coral's unique environment — surrounded by canals, exposed to Gulf salt air, and baking in year-round humidity — creates conditions that are especially tough on HVAC equipment. That's why we recommend Cape Coral homeowners schedule professional AC maintenance twice a year, not just once.",
+      "Salt air accelerates corrosion on outdoor condenser units, coils, and electrical connections. High humidity means your system's condensate drain line is working overtime and is more prone to clogs. And because your AC runs nearly year-round in Cape Coral, components wear faster than in milder climates.",
+      "During an AC Assurance maintenance visit, our technicians perform a comprehensive inspection and service that includes cleaning evaporator and condenser coils, checking and adjusting refrigerant levels, tightening electrical connections, clearing the condensate drain line, replacing the air filter, calibrating your thermostat, and providing a written report of system condition.",
+      "The cost of regular maintenance is a fraction of what you'd pay for an emergency repair or premature system replacement. A well-maintained AC system uses less energy, lasts longer, and is far less likely to break down on the hottest day of the year — which in Cape Coral could be any day from May through September.",
+      "AC Assurance offers maintenance plans designed specifically for Southwest Florida homeowners. Our plans include scheduled tune-ups, priority service scheduling, and discounts on any needed repairs. It's the smartest investment you can make for your home comfort.",
+      "Don't wait for a breakdown to think about maintenance. Call AC Assurance at (239) 365-3090 to schedule your tune-up or ask about our maintenance plan options.",
+    ],
+  },
+  {
     slug: "why-ac-assurance-chooses-trane",
     title: "Why AC Assurance Chooses Trane for Southwest Florida Homes",
     excerpt: "Discover why AC Assurance is proud to be an Independent Trane Dealer and how Trane systems are built to handle Southwest Florida's demanding climate.",

@@ -20,6 +20,13 @@ const DuctCleaningPage = () => (
         "Visual inspection for duct damage or leaks",
         "Before-and-after documentation provided",
       ]}
+      faqs={[
+        { question: "How often should I clean my ducts in Florida?", answer: "We recommend duct cleaning every 3-5 years in Southwest Florida. However, homes with pets, allergy sufferers, or recent renovations may benefit from more frequent cleaning." },
+        { question: "What are the signs I need duct cleaning?", answer: "Common signs include visible dust around vents, musty or stale odors when the AC runs, increased allergy symptoms indoors, uneven airflow between rooms, and higher-than-normal energy bills." },
+        { question: "How long does duct cleaning take?", answer: "A typical residential duct cleaning takes 2 to 4 hours depending on the size of your home and the condition of your ductwork. We work efficiently while being thorough." },
+        { question: "Will duct cleaning improve my air quality?", answer: "Yes — removing accumulated dust, allergens, mold spores, and debris from your ductwork directly improves the air circulating through your home. Many customers notice a difference immediately." },
+        { question: "Do you clean ducts in Cape Coral and Naples?", answer: "Absolutely. We provide professional duct cleaning services throughout Cape Coral, Naples, Fort Myers, Estero, Bonita Springs, and all of Southwest Florida." },
+      ]}
     />
   </Layout>
 );

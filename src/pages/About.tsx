@@ -22,6 +22,25 @@ const About = () => (
       </div>
     </section>
 
+    {/* Meet the Owner */}
+    <section className="py-12 md:py-16 bg-muted/30">
+      <div className="container max-w-4xl">
+        <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden" style={{ borderLeft: '4px solid hsl(var(--brand-teal))' }}>
+          <div className="p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
+            <div className="w-[200px] h-[200px] bg-muted rounded-lg flex items-center justify-center shrink-0">
+              <span className="text-4xl font-heading font-extrabold text-muted-foreground/40">JR</span>
+            </div>
+            <div>
+              <h2 className="text-2xl font-heading font-bold mb-3">Meet Jason Rizzo, Owner &amp; Founder</h2>
+              <p className="text-foreground leading-relaxed">
+                Jason Rizzo founded AC Assurance in February 2025 with a single mission: bring honest, owner-operated HVAC service to Southwest Florida. As a hands-on owner, Jason personally oversees every job — from the initial diagnostic to the final quality check. When you call AC Assurance, you're not getting a call center. You're getting Jason's team, Jason's standards, and Jason's word.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section className="py-12 md:py-16">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
