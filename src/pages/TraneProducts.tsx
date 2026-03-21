@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import { PHONE, PHONE_LINK } from "@/data/services";
+import traneLogo from "@/assets/trane-logo.png";
 
 const whyTrane = [
   { icon: Thermometer, title: "Built for Florida's Climate", desc: "Trane systems are engineered to perform in extreme heat, humidity, and coastal salt air — exactly what Southwest Florida demands." },
