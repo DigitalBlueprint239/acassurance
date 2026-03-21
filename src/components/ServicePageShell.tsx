@@ -68,7 +68,7 @@ export default function ServicePageShell({
           {benefits.map((benefit, i) => (
             <div key={i} className="flex items-start gap-3 rounded-xl border border-gray-100 bg-gray-50 p-4">
               <svg
-                className="mt-0.5 h-5 w-5 shrink-0 text-teal-500"
+                className="mt-0.5 h-5 w-5 shrink-0 text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
