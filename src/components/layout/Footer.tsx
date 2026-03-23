@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE, COMPANY, serviceAreas } from "@/data/services";
 import logo from "@/assets/logo.png";
+import bbbLogo from "@/assets/bbb-accredited.png";
 
 const Footer = () => (
   <footer className="section-navy text-primary-foreground">
@@ -16,6 +17,10 @@ const Footer = () => (
           <span className="text-xs opacity-50 mt-2 inline-block bg-primary-foreground/10 rounded-full px-3 py-1">
             Independent Trane Dealer | <span style={{ color: '#EF3C13' }}>It's Hard To Stop A Trane®</span>
           </span>
+          <div className="flex items-center gap-2 mt-3">
+            <img src={bbbLogo} alt="BBB Accredited Business" className="h-8 w-auto brightness-0 invert opacity-70" width={32} height={32} />
+            <span className="text-xs opacity-60">BBB Accredited Business</span>
+          </div>
         </div>
 
         <div>

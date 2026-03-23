@@ -14,6 +14,7 @@ import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroTeam from "@/assets/hero-team-edited.jpg";
 import traneLogo from "@/assets/trane-logo.png";
+import bbbLogo from "@/assets/bbb-accredited.png";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
@@ -159,10 +160,11 @@ const Index = () => {
                 <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
                   {badge.isBBB ? (
                     <img
-                      src="https://www.bbb.org/TerminusContent/dist/img/bbb-logo-dtc.png"
+                      src={bbbLogo}
                       alt="BBB Accredited Business"
-                      className="h-5 w-auto"
-                      loading="lazy"
+                      className="h-6 w-auto"
+                      width={24}
+                      height={24}
                     />
                   ) : (
                     <badge.icon className="w-4 h-4 text-primary shrink-0" />
