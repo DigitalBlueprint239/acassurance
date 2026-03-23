@@ -6,7 +6,7 @@ import { blogPosts } from "@/data/blog";
 const Blog = () => (
   <Layout>
     <SEOHead
-      title="HVAC Tips & Blog | AC Assurance Cooling & Heating"
+      title="SWFL HVAC Blog: Tips for Naples, Fort Myers & Cape Coral | AC Assurance"
       description="Helpful HVAC tips, maintenance advice, and AC repair information for Cape Coral and Fort Myers homeowners from AC Assurance."
     />
     <section className="section-navy py-12 md:py-16">

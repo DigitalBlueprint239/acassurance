@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SWFLServiceMap from "@/components/SWFLServiceMap";
 import SEOHead from "@/components/SEOHead";
@@ -80,6 +80,16 @@ const Contact = () => (
             </div>
 
             <SWFLServiceMap />
+
+            <a
+              href="https://www.google.com/maps/search/AC+HVAC+service+Cape+Coral+FL"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 text-sm text-primary font-medium hover:underline"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Open in Google Maps
+            </a>
 
             <p className="text-sm text-muted-foreground mt-4">License #{LICENSE}</p>
           </div>

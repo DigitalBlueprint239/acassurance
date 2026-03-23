@@ -7,6 +7,11 @@ interface FAQ {
   answer: string;
 }
 
+interface ServiceContentSection {
+  heading: string;
+  content: string | string[];
+}
+
 interface ServicePageShellProps {
   title: string;
   subtitle: string;
@@ -16,6 +21,9 @@ interface ServicePageShellProps {
   benefits: string[];
   ctaText?: string;
   faqs?: FAQ[];
+  signsYouNeed?: ServiceContentSection;
+  ourProcess?: { heading: string; steps: string[] };
+  localConcerns?: ServiceContentSection;
 }
 
 export default function ServicePageShell({
@@ -27,6 +35,9 @@ export default function ServicePageShell({
   benefits,
   ctaText = 'Get a Free Quote',
   faqs,
+  signsYouNeed,
+  ourProcess,
+  localConcerns,
 }: ServicePageShellProps) {
   return (
     <main>
@@ -82,10 +93,55 @@ export default function ServicePageShell({
         </div>
       </section>
 
+      {/* Signs You Need This Service */}
+      {signsYouNeed && (
+        <section className="mx-auto max-w-4xl px-4 pb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{signsYouNeed.heading}</h2>
+          {Array.isArray(signsYouNeed.content) ? (
+            signsYouNeed.content.map((p, i) => (
+              <p key={i} className="text-base leading-relaxed text-gray-700 mb-4">{p}</p>
+            ))
+          ) : (
+            <p className="text-base leading-relaxed text-gray-700">{signsYouNeed.content}</p>
+          )}
+        </section>
+      )}
+
+      {/* Our Process */}
+      {ourProcess && (
+        <section className="mx-auto max-w-4xl px-4 pb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{ourProcess.heading}</h2>
+          <ol className="space-y-4">
+            {ourProcess.steps.map((step, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="w-8 h-8 rounded-full section-navy flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-primary-foreground font-bold text-sm">{i + 1}</span>
+                </span>
+                <span className="text-base text-gray-700 leading-relaxed">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      {/* Local Concerns */}
+      {localConcerns && (
+        <section className="mx-auto max-w-4xl px-4 pb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{localConcerns.heading}</h2>
+          {Array.isArray(localConcerns.content) ? (
+            localConcerns.content.map((p, i) => (
+              <p key={i} className="text-base leading-relaxed text-gray-700 mb-4">{p}</p>
+            ))
+          ) : (
+            <p className="text-base leading-relaxed text-gray-700">{localConcerns.content}</p>
+          )}
+        </section>
+      )}
+
       {faqs && faqs.length > 0 && (
         <section className="mx-auto max-w-4xl px-4 pb-16">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-6">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`}>
                 <AccordionTrigger className="text-left text-base font-medium">{faq.question}</AccordionTrigger>
