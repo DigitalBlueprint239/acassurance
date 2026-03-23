@@ -21,6 +21,32 @@ const EmergencyAcPage = () => (
         "Owner-operated — you get real accountability",
       ]}
       ctaText="Call for Emergency Service"
+      signsYouNeed={{
+        heading: "Signs You Need Emergency AC Service",
+        content: [
+          "Not every AC problem is an emergency — but some situations require immediate professional attention to protect your family's health and safety, and to prevent further damage to your system. Knowing the difference can save you money and prevent unnecessary stress.",
+          "Complete system failure during extreme heat is the most obvious emergency, especially if you have elderly family members, young children, or pets at home. When indoor temperatures rise above 85°F with no cooling, heat-related health risks increase rapidly in Florida's climate.",
+          "If you smell burning, see smoke, or hear popping sounds from your AC system, turn it off immediately and call for emergency service. These symptoms can indicate electrical failures that pose fire risks. Similarly, if you notice a hissing sound combined with a sudden loss of cooling, you may have a refrigerant leak that requires professional handling.",
+          "Severe water leaks from your indoor unit that threaten flooring, drywall, or electrical components also warrant emergency attention. In Florida's humidity, standing water from an AC leak can lead to mold growth within 24-48 hours.",
+        ],
+      }}
+      ourProcess={{
+        heading: "Our Emergency AC Repair Process",
+        steps: [
+          "Diagnosis — When you call our 24/7 emergency line, we dispatch a technician equipped with diagnostic tools and common replacement parts to get to you as quickly as possible.",
+          "Transparent Quote — Even in an emergency, we provide upfront pricing before starting any repair. You'll know the cost before we begin — no pressure, no surprise charges.",
+          "Expert Repair — Our technicians work efficiently to restore your cooling as fast as possible, using quality parts and proper repair techniques even under time pressure.",
+          "Final Testing & Walkthrough — We thoroughly test your system after the repair, ensure it's running safely and efficiently, and provide recommendations for any follow-up service if needed.",
+        ],
+      }}
+      localConcerns={{
+        heading: "Common Emergency AC Questions in Southwest Florida",
+        content: [
+          "Southwest Florida's extreme summer temperatures make AC emergencies more dangerous here than in most parts of the country. When outdoor temperatures exceed 95°F with high humidity, an un-cooled home can become dangerously hot within hours — particularly for vulnerable populations.",
+          "One of the most common questions we receive is about after-hours pricing. At AC Assurance, we believe in transparent pricing regardless of when you call. While emergency and after-hours calls may include a service fee, we always provide upfront pricing before any work begins. You won't be hit with surprise charges at 2 AM when you're most vulnerable.",
+          "Another frequent concern is response time. Our goal is to reach emergency calls within 1-2 hours across our Southwest Florida service area, including Cape Coral, Fort Myers, Naples, and surrounding communities. During peak summer demand, response times may vary, but we prioritize dispatching based on the severity of each situation.",
+        ],
+      }}
       faqs={[
         { question: "Do you offer 24/7 emergency AC repair?", answer: "Yes — AC Assurance offers true 24/7 emergency AC repair service. When you call our emergency line, you'll reach a real person who can dispatch a technician to your home day or night." },
         { question: "How fast can you respond in Fort Myers?", answer: "For emergencies in Fort Myers and surrounding areas, we typically respond within 1-2 hours. Response times may vary during peak demand, but we prioritize getting to you as fast as possible." },

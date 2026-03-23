@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Phone, Shield, Clock, DollarSign, Star, MapPin, ChevronRight, ArrowRight, Users, BadgeCheck, Zap } from "lucide-react";
+import { Phone, Shield, Clock, DollarSign, Star, MapPin, ChevronRight, ArrowRight, Users, BadgeCheck, Zap, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
@@ -22,13 +22,13 @@ import workAirHandler from "@/assets/work/air-handler.png";
 import workGarageDuctless from "@/assets/work/garage-ductless.png";
 
 const workPhotos = [
-{ src: workCondenser, caption: "Clean Condenser Coil Detail" },
-{ src: workMiniSplitOutdoor, caption: "Mini-Split Outdoor Unit Install" },
-{ src: workDuctless, caption: "Ductless System Installation" },
-{ src: workGarageMiniSplit, caption: "Garage Mini-Split Installation" },
-{ src: workAirHandler, caption: "New Air Handler Installation" },
-{ src: workGarageDuctless, caption: "Garage Ductless Cooling" }];
-
+  { src: workCondenser, caption: "New Trane Condenser Install — Cape Coral" },
+  { src: workMiniSplitOutdoor, caption: "Outdoor Mini-Split Unit Placement" },
+  { src: workDuctless, caption: "Ductless System Setup in Florida Room" },
+  { src: workGarageMiniSplit, caption: "Ductless Mini-Split in Garage" },
+  { src: workAirHandler, caption: "Attic Air Handler Replacement" },
+  { src: workGarageDuctless, caption: "Garage Cooling Solution — Fort Myers" },
+];
 
 const Index = () => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
@@ -82,7 +82,6 @@ const Index = () => {
           }
         ]}
       />
-      
 
       {/* 1. HERO — Elite Editorial */}
       <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
@@ -100,12 +99,19 @@ const Index = () => {
               From Naples to Cape Coral
             </span>
           </h1>
-          <p className="text-lg text-primary/70 leading-relaxed mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-primary/70 leading-relaxed mb-4 max-w-2xl mx-auto">
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
-          <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5">
-            <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-            Serving Southwest Florida Since February 2025 · Owner-Operated · 5-Star Rated
+
+          {/* Free Diagnostic Badge */}
+          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 rounded-full px-5 py-2.5 text-sm font-bold text-amber-900 mb-5 shadow-sm">
+            <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+            Your AC restored today, or the diagnostic is on us.
+          </div>
+
+          <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5 ml-0 block">
+            <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline" />
+            Owner-Operated · 5-Star Rated · Licensed & Insured
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg">
@@ -136,7 +142,7 @@ const Index = () => {
             loading="eager"
             fetchPriority="high"
             decoding="async" />
-          
+
           {/* Owner Badge */}
           <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-primary text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
             Owner-Operated & On-Site
@@ -145,16 +151,25 @@ const Index = () => {
           <div className="absolute z-10 bottom-0 left-0 right-0 bg-white/70 backdrop-blur-xl border-t border-white/40 py-3 px-4">
             <div className="grid grid-cols-2 md:flex md:justify-center gap-3 md:gap-6">
               {[
-              { icon: BadgeCheck, label: "Licensed & Insured" },
-              { icon: Star, label: "5-Star Google Rating" },
-              { icon: Shield, label: "BBB Accredited" },
-              { icon: Clock, label: "24/7 Emergency Service" }].
-              map((badge) =>
-              <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
-                  <badge.icon className="w-4 h-4 text-primary shrink-0" />
+                { icon: BadgeCheck, label: "Licensed & Insured" },
+                { icon: Star, label: "5-Star Google Rating" },
+                { icon: Shield, label: "BBB Accredited", isBBB: true },
+                { icon: Clock, label: "24/7 Emergency Service" },
+              ].map((badge) => (
+                <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
+                  {badge.isBBB ? (
+                    <img
+                      src="https://www.bbb.org/TerminusContent/dist/img/bbb-logo-dtc.png"
+                      alt="BBB Accredited Business"
+                      className="h-5 w-auto"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <badge.icon className="w-4 h-4 text-primary shrink-0" />
+                  )}
                   {badge.label}
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </div>
@@ -211,7 +226,6 @@ const Index = () => {
         </div>
       </section>
 
-
       {/* 3. SERVICES GRID */}
       <section className="py-14 md:py-20 bg-background">
         <div className="container">
@@ -220,12 +234,12 @@ const Index = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">From routine maintenance to emergency repairs, AC Assurance provides comprehensive HVAC services for Southwest Florida homeowners and businesses.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((service) =>
-            <Link
-              key={service.slug}
-              to={`/${service.slug}`}
-              className="group frost-card p-6 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 transition-all">
-              
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                to={`/${service.slug}`}
+                className="group frost-card p-6 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 transition-all"
+              >
                 <service.icon className="w-8 h-8 text-primary mb-3" />
                 <h3 className="font-heading font-bold text-primary mb-1 group-hover:text-primary/80 transition-colors">{service.shortTitle}</h3>
                 <p className="text-sm text-muted-foreground line-clamp-2">{service.description}</p>
@@ -233,7 +247,7 @@ const Index = () => {
                   Learn more <ChevronRight className="w-4 h-4" />
                 </span>
               </Link>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -244,24 +258,22 @@ const Index = () => {
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-center mb-10 text-primary-foreground">Why Choose AC Assurance</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-            { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
-            { icon: DollarSign, title: "Transparent Pricing", desc: "Upfront quotes with no hidden fees. You know the cost before we start." },
-            { icon: Shield, title: "Licensed & Insured", desc: "Fully licensed (CAC1823832) and insured for your peace of mind." },
-            { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." }].
-            map((item) =>
-            <div key={item.title} className="text-center p-6">
+              { icon: Zap, title: "24/7 Emergency Response", desc: "AC emergencies don't wait — and neither do we. Call anytime, day or night." },
+              { icon: DollarSign, title: "Transparent Pricing", desc: "Upfront quotes with no hidden fees. You know the cost before we start." },
+              { icon: Shield, title: "Licensed & Insured", desc: "Fully licensed (CAC1823832) and insured for your peace of mind." },
+              { icon: Users, title: "Owner-Led Service", desc: "Hands-on ownership ensures quality work and personal accountability." },
+            ].map((item) => (
+              <div key={item.title} className="text-center p-6">
                 <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-4">
                   <item.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="font-heading font-bold text-lg mb-2 text-primary-foreground">{item.title}</h3>
                 <p className="text-sm text-primary-foreground/70">{item.desc}</p>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Old Trane section removed — moved to TR-1 above services grid */}
 
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
@@ -271,23 +283,23 @@ const Index = () => {
             <p className="text-muted-foreground max-w-xl mx-auto">Real installations and repairs completed by our team across Southwest Florida.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {workPhotos.map((photo) =>
-            <div key={photo.caption} className="bg-card border border-border rounded overflow-hidden shadow-sm">
+            {workPhotos.map((photo) => (
+              <div key={photo.caption} className="bg-card border border-border rounded overflow-hidden shadow-sm">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                  src={photo.src}
-                  alt={photo.caption}
-                  className="w-full h-full object-cover"
-                  width={600}
-                  height={450}
-                  loading="lazy" />
-                
+                    src={photo.src}
+                    alt={photo.caption}
+                    className="w-full h-full object-cover"
+                    width={600}
+                    height={450}
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-4">
                   <p className="text-sm font-medium text-foreground">{photo.caption}</p>
                 </div>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
@@ -307,19 +319,19 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
             {serviceAreas.map((area) => {
               const cls = `inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium border ${
-              area.primary ?
-              "bg-primary text-primary-foreground border-primary" :
-              "bg-card text-foreground border-border"}`;
-
-              return area.slug ?
-              <Link key={area.name} to={area.slug} className={`${cls} hover:opacity-90 transition-opacity`}>
+                area.primary
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-foreground border-border"
+              }`;
+              return area.slug ? (
+                <Link key={area.name} to={area.slug} className={`${cls} hover:opacity-90 transition-opacity`}>
                   <MapPin className="w-3.5 h-3.5" /> {area.name}
-                </Link> :
-
-              <span key={area.name} className={cls}>
+                </Link>
+              ) : (
+                <span key={area.name} className={cls}>
                   <MapPin className="w-3.5 h-3.5" /> {area.name}
-                </span>;
-
+                </span>
+              );
             })}
           </div>
         </div>
@@ -353,8 +365,8 @@ const Index = () => {
         </div>
       </section>
       <ScrollCallReminder />
-    </Layout>);
-
+    </Layout>
+  );
 };
 
 export default Index;

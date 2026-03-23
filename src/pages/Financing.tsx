@@ -29,6 +29,17 @@ const Financing = () => (
               A new air conditioning system is a significant investment. Financing through Synchrony allows qualified Cape Coral homeowners to spread the cost over time with monthly payments, rather than paying the full amount upfront.
             </p>
 
+            {/* Synchrony Logo */}
+            <div className="flex items-center gap-3 bg-muted/50 rounded-lg p-4 border border-border">
+              <img
+                src="https://www.synchrony.com/content/dam/synchrony/logos/synchrony-logo.png"
+                alt="Synchrony Financial"
+                className="h-8 w-auto"
+                loading="lazy"
+              />
+              <span className="text-sm text-muted-foreground">Financing provided by Synchrony Financial</span>
+            </div>
+
             <h3 className="text-xl font-heading font-bold mt-8">The Process</h3>
             <ol className="space-y-4">
               {[

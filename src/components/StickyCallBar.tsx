@@ -1,12 +1,24 @@
-import { Phone, FileText } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, CalendarDays } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PHONE_LINK } from "@/data/services";
 
 const StickyCallBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      setVisible(scrollPercent >= 0.15);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (pathname === "/thank-you") return null;
+  if (!visible) return null;
 
   const handleEstimate = () => {
     const el = document.getElementById("estimate-form");
@@ -31,8 +43,8 @@ const StickyCallBar = () => {
           onClick={handleEstimate}
           className="flex items-center justify-center gap-2 py-4 text-primary-foreground font-heading font-bold text-sm tracking-wide"
         >
-          <FileText className="w-5 h-5" />
-          Request Estimate
+          <CalendarDays className="w-5 h-5" />
+          Get a Free Quote
         </button>
       </div>
       {/* Safe area spacing for notched devices */}

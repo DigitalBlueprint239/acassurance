@@ -10,7 +10,7 @@ import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
 const About = () => (
   <Layout>
     <SEOHead
-      title="About AC Assurance | Licensed HVAC Pros Cape Coral & Fort Myers"
+      title="About AC Assurance | Owner-Operated HVAC in Cape Coral, FL"
       description="Learn about AC Assurance Cooling & Heating — licensed (CAC1823832), insured HVAC professionals serving Cape Coral, Fort Myers, and Southwest Florida."
     />
     <section className="section-navy py-12 md:py-16">
@@ -25,11 +25,14 @@ const About = () => (
     {/* Meet the Owner */}
     <section className="py-12 md:py-16 bg-muted/30">
       <div className="container max-w-4xl">
-        <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden" style={{ borderLeft: '4px solid hsl(var(--brand-teal))' }}>
+        <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
           <div className="p-6 md:p-8 flex flex-col sm:flex-row gap-6 items-start">
-            <div className="w-[200px] h-[200px] bg-muted rounded-lg flex items-center justify-center shrink-0">
-              <span className="text-4xl font-heading font-extrabold text-muted-foreground/40">JR</span>
-            </div>
+            <img
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/97300450/QUnJVRYtzoSWsIJs.JPG"
+              alt="Jason Rizzo, Owner & Founder of AC Assurance Cooling & Heating"
+              className="w-[200px] h-[200px] rounded-lg object-cover shrink-0"
+              loading="lazy"
+            />
             <div>
               <h2 className="text-2xl font-heading font-bold mb-3">Meet Jason Rizzo, Owner &amp; Founder</h2>
               <p className="text-foreground leading-relaxed">
