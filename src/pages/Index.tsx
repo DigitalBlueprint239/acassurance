@@ -14,6 +14,7 @@ import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import heroTeam from "@/assets/hero-team-edited.jpg";
 import traneLogo from "@/assets/trane-logo.png";
+import bbbLogo from "@/assets/bbb-accredited.png";
 import workCondenser from "@/assets/work/condenser-coil.png";
 import workMiniSplitOutdoor from "@/assets/work/mini-split-outdoor.png";
 import workDuctless from "@/assets/work/ductless-system.png";
