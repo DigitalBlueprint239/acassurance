@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { PHONE, PHONE_LINK, EMAIL, LICENSE, COMPANY, serviceAreas } from "@/data/services";
 import logo from "@/assets/logo.png";
+import bbbLogo from "@/assets/bbb-accredited.png";
 
 const Footer = () => (
   <footer className="section-navy text-primary-foreground">
