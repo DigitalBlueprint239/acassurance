@@ -162,7 +162,7 @@ const Index = () => {
                     <img
                       src={bbbLogo}
                       alt="BBB Accredited Business"
-                      className="h-6 w-auto"
+                      className="h-8 w-auto"
                       width={24}
                       height={24}
                     />

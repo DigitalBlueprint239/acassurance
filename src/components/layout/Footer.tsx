@@ -18,7 +18,7 @@ const Footer = () => (
             Independent Trane Dealer | <span style={{ color: '#EF3C13' }}>It's Hard To Stop A Trane®</span>
           </span>
           <div className="flex items-center gap-2 mt-3">
-            <img src={bbbLogo} alt="BBB Accredited Business" className="h-8 w-auto brightness-0 invert opacity-70" width={32} height={32} />
+            <img src={bbbLogo} alt="BBB Accredited Business" className="h-10 w-auto brightness-0 invert opacity-70" width={40} height={40} />
             <span className="text-xs opacity-60">BBB Accredited Business</span>
           </div>
         </div>
