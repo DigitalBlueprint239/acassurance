@@ -56,17 +56,13 @@ const Footer = () => (
         <div>
           <h3 className="font-heading font-bold text-sm mb-4 uppercase tracking-wider text-primary-foreground">Service Areas</h3>
           <div className="space-y-2 text-sm">
-            {serviceAreas.map((area) => (
-              area.slug ? (
-                <Link key={area.name} to={area.slug} className={`block hover:opacity-100 transition-opacity ${area.primary ? "font-semibold opacity-100" : "opacity-80"}`}>
-                  {area.name}{area.primary ? " ★" : ""}
-                </Link>
-              ) : (
-                <div key={area.name} className={`opacity-80 ${area.primary ? "font-semibold opacity-100" : ""}`}>
-                  {area.name}{area.primary ? " ★" : ""}
-                </div>
-              )
-            ))}
+            <Link to="/ac-repair-naples" className="block font-semibold opacity-100 hover:opacity-100 transition-opacity">Naples ★</Link>
+            <Link to="/ac-repair-fort-myers" className="block opacity-80 hover:opacity-100 transition-opacity">Fort Myers</Link>
+            <Link to="/ac-repair-cape-coral-fl" className="block opacity-80 hover:opacity-100 transition-opacity">Cape Coral</Link>
+            <Link to="/ac-repair-bonita-springs" className="block opacity-80 hover:opacity-100 transition-opacity">Bonita Springs</Link>
+            <Link to="/ac-repair-estero" className="block opacity-80 hover:opacity-100 transition-opacity">Estero</Link>
+            <Link to="/ac-repair-lehigh-acres" className="block opacity-80 hover:opacity-100 transition-opacity">Lehigh Acres</Link>
+            <Link to="/service-areas" className="block opacity-80 hover:opacity-100 transition-opacity">All Service Areas →</Link>
           </div>
         </div>
       </div>

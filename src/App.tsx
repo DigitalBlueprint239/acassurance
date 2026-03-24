@@ -76,6 +76,13 @@ const App = () => (
             <Route path="/duct-cleaning" element={<DuctCleaningPage />} />
             <Route path="/indoor-air-quality" element={<IndoorAirQualityPage />} />
             <Route path="/commercial-refrigeration" element={<CommercialRefrigPage />} />
+            <Route path="/emergency-ac-repair-now" element={<EmergencyNow />} />
+            <Route path="/ac-repair-fort-myers" element={<AcRepairFortMyers />} />
+            <Route path="/ac-repair-cape-coral-fl" element={<AcRepairCapeCoral2 />} />
+            <Route path="/ac-repair-naples" element={<AcRepairNaples />} />
+            <Route path="/ac-repair-bonita-springs" element={<AcRepairBonitaSprings />} />
+            <Route path="/ac-repair-estero" element={<AcRepairEstero />} />
+            <Route path="/ac-repair-lehigh-acres" element={<AcRepairLehighAcres />} />
             {localPages.map((p) => (
               <Route key={p.slug} path={`/${p.slug}`} element={<LocalLandingPage />} />
             ))}

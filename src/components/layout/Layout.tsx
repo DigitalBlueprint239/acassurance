@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import StickyCallBar from "@/components/StickyCallBar";
 import FloatingServiceButton from "@/components/FloatingServiceButton";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,6 +18,7 @@ const Layout = ({ children }: LayoutProps) => (
     <Footer />
     <StickyCallBar />
     <FloatingServiceButton />
+    <ExitIntentPopup />
   </div>
 );
 

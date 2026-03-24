@@ -278,6 +278,8 @@ const Index = () => {
         </div>
       </section>
 
+      <WhyDifferent />
+
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
         <div className="container">
