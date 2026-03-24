@@ -25,7 +25,7 @@ const reviews: Review[] = [
   },
   {
     text: "Best HVAC company we've used since moving to Florida. They diagnosed an issue two other companies missed. Honest and knowledgeable.",
-    name: "Robert",
+    name: "Local Homeowner",
     city: "Naples",
     rating: 5,
   },
