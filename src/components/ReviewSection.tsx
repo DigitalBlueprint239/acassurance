@@ -19,7 +19,7 @@ const reviews: Review[] = [
   },
   {
     text: "Installed a new Trane system for our home. The crew was on time, clean, and explained everything clearly. Our electric bill dropped noticeably.",
-    name: "Jennifer",
+    name: "Local Homeowner",
     city: "Fort Myers",
     rating: 5,
   },
