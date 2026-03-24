@@ -52,8 +52,8 @@ export default function ServicePageShell({
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h1>
-          <p className="mt-4 max-w-xl text-lg text-gray-200">{subtitle}</p>
+          <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl">{title}</h1>
+          <p className="mt-4 max-w-xl text-lg text-primary-foreground/80">{subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/contact"

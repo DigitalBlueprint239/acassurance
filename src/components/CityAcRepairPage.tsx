@@ -33,7 +33,7 @@ const CityAcRepairPage = ({ city, metaTitle, metaDescription, h1, intro, localIs
           <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold">
             <a href="#city-quote">Get a Free Quote <ArrowRight className="w-4 h-4 ml-2" /></a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+          <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
             <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" /> {PHONE}</a>
           </Button>
         </div>

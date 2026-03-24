@@ -36,7 +36,7 @@ const ServicePage = () => {
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 <a href="#estimate-form">Request Estimate</a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE}</a>
               </Button>
             </div>
