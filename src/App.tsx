@@ -34,6 +34,13 @@ const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
 const DuctCleaningPage = lazy(() => import("./pages/DuctCleaningPage"));
 const IndoorAirQualityPage = lazy(() => import("./pages/IndoorAirQualityPage"));
 const CommercialRefrigPage = lazy(() => import("./pages/CommercialRefrigPage"));
+const EmergencyNow = lazy(() => import("./pages/EmergencyNow"));
+const AcRepairFortMyers = lazy(() => import("./pages/AcRepairFortMyers"));
+const AcRepairCapeCoral2 = lazy(() => import("./pages/AcRepairCapeCoral2"));
+const AcRepairNaples = lazy(() => import("./pages/AcRepairNaples"));
+const AcRepairBonitaSprings = lazy(() => import("./pages/AcRepairBonitaSprings"));
+const AcRepairEstero = lazy(() => import("./pages/AcRepairEstero"));
+const AcRepairLehighAcres = lazy(() => import("./pages/AcRepairLehighAcres"));
 
 const serviceSlugs = services.map((s) => s.slug);
 
@@ -76,6 +83,13 @@ const App = () => (
             <Route path="/duct-cleaning" element={<DuctCleaningPage />} />
             <Route path="/indoor-air-quality" element={<IndoorAirQualityPage />} />
             <Route path="/commercial-refrigeration" element={<CommercialRefrigPage />} />
+            <Route path="/emergency-ac-repair-now" element={<EmergencyNow />} />
+            <Route path="/ac-repair-fort-myers" element={<AcRepairFortMyers />} />
+            <Route path="/ac-repair-cape-coral-fl" element={<AcRepairCapeCoral2 />} />
+            <Route path="/ac-repair-naples" element={<AcRepairNaples />} />
+            <Route path="/ac-repair-bonita-springs" element={<AcRepairBonitaSprings />} />
+            <Route path="/ac-repair-estero" element={<AcRepairEstero />} />
+            <Route path="/ac-repair-lehigh-acres" element={<AcRepairLehighAcres />} />
             {localPages.map((p) => (
               <Route key={p.slug} path={`/${p.slug}`} element={<LocalLandingPage />} />
             ))}
