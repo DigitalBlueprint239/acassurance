@@ -14,7 +14,7 @@ interface CityPageProps {
   intro: string;
   localIssues: { title: string; description: string }[];
   mapQuery: string;
-  schema?: object[];
+  schema?: Record<string, unknown>[];
 }
 
 const CityAcRepairPage = ({ city, metaTitle, metaDescription, h1, intro, localIssues, mapQuery, schema }: CityPageProps) => (
