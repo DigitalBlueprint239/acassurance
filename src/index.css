@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer base {
   :root {
     /* AC Assurance Brand — Deep Navy / White */
