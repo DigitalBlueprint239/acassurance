@@ -101,10 +101,6 @@ const Index = () => {
           </p>
 
 
-          <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5 ml-0 block">
-            <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline" />
-            Owner-Operated · 5-Star Rated · Licensed & Insured
-          </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
             <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg">
               <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
