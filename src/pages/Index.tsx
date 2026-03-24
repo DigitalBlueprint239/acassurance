@@ -102,11 +102,6 @@ const Index = () => {
             SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
           </p>
 
-          {/* Free Diagnostic Badge */}
-          <div className="inline-flex items-center gap-2 bg-amber-100 border border-amber-300 rounded-full px-5 py-2.5 text-sm font-bold text-amber-900 mb-5 shadow-sm">
-            <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
-            Your AC restored today, or the diagnostic is on us.
-          </div>
 
           <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 rounded-full px-4 py-2 text-sm text-primary font-medium mb-5 ml-0 block">
             <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline" />
