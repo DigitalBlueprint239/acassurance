@@ -13,6 +13,8 @@ import SWFLServiceMap from "@/components/SWFLServiceMap";
 import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import WhyDifferent from "@/components/WhyDifferent";
+import SWFLClimateSection from "@/components/SWFLClimateSection";
+import HeroReviewCards from "@/components/HeroReviewCards";
 import heroTeam from "@/assets/hero-team-edited.jpg";
 import traneLogo from "@/assets/trane-logo.png";
 import bbbLogo from "@/assets/bbb-accredited.png";
@@ -24,12 +26,12 @@ import workAirHandler from "@/assets/work/air-handler.png";
 import workGarageDuctless from "@/assets/work/garage-ductless.png";
 
 const workPhotos = [
-  { src: workCondenser, caption: "New Trane Condenser Install — Cape Coral" },
-  { src: workMiniSplitOutdoor, caption: "Outdoor Mini-Split Unit Placement" },
-  { src: workDuctless, caption: "Ductless System Setup in Florida Room" },
-  { src: workGarageMiniSplit, caption: "Ductless Mini-Split in Garage" },
-  { src: workAirHandler, caption: "Attic Air Handler Replacement" },
-  { src: workGarageDuctless, caption: "Garage Cooling Solution — Fort Myers" },
+  { src: workCondenser, alt: "New Trane condenser install in Cape Coral, FL", caption: "New Trane Condenser Install — Cape Coral" },
+  { src: workMiniSplitOutdoor, alt: "Outdoor mini-split unit placement in Fort Myers, FL", caption: "Outdoor Mini-Split Unit — Fort Myers" },
+  { src: workDuctless, alt: "Ductless AC system installation in Florida room in Naples, FL", caption: "Ductless System in Florida Room — Naples" },
+  { src: workGarageMiniSplit, alt: "Ductless mini-split cooling system installed in garage in Cape Coral, FL", caption: "Garage Mini-Split Install — Cape Coral" },
+  { src: workAirHandler, alt: "Attic air handler replacement in Bonita Springs, FL", caption: "Attic Air Handler Replacement — Bonita Springs" },
+  { src: workGarageDuctless, alt: "Garage ductless cooling solution in Fort Myers, FL", caption: "Garage Cooling Solution — Fort Myers" },
 ];
 
 const Index = () => {
@@ -131,6 +133,9 @@ const Index = () => {
             <span className="animate-pulse-soft">🔥</span>
             {urgencyText}
           </div>
+
+          {/* Hero Review Cards */}
+          <HeroReviewCards />
         </div>
 
         {/* Full-Width Team Photo Card */}
@@ -279,6 +284,7 @@ const Index = () => {
       </section>
 
       <WhyDifferent />
+      <SWFLClimateSection />
 
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
@@ -293,7 +299,7 @@ const Index = () => {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={photo.src}
-                    alt={photo.caption}
+                    alt={photo.alt}
                     className="w-full h-full object-cover"
                     width={600}
                     height={450}
