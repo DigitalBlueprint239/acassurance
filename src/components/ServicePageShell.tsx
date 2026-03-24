@@ -153,7 +153,7 @@ export default function ServicePageShell({
       )}
 
       <section className="bg-primary py-12 px-4 text-center">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to Schedule Service?</h2>
+        <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl">Ready to Schedule Service?</h2>
         <p className="mt-2 text-primary-foreground/80">Serving Naples, Fort Myers, Cape Coral and all of Southwest Florida.</p>
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
           <Link
