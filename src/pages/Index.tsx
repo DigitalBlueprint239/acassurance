@@ -299,7 +299,7 @@ const Index = () => {
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={photo.src}
-                    alt={photo.caption}
+                    alt={photo.alt}
                     className="w-full h-full object-cover"
                     width={600}
                     height={450}
