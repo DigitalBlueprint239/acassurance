@@ -6,8 +6,6 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { services, serviceAreas, PHONE, PHONE_LINK } from "@/data/services";
-import TrustBadgeStrip from "@/components/TrustBadgeStrip";
-import TrustBar from "@/components/TrustBar";
 import FeaturedReviews from "@/components/FeaturedReviews";
 import SWFLServiceMap from "@/components/SWFLServiceMap";
 import EmergencyCallout from "@/components/EmergencyCallout";
