@@ -77,12 +77,7 @@ const Index = () => {
               "addressCountry": "US"
             },
             "areaServed": ["Naples", "Fort Myers", "Cape Coral", "Bonita Springs", "Estero", "Lehigh Acres", "North Fort Myers"],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5",
-              "bestRating": "5",
-              "ratingCount": "50"
-            }
+            "knowsAbout": ["AC Repair", "HVAC Installation", "Duct Cleaning", "Emergency AC Service", "Trane Systems"]
           }
         ]}
       />
