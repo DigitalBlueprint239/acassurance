@@ -8,7 +8,7 @@ const heroReviews = [
   },
   {
     text: "Best HVAC company in Southwest Florida. Honest pricing, no upsells, and the job was done right.",
-    name: "Mike T.",
+    name: "Verified Homeowner",
     location: "Fort Myers",
   },
   {
