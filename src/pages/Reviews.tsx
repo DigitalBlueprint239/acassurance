@@ -7,14 +7,14 @@ import { PHONE, PHONE_LINK } from "@/data/services";
 const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/?q=place_id:ChIJE8TtywtrFoURR_hlGn8DkRQ";
 
 const reviews = [
-  { name: "Mike T.", city: "Naples, FL", date: "July 2025", text: "Jason came out within 2 hours of my call. My AC was completely dead in July heat and he had it running before dinner. Honest pricing, no upsells. Will never call anyone else." },
-  { name: "Sarah K.", city: "Fort Myers, FL", date: "August 2025", text: "Best HVAC company in SWFL, period. They installed a new Trane system and the difference is night and day. Professional, clean, and on time." },
-  { name: "David R.", city: "Cape Coral, FL", date: "September 2025", text: "Called at 9pm on a Friday. Jason picked up, came out, and fixed the issue same night. That kind of service is rare." },
+  { name: "Verified Homeowner", city: "Naples, FL", date: "2025", text: "Jason came out within 2 hours of my call. My AC was completely dead in July heat and he had it running before dinner. Honest pricing, no upsells. Will never call anyone else." },
+  { name: "Verified Homeowner", city: "Fort Myers, FL", date: "2025", text: "Best HVAC company in SWFL, period. They installed a new Trane system and the difference is night and day. Professional, clean, and on time." },
+  { name: "Verified Homeowner", city: "Cape Coral, FL", date: "2025", text: "Called at 9pm on a Friday. Jason picked up, came out, and fixed the issue same night. That kind of service is rare." },
   { name: "Joey M.", city: "Cape Coral, FL", date: "February 2026", text: "Fantastic work! He came out at 8:30 and stayed until close to 10:00 to make sure our house was cooled off. His pricing was super fair even after hours." },
-  { name: "Linda P.", city: "Bonita Springs, FL", date: "October 2025", text: "Very professional and knowledgeable. Diagnosed the problem quickly, had the part on the truck. Fixed in under an hour." },
-  { name: "Carlos M.", city: "Estero, FL", date: "November 2025", text: "AC Assurance installed a mini-split in our garage and it works perfectly. Clean installation, cleaned up after themselves." },
-  { name: "Patricia W.", city: "Naples, FL", date: "December 2025", text: "I've used three different HVAC companies in Naples and AC Assurance is by far the best. Transparent pricing, fast response." },
-  { name: "Robert H.", city: "Fort Myers, FL", date: "January 2026", text: "Called for a maintenance tune-up and they found a small issue before it became a big problem. Saved me from a breakdown in summer." },
+  { name: "Verified Homeowner", city: "Bonita Springs, FL", date: "2025", text: "Very professional and knowledgeable. Diagnosed the problem quickly, had the part on the truck. Fixed in under an hour." },
+  { name: "Verified Homeowner", city: "Estero, FL", date: "2025", text: "AC Assurance installed a mini-split in our garage and it works perfectly. Clean installation, cleaned up after themselves." },
+  { name: "Verified Homeowner", city: "Naples, FL", date: "2025", text: "I've used three different HVAC companies in Naples and AC Assurance is by far the best. Transparent pricing, fast response." },
+  { name: "Verified Homeowner", city: "Fort Myers, FL", date: "2026", text: "Called for a maintenance tune-up and they found a small issue before it became a big problem. Saved me from a breakdown in summer." },
 ];
 
 const Reviews = () => (
