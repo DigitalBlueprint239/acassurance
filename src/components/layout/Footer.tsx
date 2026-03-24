@@ -17,12 +17,12 @@ const Footer = () => (
           <span className="text-xs opacity-80 mt-2 inline-block bg-primary-foreground/10 rounded-full px-3 py-1">
             Independent Trane Dealer | <span style={{ color: '#EF3C13' }}>It's Hard To Stop A Trane®</span>
           </span>
-          <div className="flex items-center gap-2 mt-3">
-            <div className="bg-white/90 rounded-md p-1.5 inline-flex">
-              <img src={bbbLogo} alt="BBB Accredited Business" className="h-12 w-auto" width={48} height={48} />
+          <a href="https://www.bbb.org/us/fl/cape-coral/profile/air-conditioning-contractors/ac-assurance-llc-0653-90120818" target="_blank" rel="noopener noreferrer" className="inline-flex flex-col items-center gap-1.5 mt-3">
+            <div className="bg-white rounded-lg p-2.5 shadow-sm inline-flex">
+              <img src={bbbLogo} alt="BBB Accredited Business" className="h-14 w-auto" />
             </div>
-            <span className="text-xs opacity-70">BBB Accredited Business</span>
-          </div>
+            <span className="text-sm font-semibold opacity-90">BBB Accredited Business</span>
+          </a>
         </div>
 
         <div>
