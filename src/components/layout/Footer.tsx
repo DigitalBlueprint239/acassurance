@@ -10,7 +10,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt="AC Assurance" className="h-10 w-auto brightness-0 invert" />
+            <img src={logo} alt="AC Assurance Cooling and Heating" className="h-14 w-auto" />
           </div>
           <p className="text-sm opacity-80 mb-4">Professional HVAC services for Fort Myers, Cape Coral, and Southwest Florida. Licensed, reliable, and committed to your comfort.</p>
           <p className="text-xs opacity-60">License #{LICENSE}</p>
