@@ -133,6 +133,9 @@ const Index = () => {
             <span className="animate-pulse-soft">🔥</span>
             {urgencyText}
           </div>
+
+          {/* Hero Review Cards */}
+          <HeroReviewCards />
         </div>
 
         {/* Full-Width Team Photo Card */}
