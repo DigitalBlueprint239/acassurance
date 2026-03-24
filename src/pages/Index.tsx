@@ -26,12 +26,12 @@ import workAirHandler from "@/assets/work/air-handler.png";
 import workGarageDuctless from "@/assets/work/garage-ductless.png";
 
 const workPhotos = [
-  { src: workCondenser, caption: "New Trane Condenser Install — Cape Coral" },
-  { src: workMiniSplitOutdoor, caption: "Outdoor Mini-Split Unit Placement" },
-  { src: workDuctless, caption: "Ductless System Setup in Florida Room" },
-  { src: workGarageMiniSplit, caption: "Ductless Mini-Split in Garage" },
-  { src: workAirHandler, caption: "Attic Air Handler Replacement" },
-  { src: workGarageDuctless, caption: "Garage Cooling Solution — Fort Myers" },
+  { src: workCondenser, alt: "New Trane condenser install in Cape Coral, FL", caption: "New Trane Condenser Install — Cape Coral" },
+  { src: workMiniSplitOutdoor, alt: "Outdoor mini-split unit placement in Fort Myers, FL", caption: "Outdoor Mini-Split Unit — Fort Myers" },
+  { src: workDuctless, alt: "Ductless AC system installation in Florida room in Naples, FL", caption: "Ductless System in Florida Room — Naples" },
+  { src: workGarageMiniSplit, alt: "Ductless mini-split cooling system installed in garage in Cape Coral, FL", caption: "Garage Mini-Split Install — Cape Coral" },
+  { src: workAirHandler, alt: "Attic air handler replacement in Bonita Springs, FL", caption: "Attic Air Handler Replacement — Bonita Springs" },
+  { src: workGarageDuctless, alt: "Garage ductless cooling solution in Fort Myers, FL", caption: "Garage Cooling Solution — Fort Myers" },
 ];
 
 const Index = () => {
