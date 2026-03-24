@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { PHONE, PHONE_LINK, EMAIL, LICENSE, COMPANY, serviceAreas } from "@/data/services";
+import { PHONE, PHONE_LINK, EMAIL, LICENSE, COMPANY } from "@/data/services";
 import logo from "@/assets/ac-assurance-logo.png";
 import bbbLogo from "@/assets/bbb-accredited.png";
 
@@ -10,16 +10,16 @@ const Footer = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <img src={logo} alt="AC Assurance Cooling and Heating" className="h-14 w-auto" />
+            <img src={logo} alt="AC Assurance Cooling and Heating" className="h-16 w-auto" />
           </div>
           <p className="text-sm opacity-80 mb-4">Professional HVAC services for Fort Myers, Cape Coral, and Southwest Florida. Licensed, reliable, and committed to your comfort.</p>
           <p className="text-xs opacity-60">License #{LICENSE}</p>
-          <span className="text-xs opacity-50 mt-2 inline-block bg-primary-foreground/10 rounded-full px-3 py-1">
+          <span className="text-xs opacity-80 mt-2 inline-block bg-primary-foreground/10 rounded-full px-3 py-1">
             Independent Trane Dealer | <span style={{ color: '#EF3C13' }}>It's Hard To Stop A Trane®</span>
           </span>
           <div className="flex items-center gap-2 mt-3">
-            <img src={bbbLogo} alt="BBB Accredited Business" className="h-10 w-auto brightness-0 invert opacity-70" width={40} height={40} />
-            <span className="text-xs opacity-60">BBB Accredited Business</span>
+            <img src={bbbLogo} alt="BBB Accredited Business" className="h-10 w-auto opacity-80" width={40} height={40} />
+            <span className="text-xs opacity-70">BBB Accredited Business</span>
           </div>
         </div>
 
@@ -74,16 +74,10 @@ const Footer = () => (
         <div className="flex items-center gap-3">
           <Link to="/privacy-policy" className="hover:opacity-100 transition-opacity">Privacy Policy</Link>
           <span>·</span>
-          <p>Serving Naples, Fort Myers, Cape Coral &amp; Southwest Florida</p>
+          <span>Florida License: {LICENSE}</span>
+          <span>·</span>
+          <span>Independent Trane Dealer</span>
         </div>
-      </div>
-    </div>
-
-    <div className="bg-gray-900 py-3">
-      <div className="container text-center">
-        <p className="text-xs text-gray-400">
-          Florida State Certified License: CAC1823832 | Proudly serving homeowners across Collier and Lee Counties with integrity.
-        </p>
       </div>
     </div>
   </footer>

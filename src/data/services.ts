@@ -198,9 +198,9 @@ export const serviceAreas = [
   { name: "Naples", primary: true, slug: "/ac-repair-naples" },
   { name: "Fort Myers", primary: true, slug: "/ac-repair-fort-myers" },
   { name: "Cape Coral", primary: true, slug: "/ac-repair-cape-coral" },
-  { name: "Bonita Springs", primary: false, slug: "" },
-  { name: "Estero", primary: false, slug: "" },
-  { name: "Lehigh Acres", primary: false, slug: "" },
+  { name: "Bonita Springs", primary: false, slug: "/ac-repair-bonita-springs" },
+  { name: "Estero", primary: false, slug: "/ac-repair-estero" },
+  { name: "Lehigh Acres", primary: false, slug: "/ac-repair-lehigh-acres" },
   { name: "North Fort Myers", primary: false, slug: "" },
 ];
 
