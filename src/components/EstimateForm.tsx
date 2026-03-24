@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface EstimateFormProps {
   showMessage?: boolean;
@@ -32,8 +33,6 @@ const hearAboutUsOptions = [
   "Other",
 ];
 
-const WEBHOOK_URL = import.meta.env.VITE_LEAD_WEBHOOK_URL as string | undefined;
-
 const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website" }: EstimateFormProps) => {
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -55,29 +54,14 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
       hearAboutUs: (formData.get("hear_about_us") as string) || "",
       leadSource,
       pagePath: window.location.pathname,
-      timestamp: new Date().toISOString(),
     };
 
-    if (!WEBHOOK_URL) {
-      console.warn("VITE_LEAD_WEBHOOK_URL not configured. Lead payload:", payload);
-      toast({
-        title: "Request Submitted",
-        description: "Thank you! We'll be in touch shortly.",
-      });
-      form.reset();
-      setLoading(false);
-      navigate("/thank-you");
-      return;
-    }
-
     try {
-      const res = await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+      const { data, error } = await supabase.functions.invoke("submit-lead", {
+        body: payload,
       });
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (error) throw error;
 
       toast({
         title: "Request Submitted",
