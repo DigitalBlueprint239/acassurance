@@ -118,8 +118,6 @@ const Index = () => {
             {urgencyText}
           </div>
 
-          {/* Hero Review Cards */}
-          <HeroReviewCards />
         </div>
 
         {/* Full-Width Team Photo Card */}
