@@ -12,7 +12,7 @@ import EmergencyCallout from "@/components/EmergencyCallout";
 import ScrollCallReminder from "@/components/ScrollCallReminder";
 import WhyDifferent from "@/components/WhyDifferent";
 import SWFLClimateSection from "@/components/SWFLClimateSection";
-import HeroReviewCards from "@/components/HeroReviewCards";
+
 import heroTeam from "@/assets/hero-team-edited.jpg";
 import traneLogo from "@/assets/trane-logo.png";
 import bbbLogo from "@/assets/bbb-accredited.png";

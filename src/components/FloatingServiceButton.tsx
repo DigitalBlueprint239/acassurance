@@ -10,7 +10,7 @@ const FloatingServiceButton = () => {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-20 md:bottom-6 right-4 z-40 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all flex items-center justify-center"
+        className="hidden md:flex fixed bottom-6 right-4 z-40 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-lg hover:shadow-xl hover:bg-accent/90 transition-all items-center justify-center"
         aria-label="Request Service"
       >
         <MessageSquare className="w-6 h-6" />
