@@ -191,38 +191,6 @@ const Index = () => {
         </div>
       </section>
 
-      <TrustBar />
-      <TrustBadgeStrip />
-
-      {/* TRANE INDEPENDENT DEALER */}
-      <section className="py-10 md:py-14 bg-background">
-        <div className="container max-w-4xl">
-          <div className="bg-white border border-border rounded-lg shadow-sm overflow-hidden flex flex-col md:flex-row" style={{ borderLeft: '4px solid #EF3C13' }}>
-            <div className="flex items-center justify-center px-8 py-6 md:py-0 md:border-r border-border bg-muted/30">
-              <img src={traneLogo} alt="Trane - It's Hard To Stop A Trane®" className="w-[120px] h-auto" />
-            </div>
-            <div className="px-6 py-6 md:px-8 flex-1">
-              <h2 className="font-heading font-bold text-lg md:text-xl mb-2 text-primary">Proud Independent Trane Dealer</h2>
-              <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
-                AC Assurance is an authorized independent dealer of Trane heating and cooling systems — engineered for durability and performance in Southwest Florida's demanding climate.
-              </p>
-              <p className="text-sm italic text-muted-foreground mb-4">It's Hard To Stop A Trane®</p>
-              <div className="flex flex-wrap gap-3">
-                <Button asChild size="sm" style={{ backgroundColor: '#EF3C13' }} className="text-white hover:opacity-90">
-                  <Link to="/trane-products">View Trane Products <ArrowRight className="w-4 h-4 ml-1" /></Link>
-                </Button>
-                <Button asChild size="sm" variant="outline">
-                  <Link to="/trane-air-conditioners">Trane Air Conditioners</Link>
-                </Button>
-                <Button asChild size="sm" variant="outline">
-                  <Link to="/trane-heat-pumps">Trane Heat Pumps</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 3. SERVICES GRID */}
       <section className="py-14 md:py-20 bg-background">
         <div className="container">
