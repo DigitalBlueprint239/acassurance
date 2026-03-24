@@ -6,17 +6,6 @@ import { PHONE, PHONE_LINK } from "@/data/services";
 
 const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/?q=place_id:ChIJE8TtywtrFoURR_hlGn8DkRQ";
 
-const reviews = [
-  { name: "Verified Homeowner", city: "Naples, FL", date: "2025", text: "Jason came out within 2 hours of my call. My AC was completely dead in July heat and he had it running before dinner. Honest pricing, no upsells. Will never call anyone else." },
-  { name: "Verified Homeowner", city: "Fort Myers, FL", date: "2025", text: "Best HVAC company in SWFL, period. They installed a new Trane system and the difference is night and day. Professional, clean, and on time." },
-  { name: "Verified Homeowner", city: "Cape Coral, FL", date: "2025", text: "Called at 9pm on a Friday. Jason picked up, came out, and fixed the issue same night. That kind of service is rare." },
-  { name: "Joey M.", city: "Cape Coral, FL", date: "February 2026", text: "Fantastic work! He came out at 8:30 and stayed until close to 10:00 to make sure our house was cooled off. His pricing was super fair even after hours." },
-  { name: "Verified Homeowner", city: "Bonita Springs, FL", date: "2025", text: "Very professional and knowledgeable. Diagnosed the problem quickly, had the part on the truck. Fixed in under an hour." },
-  { name: "Verified Homeowner", city: "Estero, FL", date: "2025", text: "AC Assurance installed a mini-split in our garage and it works perfectly. Clean installation, cleaned up after themselves." },
-  { name: "Verified Homeowner", city: "Naples, FL", date: "2025", text: "I've used three different HVAC companies in Naples and AC Assurance is by far the best. Transparent pricing, fast response." },
-  { name: "Verified Homeowner", city: "Fort Myers, FL", date: "2026", text: "Called for a maintenance tune-up and they found a small issue before it became a big problem. Saved me from a breakdown in summer." },
-];
-
 const Reviews = () => (
   <Layout>
     <SEOHead
@@ -50,24 +39,10 @@ const Reviews = () => (
       </div>
     </section>
 
-    {/* Review Cards */}
+    {/* Elfsight Google Reviews Widget */}
     <section className="py-12 md:py-16 bg-background">
       <div className="container max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {reviews.map((review) => (
-            <div key={review.name} className="bg-card border border-border rounded-lg p-6">
-              <div className="flex gap-1 mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground leading-relaxed mb-4">"{review.text}"</p>
-              <div className="text-xs text-muted-foreground">
-                <span className="font-semibold text-foreground">{review.name}</span> · {review.city} · {review.date}
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className="elfsight-app-6797d54a-9e55-4e28-ae17-97549347a240" data-elfsight-app-lazy></div>
       </div>
     </section>
 
