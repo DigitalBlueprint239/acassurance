@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 const heroReviews = [
   {
     text: "Jason was incredibly professional and fixed our AC the same day we called. Highly recommend!",
-    name: "Sarah M.",
+    name: "Verified Homeowner",
     location: "Cape Coral",
   },
   {
