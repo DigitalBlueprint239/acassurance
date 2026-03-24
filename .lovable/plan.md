@@ -1,72 +1,70 @@
 
 
-# Comprehensive 10/10 Polish: Remaining Issues
+# Connect EstimateForm to a Real Backend
 
-## 1. Header Logo Fix
-**Problem**: The logo (`h-12 md:h-14`) is too small and barely readable in its white container.
-**Fix**: In `Header.tsx`, increase logo to `h-14 md:h-16`. Also check if `logo-full.png` or `ac-assurance-logo.png` is a wider/more readable wordmark and use that instead if so. Remove the cramped `px-2 py-1` and use `px-3 py-2` for better breathing room.
+## Current State
+- The `EstimateForm` posts to `VITE_LEAD_WEBHOOK_URL` which is not set
+- When unset, it silently logs to console and redirects to /thank-you (looks like it worked, but no lead is captured)
+- No Supabase is connected to this project
+- Lovable Cloud is enabled (LOVABLE_API_KEY exists)
 
-## 2. Remove Remaining Content Redundancy
-**Problem**: After the previous consolidation, the homepage still has: TopBar credentials → Header license text → Hero trust pill → Hero trust ribbon → Stats bar. That's 5 trust signals before services.
-**Fix**: 
-- Remove the hero trust pill ("Owner-Operated · 5-Star Rated · Licensed & Insured" — line 104-107) since the stats bar and trust ribbon already say this
-- This brings it down to: TopBar → Header license micro-text → Hero review cards → Trust ribbon → Stats bar — a more natural flow
+## What We Need
+1. **Supabase database** to store every lead permanently
+2. **Edge Function** to receive the form submission, store it, and send an email notification to `service@acassurancefl.com`
+3. **Update EstimateForm** to call the edge function instead of a webhook
 
-## 3. Review Attribution Transparency
-**Problem**: HeroReviewCards and ReviewSection contain AI-generated review *text* attributed to "Verified Homeowner" — the quotes themselves are fabricated.
-**Fix**: 
-- Replace `HeroReviewCards` on the homepage with the Elfsight widget (a smaller instance), OR remove HeroReviewCards entirely and let the FeaturedReviews carousel (which uses confirmed real Google reviews) serve as social proof
-- Remove ReviewSection component usage from any pages — it contains fabricated quotes. The Elfsight widget on /reviews and FeaturedReviews carousel (real reviews) are sufficient
-- **Recommendation**: Remove HeroReviewCards from homepage hero. The real FeaturedReviews carousel lower on the page is more trustworthy.
+## Plan
 
-## 4. Mobile Touch Target Conflicts
-**Problem**: `FloatingServiceButton` sits at `bottom-20 md:bottom-6 right-4` which overlaps with `StickyCallBar` on mobile.
-**Fix**: 
-- Hide `FloatingServiceButton` on mobile entirely (`hidden md:flex`) since `StickyCallBar` already provides mobile CTA
-- This eliminates the overlap completely
+### Step 1: Enable Supabase via Lovable Cloud
+- Connect the project to Supabase (Lovable Cloud spins this up automatically)
+- This gives us a database + edge functions without needing an external account
 
-## 5. Elfsight Script — Load Only on /reviews
-**Problem**: `<script src="https://elfsightcdn.com/platform.js">` in `index.html` loads on every page.
-**Fix**: 
-- Remove the script from `index.html`
-- Dynamically load it in `Reviews.tsx` via a `useEffect` that appends the script tag only when the page mounts
+### Step 2: Create `leads` table
+Migration to create:
+```sql
+CREATE TABLE public.leads (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  phone text NOT NULL,
+  email text,
+  service_needed text NOT NULL,
+  message text,
+  hear_about_us text,
+  lead_source text DEFAULT 'Website',
+  page_path text,
+  created_at timestamptz DEFAULT now()
+);
+ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
+-- Allow inserts from anonymous/authenticated users (public form)
+CREATE POLICY "Anyone can insert leads" ON public.leads FOR INSERT WITH CHECK (true);
+-- Only service role can read (no public access to other people's leads)
+```
 
-## 6. Exit Intent Popup — Better Conversion Path
-**Problem**: Exit intent links to `/contact` which is a full page load, breaking the conversion moment.
-**Fix**: 
-- Replace the Link with an inline `EstimateForm` directly in the popup, or use the same anchor-scroll pattern (`#estimate-form`) when on homepage
-- Best approach: embed a compact `EstimateForm` right in the popup (no navigation needed)
+### Step 3: Create `submit-lead` Edge Function
+- Validates the incoming payload
+- Inserts into the `leads` table
+- Sends a notification email to `service@acassurancefl.com` with the lead details (using Lovable's email infrastructure if an email domain is configured, or a simple formatted response for now)
+- Returns success/failure
 
-## 7. CTA Consistency — "Get a Free Quote" Behavior
-**Problem**: From the homepage, the hero button scrolls to `#estimate-form`. From other pages, header "Get a Free Quote" links to `/contact#estimate-form`. The Contact page form has `id="estimate-form"` but the homepage also has one.
-**Fix**: This is actually correct behavior — homepage scrolls locally, other pages navigate to contact. No change needed. Just verify the header button uses `Link to="/contact#estimate-form"` (it does).
+### Step 4: Update `EstimateForm.tsx`
+- Replace the webhook fetch with `supabase.functions.invoke('submit-lead', { body: payload })`
+- Remove the `VITE_LEAD_WEBHOOK_URL` fallback logic
+- Keep the same UX (toast + redirect to /thank-you)
 
-## 8. Missing Google Analytics
-**Problem**: No analytics or conversion tracking.
-**Fix**: 
-- Ask the user if they have a Google Analytics measurement ID (G-XXXXXXX) 
-- If yes, add the gtag.js script to `index.html`
-- If not, flag this as a follow-up item requiring their GA account setup
+### Step 5: Create Supabase client integration
+- Add `src/integrations/supabase/client.ts` with the Supabase client setup using `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
 
-## Summary of File Changes
-
+## Files Created/Modified
 | File | Change |
 |------|--------|
-| `src/components/layout/Header.tsx` | Increase logo size to `h-14 md:h-16`, add more padding to white container |
-| `src/pages/Index.tsx` | Remove hero trust pill (lines 104-107), remove `HeroReviewCards` import/usage |
-| `src/components/FloatingServiceButton.tsx` | Add `hidden md:flex` to hide on mobile |
-| `index.html` | Remove Elfsight script tag |
-| `src/pages/Reviews.tsx` | Add `useEffect` to dynamically load Elfsight script |
-| `src/components/ExitIntentPopup.tsx` | Embed inline `EstimateForm` instead of linking to /contact |
-| `src/components/HeroReviewCards.tsx` | No changes (kept for potential reuse but removed from homepage) |
+| `src/integrations/supabase/client.ts` | New — Supabase client |
+| `supabase/functions/submit-lead/index.ts` | New — Edge function to store lead + notify |
+| `src/components/EstimateForm.tsx` | Update to use Supabase function invoke |
+| Migration | New `leads` table |
 
-## What Stays Untouched
-- All CSS, colors, component structure
-- FeaturedReviews carousel (confirmed real Google reviews)
-- ReviewSection component file (kept, just not used on homepage if it's only used there)
-- StickyCallBar positioning
-- All service/city pages
-
-## Open Question for User
-- **Google Analytics**: Do you have a GA4 measurement ID (G-XXXXXXX) to add? Or should we skip analytics for now?
+## What This Achieves
+- Every form submission is permanently stored in your database
+- You can query/export leads anytime via the Supabase dashboard
+- The form actually works end-to-end instead of silently dropping submissions
+- Email notification to `service@acassurancefl.com` ensures you never miss a lead
 
