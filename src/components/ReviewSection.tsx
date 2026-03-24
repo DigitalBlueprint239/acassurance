@@ -31,7 +31,7 @@ const reviews: Review[] = [
   },
   {
     text: "Had a mini-split installed in our garage. Great work, clean installation, and reasonable price. Will use them again for sure.",
-    name: "David",
+    name: "Local Homeowner",
     city: "Estero",
     rating: 5,
   },
