@@ -2,7 +2,7 @@ import { ShieldCheck, Star, Clock } from "lucide-react";
 
 const items = [
   { icon: ShieldCheck, title: "Licensed & Insured", subtitle: "Florida State Certified" },
-  { icon: Star, title: "5-Star Rated", subtitle: "Google & Yelp Verified" },
+  { icon: Star, title: "5-Star Rated", subtitle: "Verified Customer Reviews" },
   { icon: Clock, title: "24/7 Emergency Service", subtitle: "Always a human on the phone" },
 ];
 

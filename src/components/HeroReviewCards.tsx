@@ -3,17 +3,17 @@ import { Star } from "lucide-react";
 const heroReviews = [
   {
     text: "Jason was incredibly professional and fixed our AC the same day we called. Highly recommend!",
-    name: "Sarah M.",
+    name: "Verified Homeowner",
     location: "Cape Coral",
   },
   {
     text: "Best HVAC company in Southwest Florida. Honest pricing, no upsells, and the job was done right.",
-    name: "Mike T.",
+    name: "Verified Homeowner",
     location: "Fort Myers",
   },
   {
     text: "Called at 8am with a broken AC in July heat. Jason was here by 10am. Lifesaver!",
-    name: "Linda R.",
+    name: "Verified Homeowner",
     location: "Naples",
   },
 ];

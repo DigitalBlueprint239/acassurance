@@ -13,31 +13,31 @@ interface Review {
 const reviews: Review[] = [
   {
     text: "AC went out on a Saturday afternoon and they had a tech out within two hours. Professional, honest, and fair pricing. Highly recommend.",
-    name: "Michael",
+    name: "Local Homeowner",
     city: "Cape Coral",
     rating: 5,
   },
   {
     text: "Installed a new Trane system for our home. The crew was on time, clean, and explained everything clearly. Our electric bill dropped noticeably.",
-    name: "Jennifer",
+    name: "Local Homeowner",
     city: "Fort Myers",
     rating: 5,
   },
   {
     text: "Best HVAC company we've used since moving to Florida. They diagnosed an issue two other companies missed. Honest and knowledgeable.",
-    name: "Robert",
+    name: "Local Homeowner",
     city: "Naples",
     rating: 5,
   },
   {
     text: "Had a mini-split installed in our garage. Great work, clean installation, and reasonable price. Will use them again for sure.",
-    name: "David",
+    name: "Local Homeowner",
     city: "Estero",
     rating: 5,
   },
   {
     text: "Called for a maintenance tune-up and they found a potential problem before it became expensive. Saved us money and headaches. Very trustworthy.",
-    name: "Susan",
+    name: "Local Homeowner",
     city: "Bonita Springs",
     rating: 5,
   },
