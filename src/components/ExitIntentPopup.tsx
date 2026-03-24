@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
 import { X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import EstimateForm from "@/components/EstimateForm";
 
 const ExitIntentPopup = () => {
   const [show, setShow] = useState(false);
@@ -13,13 +12,11 @@ const ExitIntentPopup = () => {
   }, []);
 
   useEffect(() => {
-    // Desktop: mouseleave
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0) trigger();
     };
     document.addEventListener("mouseleave", handleMouseLeave);
 
-    // Mobile: 45s inactivity
     let timer = setTimeout(trigger, 45000);
     const resetTimer = () => {
       clearTimeout(timer);
@@ -48,17 +45,13 @@ const ExitIntentPopup = () => {
           <X className="w-5 h-5 text-muted-foreground" />
         </button>
 
-        <h2 className="text-2xl font-heading font-extrabold text-foreground mb-3">
-          Wait! Already Have a Quote?
+        <h2 className="text-2xl font-heading font-extrabold text-foreground mb-2">
+          Wait — Before You Go!
         </h2>
-        <p className="text-muted-foreground mb-6 leading-relaxed">
-          Don't overpay. We'll beat any licensed competitor's quote or verify it for free. That's our <strong className="text-foreground">Second Opinion Guarantee</strong>.
+        <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+          Get a free second opinion on any quote. We'll beat any licensed competitor's price or verify yours for free.
         </p>
-        <Button asChild size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base">
-          <Link to="/contact" onClick={() => setShow(false)}>
-            Get My Free Second Opinion
-          </Link>
-        </Button>
+        <EstimateForm leadSource="exit-intent-popup" />
       </div>
     </div>
   );
