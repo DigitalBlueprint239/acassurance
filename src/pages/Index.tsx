@@ -284,6 +284,7 @@ const Index = () => {
       </section>
 
       <WhyDifferent />
+      <SWFLClimateSection />
 
       {/* 5. PROOF OF WORK */}
       <section className="py-14 md:py-20 bg-background">
