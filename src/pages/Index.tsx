@@ -150,9 +150,7 @@ const Index = () => {
                     <img
                       src={bbbLogo}
                       alt="BBB Accredited Business"
-                      className="h-10 w-auto bg-white rounded px-1"
-                      width={24}
-                      height={24}
+                      className="h-12 w-auto bg-white rounded-lg px-2 py-1 shadow-sm"
                     />
                   ) : (
                     <badge.icon className="w-4 h-4 text-primary shrink-0" />
