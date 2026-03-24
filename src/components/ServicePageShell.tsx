@@ -52,8 +52,8 @@ export default function ServicePageShell({
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">{title}</h1>
-          <p className="mt-4 max-w-xl text-lg text-gray-200">{subtitle}</p>
+          <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl">{title}</h1>
+          <p className="mt-4 max-w-xl text-lg text-primary-foreground/80">{subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <Link
               to="/contact"
@@ -63,7 +63,7 @@ export default function ServicePageShell({
             </Link>
             <a
               href="tel:+12393653090"
-              className="rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-white hover:text-gray-900"
+              className="rounded-lg border border-primary-foreground/30 px-6 py-3 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground/10"
             >
               Call (239) 365-3090
             </a>
@@ -153,7 +153,7 @@ export default function ServicePageShell({
       )}
 
       <section className="bg-primary py-12 px-4 text-center">
-        <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to Schedule Service?</h2>
+        <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl">Ready to Schedule Service?</h2>
         <p className="mt-2 text-primary-foreground/80">Serving Naples, Fort Myers, Cape Coral and all of Southwest Florida.</p>
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-4">
           <Link
@@ -164,7 +164,7 @@ export default function ServicePageShell({
           </Link>
           <a
             href="tel:+12393653090"
-            className="rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-primary/80"
+            className="rounded-lg border border-primary-foreground/30 px-6 py-3 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground/10"
           >
             Call Now — (239) 365-3090
           </a>
