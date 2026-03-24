@@ -13,7 +13,7 @@ interface Review {
 const reviews: Review[] = [
   {
     text: "AC went out on a Saturday afternoon and they had a tech out within two hours. Professional, honest, and fair pricing. Highly recommend.",
-    name: "Michael",
+    name: "Local Homeowner",
     city: "Cape Coral",
     rating: 5,
   },
