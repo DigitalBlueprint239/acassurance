@@ -34,6 +34,13 @@ const MaintenancePage = lazy(() => import("./pages/MaintenancePage"));
 const DuctCleaningPage = lazy(() => import("./pages/DuctCleaningPage"));
 const IndoorAirQualityPage = lazy(() => import("./pages/IndoorAirQualityPage"));
 const CommercialRefrigPage = lazy(() => import("./pages/CommercialRefrigPage"));
+const EmergencyNow = lazy(() => import("./pages/EmergencyNow"));
+const AcRepairFortMyers = lazy(() => import("./pages/AcRepairFortMyers"));
+const AcRepairCapeCoral2 = lazy(() => import("./pages/AcRepairCapeCoral2"));
+const AcRepairNaples = lazy(() => import("./pages/AcRepairNaples"));
+const AcRepairBonitaSprings = lazy(() => import("./pages/AcRepairBonitaSprings"));
+const AcRepairEstero = lazy(() => import("./pages/AcRepairEstero"));
+const AcRepairLehighAcres = lazy(() => import("./pages/AcRepairLehighAcres"));
 
 const serviceSlugs = services.map((s) => s.slug);
 
