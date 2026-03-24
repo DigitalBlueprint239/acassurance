@@ -1,70 +1,33 @@
 
 
-# Connect EstimateForm to a Real Backend
+# Improve BBB Logo Display Across the Site
 
 ## Current State
-- The `EstimateForm` posts to `VITE_LEAD_WEBHOOK_URL` which is not set
-- When unset, it silently logs to console and redirects to /thank-you (looks like it worked, but no lead is captured)
-- No Supabase is connected to this project
-- Lovable Cloud is enabled (LOVABLE_API_KEY exists)
+The BBB logo appears in 2 places with image assets:
+1. **Homepage hero trust strip** — `h-8` (small, inline with text badges)
+2. **Footer** — `h-10` with `opacity-80`, next to small text label
 
-## What We Need
-1. **Supabase database** to store every lead permanently
-2. **Edge Function** to receive the form submission, store it, and send an email notification to `service@acassurancefl.com`
-3. **Update EstimateForm** to call the edge function instead of a webhook
+Both instances are undersized and low-contrast. The logo blends into its surroundings rather than standing out as a trust credential.
 
-## Plan
+## Changes
 
-### Step 1: Enable Supabase via Lovable Cloud
-- Connect the project to Supabase (Lovable Cloud spins this up automatically)
-- This gives us a database + edge functions without needing an external account
+### 1. Homepage Hero Trust Strip (`src/pages/Index.tsx`, ~line 150-156)
+- Increase BBB logo from `h-8` to `h-10` so it's more legible alongside the other badges
+- Add a subtle white background container behind it (`bg-white rounded px-1`) to ensure clean rendering on the frosted glass strip
 
-### Step 2: Create `leads` table
-Migration to create:
-```sql
-CREATE TABLE public.leads (
-  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-  name text NOT NULL,
-  phone text NOT NULL,
-  email text,
-  service_needed text NOT NULL,
-  message text,
-  hear_about_us text,
-  lead_source text DEFAULT 'Website',
-  page_path text,
-  created_at timestamptz DEFAULT now()
-);
-ALTER TABLE public.leads ENABLE ROW LEVEL SECURITY;
--- Allow inserts from anonymous/authenticated users (public form)
-CREATE POLICY "Anyone can insert leads" ON public.leads FOR INSERT WITH CHECK (true);
--- Only service role can read (no public access to other people's leads)
-```
+### 2. Footer (`src/components/layout/Footer.tsx`, ~line 20-23)
+- Increase BBB logo from `h-10` to `h-12` for better footer presence
+- Remove `opacity-80` — show at full opacity for maximum clarity on the navy background
+- Add a small white rounded container behind it (`bg-white/90 rounded-md p-1.5`) so the logo's colors pop against the dark footer instead of getting lost
+- Keep the "BBB Accredited Business" text label beside it
 
-### Step 3: Create `submit-lead` Edge Function
-- Validates the incoming payload
-- Inserts into the `leads` table
-- Sends a notification email to `service@acassurancefl.com` with the lead details (using Lovable's email infrastructure if an email domain is configured, or a simple formatted response for now)
-- Returns success/failure
+### 3. No layout or spacing changes
+- No section reordering or structural changes
+- Existing padding, margins, and surrounding elements stay exactly as they are
 
-### Step 4: Update `EstimateForm.tsx`
-- Replace the webhook fetch with `supabase.functions.invoke('submit-lead', { body: payload })`
-- Remove the `VITE_LEAD_WEBHOOK_URL` fallback logic
-- Keep the same UX (toast + redirect to /thank-you)
-
-### Step 5: Create Supabase client integration
-- Add `src/integrations/supabase/client.ts` with the Supabase client setup using `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
-
-## Files Created/Modified
+## Files Modified (2)
 | File | Change |
 |------|--------|
-| `src/integrations/supabase/client.ts` | New — Supabase client |
-| `supabase/functions/submit-lead/index.ts` | New — Edge function to store lead + notify |
-| `src/components/EstimateForm.tsx` | Update to use Supabase function invoke |
-| Migration | New `leads` table |
-
-## What This Achieves
-- Every form submission is permanently stored in your database
-- You can query/export leads anytime via the Supabase dashboard
-- The form actually works end-to-end instead of silently dropping submissions
-- Email notification to `service@acassurancefl.com` ensures you never miss a lead
+| `src/pages/Index.tsx` | Enlarge BBB logo to h-10, add subtle white backing |
+| `src/components/layout/Footer.tsx` | Enlarge BBB logo to h-12, full opacity, white backing container |
 
