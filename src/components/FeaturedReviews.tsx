@@ -143,14 +143,6 @@ const FeaturedReviews = () => {
             Review us on Google
           </a>
 
-          <div className="inline-flex items-center gap-2 bg-white border border-border shadow-sm rounded-full px-4 py-2 text-sm font-medium text-foreground">
-            <span className="font-heading font-bold">Top Rated on Yelp</span>
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

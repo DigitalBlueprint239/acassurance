@@ -37,7 +37,7 @@ const reviews: Review[] = [
   },
   {
     text: "Called for a maintenance tune-up and they found a potential problem before it became expensive. Saved us money and headaches. Very trustworthy.",
-    name: "Susan",
+    name: "Local Homeowner",
     city: "Bonita Springs",
     rating: 5,
   },

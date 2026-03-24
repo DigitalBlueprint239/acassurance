@@ -43,8 +43,8 @@ const Reviews = () => (
     <section className="bg-primary py-5">
       <div className="container">
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-center text-white">
-          <div className="text-sm font-semibold">4.9★ Average Rating</div>
-          <div className="text-sm font-semibold">50+ Verified Reviews</div>
+          <div className="text-sm font-semibold">5-Star Google Reviews</div>
+          <div className="text-sm font-semibold">Licensed CAC1823832</div>
           <div className="text-sm font-semibold">Serving SWFL Since 2025</div>
         </div>
       </div>

@@ -13,7 +13,7 @@ const heroReviews = [
   },
   {
     text: "Called at 8am with a broken AC in July heat. Jason was here by 10am. Lifesaver!",
-    name: "Linda R.",
+    name: "Verified Homeowner",
     location: "Naples",
   },
 ];

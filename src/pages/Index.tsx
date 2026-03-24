@@ -183,9 +183,9 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
-              { value: "500+", label: "SWFL Homes Served" },
-              { value: "4.9★", label: "Google Rating" },
-              { value: "< 2 hrs", label: "Average Response Time" },
+              { value: "CAC1823832", label: "Florida Licensed & Insured" },
+              { value: "5-Star", label: "Google Reviewed" },
+              { value: "Rapid", label: "Response Times" },
               { value: "100%", label: "Owner-Supervised Jobs" },
             ].map((stat) => (
               <div key={stat.label}>
