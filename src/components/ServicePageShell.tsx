@@ -63,7 +63,7 @@ export default function ServicePageShell({
             </Link>
             <a
               href="tel:+12393653090"
-              className="rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition hover:bg-white hover:text-gray-900"
+              className="rounded-lg border border-primary-foreground/30 px-6 py-3 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground/10"
             >
               Call (239) 365-3090
             </a>
