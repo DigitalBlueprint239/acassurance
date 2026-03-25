@@ -1,52 +1,27 @@
 
-# Favicon Emergency Fix Plan (All favicon endpoints + cache-proofing)
 
-## What I found
-- `index.html` currently points both icon links to `/favicon.png`.
-- `public/favicon.ico` was deleted, so there is no explicit `.ico` file in the repo.
-- `public/favicon.png` is the correct AC logo, but favicon handling is still fragile across browsers/crawlers without a real `.ico` + multi-size icon set.
+# Update BBB Logo Links to Correct Profile URL
 
-## Implementation plan
+## Summary
+Three locations need updating. The footer already has a link but points to an old/wrong BBB profile URL. The hero trust ribbon BBB logo is not linked at all. The TopBar and Header only have text mentions (no logo images), so no changes needed there.
 
-1. **Restore a real `.ico` favicon with AC logo**
-   - Create `public/favicon.ico` from the AC logo (multi-resolution inside: 16x16, 32x32, 48x48).
-   - This ensures browsers that still auto-request `/favicon.ico` cannot fall back to old cached/default behavior.
+## Changes
 
-2. **Add a proper favicon set (not just one PNG)**
-   - Create:
-     - `public/favicon-16x16.png`
-     - `public/favicon-32x32.png`
-     - `public/apple-touch-icon.png` (180x180)
-     - `public/android-chrome-192x192.png`
-     - `public/android-chrome-512x512.png`
-   - Use the AC Assurance logo as the source so every device/crawler sees the same brand.
+### 1. Footer (`src/components/layout/Footer.tsx`)
+- **Line 20**: Update the existing `href` from the old URL to `https://www.bbb.org/us/fl/cape-coral/profile/air-conditioning-contractor/ac-assurance-cooling-and-heating-llc-0653-90454763`
+- Already has `target="_blank"` and `rel="noopener noreferrer"` — no other changes needed.
 
-3. **Update `index.html` head tags to explicit, standards-friendly favicon links**
-   - Replace current minimal icon tags with explicit entries:
-     - `rel="icon"` to `/favicon.ico`
-     - PNG icons with `sizes="16x16"` and `sizes="32x32"`
-     - `rel="apple-touch-icon"` to `/apple-touch-icon.png`
-     - keep manifest link
-   - This removes ambiguity and ensures consistent favicon selection by Chrome/Safari/Google crawlers.
+### 2. Hero Trust Ribbon (`src/pages/Index.tsx`)
+- **Lines 148–156**: The BBB badge in the trust ribbon at the bottom of the hero image is currently a plain `<div>`. Wrap the BBB `<img>` in an `<a>` tag linking to the same BBB profile URL with `target="_blank"`, `rel="noopener noreferrer"`, and `cursor-pointer`.
 
-4. **Update `public/manifest.json` icon entries**
-   - Point manifest icons to `android-chrome-192x192.png` and `android-chrome-512x512.png`.
-   - Keep brand colors and app naming as AC Assurance.
+### No changes needed
+- **TopBar.tsx** and **Header.tsx**: These only contain text mentions of "BBB Accredited" (no logo images), so no link wrapping is required per the request.
+- **TrustBadgeStrip.tsx** and **TrustBar.tsx**: These don't contain BBB logos.
+- Service/city pages use `ServicePageShell` which doesn't render BBB logos directly — the footer handles it globally.
 
-5. **Verification pass (preview + published)**
-   - Confirm these URLs resolve with 200:
-     - `/favicon.ico`
-     - `/favicon-16x16.png`
-     - `/favicon-32x32.png`
-     - `/apple-touch-icon.png`
-     - `/manifest.json`
-   - Verify network tab loads the new favicon assets.
-   - Verify browser tab icon updates after hard refresh/incognito.
-   - Verify published domain serves the same assets (not stale fallback).
+## Files modified
+| File | Change |
+|------|--------|
+| `src/components/layout/Footer.tsx` | Fix BBB profile URL |
+| `src/pages/Index.tsx` | Wrap hero BBB badge in anchor tag |
 
-## Files to modify/create
-- **Modify:** `index.html`, `public/manifest.json`
-- **Create/replace:** `public/favicon.ico`, `public/favicon-16x16.png`, `public/favicon-32x32.png`, `public/apple-touch-icon.png`, `public/android-chrome-192x192.png`, `public/android-chrome-512x512.png`
-
-## Why this will fix it
-This removes all fallback ambiguity and makes every major favicon path explicit and AC-branded, including the legacy `.ico` route that often causes “still seeing old logo” issues.
