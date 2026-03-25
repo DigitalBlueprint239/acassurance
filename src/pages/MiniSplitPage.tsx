@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
-import heroImg from "@/assets/service-repair.webp";
+import heroImg from "@/assets/service-mini-split.webp";
 
 const MiniSplitPage = () => (
   <Layout>
