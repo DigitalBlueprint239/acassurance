@@ -1,32 +1,25 @@
 
-I’ll apply a focused visual fix to the call button on `/trane-products` (the one in the hero CTA row) without redesigning anything else.
 
-**Root cause**
-- That button uses `variant="outline"`, which injects `bg-background` (white).
-- In the navy hero section, the text is forced to white, so it becomes white text on a white button until hover.
+# Replace Mini-Split Hero Image with Authentic Photo
 
-**Implementation plan**
+## Problem
+The Mini-Split page (`/ductless-mini-split`) uses a generic `service-repair.webp` hero image that doesn't match the service. The same issue exists on other pages (Heating, Indoor Air Quality, Commercial Refrigeration) — all reusing `service-repair.webp` — but for now, the user has provided a real mini-split photo to fix this specific page.
 
-1. **Update hero call button styling in `src/pages/TraneProducts.tsx`**
-   - Keep the existing layout and button size.
-   - Change the class list on the outline call button to explicitly use a transparent background and preserve visible white text in all states:
-     - add `bg-transparent` (or `!bg-transparent` if needed for precedence)
-     - keep border styling
-     - keep hover fill (`hover:bg-primary-foreground/10`)
-     - enforce readable text (`text-primary-foreground` + hover/focus text consistency)
-     - keep pointer behavior (`cursor-pointer`)
-   - This removes the white box issue while preserving current alignment and brand style.
+## Pages using mismatched `service-repair.webp`
+| Page | File | Should show |
+|------|------|-------------|
+| **Mini-Split** | `MiniSplitPage.tsx` | Ductless mini-split unit (photo provided) |
+| Heating Services | `HeatingServicesPage.tsx` | Heating system / heat pump |
+| Indoor Air Quality | `IndoorAirQualityPage.tsx` | Air quality equipment |
+| Commercial Refrigeration | `CommercialRefrigPage.tsx` | Commercial refrigeration unit |
 
-2. **Clean icon spacing in same button**
-   - Remove `mr-2` from the `Phone` icon so spacing is controlled by the button’s built-in `gap-2`.
-   - This keeps visual balance and prevents over-spacing.
+## Change (this round)
 
-3. **Quick consistency sweep (same pattern only if present on this page)**
-   - Confirm no other CTA on `/trane-products` has white-on-white behavior.
-   - Do not change global button variants to avoid side effects across the site.
+1. **Copy uploaded photo** to `src/assets/service-mini-split.webp`
+2. **Update `src/pages/MiniSplitPage.tsx`** — change the import from `service-repair.webp` to `service-mini-split.webp`
 
-4. **Validation checklist after change**
-   - Desktop and mobile: button text is visible before hover.
-   - Hover/focus states still look intentional and accessible.
-   - CTA remains clearly clickable and aligned with adjacent “Get a Free Quote” button.
-   - No layout shift or spacing regressions in hero section.
+That's it — one asset copy and one import line change. No layout or content changes needed.
+
+## Note
+The other three pages still use the generic repair image. If you have photos for those services, share them and we can update those the same way.
+
