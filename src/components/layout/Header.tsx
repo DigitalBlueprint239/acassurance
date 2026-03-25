@@ -33,7 +33,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-2 shrink-0 -my-2">
           <div className="flex flex-col items-center">
             <div className="bg-white rounded-lg px-3 py-2">
-              <img src={logo} alt="AC Assurance Cooling & Heating" className="h-14 md:h-16 w-auto" />
+              <img src={logo} alt="AC Assurance Cooling & Heating Logo" className="h-14 md:h-16 w-auto" />
             </div>
             <span className="text-[10px] text-primary-foreground/50 mt-0.5 tracking-wide">LIC# {LICENSE}</span>
           </div>
