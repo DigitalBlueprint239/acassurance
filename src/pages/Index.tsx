@@ -147,11 +147,13 @@ const Index = () => {
               ].map((badge) => (
                 <div key={badge.label} className="flex items-center gap-2 text-slate-700 text-xs font-medium tracking-wide justify-center">
                   {badge.isBBB ? (
-                    <img
-                      src={bbbLogo}
-                      alt="BBB Accredited Business"
-                      className="h-12 w-auto bg-white rounded-lg px-2 py-1 shadow-sm"
-                    />
+                    <a href="https://www.bbb.org/us/fl/cape-coral/profile/air-conditioning-contractor/ac-assurance-cooling-and-heating-llc-0653-90454763" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                      <img
+                        src={bbbLogo}
+                        alt="BBB Accredited Business"
+                        className="h-12 w-auto bg-white rounded-lg px-2 py-1 shadow-sm"
+                      />
+                    </a>
                   ) : (
                     <badge.icon className="w-4 h-4 text-primary shrink-0" />
                   )}
