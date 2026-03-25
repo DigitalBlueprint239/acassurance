@@ -1,48 +1,32 @@
 
+I’ll apply a focused visual fix to the call button on `/trane-products` (the one in the hero CTA row) without redesigning anything else.
 
-# Financing Page — Synchrony Application Link Integration
+**Root cause**
+- That button uses `variant="outline"`, which injects `bg-background` (white).
+- In the navy hero section, the text is forced to white, so it becomes white text on a white button until hover.
 
-## Summary
-Enhance the existing `/financing` page to include a prominent "Apply for Financing" CTA linking to the Synchrony application, while keeping phone/quote CTAs as the primary conversion path. Also update financing mentions on other pages to link back to `/financing`.
+**Implementation plan**
 
-## Changes
+1. **Update hero call button styling in `src/pages/TraneProducts.tsx`**
+   - Keep the existing layout and button size.
+   - Change the class list on the outline call button to explicitly use a transparent background and preserve visible white text in all states:
+     - add `bg-transparent` (or `!bg-transparent` if needed for precedence)
+     - keep border styling
+     - keep hover fill (`hover:bg-primary-foreground/10`)
+     - enforce readable text (`text-primary-foreground` + hover/focus text consistency)
+     - keep pointer behavior (`cursor-pointer`)
+   - This removes the white box issue while preserving current alignment and brand style.
 
-### 1. Financing Page (`src/pages/Financing.tsx`)
+2. **Clean icon spacing in same button**
+   - Remove `mr-2` from the `Phone` icon so spacing is controlled by the button’s built-in `gap-2`.
+   - This keeps visual balance and prevents over-spacing.
 
-**Hero section** — Update headline and subheadline:
-- H1: "Flexible HVAC Financing Options"
-- Subtext: "Need a new AC system or major repair? AC Assurance offers financing options to help make your comfort more affordable."
+3. **Quick consistency sweep (same pattern only if present on this page)**
+   - Confirm no other CTA on `/trane-products` has white-on-white behavior.
+   - Do not change global button variants to avoid side effects across the site.
 
-**New "Apply Now" highlight block** — Add a visually prominent card/section between the Synchrony logo block and "The Process" section containing:
-- Benefit bullets: Fast online application · Convenient monthly payment options · Financing available for qualified customers · A simple way to move forward on your HVAC project
-- Primary CTA: **"Apply for Financing"** button → `https://www.synchrony.com/mmc/M9236331300?sitecode=acewel401` (`target="_blank"`, `rel="noopener noreferrer"`)
-- Secondary CTA: **"Call Us to Discuss Financing Options"** button (outline variant) → `tel:+12393653090`
-- Disclosure text preserved: "Special financing available. Subject to credit approval. Call for details."
-
-**Bottom CTA area** (lines 86–93) — Replace the single phone button with dual CTAs matching the pattern above (Apply primary, Call secondary).
-
-**Keep sidebar form** unchanged — it already serves quote/consultation requests.
-
-### 2. Other Pages — Minor CTA Updates
-
-These pages mention financing near CTA areas. Add a small "Learn About Financing →" link pointing to `/financing` where it doesn't already exist:
-
-| File | Current state | Change |
-|------|--------------|--------|
-| `src/pages/AcInstallationPage.tsx` | FAQ mentions financing | No change needed (FAQ answer is sufficient) |
-| `src/pages/TraneProducts.tsx` | Has "View Financing" button already | Verify it links to `/financing` — update if needed |
-| `src/pages/TraneAirConditioners.tsx` | Financing disclosure text only | Add small "Learn About Financing →" link below disclosure |
-| `src/pages/TraneHeatPumps.tsx` | Financing disclosure text only | Add small "Learn About Financing →" link below disclosure |
-| `src/pages/Index.tsx` | Already has "Learn About Financing" CTA linking to `/financing` | No change needed |
-
-### 3. No compliance violations
-- No rates, APRs, or payment amounts invented
-- No "guaranteed approval" or "no credit check" language
-- Synchrony presented as an available option, subject to credit approval
-- Phone call and quote request remain the dominant CTAs site-wide
-
-## Files modified
-- `src/pages/Financing.tsx` — Main overhaul (new headline, Apply CTA, dual buttons)
-- `src/pages/TraneAirConditioners.tsx` — Add financing page link
-- `src/pages/TraneHeatPumps.tsx` — Add financing page link
-
+4. **Validation checklist after change**
+   - Desktop and mobile: button text is visible before hover.
+   - Hover/focus states still look intentional and accessible.
+   - CTA remains clearly clickable and aligned with adjacent “Get a Free Quote” button.
+   - No layout shift or spacing regressions in hero section.
