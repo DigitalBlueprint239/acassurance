@@ -45,9 +45,9 @@ const TraneProducts = () => (
           <Button asChild size="lg" className="shimmer-btn text-white hover:opacity-90" style={{ backgroundColor: '#EF3C13' }}>
             <Link to="/contact#estimate-form">Get a Free Quote</Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+          <Button asChild size="lg" variant="outline" className="!bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
             <a href={PHONE_LINK}>
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-5 h-5" />
               Call {PHONE}
             </a>
           </Button>
