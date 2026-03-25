@@ -1,28 +1,15 @@
 
 
-# Fix Favicon — Remove Lovable Default .ico File
+# Add Google Search Console Verification File
 
-## Problem
-Google is showing the old Lovable logo as the favicon in search results (visible in the screenshot). The root cause: there is a `favicon.ico` file in the `public/` directory that is the old Lovable default. Browsers and Google's crawler prioritize `.ico` files over `.png`, so even though `index.html` correctly points to `favicon.png`, Google is picking up the stale `favicon.ico`.
+## What it is
+A one-line HTML file that Google uses to verify site ownership. It must be publicly accessible at the root URL.
 
-## Fix
+## Change
 
-### 1. Delete `public/favicon.ico`
-Remove the old Lovable favicon.ico file so it no longer gets served.
-
-### 2. Add explicit `.ico` override in `index.html`
-Add a second `<link rel="icon">` tag for `.ico` format pointing to the same `favicon.png`, ensuring no browser falls back to a default `.ico` lookup:
-```html
-<link rel="icon" type="image/png" href="/favicon.png" />
-<link rel="icon" type="image/x-icon" href="/favicon.png" />
-```
-
-## Files Modified
-| File | Change |
+| File | Action |
 |------|--------|
-| `public/favicon.ico` | Delete (old Lovable logo) |
-| `index.html` | Add fallback icon link to prevent .ico auto-discovery |
+| `public/google2e83009970df9bfc.html` | Copy uploaded file to public directory |
 
-## After Publishing
-Google will re-crawl and pick up the correct favicon. You can speed this up by submitting `https://www.acassurancefl.com/` in Google Search Console for re-indexing.
+Once published, Google will be able to verify ownership at `https://www.acassurancefl.com/google2e83009970df9bfc.html`. After that you can click "Verify" in Google Search Console.
 
