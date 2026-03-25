@@ -152,6 +152,9 @@ const TraneAirConditioners = () => (
         <p className="text-sm text-primary-foreground/60 mt-3">
           Special financing available. Subject to credit approval. Call for details.
         </p>
+        <Link to="/financing" className="inline-flex items-center gap-1 text-primary-foreground/70 hover:text-primary-foreground text-sm mt-2 underline-offset-4 hover:underline">
+          Learn About Financing →
+        </Link>
       </div>
     </section>
     <ScrollCallReminder />

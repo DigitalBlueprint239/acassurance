@@ -1,21 +1,24 @@
-import { Phone, CreditCard, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Phone, CreditCard, CheckCircle2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
+const SYNCHRONY_URL = "https://www.synchrony.com/mmc/M9236331300?sitecode=acewel401";
+
 const Financing = () => (
   <Layout>
     <SEOHead
-      title="HVAC Financing Cape Coral | AC Assurance Cooling & Heating"
-      description="Convenient HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Get the comfort you need with manageable monthly payments."
+      title="Flexible HVAC Financing | AC Assurance Cooling & Heating"
+      description="Convenient HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Apply online or call to discuss options for your comfort needs."
     />
     <section className="section-navy py-12 md:py-16">
       <div className="container">
-        <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">HVAC Financing in Cape Coral</h1>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Flexible HVAC Financing Options</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
-          AC Assurance partners with Synchrony to offer financing options for qualifying homeowners. Get the comfort you need with manageable monthly payments.
+          Need a new AC system or major repair? AC Assurance offers financing options to help make your comfort more affordable.
         </p>
       </div>
     </section>
@@ -38,6 +41,39 @@ const Financing = () => (
                 loading="lazy"
               />
               <span className="text-sm text-muted-foreground">Financing provided by Synchrony Financial</span>
+            </div>
+
+            {/* Apply Now highlight block */}
+            <div className="bg-accent/10 border border-accent/30 rounded-lg p-6 md:p-8 space-y-5">
+              <h3 className="text-xl font-heading font-bold">Ready to Get Started?</h3>
+              <ul className="space-y-3">
+                {[
+                  "Fast online application",
+                  "Convenient monthly payment options",
+                  "Financing available for qualified customers",
+                  "A simple way to move forward on your HVAC project",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                    <span className="text-foreground">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  <a href={SYNCHRONY_URL} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-5 h-5 mr-2" /> Apply for Financing
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <a href={PHONE_LINK}>
+                    <Phone className="w-5 h-5 mr-2" /> Call Us to Discuss Financing Options
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                Special financing available. Subject to credit approval. Call for details.
+              </p>
             </div>
 
             <h3 className="text-xl font-heading font-bold mt-8">The Process</h3>
@@ -83,14 +119,21 @@ const Financing = () => (
               </div>
             </div>
 
-            <div className="pt-4">
-              <Button asChild size="lg">
-                <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE} to Discuss</a>
+            <div className="pt-4 flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <a href={SYNCHRONY_URL} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-5 h-5 mr-2" /> Apply for Financing
+                </a>
               </Button>
-              <p className="text-sm text-muted-foreground mt-3">
-                Special financing available. Subject to credit approval. Call for details.
-              </p>
+              <Button asChild size="lg" variant="outline">
+                <a href={PHONE_LINK}>
+                  <Phone className="w-5 h-5 mr-2" /> Call {PHONE}
+                </a>
+              </Button>
             </div>
+            <p className="text-sm text-muted-foreground">
+              Special financing available. Subject to credit approval. Call for details.
+            </p>
           </div>
 
           <div id="estimate-form">
