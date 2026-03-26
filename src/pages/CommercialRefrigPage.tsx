@@ -4,7 +4,8 @@ import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/commercial-unit.jpg";
 import { ShieldCheck, Zap, ClipboardCheck } from "lucide-react";
-import { buildServiceSchema } from "@/lib/seoSchemas";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seoSchemas";
 
 const benefits = [
   "Walk-in cooler and freezer repair",
@@ -33,6 +34,42 @@ const stakes = [
   },
 ];
 
+const processSteps = [
+  "Emergency or scheduled call — Contact us by phone or online. For emergencies, we prioritize commercial calls because we understand that every hour of downtime means lost inventory and revenue.",
+  "On-site diagnostic — Our licensed technician arrives with a fully stocked service vehicle, diagnoses the issue, and checks all critical components including compressors, evaporator coils, condensers, thermostats, and refrigerant levels.",
+  "Transparent quote and repair — We explain the problem clearly and provide an upfront price before any work begins. Most repairs are completed in a single visit to get your equipment back online fast.",
+  "Follow-up and maintenance planning — After the repair, we recommend a preventive maintenance schedule to catch small issues before they become expensive emergencies. Regular maintenance extends equipment life and keeps you compliant with health codes.",
+];
+
+const localConcerns = [
+  "Florida's Department of Business and Professional Regulation (DBPR) requires commercial food establishments to maintain specific temperature ranges for cold storage. A refrigeration failure doesn't just mean lost product — it can mean a failed health inspection, fines, or a temporary shutdown. AC Assurance helps Fort Myers and Naples area businesses stay compliant with reliable equipment service.",
+  "Hurricane season brings unique risks to commercial refrigeration. Power outages, flooding, and debris damage can take equipment offline for days. AC Assurance helps businesses prepare with pre-storm equipment checks, emergency response plans, and priority post-storm service to get your operation running again as fast as possible.",
+  "Coastal businesses in Fort Myers Beach, Naples, and Bonita Springs deal with accelerated corrosion on rooftop and outdoor refrigeration units from salt air exposure. We recommend corrosion-resistant coatings, regular coil cleaning, and strategic equipment placement to extend the life of your commercial units in these demanding environments.",
+];
+
+const faqs = [
+  {
+    question: "How fast can you respond to a commercial refrigeration emergency?",
+    answer: "AC Assurance provides priority response for commercial refrigeration emergencies across Southwest Florida. In most cases, we can have a technician on-site within a few hours during business hours. We understand that every hour of downtime means potential inventory loss and revenue impact, so commercial calls are treated as urgent.",
+  },
+  {
+    question: "What brands of commercial refrigeration equipment do you service?",
+    answer: "We service all major commercial refrigeration brands including True, Traulsen, Hoshizaki, Manitowoc, Turbo Air, Beverage-Air, and more. Our technicians carry common parts for these brands to maximize first-visit repair rates.",
+  },
+  {
+    question: "How often should commercial refrigeration equipment be serviced?",
+    answer: "We recommend professional maintenance at least twice per year for most commercial refrigeration equipment, and quarterly for high-use units like walk-in coolers in busy restaurants. Regular maintenance includes coil cleaning, refrigerant checks, thermostat calibration, and door seal inspection — all of which prevent costly breakdowns.",
+  },
+  {
+    question: "Can you help us pass a health department inspection?",
+    answer: "Yes. We ensure your refrigeration equipment maintains proper temperatures as required by Florida's DBPR regulations. We provide temperature verification, calibrate thermostats, and can install temperature monitoring systems that alert you before equipment falls out of compliance.",
+  },
+  {
+    question: "How much does commercial refrigeration repair cost?",
+    answer: "Repair costs depend on the equipment type and issue. Simple fixes like thermostat replacement or fan motor repair may run $200–$500. Compressor replacements or major repairs can range from $800–$3,000+. AC Assurance always provides an upfront quote so you can make an informed decision before any work begins.",
+  },
+];
+
 const CommercialRefrigPage = () => (
   <Layout>
     <SEOHead
@@ -40,13 +77,13 @@ const CommercialRefrigPage = () => (
       description="Commercial refrigeration repair and maintenance in Southwest Florida. Walk-in coolers, reach-in units, ice machines. Call (239) 365-3090."
       schema={[
         buildServiceSchema("Commercial Refrigeration", "Reliable commercial refrigeration repair and maintenance for restaurants, stores, and businesses across Southwest Florida.", "commercial-refrigeration"),
+        buildFAQSchema(faqs),
       ]}
     />
 
     {/* ─── HERO ─── */}
     <section className="relative overflow-hidden bg-brand-navy-deep">
       <div className="flex flex-col lg:flex-row min-h-[520px] lg:min-h-[560px]">
-        {/* Left — 65 % text panel */}
         <div
           className="relative z-10 flex flex-col justify-center px-6 py-16 sm:px-10 lg:w-[65%] lg:py-20 lg:pl-[max(2rem,calc((100vw-1200px)/2+1rem))] lg:pr-16"
           style={{
@@ -54,7 +91,6 @@ const CommercialRefrigPage = () => (
               "linear-gradient(135deg, hsl(222 78% 10%) 0%, hsl(220 72% 15%) 100%)",
           }}
         >
-          {/* Glassmorphism trust pill */}
           <div
             className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-1.5 text-xs font-medium tracking-wide text-white/90 backdrop-blur-md animate-fade-in"
             style={{ background: "rgba(255,255,255,0.08)" }}
@@ -66,7 +102,6 @@ const CommercialRefrigPage = () => (
             24/7 Priority Response · Licensed &amp; Bonded
           </div>
 
-          {/* Two-tone headline */}
           <h1
             className="font-heading leading-[1.1] animate-slide-in-left"
             style={{ animationDelay: "0.1s" }}
@@ -87,7 +122,6 @@ const CommercialRefrigPage = () => (
             expert commercial refrigeration service across Southwest Florida.
           </p>
 
-          {/* CTAs */}
           <div
             className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4 animate-slide-in-left"
             style={{ animationDelay: "0.4s" }}
@@ -107,7 +141,6 @@ const CommercialRefrigPage = () => (
           </div>
         </div>
 
-        {/* Right — 35 % image panel */}
         <div
           className="relative flex items-center justify-center lg:w-[35%] overflow-visible"
           style={{
@@ -115,7 +148,6 @@ const CommercialRefrigPage = () => (
               "linear-gradient(135deg, hsl(220 72% 15%) 0%, #F8FAFC 100%)",
           }}
         >
-          {/* Blue glow aura */}
           <div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full animate-glow-pulse"
             style={{
@@ -123,8 +155,6 @@ const CommercialRefrigPage = () => (
                 "radial-gradient(circle, hsl(210 100% 60% / 0.35) 0%, transparent 70%)",
             }}
           />
-
-          {/* Unit image — overlaps left panel */}
           <img
             src={heroImg}
             alt="Trane commercial rooftop refrigeration unit serviced by AC Assurance"
@@ -151,9 +181,7 @@ const CommercialRefrigPage = () => (
         </p>
 
         <div className="relative mt-14 grid gap-10 sm:grid-cols-3">
-          {/* Dashed connecting line (desktop) */}
           <div className="absolute top-10 left-[16.66%] right-[16.66%] hidden border-t-2 border-dashed border-brand-gray sm:block" />
-
           {stakes.map((s, i) => (
             <div
               key={s.title}
@@ -213,6 +241,42 @@ const CommercialRefrigPage = () => (
       </div>
     </section>
 
+    {/* Our Service Process */}
+    <section className="mx-auto max-w-4xl px-4 pb-12">
+      <h2 className="text-2xl font-bold tracking-tight text-foreground mb-4">Our Commercial Refrigeration Service Process</h2>
+      <ol className="space-y-4">
+        {processSteps.map((step, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <span className="w-8 h-8 rounded-full section-navy flex items-center justify-center shrink-0 mt-0.5">
+              <span className="text-primary-foreground font-bold text-sm">{i + 1}</span>
+            </span>
+            <span className="text-base text-muted-foreground leading-relaxed">{step}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {/* Local Concerns */}
+    <section className="mx-auto max-w-4xl px-4 pb-12">
+      <h2 className="text-2xl font-bold tracking-tight text-foreground mb-4">Commercial Refrigeration in Southwest Florida</h2>
+      {localConcerns.map((p, i) => (
+        <p key={i} className="text-base leading-relaxed text-muted-foreground mb-4">{p}</p>
+      ))}
+    </section>
+
+    {/* FAQs */}
+    <section className="mx-auto max-w-4xl px-4 pb-16">
+      <h2 className="text-2xl font-bold tracking-tight text-foreground mb-6">Frequently Asked Questions</h2>
+      <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="w-full">
+        {faqs.map((faq, i) => (
+          <AccordionItem key={i} value={`faq-${i}`}>
+            <AccordionTrigger className="text-left text-base font-medium">{faq.question}</AccordionTrigger>
+            <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </section>
+
     {/* ─── BOTTOM CTA ─── */}
     <section className="bg-primary py-12 px-4 text-center">
       <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl">
@@ -234,6 +298,13 @@ const CommercialRefrigPage = () => (
         >
           Call Now — (239) 365-3090
         </a>
+      </div>
+      <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-primary-foreground/70">
+        <Link to="/financing" className="underline hover:text-primary-foreground transition">Financing Options</Link>
+        <span>·</span>
+        <Link to="/service-areas" className="underline hover:text-primary-foreground transition">Service Areas</Link>
+        <span>·</span>
+        <Link to="/reviews" className="underline hover:text-primary-foreground transition">Customer Reviews</Link>
       </div>
     </section>
   </Layout>
