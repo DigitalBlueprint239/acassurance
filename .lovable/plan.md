@@ -1,25 +1,38 @@
 
 
-# Replace Mini-Split Hero Image with Authentic Photo
+# Add Photo Gallery Strip to Service Pages
 
-## Problem
-The Mini-Split page (`/ductless-mini-split`) uses a generic `service-repair.webp` hero image that doesn't match the service. The same issue exists on other pages (Heating, Indoor Air Quality, Commercial Refrigeration) — all reusing `service-repair.webp` — but for now, the user has provided a real mini-split photo to fix this specific page.
+## What
+Add an optional `galleryImages` prop to `ServicePageShell` that renders 3-4 photos in an asymmetric grid between the hero/TrustBar and the description section. This creates visual impact without changing existing content flow.
 
-## Pages using mismatched `service-repair.webp`
-| Page | File | Should show |
-|------|------|-------------|
-| **Mini-Split** | `MiniSplitPage.tsx` | Ductless mini-split unit (photo provided) |
-| Heating Services | `HeatingServicesPage.tsx` | Heating system / heat pump |
-| Indoor Air Quality | `IndoorAirQualityPage.tsx` | Air quality equipment |
-| Commercial Refrigeration | `CommercialRefrigPage.tsx` | Commercial refrigeration unit |
+## Layout
+```text
+┌──────────────────┬───────────┐
+│                  │           │
+│   Large photo    │  Photo 2  │
+│   (spans 2 rows) │           │
+│                  ├───────────┤
+│                  │  Photo 3  │
+└──────────────────┴───────────┘
+```
+On mobile: horizontal scroll strip or stacked 2-column grid.
 
-## Change (this round)
+## Changes
 
-1. **Copy uploaded photo** to `src/assets/service-mini-split.webp`
-2. **Update `src/pages/MiniSplitPage.tsx`** — change the import from `service-repair.webp` to `service-mini-split.webp`
+### 1. Update `ServicePageShell.tsx`
+- Add optional `galleryImages` prop: `{ src: string; alt: string }[]`
+- Render a gallery section after `<TrustBar />` when images are provided
+- Use CSS grid with `grid-rows-2` for the asymmetric layout
+- Add rounded corners, subtle shadow, and `object-cover` for consistent sizing
+- Animate on scroll with a simple fade-in (CSS only, no library)
 
-That's it — one asset copy and one import line change. No layout or content changes needed.
+### 2. Update `MiniSplitPage.tsx` as first example
+- Import the uploaded mini-split image plus placeholder references for 2-3 additional gallery slots
+- Pass `galleryImages` array to the shell
+- For now, we can reuse the existing mini-split photo in multiple slots as a placeholder until more photos are uploaded
 
-## Note
-The other three pages still use the generic repair image. If you have photos for those services, share them and we can update those the same way.
+## Notes
+- No changes to other service pages until photos are provided
+- Gallery gracefully hidden when prop is omitted (zero impact on existing pages)
+- Images use `loading="lazy"` since they're below the fold
 
