@@ -3,6 +3,12 @@ import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-mini-split.webp";
 
+const galleryImages = [
+  { src: heroImg, alt: "Ductless mini-split indoor wall unit installation" },
+  { src: heroImg, alt: "Mini-split outdoor condenser unit" },
+  { src: heroImg, alt: "AC Assurance technician installing mini-split system" },
+];
+
 const MiniSplitPage = () => (
   <Layout>
     <SEOHead title="Ductless Mini-Split Installation | AC Assurance Cooling & Heating" description="Expert ductless mini-split installation in Southwest Florida. Perfect for garages, additions, and rooms without ductwork. Call (239) 365-3090." />
@@ -20,6 +26,7 @@ const MiniSplitPage = () => (
         "Quiet indoor units with multiple mounting options",
         "Professional sizing and installation",
       ]}
+      galleryImages={galleryImages}
     />
   </Layout>
 );
