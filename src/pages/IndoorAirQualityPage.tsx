@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/trane-iaq-filter.png";
 import { Wind, ShieldCheck, Sparkles, Star, BadgeCheck } from "lucide-react";
+import { buildServiceSchema } from "@/lib/seoSchemas";
 
 const benefits = [
   "UV germicidal light installation",
@@ -37,6 +38,9 @@ const IndoorAirQualityPage = () => (
     <SEOHead
       title="Indoor Air Quality Solutions | AC Assurance Cooling & Heating"
       description="Improve your home's indoor air quality with UV lights, air purifiers, and filtration upgrades. Serving Southwest Florida. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("Indoor Air Quality Solutions", "Professional indoor air quality upgrades including UV germicidal lights, whole-home air purifiers, and advanced filtration systems.", "indoor-air-quality"),
+      ]}
     />
     <main>
       {/* ── Premium Hero — 65/35 Asymmetric Split ── */}

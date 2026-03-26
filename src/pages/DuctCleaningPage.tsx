@@ -5,6 +5,7 @@ import heroImg from "@/assets/service-ducts.webp";
 import ductBranded from "@/assets/duct-cleaning-branded.webp";
 import ductLadder from "@/assets/duct-cleaning-ladder.webp";
 import ductBedroom from "@/assets/duct-cleaning-bedroom.webp";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seoSchemas";
 
 const galleryImages = [
   { src: ductBranded, alt: "AC Assurance technician cleaning ceiling duct in branded uniform" },
@@ -12,9 +13,24 @@ const galleryImages = [
   { src: ductBedroom, alt: "Professional duct cleaning service in Southwest Florida bedroom" },
 ];
 
+const faqs = [
+  { question: "How often should I clean my ducts in Florida?", answer: "We recommend duct cleaning every 3-5 years in Southwest Florida. However, homes with pets, allergy sufferers, or recent renovations may benefit from more frequent cleaning." },
+  { question: "What are the signs I need duct cleaning?", answer: "Common signs include visible dust around vents, musty or stale odors when the AC runs, increased allergy symptoms indoors, uneven airflow between rooms, and higher-than-normal energy bills." },
+  { question: "How long does duct cleaning take?", answer: "A typical residential duct cleaning takes 2 to 4 hours depending on the size of your home and the condition of your ductwork. We work efficiently while being thorough." },
+  { question: "Will duct cleaning improve my air quality?", answer: "Yes — removing accumulated dust, allergens, mold spores, and debris from your ductwork directly improves the air circulating through your home. Many customers notice a difference immediately." },
+  { question: "Do you clean ducts in Cape Coral and Naples?", answer: "Absolutely. We provide professional duct cleaning services throughout Cape Coral, Naples, Fort Myers, Estero, Bonita Springs, and all of Southwest Florida." },
+];
+
 const DuctCleaningPage = () => (
   <Layout>
-    <SEOHead title="Duct Cleaning in Naples & Cape Coral | AC Assurance" description="Professional duct cleaning in Naples, Fort Myers, Cape Coral. Improve air quality and system efficiency. Call (239) 365-3090." />
+    <SEOHead
+      title="Duct Cleaning in Naples & Cape Coral | AC Assurance"
+      description="Professional duct cleaning in Naples, Fort Myers, Cape Coral. Improve air quality and system efficiency. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("Duct Cleaning", "Professional duct cleaning to remove dust, allergens, and buildup for cleaner air and better HVAC efficiency.", "duct-cleaning"),
+        buildFAQSchema(faqs),
+      ]}
+    />
     <ServicePageShell
       galleryImages={galleryImages}
       title="Duct Cleaning Services"
@@ -55,13 +71,7 @@ const DuctCleaningPage = () => (
           "Cost is a common concern, and it's important to be wary of companies advertising extremely low prices. Professional duct cleaning for a typical Southwest Florida home ranges from $300-$600 depending on system size and condition. Companies offering $99 whole-house cleaning are often using bait-and-switch tactics. AC Assurance provides honest, upfront pricing with no hidden fees.",
         ],
       }}
-      faqs={[
-        { question: "How often should I clean my ducts in Florida?", answer: "We recommend duct cleaning every 3-5 years in Southwest Florida. However, homes with pets, allergy sufferers, or recent renovations may benefit from more frequent cleaning." },
-        { question: "What are the signs I need duct cleaning?", answer: "Common signs include visible dust around vents, musty or stale odors when the AC runs, increased allergy symptoms indoors, uneven airflow between rooms, and higher-than-normal energy bills." },
-        { question: "How long does duct cleaning take?", answer: "A typical residential duct cleaning takes 2 to 4 hours depending on the size of your home and the condition of your ductwork. We work efficiently while being thorough." },
-        { question: "Will duct cleaning improve my air quality?", answer: "Yes — removing accumulated dust, allergens, mold spores, and debris from your ductwork directly improves the air circulating through your home. Many customers notice a difference immediately." },
-        { question: "Do you clean ducts in Cape Coral and Naples?", answer: "Absolutely. We provide professional duct cleaning services throughout Cape Coral, Naples, Fort Myers, Estero, Bonita Springs, and all of Southwest Florida." },
-      ]}
+      faqs={faqs}
     />
   </Layout>
 );

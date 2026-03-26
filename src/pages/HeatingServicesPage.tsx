@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/heating-hero.png";
 import traneLink from "@/assets/trane-link-system.jpeg";
+import { buildServiceSchema } from "@/lib/seoSchemas";
 
 const benefits = [
   "Heat pump repair and installation",
@@ -19,6 +20,9 @@ const HeatingServicesPage = () => (
     <SEOHead
       title="Heating Services Southwest Florida | AC Assurance Cooling & Heating"
       description="Professional heating repair and installation in Naples, Fort Myers, Cape Coral. Heat pumps, furnaces, and more. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("Heating Services", "Professional heating repair and installation including heat pumps, furnaces, and dual-fuel systems for Southwest Florida.", "heating-services"),
+      ]}
     />
     <main>
       {/* ── Split-Panel Hero ── */}
