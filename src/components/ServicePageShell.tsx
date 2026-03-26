@@ -217,6 +217,13 @@ export default function ServicePageShell({
             Call Now — (239) 365-3090
           </a>
         </div>
+        <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-primary-foreground/70">
+          <Link to="/financing" className="underline hover:text-primary-foreground transition">Financing Options</Link>
+          <span>·</span>
+          <Link to="/service-areas" className="underline hover:text-primary-foreground transition">Service Areas</Link>
+          <span>·</span>
+          <Link to="/reviews" className="underline hover:text-primary-foreground transition">Customer Reviews</Link>
+        </div>
       </section>
     </main>
   );
