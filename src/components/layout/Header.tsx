@@ -102,7 +102,7 @@ const Header = () => {
                 <Link to="/contact#estimate-form" onClick={() => setMenuOpen(false)}>Get a Free Quote</Link>
               </Button>
               <Button asChild variant="outline" className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                <a href={PHONE_LINK}>
+                <a href={PHONE_LINK} className="bg-accent-foreground">
                   <Phone className="w-4 h-4 mr-2" />
                   Call {PHONE}
                 </a>
