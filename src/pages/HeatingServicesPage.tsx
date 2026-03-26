@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/heating-hero.png";
+import traneLink from "@/assets/trane-link-system.jpeg";
 
 const benefits = [
   "Heat pump repair and installation",
