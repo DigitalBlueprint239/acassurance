@@ -1,18 +1,44 @@
 import { Link } from "react-router-dom";
 import { Phone, CreditCard, CheckCircle2, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
 import { PHONE, PHONE_LINK } from "@/data/services";
+import { buildFAQSchema } from "@/lib/seoSchemas";
 
 const SYNCHRONY_URL = "https://www.synchrony.com/mmc/M9236331300?sitecode=acewel401";
+
+const faqs = [
+  {
+    question: "What credit score do I need to qualify for HVAC financing?",
+    answer: "Financing is provided through Synchrony Financial and is subject to credit approval. While specific score requirements aren't publicly disclosed, Synchrony considers a range of factors beyond just your credit score. Many homeowners in the Fort Myers and Cape Coral area are approved. We encourage you to apply — the application is quick and won't affect your credit score until you accept an offer.",
+  },
+  {
+    question: "How do I apply for HVAC financing?",
+    answer: "You can apply online through our Synchrony application link right from this page, or call us at (239) 365-3090 and we'll walk you through the process. The application typically takes just a few minutes, and you'll usually receive a decision quickly. We recommend getting your free estimate first so you know the total project cost before applying.",
+  },
+  {
+    question: "What HVAC services can I finance?",
+    answer: "Financing is primarily available for major HVAC investments like new AC system installations, heat pump replacements, and ductless mini-split installations. It's designed for larger projects where spreading the cost over monthly payments makes the investment more manageable. Contact us to discuss whether your specific project qualifies.",
+  },
+  {
+    question: "How long does financing approval take?",
+    answer: "Most applicants receive a decision within minutes of submitting the online application. Once approved, we can typically schedule your installation within a few days. The entire process — from estimate to approved financing to installation — can often be completed within a week.",
+  },
+  {
+    question: "Does financing affect my equipment warranty?",
+    answer: "Not at all. Your manufacturer warranty and any AC Assurance workmanship guarantees remain exactly the same whether you pay upfront or finance. Financing is simply a payment method — it has no impact on the quality of equipment, installation, or warranty coverage you receive.",
+  },
+];
 
 const Financing = () => (
   <Layout>
     <SEOHead
       title="Flexible HVAC Financing | AC Assurance Cooling & Heating"
       description="Convenient HVAC financing through Synchrony for Cape Coral and Fort Myers homeowners. Apply online or call to discuss options for your comfort needs."
+      schema={[buildFAQSchema(faqs)]}
     />
     <section className="section-navy py-12 md:py-16">
       <div className="container">
@@ -106,6 +132,19 @@ const Financing = () => (
                 </li>
               ))}
             </ul>
+
+            {/* FAQ Section */}
+            <div className="mt-10 pt-8 border-t border-border">
+              <h3 className="text-xl font-heading font-bold mb-6">Frequently Asked Questions About HVAC Financing</h3>
+              <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="w-full">
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`}>
+                    <AccordionTrigger className="text-left text-base font-medium">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
 
             <div className="bg-muted rounded p-6 mt-8">
               <div className="flex items-start gap-3">
