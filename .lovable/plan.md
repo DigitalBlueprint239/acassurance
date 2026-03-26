@@ -1,75 +1,77 @@
 
 
-# Full On-Site SEO Foundation Pass
+# Local SEO Content Depth Pass
 
-## Current State Assessment
+## Assessment Summary
 
-**What's already working:**
-- SEOHead component handles title, description, canonical, OG, Twitter meta dynamically per page
-- Homepage has HVACBusiness JSON-LD schema
-- All major pages have unique titles and meta descriptions
-- Canonical URLs are self-referencing and clean (trailing slash stripped)
-- robots.txt exists with sitemap reference
-- sitemap.xml exists in public/
-- LocalLandingPage injects HVACBusiness JSON-LD per city
-- ThankYou page sets noindex/nofollow
-- Image alt text is locally relevant across most pages
-- H1 usage is correct on every page audited
+**Strong pages (content-rich, well-structured):**
+- AcRepairPage — full Signs/Process/Local/FAQs sections
+- AcInstallationPage — full Signs/Process/Local/FAQs
+- EmergencyAcPage — full Signs/Process/Local/FAQs
+- MaintenancePage — full Signs/Process/Local/FAQs
+- DuctCleaningPage — full Signs/Process/Local/FAQs + gallery
+- Homepage — comprehensive, strong local relevance
+- LocalLandingPages (Naples, Fort Myers, Cape Coral, etc.) — deep, localized content via `localPages.ts`
 
-**What's missing or weak:**
-1. **JSON-LD schema on 90% of pages** — Only the homepage and LocalLandingPages have structured data. No Service schema on service pages, no FAQPage schema on pages with FAQs, no Organization/WebSite schema site-wide.
-2. **Sitemap is incomplete** — Missing ~15 routes: `/ac-repair-fort-myers`, `/ac-repair-bonita-springs`, `/ac-repair-estero`, `/ac-repair-lehigh-acres`, `/ac-repair-cape-coral-fl`, `/services`, `/reviews`, `/privacy-policy`, `/trane-products`, `/heating-services`, `/ductless-mini-split`, `/indoor-air-quality`, `/emergency-ac-repair-now`, `/contact`, `/thank-you` (noindex, so exclude), and all local landing page slugs.
-3. **No `react-helmet-async`** — Current SEOHead uses `document.title` and `querySelector` mutations. This works fine for an SPA; switching to react-helmet-async is cleaner but functionally equivalent. Worth the migration for maintainability.
-4. **Duplicate schema in `index.html`** — The static LocalBusiness JSON-LD in `index.html` conflicts with the dynamic HVACBusiness schema injected by the homepage's SEOHead, creating duplicate structured data on the homepage.
-5. **Missing OG URL meta** — `og:url` is not set per-page.
-6. **City repair pages (CityAcRepairPage) have no schema** — The `schema` prop exists but none of the 6 city pages pass it.
-7. **ServicePageShell pages with FAQs lack FAQPage schema** — 5 pages have FAQ accordions but no corresponding FAQPage JSON-LD.
-8. **Internal linking gaps** — Service pages link to Contact and each other via the bottom CTA, but don't cross-link to related services, financing, or city pages within body content.
-9. **sitemap.xml lacks `lastmod`, `changefreq`, `priority`** — Basic `<loc>` only.
+**Thin pages needing content expansion:**
+1. **MiniSplitPage** — Only has title, subtitle, description, benefits, and gallery. No `signsYouNeed`, `ourProcess`, `localConcerns`, or `faqs`. This is the thinnest service page.
+2. **HeatingServicesPage** — Custom layout with only a short paragraph and benefits list. No Signs/Process/Local/FAQ sections.
+3. **IndoorAirQualityPage** — Custom layout with "How It Works" and benefits, but no Signs/Process/Local Concerns/FAQ sections.
+4. **CommercialRefrigPage** — Custom layout with "What's at Stake" and benefits, but no Signs/Process/Local Concerns/FAQ sections.
+5. **Financing** — Decent content but missing FAQ section for financing-intent searches.
+
+**Internal linking gaps:**
+- HeatingServicesPage, IAQ, and CommercialRefrig bottom CTAs lack cross-links to financing/service-areas/reviews (ServicePageShell pages have them, but these custom pages don't)
+- MiniSplitPage uses ServicePageShell but has no deep content sections
 
 ---
 
 ## Implementation Plan
 
-### 1. Migrate to `react-helmet-async`
-- Install `react-helmet-async`
-- Wrap `App` in `<HelmetProvider>`
-- Rewrite `SEOHead` to use `<Helmet>` with proper `<title>`, `<meta>`, `<link rel="canonical">`, and `<script type="application/ld+json">` tags
-- Add `og:url` per page using canonical URL
-- Remove manual DOM manipulation
+### 1. Expand MiniSplitPage (highest priority — thinnest page)
+Add `signsYouNeed`, `ourProcess`, `localConcerns`, and `faqs` props to match other ServicePageShell pages.
 
-### 2. Remove duplicate static schema from `index.html`
-- Delete the `<script type="application/ld+json">` block from `index.html` (the homepage's SEOHead already injects HVACBusiness schema dynamically)
+- **Primary intent:** "ductless mini-split installation near me", "mini split Fort Myers"
+- **FAQs (5):** Cost, how they work, garage cooling, brands, permits
+- **Signs:** rooms that don't cool, garage too hot, additions without ductwork, home office comfort
+- **Process:** consultation, sizing, install, testing
+- **Local concerns:** Florida room cooling, garage workshops, salt air on outdoor units
 
-### 3. Add Organization + WebSite schema to SEOHead (site-wide)
-- Inject Organization and WebSite JSON-LD on every page render via SEOHead, so every crawled page carries baseline structured data
+### 2. Expand HeatingServicesPage
+Add Signs, Process, Local Concerns, and FAQ sections below existing benefits grid (keep the custom hero layout).
 
-### 4. Add Service JSON-LD to all 9 service pages
-- AcRepairPage, AcInstallationPage, EmergencyAcPage, HeatingServicesPage, MiniSplitPage, MaintenancePage, DuctCleaningPage, IndoorAirQualityPage, CommercialRefrigPage
-- Each gets a `Service` schema with name, description, provider (AC Assurance), areaServed, and telephone
+- **Primary intent:** "heating repair Fort Myers", "heat pump service Cape Coral"
+- **FAQs (5):** heat pump vs furnace, how often service, cold snap emergency, costs, dual-fuel
+- **Signs:** uneven heating, strange smells, high bills, system won't start
+- **Process:** diagnostic, quote, repair/install, testing
+- **Local concerns:** Florida's mild but real winter, heat pump efficiency in SWFL, pre-season tune-ups
+- Add internal links to financing + service areas in bottom CTA
 
-### 5. Add FAQPage JSON-LD to pages with FAQ accordions
-- 5 ServicePageShell pages (Repair, Installation, Emergency, Maintenance, Duct Cleaning) + LocalLandingPages with FAQs
-- Generate FAQPage schema from the existing `faqs` array data
+### 3. Expand IndoorAirQualityPage
+Add Signs, Local Concerns, and FAQ sections below existing content.
 
-### 6. Add HVACBusiness schema to CityAcRepairPage instances
-- Pass schema prop from AcRepairNaples, AcRepairFortMyers, AcRepairCapeCoral2, AcRepairBonitaSprings, AcRepairEstero, AcRepairLehighAcres
+- **Primary intent:** "indoor air quality Naples", "UV light installation HVAC"
+- **FAQs (5):** UV light effectiveness, HEPA vs standard filters, humidity control, allergy relief, cost
+- **Signs:** musty odors, worsening allergies, visible dust, humidity issues
+- **Local concerns:** Florida humidity and mold risk, post-hurricane air quality, new construction off-gassing
+- Add internal links to financing + service areas in bottom CTA
 
-### 7. Expand sitemap.xml
-- Add all missing routes with `lastmod`, `changefreq`, `priority`
-- Exclude `/thank-you` and `/emergency-ac-repair-now` (utility/noindex pages)
-- Include all 11 local landing page slugs
-- Include `/privacy-policy`, `/trane-products`, `/trane-air-conditioners`, `/trane-heat-pumps`
+### 4. Expand CommercialRefrigPage
+Add Process, Local Concerns, and FAQ sections below existing content.
 
-### 8. Add internal cross-links
-- ServicePageShell bottom CTA: add links to `/financing` and `/service-areas`
-- About page: add link to `/services` and `/reviews`
-- Financing page: add link to `/ac-installation-replacement`
-- Contact page: already well-linked
+- **Primary intent:** "commercial refrigeration repair Fort Myers", "walk-in cooler repair Cape Coral"
+- **FAQs (5):** emergency response time, brands serviced, maintenance frequency, health code compliance, cost
+- **Process:** emergency call, diagnostic, transparent quote, repair, follow-up maintenance
+- **Local concerns:** Florida health department requirements, hurricane prep for commercial units, coastal corrosion on rooftop units
+- Add internal links to financing + service areas in bottom CTA
 
-### 9. Enhance robots.txt
-- Add `Disallow: /thank-you` to prevent crawling the thank-you page
-- Keep existing Allow and Sitemap directives
+### 5. Add FAQ section to Financing page
+- **Primary intent:** "HVAC financing Cape Coral", "AC payment plans Fort Myers"
+- **FAQs (5):** credit requirements, how to apply, what's covered, timeline, impact on warranty
+- Add FAQPage JSON-LD schema
+
+### 6. Strengthen internal linking on custom-layout pages
+- HeatingServicesPage, IAQ, and CommercialRefrig bottom CTAs: add same cross-link row as ServicePageShell (Financing, Service Areas, Reviews)
 
 ---
 
@@ -77,32 +79,15 @@
 
 | File | Change |
 |------|--------|
-| `package.json` | Add `react-helmet-async` |
-| `src/App.tsx` | Wrap with `HelmetProvider` |
-| `src/components/SEOHead.tsx` | Full rewrite using `Helmet`; add Organization + WebSite schema; add `og:url` |
-| `index.html` | Remove duplicate LocalBusiness JSON-LD script block |
-| `src/pages/AcRepairPage.tsx` | Add Service + FAQPage schema |
-| `src/pages/AcInstallationPage.tsx` | Add Service + FAQPage schema |
-| `src/pages/EmergencyAcPage.tsx` | Add Service + FAQPage schema |
-| `src/pages/MaintenancePage.tsx` | Add Service + FAQPage schema |
-| `src/pages/DuctCleaningPage.tsx` | Add Service + FAQPage schema |
-| `src/pages/HeatingServicesPage.tsx` | Add Service schema |
-| `src/pages/MiniSplitPage.tsx` | Add Service schema |
-| `src/pages/IndoorAirQualityPage.tsx` | Add Service schema |
-| `src/pages/CommercialRefrigPage.tsx` | Add Service schema |
-| `src/pages/AcRepairNaples.tsx` | Add HVACBusiness schema prop |
-| `src/pages/AcRepairFortMyers.tsx` | Add HVACBusiness schema prop |
-| `src/pages/AcRepairCapeCoral2.tsx` | Add HVACBusiness schema prop |
-| `src/pages/AcRepairBonitaSprings.tsx` | Add HVACBusiness schema prop |
-| `src/pages/AcRepairEstero.tsx` | Add HVACBusiness schema prop |
-| `src/pages/AcRepairLehighAcres.tsx` | Add HVACBusiness schema prop |
-| `src/components/ServicePageShell.tsx` | Add internal links to Financing + Service Areas in bottom CTA |
-| `src/pages/About.tsx` | Add internal links to Services + Reviews |
-| `src/pages/Financing.tsx` | Add internal link to AC Installation |
-| `public/sitemap.xml` | Expand with all routes + crawl hints |
-| `public/robots.txt` | Add Disallow for /thank-you |
+| `src/pages/MiniSplitPage.tsx` | Add signsYouNeed, ourProcess, localConcerns, faqs + FAQPage schema |
+| `src/pages/HeatingServicesPage.tsx` | Add Signs, Process, Local, FAQ sections + internal links + FAQPage schema |
+| `src/pages/IndoorAirQualityPage.tsx` | Add Signs, Local, FAQ sections + internal links + FAQPage schema |
+| `src/pages/CommercialRefrigPage.tsx` | Add Process, Local, FAQ sections + internal links + FAQPage schema |
+| `src/pages/Financing.tsx` | Add FAQ accordion + FAQPage schema |
 
-## Limitations (SPA constraints)
-- No SSR/prerendering — Google must execute JavaScript to see content. A prerendering service (prerender.io or similar) should be added at the hosting/CDN level for production SEO. Cannot be done inside Lovable.
-- Dynamic `<head>` changes via react-helmet-async only take effect after JS execution. Static crawlers that don't render JS will only see `index.html` defaults.
+## Content Gaps Discovered (Future Recommendations)
+- No dedicated "AC Replacement" page (distinct from installation) — high-intent search term
+- No "Thermostat Installation" or "Smart Thermostat" page
+- No "HVAC Service Agreements / Maintenance Plans" dedicated page
+- City-specific pages exist for AC Repair but not for Installation, Maintenance, or Emergency — future expansion opportunity
 
