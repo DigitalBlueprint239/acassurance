@@ -1,44 +1,20 @@
 
 
-# 10/10 Heating Services Hero Section
+# Add Second Image to Heating Services Hero
 
-## Current Problem
-The `ServicePageShell` hero treats every image as a full-bleed background with a dark overlay — great for wide action shots, but terrible for a product marketing image like the Trane thermostat. The image gets obscured and loses its visual impact.
+## What
+Add the new Trane Link system controller image alongside the existing thermostat image in the hero's image panel, creating a stacked or side-by-side gallery effect.
 
-## Design: Split-Panel Hero
-A premium split layout where the text occupies the left side on a brand navy gradient, and the product image is showcased prominently on the right with no overlay — letting the image breathe and shine.
-
-```text
-┌──────────────────────────────────────────────────┐
-│  ████████████████████  │                          │
-│  █  HEATING SERVICES █  │   [Trane thermostat     │
-│  █                   █  │    image — full height,  │
-│  █  Subtitle text    █  │    object-contain or     │
-│  █                   █  │    object-cover, clean   │
-│  █  [CTA] [Call]     █  │    white/light bg]       │
-│  ████████████████████  │                          │
-└──────────────────────────────────────────────────┘
-         60% text                40% image
-         (mobile: stacked — image on top, text below)
-```
+## Design
+On desktop, the right 40% panel will show both images stacked vertically with a small gap — the existing thermostat image on top, the Trane Link spec sheet below. On mobile, show both images side-by-side in the top image strip to keep height compact.
 
 ## Changes
 
-### 1. Save the uploaded image
-- `user-uploads://Screen_Shot_2026-03-26_at_12.11.37_PM.png` → `src/assets/heating-hero.png`
+### 1. Save the new image
+- Copy `user-uploads://897ef205-ee2f-ef11-a065-3cecef705787.jpeg` → `src/assets/trane-link-system.jpeg`
 
 ### 2. `src/pages/HeatingServicesPage.tsx`
-- Stop using `ServicePageShell` for this page
-- Build a custom hero inline (or a new component) with the split-panel layout:
-  - **Left panel**: Brand navy gradient background, white text, H1, subtitle, two CTAs
-  - **Right panel**: Clean light/white background, image displayed large with `object-contain` so the product is fully visible — no dark overlay
-  - **Mobile**: Image stacks on top (shorter height), text panel below
-- Keep the rest of the page content (TrustBar, description, benefits) rendered below using the same patterns from ServicePageShell
-
-### 3. `src/pages/HeatingServicesPage.tsx` — details
-- Hero height: `min-h-[500px] lg:min-h-[560px]`
-- Left side: `bg-gradient-to-br from-[hsl(220,72%,12%)] to-[hsl(220,72%,20%)]` with subtle radial glow
-- Right side: `bg-white` or `bg-gray-50` — the product image sits cleanly
-- Image uses `fetchPriority="high"`, `object-contain`, with some padding so it's not edge-to-edge
-- Mobile: single column, image 250px tall on top, text panel below with navy bg
+- Import the new image: `import traneLink from "@/assets/trane-link-system.jpeg"`
+- **Mobile image strip**: Change from single image to a flex row with both images side-by-side, each `max-h-[200px]`
+- **Desktop image panel**: Stack both images vertically with `flex-col gap-4`, the thermostat image slightly larger on top and the Trane Link sheet below, both using `object-contain` with `drop-shadow`
 
