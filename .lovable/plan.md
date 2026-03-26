@@ -1,77 +1,64 @@
 
 
-# Local SEO Content Depth Pass
+# Conversion Rate Optimization Pass
 
-## Assessment Summary
+## Key Findings
 
-**Strong pages (content-rich, well-structured):**
-- AcRepairPage — full Signs/Process/Local/FAQs sections
-- AcInstallationPage — full Signs/Process/Local/FAQs
-- EmergencyAcPage — full Signs/Process/Local/FAQs
-- MaintenancePage — full Signs/Process/Local/FAQs
-- DuctCleaningPage — full Signs/Process/Local/FAQs + gallery
-- Homepage — comprehensive, strong local relevance
-- LocalLandingPages (Naples, Fort Myers, Cape Coral, etc.) — deep, localized content via `localPages.ts`
+**What's already strong:** Sticky mobile CTA bar, exit-intent popup with form, scroll reminder on desktop, urgency pill with time-based logic, strong review carousel, comparison table vs competitors.
 
-**Thin pages needing content expansion:**
-1. **MiniSplitPage** — Only has title, subtitle, description, benefits, and gallery. No `signsYouNeed`, `ourProcess`, `localConcerns`, or `faqs`. This is the thinnest service page.
-2. **HeatingServicesPage** — Custom layout with only a short paragraph and benefits list. No Signs/Process/Local/FAQ sections.
-3. **IndoorAirQualityPage** — Custom layout with "How It Works" and benefits, but no Signs/Process/Local Concerns/FAQ sections.
-4. **CommercialRefrigPage** — Custom layout with "What's at Stake" and benefits, but no Signs/Process/Local Concerns/FAQ sections.
-5. **Financing** — Decent content but missing FAQ section for financing-intent searches.
+**Conversion weaknesses identified:**
 
-**Internal linking gaps:**
-- HeatingServicesPage, IAQ, and CommercialRefrig bottom CTAs lack cross-links to financing/service-areas/reviews (ServicePageShell pages have them, but these custom pages don't)
-- MiniSplitPage uses ServicePageShell but has no deep content sections
+1. **EstimateForm lacks reassurance copy** — No friction-reducing text near submit button (e.g. "No obligation. We typically respond within 1 hour."). Form heading on Contact page says generic "Send Us a Message" instead of benefit-driven copy.
+2. **ServicePageShell hero CTAs link to /contact** — Should scroll to inline form or use anchor to #estimate-form on same page. Adds unnecessary navigation friction.
+3. **ServicePageShell has no inline form** — After all the content sections, user hits a bottom CTA that sends them away. Should embed a form directly on service pages.
+4. **Homepage hero subtitle mentions "diagnostic is on us"** — Per memory, this promise was removed. Needs cleanup.
+5. **Contact page form area has no trust cues** — No reassurance badges, response time promise, or micro-copy near form.
+6. **WhyDifferent "Trane Certified Dealer" text** — Must say "Independent Trane Dealer" per brand compliance.
+7. **StickyCallBar appears only after 15% scroll** — Should appear immediately on service/emergency pages where intent is highest.
+8. **Emergency pathway not prominent enough from homepage** — EmergencyCallout section headline "AC Not Cooling?" is good but buried deep in the page. No emergency link in header nav.
+9. **Financing page form heading says "Request a Financing Consultation"** — Should be warmer/lower-friction.
 
 ---
 
 ## Implementation Plan
 
-### 1. Expand MiniSplitPage (highest priority — thinnest page)
-Add `signsYouNeed`, `ourProcess`, `localConcerns`, and `faqs` props to match other ServicePageShell pages.
+### 1. Add micro-copy and trust cues to EstimateForm
+- Add reassurance text below submit button: "No obligation. We typically respond within 1 hour."
+- Add small trust line: "Licensed (CAC1823832) · Insured · BBB Accredited"
 
-- **Primary intent:** "ductless mini-split installation near me", "mini split Fort Myers"
-- **FAQs (5):** Cost, how they work, garage cooling, brands, permits
-- **Signs:** rooms that don't cool, garage too hot, additions without ductwork, home office comfort
-- **Process:** consultation, sizing, install, testing
-- **Local concerns:** Florida room cooling, garage workshops, salt air on outdoor units
+### 2. Improve Contact page form wrapper
+- Change heading from "Send Us a Message" to "Request Service — Free Estimate"
+- Add subtext: "Tell us what's going on and we'll get back to you fast. No obligation."
 
-### 2. Expand HeatingServicesPage
-Add Signs, Process, Local Concerns, and FAQ sections below existing benefits grid (keep the custom hero layout).
+### 3. Add inline EstimateForm to ServicePageShell
+- Insert a form section before the bottom navy CTA bar
+- Heading: "Request [Service Type] Service" with reassurance copy
+- Uses `id="estimate-form"` so hero CTAs scroll to it instead of navigating to /contact
+- Change hero CTA from `Link to="/contact"` to `a href="#estimate-form"`
 
-- **Primary intent:** "heating repair Fort Myers", "heat pump service Cape Coral"
-- **FAQs (5):** heat pump vs furnace, how often service, cold snap emergency, costs, dual-fuel
-- **Signs:** uneven heating, strange smells, high bills, system won't start
-- **Process:** diagnostic, quote, repair/install, testing
-- **Local concerns:** Florida's mild but real winter, heat pump efficiency in SWFL, pre-season tune-ups
-- Add internal links to financing + service areas in bottom CTA
+### 4. Fix homepage hero subtitle
+- Remove "or the diagnostic is on us" per business memory
+- Replace with: "SWFL's highest-rated response team. Fast, honest AC service across Southwest Florida."
 
-### 3. Expand IndoorAirQualityPage
-Add Signs, Local Concerns, and FAQ sections below existing content.
+### 5. Fix WhyDifferent brand compliance
+- Change "Trane Certified Dealer" → "Independent Trane Dealer"
 
-- **Primary intent:** "indoor air quality Naples", "UV light installation HVAC"
-- **FAQs (5):** UV light effectiveness, HEPA vs standard filters, humidity control, allergy relief, cost
-- **Signs:** musty odors, worsening allergies, visible dust, humidity issues
-- **Local concerns:** Florida humidity and mold risk, post-hurricane air quality, new construction off-gassing
-- Add internal links to financing + service areas in bottom CTA
+### 6. Show StickyCallBar immediately on high-intent pages
+- On `/emergency-ac-repair`, `/ac-repair-*`, and `/contact` routes, show the bar without the 15% scroll threshold
 
-### 4. Expand CommercialRefrigPage
-Add Process, Local Concerns, and FAQ sections below existing content.
+### 7. Improve Financing page form heading
+- Change "Request a Financing Consultation" → "Get Your Free Estimate"
+- Add subtext: "We'll help you find the right system and payment plan."
 
-- **Primary intent:** "commercial refrigeration repair Fort Myers", "walk-in cooler repair Cape Coral"
-- **FAQs (5):** emergency response time, brands serviced, maintenance frequency, health code compliance, cost
-- **Process:** emergency call, diagnostic, transparent quote, repair, follow-up maintenance
-- **Local concerns:** Florida health department requirements, hurricane prep for commercial units, coastal corrosion on rooftop units
-- Add internal links to financing + service areas in bottom CTA
+### 8. Strengthen form CTA button text contextually
+- Add optional `ctaLabel` prop to EstimateForm
+- Default: "Schedule Service"
+- Contact page: "Send My Request"
+- Financing page: "Get My Free Estimate"
+- Service pages: "Request Service"
 
-### 5. Add FAQ section to Financing page
-- **Primary intent:** "HVAC financing Cape Coral", "AC payment plans Fort Myers"
-- **FAQs (5):** credit requirements, how to apply, what's covered, timeline, impact on warranty
-- Add FAQPage JSON-LD schema
-
-### 6. Strengthen internal linking on custom-layout pages
-- HeatingServicesPage, IAQ, and CommercialRefrig bottom CTAs: add same cross-link row as ServicePageShell (Financing, Service Areas, Reviews)
+### 9. Add emergency quick-link to header
+- Add a small "Emergency?" link with phone icon in the desktop header nav area, styled distinctly (e.g. text-red/accent)
 
 ---
 
@@ -79,15 +66,12 @@ Add Process, Local Concerns, and FAQ sections below existing content.
 
 | File | Change |
 |------|--------|
-| `src/pages/MiniSplitPage.tsx` | Add signsYouNeed, ourProcess, localConcerns, faqs + FAQPage schema |
-| `src/pages/HeatingServicesPage.tsx` | Add Signs, Process, Local, FAQ sections + internal links + FAQPage schema |
-| `src/pages/IndoorAirQualityPage.tsx` | Add Signs, Local, FAQ sections + internal links + FAQPage schema |
-| `src/pages/CommercialRefrigPage.tsx` | Add Process, Local, FAQ sections + internal links + FAQPage schema |
-| `src/pages/Financing.tsx` | Add FAQ accordion + FAQPage schema |
-
-## Content Gaps Discovered (Future Recommendations)
-- No dedicated "AC Replacement" page (distinct from installation) — high-intent search term
-- No "Thermostat Installation" or "Smart Thermostat" page
-- No "HVAC Service Agreements / Maintenance Plans" dedicated page
-- City-specific pages exist for AC Repair but not for Installation, Maintenance, or Emergency — future expansion opportunity
+| `src/components/EstimateForm.tsx` | Add reassurance micro-copy below submit, add `ctaLabel` prop |
+| `src/components/ServicePageShell.tsx` | Add inline form section, change hero CTA to anchor scroll |
+| `src/pages/Contact.tsx` | Improve form heading and subtext |
+| `src/pages/Index.tsx` | Fix hero subtitle copy |
+| `src/pages/Financing.tsx` | Improve form heading and subtext |
+| `src/components/WhyDifferent.tsx` | Fix "Trane Certified" → "Independent Trane Dealer" |
+| `src/components/StickyCallBar.tsx` | Show immediately on high-intent routes |
+| `src/components/layout/Header.tsx` | Add emergency quick-link |
 
