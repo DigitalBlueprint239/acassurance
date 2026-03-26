@@ -1,38 +1,27 @@
 
 
-# Add Photo Gallery Strip to Service Pages
+# Add Real Mini-Split Photos to Gallery
 
 ## What
-Add an optional `galleryImages` prop to `ServicePageShell` that renders 3-4 photos in an asymmetric grid between the hero/TrustBar and the description section. This creates visual impact without changing existing content flow.
+Replace the placeholder gallery images on the Mini-Split page with the 4 newly uploaded photos (plus the existing hero image = 5 total). The gallery grid currently supports 3 images, so we'll pick the best 3 for the grid slots.
 
-## Layout
-```text
-┌──────────────────┬───────────┐
-│                  │           │
-│   Large photo    │  Photo 2  │
-│   (spans 2 rows) │           │
-│                  ├───────────┤
-│                  │  Photo 3  │
-└──────────────────┴───────────┘
-```
-On mobile: horizontal scroll strip or stacked 2-column grid.
+## Photo Assignment
+- **Large photo (spans 2 rows)**: The existing hero image (indoor wall unit) -- already imported
+- **Photo 2 (top-right)**: `2296823128312983692_1-2.JPG` -- clean indoor wall-mounted unit on white wall
+- **Photo 3 (bottom-right)**: `700838430447260170.JPG` -- outdoor Mitsubishi condenser unit with landscaping
+
+The other two photos (garage installations) are good but visually busier. We'll save them as assets for potential future use.
 
 ## Changes
 
-### 1. Update `ServicePageShell.tsx`
-- Add optional `galleryImages` prop: `{ src: string; alt: string }[]`
-- Render a gallery section after `<TrustBar />` when images are provided
-- Use CSS grid with `grid-rows-2` for the asymmetric layout
-- Add rounded corners, subtle shadow, and `object-cover` for consistent sizing
-- Animate on scroll with a simple fade-in (CSS only, no library)
+### 1. Copy uploaded images to `src/assets/`
+- `mini-split-indoor.webp` (wall-mounted unit on white wall)
+- `mini-split-outdoor.webp` (Mitsubishi outdoor condenser)
 
-### 2. Update `MiniSplitPage.tsx` as first example
-- Import the uploaded mini-split image plus placeholder references for 2-3 additional gallery slots
-- Pass `galleryImages` array to the shell
-- For now, we can reuse the existing mini-split photo in multiple slots as a placeholder until more photos are uploaded
-
-## Notes
-- No changes to other service pages until photos are provided
-- Gallery gracefully hidden when prop is omitted (zero impact on existing pages)
-- Images use `loading="lazy"` since they're below the fold
+### 2. Update `src/pages/MiniSplitPage.tsx`
+- Import the two new images
+- Update `galleryImages` array with unique real photos and proper alt text:
+  - Slot 1 (large): existing hero image -- "Mini-split indoor wall unit installation"
+  - Slot 2: indoor unit -- "Wall-mounted ductless mini-split unit"
+  - Slot 3: outdoor condenser -- "Mitsubishi mini-split outdoor condenser unit"
 
