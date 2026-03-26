@@ -30,7 +30,7 @@ const StickyCallBar = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden section-navy shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
+    <div className="fixed bottom-0 left-0 right-0 z-50 <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden section-navy shadow-[0_-2px_10px_rgba(0,0,0,0.3)]"> section-navy shadow-[0_-2px_10px_rgba(0,0,0,0.3)]">
       <div className="grid grid-cols-2 divide-x divide-primary-foreground/20">
         <a
           href={PHONE_LINK}
