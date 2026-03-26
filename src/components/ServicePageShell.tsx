@@ -81,13 +81,17 @@ export default function ServicePageShell({
       <TrustBar />
 
       {galleryImages && galleryImages.length >= 3 && (
-        <section className="mx-auto max-w-5xl px-4 py-10">
-          <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4 md:grid-cols-3 md:grid-rows-2" style={{ gridTemplateRows: 'repeat(2, 180px)' }}>
+        <section className="mx-auto max-w-5xl px-4 py-10" aria-label="Photo gallery of our work">
+          <h2 className="text-xl font-semibold tracking-tight text-gray-900 mb-4">Our Work in Action</h2>
+          <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4 md:grid-cols-3 md:grid-rows-2" style={{ gridTemplateRows: 'repeat(2, 220px)' }}>
             <div className="col-span-2 row-span-2 md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl shadow-md">
               <img
                 src={galleryImages[0].src}
                 alt={galleryImages[0].alt}
-                loading="lazy"
+                width={800}
+                height={880}
+                fetchPriority="high"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
@@ -95,7 +99,10 @@ export default function ServicePageShell({
               <img
                 src={galleryImages[1].src}
                 alt={galleryImages[1].alt}
+                width={400}
+                height={440}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
@@ -103,7 +110,10 @@ export default function ServicePageShell({
               <img
                 src={galleryImages[2].src}
                 alt={galleryImages[2].alt}
+                width={400}
+                height={440}
                 loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
