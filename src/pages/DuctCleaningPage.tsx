@@ -2,11 +2,21 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-ducts.webp";
+import ductBranded from "@/assets/duct-cleaning-branded.webp";
+import ductLadder from "@/assets/duct-cleaning-ladder.webp";
+import ductBedroom from "@/assets/duct-cleaning-bedroom.webp";
+
+const galleryImages = [
+  { src: ductBranded, alt: "AC Assurance technician cleaning ceiling duct in branded uniform" },
+  { src: ductLadder, alt: "Technician on ladder servicing ceiling vent register" },
+  { src: ductBedroom, alt: "Professional duct cleaning service in Southwest Florida bedroom" },
+];
 
 const DuctCleaningPage = () => (
   <Layout>
     <SEOHead title="Duct Cleaning in Naples & Cape Coral | AC Assurance" description="Professional duct cleaning in Naples, Fort Myers, Cape Coral. Improve air quality and system efficiency. Call (239) 365-3090." />
     <ServicePageShell
+      galleryImages={galleryImages}
       title="Duct Cleaning Services"
       subtitle="Remove dust, allergens, and buildup from your ductwork for cleaner air and better efficiency."
       heroImage={heroImg}
