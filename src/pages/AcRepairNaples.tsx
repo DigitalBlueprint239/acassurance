@@ -1,4 +1,5 @@
 import CityAcRepairPage from "@/components/CityAcRepairPage";
+import { buildHVACBusinessSchema } from "@/lib/seoSchemas";
 
 const AcRepairNaples = () => (
   <CityAcRepairPage
@@ -8,6 +9,7 @@ const AcRepairNaples = () => (
     h1="Expert AC Repair in Naples, FL"
     intro="Naples is synonymous with luxury — from the boutique-lined streets of 5th Avenue South to the gated estates of Port Royal and Grey Oaks. But even the most premium homes are at the mercy of Southwest Florida's punishing heat and humidity. High-end HVAC systems in Naples properties are often complex multi-zone setups that require specialized knowledge to diagnose and repair properly. Beachfront homes face relentless salt air that corrodes condensers and degrades refrigerant lines faster than inland properties. At AC Assurance, we bring the same level of precision and care that Naples homeowners expect from every service provider. Our owner is on-site for every job — no anonymous subcontractors, no corner-cutting. We provide same-day diagnostics, upfront pricing, and expert repair on all makes and models."
     mapQuery="Naples,FL"
+    schema={[buildHVACBusinessSchema("Naples")]}
     localIssues={[
       { title: "Luxury Home HVAC Complexity", description: "Naples homes often feature multi-zone systems, variable-speed compressors, and smart thermostats. Diagnosing issues requires specialized training and experience with premium equipment brands." },
       { title: "Gulf Salt Air Corrosion", description: "Properties near the beach and along the coast experience accelerated corrosion from salt-laden Gulf air. Outdoor units, copper lines, and electrical connections degrade faster without protective coatings and regular maintenance." },
