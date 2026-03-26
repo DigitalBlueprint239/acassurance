@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
-import { EMAIL, PHONE } from "@/data/services";
+import { EMAIL, EMAIL_SECONDARY, PHONE } from "@/data/services";
 
 const PrivacyPolicy = () => (
   <Layout>
@@ -49,7 +49,8 @@ const PrivacyPolicy = () => (
         <h2 className="text-xl font-heading font-bold mb-3 mt-8">Contact Us</h2>
         <p className="text-foreground leading-relaxed">
           If you have questions about this privacy policy or your personal data, contact us at{" "}
-          <a href={`mailto:${EMAIL}`} className="text-accent hover:underline">{EMAIL}</a> or call{" "}
+          <a href={`mailto:${EMAIL}`} className="text-accent hover:underline">{EMAIL}</a> or{" "}
+          <a href={`mailto:${EMAIL_SECONDARY}`} className="text-accent hover:underline">{EMAIL_SECONDARY}</a>, or call{" "}
           <span className="font-semibold">{PHONE}</span>.
         </p>
       </div>

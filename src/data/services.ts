@@ -206,7 +206,8 @@ export const serviceAreas = [
 
 export const PHONE = "(239) 365-3090";
 export const PHONE_LINK = "tel:+12393653090";
-export const EMAIL = "service@acassurancefl.com";
+export const EMAIL = "Jason@acassurancefl.com";
+export const EMAIL_SECONDARY = "Acassurancefl@gmail.com";
 export const LICENSE = "CAC1823832";
 export const COMPANY = "AC Assurance Cooling & Heating";
 export const PRIMARY_CITY = "Fort Myers & Cape Coral, FL";

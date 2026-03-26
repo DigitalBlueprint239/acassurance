@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { PHONE, PHONE_LINK, EMAIL, LICENSE, COMPANY } from "@/data/services";
+import { PHONE, PHONE_LINK, EMAIL, EMAIL_SECONDARY, LICENSE, COMPANY } from "@/data/services";
 import logo from "@/assets/ac-assurance-logo.png";
 import bbbLogo from "@/assets/bbb-accredited.png";
 
@@ -33,6 +33,9 @@ const Footer = () => (
             </a>
             <a href={`mailto:${EMAIL}`} className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
               <Mail className="w-4 h-4 shrink-0" /> {EMAIL}
+            </a>
+            <a href={`mailto:${EMAIL_SECONDARY}`} className="flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+              <Mail className="w-4 h-4 shrink-0" /> {EMAIL_SECONDARY}
             </a>
             <div className="flex items-start gap-2 opacity-80">
               <MapPin className="w-4 h-4 shrink-0 mt-0.5" />

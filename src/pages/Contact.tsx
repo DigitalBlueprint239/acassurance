@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SWFLServiceMap from "@/components/SWFLServiceMap";
 import SEOHead from "@/components/SEOHead";
 import EstimateForm from "@/components/EstimateForm";
-import { PHONE, PHONE_LINK, EMAIL, LICENSE } from "@/data/services";
+import { PHONE, PHONE_LINK, EMAIL, EMAIL_SECONDARY, LICENSE } from "@/data/services";
 
 const Contact = () => (
   <Layout>
@@ -42,6 +42,15 @@ const Contact = () => (
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
                   <div className="font-bold">{EMAIL}</div>
+                </div>
+              </a>
+              <a href={`mailto:${EMAIL_SECONDARY}`} className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
+                <div className="w-10 h-10 rounded bg-muted flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground">Email</div>
+                  <div className="font-bold">{EMAIL_SECONDARY}</div>
                 </div>
               </a>
               <div className="flex items-center gap-3 text-foreground">
