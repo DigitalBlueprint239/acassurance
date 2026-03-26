@@ -12,6 +12,11 @@ interface ServiceContentSection {
   content: string | string[];
 }
 
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
 interface ServicePageShellProps {
   title: string;
   subtitle: string;
@@ -21,6 +26,7 @@ interface ServicePageShellProps {
   benefits: string[];
   ctaText?: string;
   faqs?: FAQ[];
+  galleryImages?: GalleryImage[];
   signsYouNeed?: ServiceContentSection;
   ourProcess?: { heading: string; steps: string[] };
   localConcerns?: ServiceContentSection;
@@ -35,6 +41,7 @@ export default function ServicePageShell({
   benefits,
   ctaText = 'Get a Free Quote',
   faqs,
+  galleryImages,
   signsYouNeed,
   ourProcess,
   localConcerns,
@@ -72,6 +79,37 @@ export default function ServicePageShell({
       </section>
 
       <TrustBar />
+
+      {galleryImages && galleryImages.length >= 3 && (
+        <section className="mx-auto max-w-5xl px-4 py-10">
+          <div className="grid grid-cols-2 grid-rows-2 gap-3 sm:gap-4 md:grid-cols-3 md:grid-rows-2" style={{ gridTemplateRows: 'repeat(2, 180px)' }}>
+            <div className="col-span-2 row-span-2 md:col-span-2 md:row-span-2 overflow-hidden rounded-2xl shadow-md">
+              <img
+                src={galleryImages[0].src}
+                alt={galleryImages[0].alt}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-md">
+              <img
+                src={galleryImages[1].src}
+                alt={galleryImages[1].alt}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-md">
+              <img
+                src={galleryImages[2].src}
+                alt={galleryImages[2].alt}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-4xl px-4 py-16">
         <p className="text-lg leading-relaxed text-gray-700">{description}</p>
