@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/heating-hero.png";
+import traneLink from "@/assets/trane-link-system.jpeg";
 
 const benefits = [
   "Heat pump repair and installation",
@@ -23,15 +24,23 @@ const HeatingServicesPage = () => (
       {/* ── Split-Panel Hero ── */}
       <section className="flex flex-col lg:flex-row min-h-[500px] lg:min-h-[560px]">
         {/* Mobile: image on top */}
-        <div className="lg:hidden bg-secondary flex items-center justify-center px-6 py-8">
+        <div className="lg:hidden bg-secondary flex items-center justify-center gap-4 px-6 py-8">
           <img
             src={heroImg}
             alt="Trane smart thermostat and home comfort controls"
-            width={600}
-            height={400}
+            width={400}
+            height={300}
             fetchPriority="high"
             decoding="async"
-            className="max-h-[260px] w-auto object-contain drop-shadow-xl"
+            className="max-h-[200px] w-auto object-contain drop-shadow-xl"
+          />
+          <img
+            src={traneLink}
+            alt="Trane Link system controller"
+            width={400}
+            height={300}
+            decoding="async"
+            className="max-h-[200px] w-auto object-contain drop-shadow-xl"
           />
         </div>
 
@@ -69,7 +78,7 @@ const HeatingServicesPage = () => (
         </div>
 
         {/* Image panel — desktop only */}
-        <div className="hidden lg:flex lg:w-[40%] items-center justify-center bg-secondary p-10">
+        <div className="hidden lg:flex lg:w-[40%] flex-col items-center justify-center gap-4 bg-secondary p-10">
           <img
             src={heroImg}
             alt="Trane smart thermostat and home comfort controls"
@@ -77,7 +86,15 @@ const HeatingServicesPage = () => (
             height={600}
             fetchPriority="high"
             decoding="async"
-            className="max-h-[440px] w-auto object-contain drop-shadow-2xl"
+            className="max-h-[260px] w-auto object-contain drop-shadow-2xl"
+          />
+          <img
+            src={traneLink}
+            alt="Trane Link system controller"
+            width={800}
+            height={600}
+            decoding="async"
+            className="max-h-[220px] w-auto object-contain drop-shadow-2xl"
           />
         </div>
       </section>
