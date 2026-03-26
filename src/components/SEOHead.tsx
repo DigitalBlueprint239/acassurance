@@ -1,62 +1,88 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
 
 const BASE_URL = "https://www.acassurancefl.com";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AC Assurance Cooling & Heating",
+  "url": BASE_URL,
+  "logo": `${BASE_URL}/og-logo.png`,
+  "telephone": "+1-239-365-3090",
+  "email": "Jason@acassurancefl.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fort Myers",
+    "addressRegion": "FL",
+    "addressCountry": "US"
+  },
+  "sameAs": []
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AC Assurance Cooling & Heating",
+  "url": BASE_URL,
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${BASE_URL}/?s={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
 
 interface SEOHeadProps {
   title: string;
   description: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const SEOHead = ({ title, description, schema }: SEOHeadProps) => {
+const SEOHead = ({ title, description, schema, ogImage, noindex }: SEOHeadProps) => {
   const { pathname } = useLocation();
+  const cleanPath = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+  const canonicalUrl = BASE_URL + cleanPath;
+  const image = ogImage || `${BASE_URL}/og-logo.png`;
 
-  useEffect(() => {
-    document.title = title;
+  // Merge page-specific schemas with site-wide Organization + WebSite
+  const allSchemas: Record<string, unknown>[] = [organizationSchema, websiteSchema];
+  if (schema) {
+    const pageSchemas = Array.isArray(schema) ? schema : [schema];
+    allSchemas.push(...pageSchemas);
+  }
 
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector);
-      if (el) el.setAttribute(attr, value);
-    };
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonicalUrl} />
 
-    setMeta('meta[name="description"]', "content", description);
-    setMeta('meta[property="og:title"]', "content", title);
-    setMeta('meta[property="og:description"]', "content", description);
-    setMeta('meta[name="twitter:title"]', "content", title);
-    setMeta('meta[name="twitter:description"]', "content", description);
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-    // Dynamic canonical
-    const cleanPath = pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
-    const canonicalUrl = BASE_URL + cleanPath;
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="512" />
+      <meta property="og:image:height" content="512" />
+      <meta property="og:image:alt" content="AC Assurance Cooling & Heating Logo" />
 
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", canonicalUrl);
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
 
-    // JSON-LD schema injection
-    const SCHEMA_ID = "seohead-jsonld";
-    let scriptEl = document.getElementById(SCHEMA_ID) as HTMLScriptElement | null;
-    if (schema) {
-      const schemas = Array.isArray(schema) ? schema : [schema];
-      const jsonStr = JSON.stringify(schemas.length === 1 ? schemas[0] : schemas);
-      if (!scriptEl) {
-        scriptEl = document.createElement("script");
-        scriptEl.id = SCHEMA_ID;
-        scriptEl.type = "application/ld+json";
-        document.head.appendChild(scriptEl);
-      }
-      scriptEl.textContent = jsonStr;
-    } else if (scriptEl) {
-      scriptEl.remove();
-    }
-  }, [title, description, pathname, schema]);
-
-  return null;
+      {/* JSON-LD */}
+      <script type="application/ld+json">
+        {JSON.stringify(allSchemas)}
+      </script>
+    </Helmet>
+  );
 };
 
 export default SEOHead;

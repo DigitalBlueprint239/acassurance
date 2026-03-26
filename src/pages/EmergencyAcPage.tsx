@@ -2,10 +2,26 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-emergency.webp";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seoSchemas";
+
+const faqs = [
+  { question: "Do you offer 24/7 emergency AC repair?", answer: "Yes — AC Assurance offers true 24/7 emergency AC repair service. When you call our emergency line, you'll reach a real person who can dispatch a technician to your home day or night." },
+  { question: "How fast can you respond in Fort Myers?", answer: "For emergencies in Fort Myers and surrounding areas, we typically respond within 1-2 hours. Response times may vary during peak demand, but we prioritize getting to you as fast as possible." },
+  { question: "What counts as an AC emergency?", answer: "An AC emergency includes complete system failure, no cooling output, refrigerant leaks, burning smells or unusual sounds, and any situation where lack of AC poses a health risk — especially for elderly residents, young children, or pets." },
+  { question: "Is emergency service more expensive?", answer: "We maintain transparent, fair pricing for all service calls including emergencies. While after-hours calls may carry a service fee, we provide upfront pricing before any work begins — no surprise charges." },
+  { question: "What if my AC breaks on a weekend?", answer: "We're available weekends and holidays. AC emergencies don't follow a schedule, and neither do we. Call (239) 365-3090 anytime and we'll get a technician to your home." },
+];
 
 const EmergencyAcPage = () => (
   <Layout>
-    <SEOHead title="24/7 Emergency AC Repair in Naples & Cape Coral | AC Assurance" description="24/7 emergency AC repair in Naples, Fort Myers, Cape Coral. Fast response, after-hours service. Call (239) 365-3090 now." />
+    <SEOHead
+      title="24/7 Emergency AC Repair in Naples & Cape Coral | AC Assurance"
+      description="24/7 emergency AC repair in Naples, Fort Myers, Cape Coral. Fast response, after-hours service. Call (239) 365-3090 now."
+      schema={[
+        buildServiceSchema("24/7 Emergency AC Repair", "Around-the-clock emergency AC repair across Southwest Florida. Fast response, transparent after-hours pricing.", "emergency-ac-repair"),
+        buildFAQSchema(faqs),
+      ]}
+    />
     <ServicePageShell
       title="24/7 Emergency AC Repair"
       subtitle="AC emergencies don't wait — and neither do we. Call anytime, day or night."
@@ -47,13 +63,7 @@ const EmergencyAcPage = () => (
           "Another frequent concern is response time. Our goal is to reach emergency calls within 1-2 hours across our Southwest Florida service area, including Cape Coral, Fort Myers, Naples, and surrounding communities. During peak summer demand, response times may vary, but we prioritize dispatching based on the severity of each situation.",
         ],
       }}
-      faqs={[
-        { question: "Do you offer 24/7 emergency AC repair?", answer: "Yes — AC Assurance offers true 24/7 emergency AC repair service. When you call our emergency line, you'll reach a real person who can dispatch a technician to your home day or night." },
-        { question: "How fast can you respond in Fort Myers?", answer: "For emergencies in Fort Myers and surrounding areas, we typically respond within 1-2 hours. Response times may vary during peak demand, but we prioritize getting to you as fast as possible." },
-        { question: "What counts as an AC emergency?", answer: "An AC emergency includes complete system failure, no cooling output, refrigerant leaks, burning smells or unusual sounds, and any situation where lack of AC poses a health risk — especially for elderly residents, young children, or pets." },
-        { question: "Is emergency service more expensive?", answer: "We maintain transparent, fair pricing for all service calls including emergencies. While after-hours calls may carry a service fee, we provide upfront pricing before any work begins — no surprise charges." },
-        { question: "What if my AC breaks on a weekend?", answer: "We're available weekends and holidays. AC emergencies don't follow a schedule, and neither do we. Call (239) 365-3090 anytime and we'll get a technician to your home." },
-      ]}
+      faqs={faqs}
     />
   </Layout>
 );

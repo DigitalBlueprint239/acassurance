@@ -4,6 +4,7 @@ import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-mini-split.webp";
 import indoorImg from "@/assets/mini-split-indoor.webp";
 import outdoorImg from "@/assets/mini-split-outdoor.webp";
+import { buildServiceSchema } from "@/lib/seoSchemas";
 
 const galleryImages = [
   { src: heroImg, alt: "Mini-split indoor wall unit installation" },
@@ -13,7 +14,13 @@ const galleryImages = [
 
 const MiniSplitPage = () => (
   <Layout>
-    <SEOHead title="Ductless Mini-Split Installation | AC Assurance Cooling & Heating" description="Expert ductless mini-split installation in Southwest Florida. Perfect for garages, additions, and rooms without ductwork. Call (239) 365-3090." />
+    <SEOHead
+      title="Ductless Mini-Split Installation | AC Assurance Cooling & Heating"
+      description="Expert ductless mini-split installation in Southwest Florida. Perfect for garages, additions, and rooms without ductwork. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("Ductless Mini-Split Installation", "Expert ductless mini-split installation for garages, additions, sunrooms, and spaces without ductwork.", "ductless-mini-split"),
+      ]}
+    />
     <ServicePageShell
       title="Ductless Mini-Split Systems"
       subtitle="Efficient zone cooling for garages, additions, sunrooms, and spaces without ductwork."

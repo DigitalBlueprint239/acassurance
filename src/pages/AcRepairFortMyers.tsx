@@ -1,4 +1,5 @@
 import CityAcRepairPage from "@/components/CityAcRepairPage";
+import { buildHVACBusinessSchema } from "@/lib/seoSchemas";
 
 const AcRepairFortMyers = () => (
   <CityAcRepairPage
@@ -8,6 +9,7 @@ const AcRepairFortMyers = () => (
     h1="Expert AC Repair in Fort Myers, FL"
     intro="Fort Myers homeowners know that a functioning AC system isn't a luxury — it's a necessity. From the historic River District's charming older homes to the sprawling neighborhoods along McGregor Boulevard, every property here faces unique cooling challenges. Older homes along the Caloosahatchee River often have aging ductwork that struggles to keep up with Florida's relentless humidity. Salt air drifting in from the nearby Gulf accelerates corrosion on outdoor condensers and coils. At AC Assurance, we understand these Fort Myers-specific challenges because we live and work here. Our owner-operated team provides same-day diagnostics, transparent quotes, and expert repairs — no upsells, no surprises. Whether your system is short-cycling in the summer heat or your energy bills have spiked unexpectedly, we'll get to the root cause fast."
     mapQuery="Fort+Myers,FL"
+    schema={[buildHVACBusinessSchema("Fort Myers")]}
     localIssues={[
       { title: "Aging Ductwork in Older Homes", description: "Many Fort Myers homes along the river and in historic neighborhoods have ductwork that's decades old. Leaking or deteriorating ducts waste energy and reduce cooling performance significantly." },
       { title: "High Humidity Near the Caloosahatchee", description: "Proximity to the Caloosahatchee River means elevated humidity levels that force AC systems to work overtime. Proper dehumidification and system sizing are critical here." },

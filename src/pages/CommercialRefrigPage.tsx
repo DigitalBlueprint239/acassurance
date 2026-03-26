@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import TrustBar from "@/components/TrustBar";
 import heroImg from "@/assets/commercial-unit.jpg";
 import { ShieldCheck, Zap, ClipboardCheck } from "lucide-react";
+import { buildServiceSchema } from "@/lib/seoSchemas";
 
 const benefits = [
   "Walk-in cooler and freezer repair",
@@ -37,6 +38,9 @@ const CommercialRefrigPage = () => (
     <SEOHead
       title="Commercial Refrigeration Services | AC Assurance Cooling & Heating"
       description="Commercial refrigeration repair and maintenance in Southwest Florida. Walk-in coolers, reach-in units, ice machines. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("Commercial Refrigeration", "Reliable commercial refrigeration repair and maintenance for restaurants, stores, and businesses across Southwest Florida.", "commercial-refrigeration"),
+      ]}
     />
 
     {/* ─── HERO ─── */}

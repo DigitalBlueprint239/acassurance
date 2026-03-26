@@ -95,6 +95,11 @@ const About = () => (
               <p className="text-foreground leading-relaxed">
                 We serve Cape Coral, Fort Myers, Naples, Estero, Bonita Springs, Lehigh Acres, and North Fort Myers. Whether you need a routine tune-up or an emergency repair at 2 AM, AC Assurance is here to help.
               </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link to="/services" className="text-sm text-primary font-medium underline hover:text-primary/80">View All Services</Link>
+                <Link to="/reviews" className="text-sm text-primary font-medium underline hover:text-primary/80">Read Customer Reviews</Link>
+                <Link to="/service-areas" className="text-sm text-primary font-medium underline hover:text-primary/80">Service Areas</Link>
+              </div>
             </div>
           </div>
 

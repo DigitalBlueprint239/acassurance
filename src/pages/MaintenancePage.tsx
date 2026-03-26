@@ -2,10 +2,26 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-maintenance.webp";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seoSchemas";
+
+const faqs = [
+  { question: "How often should I service my AC in Florida?", answer: "In Southwest Florida, we recommend twice-yearly maintenance — once in early spring before peak cooling season and once in early fall. Florida's year-round AC usage puts more stress on systems than most climates." },
+  { question: "What's included in an AC tune-up?", answer: "Our tune-up includes a full system inspection, coil cleaning, refrigerant level check, electrical connection testing, drain line clearing, filter replacement, thermostat calibration, and a written report of findings." },
+  { question: "Can maintenance really prevent breakdowns?", answer: "Yes — the majority of AC breakdowns we see could have been prevented with regular maintenance. Catching small issues before they become big problems saves you money and keeps your home comfortable." },
+  { question: "Do you offer maintenance plans?", answer: "Yes — we offer maintenance plans that include scheduled tune-ups, priority scheduling, and discounts on repairs. Contact us for plan details and pricing." },
+  { question: "How much does an AC tune-up cost in Naples?", answer: "Tune-up pricing varies based on system type and any additional services needed. We offer competitive, transparent pricing with no hidden fees. Call us for a current quote." },
+];
 
 const MaintenancePage = () => (
   <Layout>
-    <SEOHead title="AC Maintenance & Tune-Up in Naples & Cape Coral | AC Assurance" description="Preventive AC maintenance and tune-ups in Naples, Fort Myers, Cape Coral. Extend system life, lower bills, prevent breakdowns. Call (239) 365-3090." />
+    <SEOHead
+      title="AC Maintenance & Tune-Up in Naples & Cape Coral | AC Assurance"
+      description="Preventive AC maintenance and tune-ups in Naples, Fort Myers, Cape Coral. Extend system life, lower bills, prevent breakdowns. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("AC Maintenance & Tune-Up", "Comprehensive preventive AC maintenance that extends system life, lowers energy bills, and prevents costly breakdowns.", "ac-maintenance-tune-up"),
+        buildFAQSchema(faqs),
+      ]}
+    />
     <ServicePageShell
       title="AC Maintenance & Tune-Up"
       subtitle="Preventive maintenance that extends system life, lowers energy bills, and prevents costly breakdowns."
@@ -46,13 +62,7 @@ const MaintenancePage = () => (
           "Another frequent concern is whether maintenance plans are worth it. The data is clear: regularly maintained AC systems last 3-5 years longer, operate 15-25% more efficiently, and experience 95% fewer emergency breakdowns compared to neglected systems. When you factor in the energy savings alone, maintenance plans typically pay for themselves within the first year.",
         ],
       }}
-      faqs={[
-        { question: "How often should I service my AC in Florida?", answer: "In Southwest Florida, we recommend twice-yearly maintenance — once in early spring before peak cooling season and once in early fall. Florida's year-round AC usage puts more stress on systems than most climates." },
-        { question: "What's included in an AC tune-up?", answer: "Our tune-up includes a full system inspection, coil cleaning, refrigerant level check, electrical connection testing, drain line clearing, filter replacement, thermostat calibration, and a written report of findings." },
-        { question: "Can maintenance really prevent breakdowns?", answer: "Yes — the majority of AC breakdowns we see could have been prevented with regular maintenance. Catching small issues before they become big problems saves you money and keeps your home comfortable." },
-        { question: "Do you offer maintenance plans?", answer: "Yes — we offer maintenance plans that include scheduled tune-ups, priority scheduling, and discounts on repairs. Contact us for plan details and pricing." },
-        { question: "How much does an AC tune-up cost in Naples?", answer: "Tune-up pricing varies based on system type and any additional services needed. We offer competitive, transparent pricing with no hidden fees. Call us for a current quote." },
-      ]}
+      faqs={faqs}
     />
   </Layout>
 );

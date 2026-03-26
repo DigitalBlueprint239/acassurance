@@ -2,10 +2,26 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-installation.webp";
+import { buildServiceSchema, buildFAQSchema } from "@/lib/seoSchemas";
+
+const faqs = [
+  { question: "How long does AC installation take?", answer: "Most residential AC installations are completed in one day — typically 4 to 8 hours depending on the complexity of the job. We'll give you a clear timeline during your free in-home estimate." },
+  { question: "What size AC do I need for my Florida home?", answer: "Proper sizing depends on your home's square footage, insulation, window exposure, and layout. We perform a detailed Manual J load calculation to ensure your new system is perfectly sized — not too big, not too small." },
+  { question: "Do you install Trane systems?", answer: "Yes — AC Assurance is a proud Independent Trane Dealer. We install the full Trane product line including central air conditioners, heat pumps, and air handlers, all backed by comprehensive manufacturer warranties." },
+  { question: "What's included in a new AC installation?", answer: "Our installations include the new equipment, professional installation by licensed technicians, thermostat setup, system testing, cleanup, and a walkthrough of your new system. We also handle permit coordination when required." },
+  { question: "Do you offer financing for new AC systems?", answer: "Yes — we offer financing through Synchrony Financial with convenient monthly payment options. Special financing available, subject to credit approval. Call us for current terms and details." },
+];
 
 const AcInstallationPage = () => (
   <Layout>
-    <SEOHead title="AC Installation & Replacement in Naples & Cape Coral | AC Assurance" description="Professional AC installation and replacement in Naples, Cape Coral, Fort Myers. Trane systems, financing available, expert sizing. Call (239) 365-3090." />
+    <SEOHead
+      title="AC Installation & Replacement in Naples & Cape Coral | AC Assurance"
+      description="Professional AC installation and replacement in Naples, Cape Coral, Fort Myers. Trane systems, financing available, expert sizing. Call (239) 365-3090."
+      schema={[
+        buildServiceSchema("AC Installation & Replacement", "Professional AC system installation with proper sizing, top-tier Trane equipment, and flexible financing options.", "ac-installation-replacement"),
+        buildFAQSchema(faqs),
+      ]}
+    />
     <ServicePageShell
       title="AC Installation & Replacement"
       subtitle="Expert AC system installation with proper sizing, top-tier equipment, and financing options."
@@ -46,13 +62,7 @@ const AcInstallationPage = () => (
           "For coastal homes in Cape Coral and Fort Myers, we recommend systems with coil coatings and corrosion-resistant components to combat salt air damage. The investment in coastal-rated equipment pays for itself many times over in extended system life and reduced repair frequency.",
         ],
       }}
-      faqs={[
-        { question: "How long does AC installation take?", answer: "Most residential AC installations are completed in one day — typically 4 to 8 hours depending on the complexity of the job. We'll give you a clear timeline during your free in-home estimate." },
-        { question: "What size AC do I need for my Florida home?", answer: "Proper sizing depends on your home's square footage, insulation, window exposure, and layout. We perform a detailed Manual J load calculation to ensure your new system is perfectly sized — not too big, not too small." },
-        { question: "Do you install Trane systems?", answer: "Yes — AC Assurance is a proud Independent Trane Dealer. We install the full Trane product line including central air conditioners, heat pumps, and air handlers, all backed by comprehensive manufacturer warranties." },
-        { question: "What's included in a new AC installation?", answer: "Our installations include the new equipment, professional installation by licensed technicians, thermostat setup, system testing, cleanup, and a walkthrough of your new system. We also handle permit coordination when required." },
-        { question: "Do you offer financing for new AC systems?", answer: "Yes — we offer financing through Synchrony Financial with convenient monthly payment options. Special financing available, subject to credit approval. Call us for current terms and details." },
-      ]}
+      faqs={faqs}
     />
   </Layout>
 );

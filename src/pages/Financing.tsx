@@ -134,6 +134,11 @@ const Financing = () => (
             <p className="text-sm text-muted-foreground">
               Special financing available. Subject to credit approval. Call for details.
             </p>
+            <div className="mt-6 pt-4 border-t border-border">
+              <p className="text-sm text-muted-foreground">
+                Looking for a new AC system? <Link to="/ac-installation-replacement" className="text-primary font-medium underline hover:text-primary/80">Learn about our AC installation services</Link> or <Link to="/services" className="text-primary font-medium underline hover:text-primary/80">browse all HVAC services</Link>.
+              </p>
+            </div>
           </div>
 
           <div id="estimate-form">
