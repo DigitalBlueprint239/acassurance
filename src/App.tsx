@@ -92,6 +92,7 @@ const App = () => (
               <Route path="/ac-repair-bonita-springs" element={<AcRepairBonitaSprings />} />
               <Route path="/ac-repair-estero" element={<AcRepairEstero />} />
               <Route path="/ac-repair-lehigh-acres" element={<AcRepairLehighAcres />} />
+              {/* Some localPages slugs overlap with dedicated routes above (e.g. ac-repair-naples). Dedicated routes take priority in React Router; these shadow routes are harmless but noted for clarity. */}
               {localPages.map((p) => (
                 <Route key={p.slug} path={`/${p.slug}`} element={<LocalLandingPage />} />
               ))}

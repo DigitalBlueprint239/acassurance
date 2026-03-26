@@ -24,12 +24,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "AC Assurance Cooling & Heating",
-  "url": BASE_URL,
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${BASE_URL}/?s={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
+  "url": BASE_URL
 };
 
 interface SEOHeadProps {
