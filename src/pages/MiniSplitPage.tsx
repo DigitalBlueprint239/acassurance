@@ -2,11 +2,13 @@ import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import ServicePageShell from "@/components/ServicePageShell";
 import heroImg from "@/assets/service-mini-split.webp";
+import indoorImg from "@/assets/mini-split-indoor.webp";
+import outdoorImg from "@/assets/mini-split-outdoor.webp";
 
 const galleryImages = [
-  { src: heroImg, alt: "Ductless mini-split indoor wall unit installation" },
-  { src: heroImg, alt: "Mini-split outdoor condenser unit" },
-  { src: heroImg, alt: "AC Assurance technician installing mini-split system" },
+  { src: heroImg, alt: "Mini-split indoor wall unit installation" },
+  { src: indoorImg, alt: "Wall-mounted ductless mini-split unit" },
+  { src: outdoorImg, alt: "Mitsubishi mini-split outdoor condenser unit" },
 ];
 
 const MiniSplitPage = () => (
