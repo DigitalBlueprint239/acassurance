@@ -42,7 +42,7 @@ const WhyDifferent = () => (
             "Licensed & Insured CAC1823832",
             "No Subcontractors",
             "2-Hour Arrival Window",
-            "Trane Certified Dealer",
+            "Independent Trane Dealer",
           ]}
         />
         <ComparisonColumn

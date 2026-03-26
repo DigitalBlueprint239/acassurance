@@ -5,11 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { Shield } from "lucide-react";
 
 interface EstimateFormProps {
   showMessage?: boolean;
   showHearAboutUs?: boolean;
   leadSource?: string;
+  ctaLabel?: string;
 }
 
 const serviceOptions = [
@@ -33,7 +35,7 @@ const hearAboutUsOptions = [
   "Other",
 ];
 
-const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website" }: EstimateFormProps) => {
+const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website", ctaLabel = "Schedule Service" }: EstimateFormProps) => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -123,8 +125,16 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
       )}
 
       <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90" size="lg" disabled={loading}>
-        {loading ? "Submitting..." : "Schedule Service"}
+        {loading ? "Submitting..." : ctaLabel}
       </Button>
+
+      <p className="text-xs text-muted-foreground text-center leading-relaxed">
+        No obligation. We typically respond within 1 hour.
+      </p>
+      <div className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground/70">
+        <Shield className="w-3 h-3" />
+        <span>Licensed (CAC1823832) · Insured · BBB Accredited</span>
+      </div>
     </form>
   );
 };

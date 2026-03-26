@@ -97,7 +97,7 @@ const Index = () => {
             </span>
           </h1>
           <p className="text-lg text-primary/70 leading-relaxed mb-4 max-w-2xl mx-auto">
-            SWFL's highest-rated response team. Your AC restored today, or the diagnostic is on us. Serving all of Southwest Florida with 5-star precision.
+            SWFL's highest-rated response team. Fast, honest AC service across Southwest Florida — backed by 5-star reviews.
           </p>
 
 
@@ -346,8 +346,8 @@ const Index = () => {
         <div className="container">
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Tell Us What's Going On</h2>
-              <p className="text-muted-foreground">Fill out the form below and we'll get back to you promptly.</p>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Request Service — Free Estimate</h2>
+              <p className="text-muted-foreground">Tell us what's going on and we'll get back to you fast. No obligation.</p>
             </div>
             <div className="bg-card border border-border rounded p-6 md:p-8">
               <EstimateForm showMessage showHearAboutUs leadSource="homepage" />
