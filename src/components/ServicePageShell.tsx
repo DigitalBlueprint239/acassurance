@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import TrustBar from './TrustBar';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import EstimateForm from './EstimateForm';
 
 interface FAQ {
   question: string;
@@ -62,12 +63,12 @@ export default function ServicePageShell({
           <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl">{title}</h1>
           <p className="mt-4 max-w-xl text-lg text-primary-foreground/80">{subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <Link
-              to="/contact"
+            <a
+              href="#estimate-form"
               className="rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white shadow transition hover:bg-primary/90"
             >
               {ctaText}
-            </Link>
+            </a>
             <a
               href="tel:+12393653090"
               className="rounded-lg border border-primary-foreground/30 px-6 py-3 text-base font-semibold text-primary-foreground transition hover:bg-primary-foreground/10"
@@ -199,6 +200,15 @@ export default function ServicePageShell({
           </Accordion>
         </section>
       )}
+
+      {/* Inline Estimate Form */}
+      <section id="estimate-form" className="mx-auto max-w-xl px-4 pb-16 scroll-mt-24">
+        <div className="bg-card border border-border rounded-xl p-6 md:p-8 shadow-sm">
+          <h2 className="font-heading font-bold text-xl mb-2 text-center">Request Service — Free Estimate</h2>
+          <p className="text-sm text-muted-foreground text-center mb-5">Tell us what's going on and we'll get back to you fast. No obligation.</p>
+          <EstimateForm showMessage leadSource={title} ctaLabel="Request Service" />
+        </div>
+      </section>
 
       <section className="bg-primary py-12 px-4 text-center">
         <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl">Ready to Schedule Service?</h2>

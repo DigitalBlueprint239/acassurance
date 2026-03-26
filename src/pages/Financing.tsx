@@ -182,8 +182,9 @@ const Financing = () => (
 
           <div id="estimate-form">
             <div className="sticky top-28 bg-card border border-border rounded p-6">
-              <h3 className="font-heading font-bold text-lg mb-4">Request a Financing Consultation</h3>
-              <EstimateForm showMessage showHearAboutUs leadSource="financing" />
+              <h3 className="font-heading font-bold text-lg mb-2">Get Your Free Estimate</h3>
+              <p className="text-sm text-muted-foreground mb-4">We'll help you find the right system and payment plan.</p>
+              <EstimateForm showMessage showHearAboutUs leadSource="financing" ctaLabel="Get My Free Estimate" />
             </div>
           </div>
         </div>

@@ -105,8 +105,9 @@ const Contact = () => (
 
           <div id="estimate-form">
             <div className="bg-card border border-border rounded p-6 md:p-8">
-              <h3 className="font-heading font-bold text-xl mb-4">Send Us a Message</h3>
-              <EstimateForm showMessage showHearAboutUs leadSource="contact" />
+              <h3 className="font-heading font-bold text-xl mb-2">Request Service — Free Estimate</h3>
+              <p className="text-sm text-muted-foreground mb-4">Tell us what's going on and we'll get back to you fast. No obligation.</p>
+              <EstimateForm showMessage showHearAboutUs leadSource="contact" ctaLabel="Send My Request" />
             </div>
           </div>
         </div>

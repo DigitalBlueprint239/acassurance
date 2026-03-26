@@ -59,6 +59,10 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          <Link to="/emergency-ac-repair" className="flex items-center gap-1.5 text-xs font-bold text-red-400 hover:text-red-300 transition-colors">
+            <Phone className="w-3.5 h-3.5" />
+            Emergency?
+          </Link>
           <a href={PHONE_LINK} className="flex items-center gap-2 text-primary-foreground font-bold text-sm bg-white/10 rounded-full px-3 py-1.5">
             <Phone className="w-4 h-4" />
             {PHONE}

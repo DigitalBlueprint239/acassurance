@@ -3,19 +3,27 @@ import { Phone, CalendarDays } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { PHONE_LINK } from "@/data/services";
 
+const HIGH_INTENT_PATTERNS = ["/emergency", "/ac-repair", "/contact"];
+
 const StickyCallBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
 
+  const isHighIntent = HIGH_INTENT_PATTERNS.some((p) => pathname.startsWith(p));
+
   useEffect(() => {
+    if (isHighIntent) {
+      setVisible(true);
+      return;
+    }
     const handleScroll = () => {
       const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
       setVisible(scrollPercent >= 0.15);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHighIntent]);
 
   if (pathname === "/thank-you") return null;
   if (!visible) return null;
