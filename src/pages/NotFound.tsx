@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
 const NotFound = () => {
@@ -14,6 +15,11 @@ const NotFound = () => {
 
   return (
     <Layout>
+      <SEOHead
+        title="Page Not Found | AC Assurance"
+        description="The page you're looking for doesn't exist. Contact AC Assurance for HVAC service in Southwest Florida."
+        noindex
+      />
       <section className="section-navy py-12 md:py-16">
         <div className="container">
           <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Page Not Found</h1>
