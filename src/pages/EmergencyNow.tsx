@@ -26,6 +26,7 @@ const EmergencyNow = () => {
       <SEOHead
         title="Emergency AC Repair Now | SWFL | AC Assurance"
         description="Emergency AC repair in Southwest Florida. Enter your zip code for immediate dispatch. Available 24/7."
+        noindex
       />
       <div className="max-w-xl w-full text-center py-16">
         <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-6" />
