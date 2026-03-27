@@ -22,7 +22,7 @@ const EmergencyCallout = () => {
           AC Not Cooling?
         </h2>
         <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">
-          Fast diagnostic service available across Southwest Florida. Don't wait in the heat — get help now.
+          Same-day diagnostics across Southwest Florida. Licensed, insured, and ready now.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button asChild size="lg" className="shimmer-btn bg-white text-primary hover:bg-white/90">

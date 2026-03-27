@@ -105,8 +105,7 @@ const HeatingServicesPage = () => (
             Heating Services
           </h1>
           <p className="mt-4 max-w-lg text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-            Stay warm during Florida's cool season with expert heating repair
-            and installation from AC Assurance.
+            Heat pump repair, furnace service, and dual-fuel systems — sized and serviced for Florida's climate.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">

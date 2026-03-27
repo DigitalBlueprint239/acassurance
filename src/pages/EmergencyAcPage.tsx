@@ -24,7 +24,7 @@ const EmergencyAcPage = () => (
     />
     <ServicePageShell
       title="24/7 Emergency AC Repair"
-      subtitle="AC emergencies don't wait — and neither do we. Call anytime, day or night."
+      subtitle="When your AC fails, every minute matters. We answer 24/7 — real people, real dispatch."
       heroImage={heroImg}
       heroAlt="Emergency HVAC technician providing 24/7 AC repair in Southwest Florida"
       description="When your air conditioning fails in the middle of a Florida summer night, you need help now — not tomorrow morning. AC Assurance offers around-the-clock emergency AC repair across Southwest Florida. Our technicians arrive prepared with common parts and diagnostic tools to get your system running as fast as possible."

@@ -15,7 +15,7 @@ const Contact = () => (
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Contact AC Assurance</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
-          Ready to schedule service or have a question? Reach out — we're happy to help.
+          Schedule service, request a quote, or ask us anything. We respond fast.
         </p>
       </div>
     </section>
@@ -105,8 +105,8 @@ const Contact = () => (
 
           <div id="estimate-form">
             <div className="bg-card border border-border rounded p-6 md:p-8">
-              <h3 className="font-heading font-bold text-xl mb-2">Request Service — Free Estimate</h3>
-              <p className="text-sm text-muted-foreground mb-4">Tell us what's going on and we'll get back to you fast. No obligation.</p>
+              <h3 className="font-heading font-bold text-xl mb-2">Get Your Free Estimate</h3>
+              <p className="text-sm text-muted-foreground mb-4">No obligation. Most quotes delivered same day.</p>
               <EstimateForm showMessage showHearAboutUs leadSource="contact" ctaLabel="Send My Request" />
             </div>
           </div>
