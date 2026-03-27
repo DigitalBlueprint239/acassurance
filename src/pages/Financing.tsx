@@ -44,7 +44,7 @@ const Financing = () => (
       <div className="container">
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">Flexible HVAC Financing Options</h1>
         <p className="text-primary-foreground/90 text-lg max-w-2xl">
-          Need a new AC system or major repair? AC Assurance offers financing options to help make your comfort more affordable.
+          Spread the cost of a new AC system into manageable monthly payments. Quick approval, no surprises.
         </p>
       </div>
     </section>
@@ -74,10 +74,10 @@ const Financing = () => (
               <h3 className="text-xl font-heading font-bold">Ready to Get Started?</h3>
               <ul className="space-y-3">
                 {[
-                  "Fast online application",
-                  "Convenient monthly payment options",
-                  "Financing available for qualified customers",
-                  "A simple way to move forward on your HVAC project",
+                  "Decision in minutes — not days",
+                  "Convenient monthly payments that fit your budget",
+                  "Available for installations, replacements, and major upgrades",
+                  "No hidden fees in the application process",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />

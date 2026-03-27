@@ -34,7 +34,7 @@ const EmergencyNow = () => {
           Emergency AC Repair in SWFL
         </h1>
         <p className="text-xl text-white/90 mb-10">
-          Your system restored today, or the diagnostic is on us.
+          Don't wait in the heat. Call now for priority dispatch.
         </p>
 
         <div className="bg-white/10 backdrop-blur border border-white/20 rounded-2xl p-8 mb-8">

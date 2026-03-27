@@ -97,7 +97,7 @@ const Index = () => {
             </span>
           </h1>
           <p className="text-lg text-primary/70 leading-relaxed mb-4 max-w-2xl mx-auto">
-            SWFL's highest-rated response team. Fast, honest AC service across Southwest Florida — backed by 5-star reviews.
+            Licensed local team. Owner on every job. Same-day AC service across Southwest Florida.
           </p>
 
 
@@ -331,9 +331,9 @@ const Index = () => {
       {/* 7. FINANCING */}
       <section className="py-14 md:py-20 bg-background">
         <div className="container text-center max-w-2xl">
-          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Flexible HVAC Financing Available</h2>
+          <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">New System? Flexible Monthly Payments Available.</h2>
           <p className="text-muted-foreground mb-6">Convenient monthly payment plans through Synchrony Financial. Special financing available. Subject to credit approval. Call for details.</p>
-          <Button asChild size="lg" className="shimmer-btn bg-white text-primary hover:bg-white/90">
+          <Button asChild size="lg" className="shimmer-btn bg-primary text-primary-foreground hover:bg-primary/90">
             <Link to="/financing">Learn About Financing <ArrowRight className="w-4 h-4 ml-2" /></Link>
           </Button>
         </div>
@@ -347,7 +347,7 @@ const Index = () => {
           <div className="max-w-lg mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3">Request Service — Free Estimate</h2>
-              <p className="text-muted-foreground">Tell us what's going on and we'll get back to you fast. No obligation.</p>
+              <p className="text-muted-foreground">Describe the issue and we'll respond within hours. Zero obligation, zero pressure.</p>
             </div>
             <div className="bg-card border border-border rounded p-6 md:p-8">
               <EstimateForm showMessage showHearAboutUs leadSource="homepage" />
