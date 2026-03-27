@@ -66,7 +66,7 @@ const BlogPost = () => {
             ))}
           </div>
           <div className="mt-10 pt-8 border-t border-border">
-            <p className="text-muted-foreground mb-4">Need HVAC service in Cape Coral?</p>
+            <p className="text-muted-foreground mb-4">Need HVAC service in Southwest Florida?</p>
             <Button asChild size="lg">
               <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE}</a>
             </Button>
