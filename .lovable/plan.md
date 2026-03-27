@@ -1,133 +1,190 @@
 
 
-# Prerender Readiness Pass
+# SEO Deployment Plan — AC Assurance SPA
 
-## Issues Found
+## Recommended Path: Cloudflare Pages + Prerender.io
 
-### Fixable Inside Lovable
+### Why This Path
 
-1. **NotFound page missing noindex/SEOHead** — Bots hitting invalid URLs will render the 404 page with no `noindex` directive, risking thin-content indexation. Need to add `<SEOHead noindex />`.
+1. **Cloudflare Pages natively supports SPA routing** — automatic `_redirects` or `_headers` config, no server needed. All routes serve `index.html` with a single rule.
+2. **Prerender.io integrates via Cloudflare Worker** — bot detection and cached HTML serving happen at the CDN edge, zero latency penalty for real users.
+3. **Cloudflare is already the most common DNS provider for small businesses** — likely already in use or trivial to set up for `acassurancefl.com`.
+4. **No build changes required inside Lovable** — the `dist/` output from `vite build` deploys as-is.
+5. **Cost**: Cloudflare Pages free tier (unlimited sites, 500 builds/month) + Prerender.io Starter ($15/mo for 250 cached pages, more than enough for 45 routes).
 
-2. **4 blog posts missing from sitemap.xml** — Blog data contains 8 posts but sitemap only lists 4. Missing: `/blog/ac-repair-naples-fl`, `/blog/ac-installation-fort-myers`, `/blog/hvac-maintenance-cape-coral`, `/blog/why-ac-assurance-chooses-trane`.
-
-3. **WebSite schema has invalid SearchAction** — The `potentialAction` in the WebSite JSON-LD points to `/?s={search_term_string}` but no search functionality exists. Google may flag this. Remove the `potentialAction` block.
-
-4. **Duplicate route definitions** — `localPages.ts` contains entries for slugs `ac-repair-naples`, `ac-repair-fort-myers`, `ac-repair-cape-coral` which also have dedicated hardcoded routes in `App.tsx` (lines 89-94). React Router resolves correctly (dedicated routes win), but the `localPages` loop still registers shadow routes. No functional bug, but should be documented with a code comment for maintainability.
-
-### Not Fixable Inside Lovable (Deployment Team Notes)
-
-5. **All routes use `React.lazy` + `Suspense`** — Prerenderers will initially see the spinner fallback. Most services (Prerender.io, Rendertron, Puppeteer) handle this correctly by waiting for network idle. The deployment team must configure the prerender service to wait for `document.querySelector('main')` or network idle before snapshotting.
-
-6. **`index.html` static meta is homepage-only** — The fallback `<title>` and `<meta description>` in `index.html` are the homepage values. `react-helmet-async` overrides them per route, but only after JS executes. If a prerenderer fails to execute JS on a specific route, it will serve homepage meta for every page. This is inherent to SPA architecture.
-
-7. **No `<meta name="fragment" content="!">` or `Rendertron` middleware** — The site has no AJAX crawling hint or server-side prerender middleware. The deployment team needs to configure CDN-level prerender integration (e.g., Cloudflare Worker + Prerender.io, or Netlify prerendering).
+### Fallback: Netlify + Prerender.io extension (see bottom)
 
 ---
 
-## Implementation Plan
+## Step-by-Step Rollout
 
-### 1. Add SEOHead with noindex to NotFound page
-- Import SEOHead, add `<SEOHead title="Page Not Found" description="..." noindex />`
+### Phase 1 — Export and Deploy to Cloudflare Pages
 
-### 2. Add 4 missing blog posts to sitemap.xml
-- `/blog/ac-repair-naples-fl`
-- `/blog/ac-installation-fort-myers`
-- `/blog/hvac-maintenance-cape-coral`
-- `/blog/why-ac-assurance-chooses-trane`
+**All steps happen outside Lovable.**
 
-### 3. Remove invalid SearchAction from WebSite schema
-- In `SEOHead.tsx`, remove the `potentialAction` block from `websiteSchema`
+1. **Connect GitHub repo to Cloudflare Pages**
+   - Cloudflare Dashboard → Pages → Create project → Connect to Git
+   - Build command: `npm run build`
+   - Output directory: `dist`
+   - Environment variable: `NODE_VERSION` = `20`
 
-### 4. Add clarifying comment for duplicate route slugs
-- In `App.tsx`, add a comment above the `localPages.map` block noting that some slugs overlap with dedicated routes above, and the dedicated routes take priority
+2. **Add SPA fallback routing**
+   - Create `public/_redirects` file in the repo:
+     ```
+     /*  /index.html  200
+     ```
+   - This tells Cloudflare Pages to serve `index.html` for all routes (SPA behavior). Without it, direct navigation to `/ac-repair-naples` returns 404.
 
----
+3. **Configure custom domain**
+   - Cloudflare Pages → Custom domains → Add `www.acassurancefl.com`
+   - If DNS is already on Cloudflare: automatic CNAME setup
+   - If DNS is elsewhere: add CNAME record `www` → `<project>.pages.dev`
+   - Add redirect rule: `acassurancefl.com` → `www.acassurancefl.com` (301)
 
-## Files Modified
+4. **Verify deployment**
+   - Confirm all 45 routes load correctly in browser
+   - Confirm `robots.txt` and `sitemap.xml` are accessible at root
+   - Confirm `google2e83009970df9bfc.html` (Search Console verification) is served
 
-| File | Change |
-|------|--------|
-| `src/pages/NotFound.tsx` | Add SEOHead with noindex |
-| `public/sitemap.xml` | Add 4 missing blog post URLs |
-| `src/components/SEOHead.tsx` | Remove SearchAction from WebSite schema |
-| `src/App.tsx` | Add clarifying comment on route overlap |
+### Phase 2 — Prerender.io Integration
 
----
+5. **Create Prerender.io account**
+   - Sign up at prerender.io
+   - Add site: `https://www.acassurancefl.com`
+   - Set recache interval: 7 days (default)
 
-## Complete Route Inventory for Prerender Coverage
+6. **Deploy Cloudflare Worker for bot detection**
+   - Use Prerender.io's official Cloudflare Worker template
+   - The Worker checks `User-Agent` for bot signatures (Googlebot, Bingbot, facebookexternalhit, Twitterbot, LinkedInBot, Slackbot, etc.)
+   - If bot: proxy request to `https://service.prerender.io/https://www.acassurancefl.com/[path]`
+   - If human: pass through to Cloudflare Pages origin
 
-```text
-PRIORITY 1 — Core pages (prerender mandatory)
-/
-/services
-/contact
-/financing
-/about
-/service-areas
-/reviews
+   Worker configuration:
+   ```
+   PRERENDER_TOKEN = <your prerender.io token>
+   ```
 
-PRIORITY 1 — Core service pages
-/ac-repair-cape-coral
-/ac-installation-replacement
-/emergency-ac-repair
-/heating-services
-/ductless-mini-split
-/ac-maintenance-tune-up
-/duct-cleaning
-/indoor-air-quality
-/commercial-refrigeration
+   Bot user-agent list (minimum):
+   ```
+   googlebot, bingbot, yandex, baiduspider, facebookexternalhit,
+   twitterbot, rogerbot, linkedinbot, embedly, quora link preview,
+   showyoubot, outbrain, pinterest, slackbot, vkShare, W3C_Validator,
+   redditbot, Applebot, WhatsApp, Grapeshot, ChatGPT-User,
+   GPTBot, Google-Extended, CCBot, anthropic-ai, Claude-Web
+   ```
 
-PRIORITY 1 — City AC repair pages
-/ac-repair-naples
-/ac-repair-fort-myers
-/ac-repair-cape-coral-fl
-/ac-repair-bonita-springs
-/ac-repair-estero
-/ac-repair-lehigh-acres
+7. **Set Worker route**
+   - Cloudflare Dashboard → Workers Routes
+   - Route pattern: `www.acassurancefl.com/*`
+   - Assign the prerender Worker
 
-PRIORITY 2 — Local landing pages
-/ac-installation-naples
-/ac-replacement-naples
-/emergency-ac-repair-naples
-/mini-split-installation-naples
-/ac-installation-cape-coral
-/ac-replacement-fort-myers
-/mini-split-installation-cape-coral
-/emergency-ac-repair-cape-coral
+8. **Warm the cache**
+   - Use Prerender.io's sitemap recache feature
+   - Submit `https://www.acassurancefl.com/sitemap.xml`
+   - This pre-renders and caches all 45 routes
 
-PRIORITY 2 — Trane product pages
-/trane-products
-/trane-air-conditioners
-/trane-heat-pumps
+### Phase 3 — Validation
 
-PRIORITY 2 — Blog
-/blog
-/blog/ac-not-cooling-cape-coral
-/blog/how-often-service-ac-southwest-florida
-/blog/repair-vs-replace-ac-cape-coral
-/blog/hvac-financing-cape-coral
-/blog/ac-repair-naples-fl
-/blog/ac-installation-fort-myers
-/blog/hvac-maintenance-cape-coral
-/blog/why-ac-assurance-chooses-trane
-
-PRIORITY 3 — Informational
-/privacy-policy
-
-EXCLUDE from prerender (noindex)
-/thank-you
-/emergency-ac-repair-now
-```
-
-Total routes to prerender: **45**
+9. **Verify bot-visible HTML** (see checklist below)
+10. **Submit updated sitemap in Google Search Console**
+11. **Use URL Inspection tool** on 5 representative pages
 
 ---
 
-## Deployment Team Recommendations
+## Route Inventory for Prerender Coverage
 
-1. **Prerender service must wait for JS execution** — Configure for network-idle or `document.readyState === 'complete'` + 2s buffer. The Suspense spinner resolves in <500ms on fast connections.
-2. **Cache prerendered snapshots** — Recommended TTL: 7 days for service/city pages, 1 day for homepage, 30 days for blog posts.
-3. **User-Agent detection** — Route Googlebot, Bingbot, and social media crawlers (facebookexternalhit, Twitterbot, LinkedInBot) through prerender.
-4. **Verify canonical consistency** — After prerender setup, spot-check that `<link rel="canonical">` in rendered snapshots matches the expected URL (no trailing slashes, no query params).
-5. **Monitor with Google Search Console** — After prerender deployment, use URL Inspection tool to verify Google sees full rendered content, correct titles, and valid JSON-LD on at least 5 representative pages.
+All 45 routes from `sitemap.xml` plus the homepage. The sitemap already contains the complete list. Routes excluded from prerender:
+- `/thank-you` (noindex, disallowed in robots.txt)
+- `/emergency-ac-repair-now` (noindex, disallowed in robots.txt)
+- `/*` catch-all 404 (has noindex via SEOHead)
+
+---
+
+## Risks
+
+| Risk | Severity | Mitigation |
+|------|----------|------------|
+| **Cloudflare "Always Use HTTPS" + redirect loops** | Medium | Ensure SSL mode is "Full (strict)", not "Flexible". Pages projects handle this automatically but check if existing DNS proxy rules conflict. |
+| **Worker route conflicts** | Medium | If `acassurancefl.com` already has Cloudflare Workers on other routes, the prerender Worker must be ordered correctly. Use specific route pattern `www.acassurancefl.com/*`. |
+| **Cloaking risk with ad platforms** | Low | Prerender.io serves identical content (not different content to bots). Google explicitly permits dynamic rendering for JS-heavy sites per their [docs](https://developers.google.com/search/docs/crawling-indexing/javascript/dynamic-rendering). Not cloaking. |
+| **Stale prerender cache** | Low | Set Prerender.io recache to 7 days. Manually recache after content updates by hitting recache API or resubmitting sitemap. |
+| **AI crawlers (GPTBot, CCBot, Claude-Web)** | Low | Include in Worker bot list. These crawlers do execute some JS but benefit from pre-rendered HTML. Also controllable via robots.txt if desired. |
+| **SPA `_redirects` not created** | High | Without `/*  /index.html  200`, direct bot hits to `/ac-repair-naples` return Cloudflare's 404. This file MUST exist in `public/`. |
+| **react-helmet-async not executing before snapshot** | Medium | Prerender.io waits for network idle by default. The site's Helmet tags inject in <100ms. If issues arise, add `window.prerenderReady = true` signal after route render and configure Prerender.io to wait for it. |
+
+---
+
+## Validation Checklist
+
+Run these checks after deployment:
+
+1. **curl with Googlebot UA** — verify pre-rendered HTML:
+   ```bash
+   curl -A "Googlebot" https://www.acassurancefl.com/ | head -100
+   curl -A "Googlebot" https://www.acassurancefl.com/ac-repair-naples | head -100
+   ```
+   Expected: Full HTML with `<title>`, `<meta description>`, `<script type="application/ld+json">`, and visible content in `<main>`.
+
+2. **Check canonical tags** — no trailing slashes, matches expected URL:
+   ```bash
+   curl -sA "Googlebot" https://www.acassurancefl.com/ac-repair-naples | grep 'rel="canonical"'
+   ```
+
+3. **Check JSON-LD** — valid and page-specific:
+   ```bash
+   curl -sA "Googlebot" https://www.acassurancefl.com/ac-repair-naples | grep 'application/ld+json'
+   ```
+
+4. **Check noindex pages** — confirm bot sees noindex:
+   ```bash
+   curl -sA "Googlebot" https://www.acassurancefl.com/thank-you | grep 'noindex'
+   ```
+
+5. **Google Search Console URL Inspection** — test these 5 pages:
+   - `/`
+   - `/ac-repair-naples`
+   - `/ac-installation-replacement`
+   - `/blog/ac-not-cooling-cape-coral`
+   - `/financing`
+
+6. **Rich Results Test** — validate FAQ and Service schema:
+   - https://search.google.com/test/rich-results → paste each URL
+
+7. **robots.txt and sitemap** — confirm accessible:
+   ```bash
+   curl https://www.acassurancefl.com/robots.txt
+   curl https://www.acassurancefl.com/sitemap.xml | head -20
+   ```
+
+---
+
+## Fallback Option: Netlify
+
+If Cloudflare is not viable (e.g., DNS is locked to another provider):
+
+1. Deploy to Netlify via Git integration
+2. Build command: `npm run build`, publish: `dist`
+3. Add `public/_redirects`: `/*  /index.html  200`
+4. Install **Netlify Prerender.io plugin** (one-click in Netlify dashboard)
+5. Set `PRERENDER_TOKEN` environment variable
+6. Custom domain: add CNAME `www` → `<site>.netlify.app`
+7. Same validation checklist applies
+
+Netlify's Prerender.io integration is simpler (no Worker needed) but slightly less configurable for bot user-agent customization and AI crawler handling.
+
+---
+
+## What Must Happen Outside Lovable
+
+Everything in this plan happens outside Lovable except one optional file:
+
+| Action | Where |
+|--------|-------|
+| Create `public/_redirects` file | Inside Lovable (add to repo) |
+| Cloudflare Pages project setup | Cloudflare Dashboard |
+| DNS configuration | DNS provider |
+| Prerender.io account + config | Prerender.io |
+| Cloudflare Worker deployment | Cloudflare Dashboard |
+| Google Search Console verification | GSC |
+| Cache warming / sitemap submission | Prerender.io + GSC |
 
