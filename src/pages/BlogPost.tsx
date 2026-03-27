@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blog";
 import { PHONE, PHONE_LINK } from "@/data/services";
 
@@ -12,6 +13,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <Layout>
+        <SEOHead title="Post Not Found | AC Assurance" description="The blog post you're looking for could not be found." noindex />
         <div className="container py-16 text-center">
           <h1 className="text-2xl font-heading font-bold mb-4">Post Not Found</h1>
           <Button asChild><Link to="/blog">Back to Blog</Link></Button>
@@ -20,8 +22,37 @@ const BlogPost = () => {
     );
   }
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Organization",
+      "name": "AC Assurance Cooling & Heating"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AC Assurance Cooling & Heating",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.acassurancefl.com/og-logo.png"
+      }
+    },
+    "description": post.excerpt,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.acassurancefl.com/blog/${post.slug}`
+    }
+  };
+
   return (
     <Layout>
+      <SEOHead
+        title={`${post.title} | AC Assurance`}
+        description={post.excerpt}
+        schema={blogPostingSchema}
+      />
       <article className="py-12 md:py-16">
         <div className="container max-w-2xl">
           <Link to="/blog" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
