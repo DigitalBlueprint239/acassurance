@@ -68,7 +68,7 @@ serve(async (req) => {
           },
           body: JSON.stringify({
             from: "AC Assurance Leads <leads@acassurancefl.com>",
-            to: "2393653090@mms.att.net",
+            to: ["2393653090@mms.att.net", "Digitalblueprint239@gmail.com"],
             subject: "NEW LEAD",
             text: smsBody,
           }),
