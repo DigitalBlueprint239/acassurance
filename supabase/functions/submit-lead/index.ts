@@ -48,6 +48,45 @@ serve(async (req) => {
 
     console.log(`New lead captured: ${name} - ${phone} - ${serviceNeeded}`);
 
+    // Fire-and-forget SMS via Resend → AT&T MMS gateway
+    try {
+      const resendKey = Deno.env.get("RESEND_API_KEY");
+      if (resendKey) {
+        const smsBody = [
+          "NEW LEAD",
+          `Name: ${name}`,
+          `Phone: ${phone}`,
+          `Svc: ${serviceNeeded}`,
+          message ? `Msg: ${message}` : "",
+        ].filter(Boolean).join("\n");
+
+        const res = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "AC Assurance Leads <leads@acassurancefl.com>",
+            to: "2393653090@mms.att.net",
+            subject: "NEW LEAD",
+            text: smsBody,
+          }),
+        });
+
+        if (!res.ok) {
+          const errBody = await res.text();
+          console.error(`Resend SMS failed [${res.status}]: ${errBody}`);
+        } else {
+          console.log("SMS notification sent via Resend");
+        }
+      } else {
+        console.warn("RESEND_API_KEY not set — skipping SMS notification");
+      }
+    } catch (smsErr) {
+      console.error("SMS notification error (non-fatal):", smsErr);
+    }
+
     return new Response(
       JSON.stringify({ success: true }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }

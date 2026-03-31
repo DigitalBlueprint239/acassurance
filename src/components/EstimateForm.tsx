@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Shield } from "lucide-react";
+import { z } from "zod";
 
 interface EstimateFormProps {
   showMessage?: boolean;
@@ -35,23 +36,51 @@ const hearAboutUsOptions = [
   "Other",
 ];
 
+const formSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  phone: z.string().trim().min(7, "Please enter a valid phone number").max(20),
+  service: z.string().min(1, "Please select a service"),
+});
+
+type FieldErrors = Partial<Record<"name" | "phone" | "service", string>>;
+
 const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource = "Website", ctaLabel = "Schedule Service" }: EstimateFormProps) => {
   const { toast } = useToast();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<FieldErrors>({});
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
+    setErrors({});
 
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
+    const raw = {
+      name: (formData.get("name") as string) || "",
+      phone: (formData.get("phone") as string) || "",
+      service: (formData.get("service") as string) || "",
+    };
+
+    const result = formSchema.safeParse(raw);
+    if (!result.success) {
+      const fieldErrors: FieldErrors = {};
+      for (const issue of result.error.issues) {
+        const key = issue.path[0] as keyof FieldErrors;
+        if (!fieldErrors[key]) fieldErrors[key] = issue.message;
+      }
+      setErrors(fieldErrors);
+      return;
+    }
+
+    setLoading(true);
+
     const payload = {
-      name: formData.get("name") as string,
-      phone: formData.get("phone") as string,
+      name: result.data.name,
+      phone: result.data.phone,
       email: (formData.get("email") as string) || "",
-      serviceNeeded: formData.get("service") as string,
+      serviceNeeded: result.data.service,
       message: (formData.get("message") as string) || "",
       hearAboutUs: (formData.get("hear_about_us") as string) || "",
       leadSource,
@@ -59,18 +88,18 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
     };
 
     try {
-      const { data, error } = await supabase.functions.invoke("submit-lead", {
+      const { error } = await supabase.functions.invoke("submit-lead", {
         body: payload,
       });
 
       if (error) throw error;
 
+      form.reset();
       toast({
-        title: "Request Submitted",
+        title: "Request Submitted ✓",
         description: "Thank you! We'll be in touch shortly.",
       });
-      form.reset();
-      navigate("/thank-you");
+      setTimeout(() => navigate("/thank-you"), 1200);
     } catch (err) {
       console.error("Form submission error:", err);
       toast({
@@ -85,21 +114,29 @@ const EstimateForm = ({ showMessage = false, showHearAboutUs = false, leadSource
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <Input name="name" placeholder="Your Name *" required maxLength={100} className="h-12 md:h-10 bg-background" />
-      <Input name="phone" type="tel" placeholder="Phone Number *" required maxLength={20} className="h-12 md:h-10 bg-background" />
+      <div>
+        <Input name="name" placeholder="Your Name *" maxLength={100} className="h-12 md:h-10 bg-background" />
+        {errors.name && <p className="text-sm text-destructive mt-1">{errors.name}</p>}
+      </div>
+      <div>
+        <Input name="phone" type="tel" placeholder="Phone Number *" maxLength={20} className="h-12 md:h-10 bg-background" />
+        {errors.phone && <p className="text-sm text-destructive mt-1">{errors.phone}</p>}
+      </div>
       <Input name="email" type="email" placeholder="Email Address (optional)" maxLength={100} className="h-12 md:h-10 bg-background" />
 
-      <select
-        name="service"
-        required
-        className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
-        defaultValue=""
-      >
-        <option value="" disabled>Service Needed *</option>
-        {serviceOptions.map((s) => (
-          <option key={s} value={s}>{s}</option>
-        ))}
-      </select>
+      <div>
+        <select
+          name="service"
+          className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm text-foreground"
+          defaultValue=""
+        >
+          <option value="" disabled>Service Needed *</option>
+          {serviceOptions.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+        {errors.service && <p className="text-sm text-destructive mt-1">{errors.service}</p>}
+      </div>
 
       {showMessage && (
         <Textarea
