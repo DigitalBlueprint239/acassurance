@@ -80,48 +80,56 @@ const Index = () => {
         ]}
       />
 
-      {/* 1. HERO — Elite Editorial */}
+      {/* 1. HERO — Two-Column Grid */}
       <header aria-label="Homepage Hero" className="bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-slate-50 to-white border-b border-slate-100">
-        <div className={`container text-center py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
-          <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
-            <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline align-text-bottom mr-1" />
-            TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
-          </p>
-          <h1
-            className="font-heading font-extrabold text-foreground tracking-tighter leading-[1.1] mb-4 max-w-4xl mx-auto"
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
-          >
-            Expert AC Repair & Installation{' '}
-            <span className="text-primary">
-              From Naples to Cape Coral
-            </span>
-          </h1>
-          <p className="text-lg text-primary/70 leading-relaxed mb-4 max-w-2xl mx-auto">
-            Licensed local team. Owner on every job. Same-day AC service across Southwest Florida.
-          </p>
+        <div className={`container py-14 md:py-20 px-6 md:px-4 ${shouldAnimate ? "animate-slide-up" : ""}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[60vh] lg:min-h-[70vh]">
+            {/* Left Column — Copy */}
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-foreground/60 font-medium mb-4">
+                <Star className="w-4 h-4 text-amber-400 fill-amber-400 inline align-text-bottom mr-1" />
+                TOP-RATED LOCAL HVAC SPECIALISTS | LIC# CAC1823832
+              </p>
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-balance text-foreground leading-[1.1] mb-4">
+                24/7 Emergency AC Repair in SWFL
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-2">
+                Direct owner-operated dispatch by Jason Rizzo.
+              </p>
+              <p className="text-base text-muted-foreground/80 leading-relaxed mb-6">
+                Licensed local team. Same-day AC service across Southwest Florida.
+              </p>
 
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Button asChild size="lg" variant="outline" className="text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
+                  <a href={PHONE_LINK} aria-label="Call AC Assurance">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call Now {PHONE}
+                  </a>
+                </Button>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
-            <Button asChild size="lg" className="shimmer-btn w-full sm:w-auto text-base bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg">
-              <a href="#estimate-form" aria-label="Get a free quote">Get My Free Quote</a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base border-foreground/20 text-foreground/80 hover:bg-foreground/5 hover:border-foreground/40">
-              <a href={PHONE_LINK} aria-label="Call AC Assurance">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now {PHONE}
-              </a>
-            </Button>
+              <div className="inline-flex items-center gap-2 bg-muted backdrop-blur-sm border border-border rounded-full px-4 py-2 text-sm text-muted-foreground font-medium">
+                <span className="animate-pulse-soft">🔥</span>
+                {urgencyText}
+              </div>
+            </div>
+
+            {/* Right Column — Emergency Lead Form */}
+            <div>
+              <div className="bg-card border border-border rounded-lg shadow-lg p-6 md:p-8">
+                <div className="text-center mb-5">
+                  <h2 className="text-xl font-heading font-bold text-foreground mb-1">Request Emergency Service</h2>
+                  <p className="text-sm text-muted-foreground">Fast dispatch — typically within minutes.</p>
+                </div>
+                <EstimateForm variant="emergency" leadSource="homepage-hero" />
+              </div>
+            </div>
           </div>
-          {/* Urgency Pill */}
-          <div className="inline-flex items-center gap-2 bg-gray-100 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 font-medium">
-            <span className="animate-pulse-soft">🔥</span>
-            {urgencyText}
-          </div>
-
         </div>
 
         {/* Full-Width Team Photo Card */}
-        <div className={`relative mx-4 md:mx-8 lg:mx-16 -mt-8 md:-mt-12 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform ${shouldAnimate ? "animate-scale-in" : ""}`}>
+        <div className={`relative mx-4 md:mx-8 lg:mx-16 -mt-4 md:-mt-8 rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(8,112,184,0.1)] will-change-transform ${shouldAnimate ? "animate-scale-in" : ""}`}>
           <img
             src={heroTeam}
             alt="AC Assurance team providing expert HVAC services from Naples to Cape Coral and throughout Southwest Florida"
@@ -133,7 +141,7 @@ const Index = () => {
             decoding="async" />
 
           {/* Owner Badge */}
-          <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-primary text-white rounded-full px-4 py-2 text-xs font-bold shadow-lg">
+          <div className="absolute z-20 bottom-6 right-4 md:bottom-16 md:right-12 bg-primary text-primary-foreground rounded-full px-4 py-2 text-xs font-bold shadow-lg">
             Owner-Operated & On-Site
           </div>
           {/* Trust Ribbon */}

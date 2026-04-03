@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Phone } from "lucide-react";
+import { ArrowLeft, Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import SEOHead from "@/components/SEOHead";
 import { blogPosts } from "@/data/blog";
@@ -28,8 +29,8 @@ const BlogPost = () => {
     "headline": post.title,
     "datePublished": post.date,
     "author": {
-      "@type": "Organization",
-      "name": "AC Assurance Cooling & Heating"
+      "@type": "Person",
+      "name": post.author
     },
     "publisher": {
       "@type": "Organization",
@@ -40,6 +41,7 @@ const BlogPost = () => {
       }
     },
     "description": post.excerpt,
+    "keywords": post.seoKeywords.join(", "),
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": `https://www.acassurancefl.com/blog/${post.slug}`
@@ -58,21 +60,42 @@ const BlogPost = () => {
           <Link to="/blog" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
             <ArrowLeft className="w-4 h-4" /> Back to Blog
           </Link>
-          <div className="text-xs text-muted-foreground mb-3">{post.date} · {post.readTime}</div>
+          <div className="text-xs text-muted-foreground mb-1">{post.date} · {post.readTime}</div>
+          <div className="text-xs text-muted-foreground mb-3">By {post.author}</div>
           <h1 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8">{post.title}</h1>
-          <div className="space-y-5">
+          <div className="prose prose-blue max-w-none">
             {post.content.map((p, i) => (
-              <p key={i} className="text-foreground leading-relaxed">{p}</p>
+              <p key={i} className="text-foreground leading-relaxed mb-5">{p}</p>
             ))}
-          </div>
-          <div className="mt-10 pt-8 border-t border-border">
-            <p className="text-muted-foreground mb-4">Need HVAC service in Southwest Florida?</p>
-            <Button asChild size="lg">
-              <a href={PHONE_LINK}><Phone className="w-5 h-5 mr-2" />Call {PHONE}</a>
-            </Button>
           </div>
         </div>
       </article>
+
+      {/* Anchor CTA Card */}
+      <div className="container max-w-2xl pb-12 md:pb-16">
+        <Card className="bg-muted/50 border-l-4 border-l-primary">
+          <CardContent className="p-6 md:p-8">
+            <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-2">
+              Stop {post.ctaTopic} Before It Destroys Your System.
+            </h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Get a professional evaluation from Jason Rizzo's team — free, no obligation, built for Southwest Florida conditions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Link to="/#estimate-form">
+                  Get a Free SWFL System Evaluation <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href={PHONE_LINK}>
+                  <Phone className="w-4 h-4 mr-2" /> Call {PHONE}
+                </a>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </Layout>
   );
 };

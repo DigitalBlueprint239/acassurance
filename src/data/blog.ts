@@ -5,6 +5,9 @@ export interface BlogPost {
   date: string;
   readTime: string;
   content: string[];
+  author: string;
+  seoKeywords: string[];
+  ctaTopic: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -14,6 +17,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn what Naples homeowners can expect when they call AC Assurance for fast, reliable AC repair service.",
     date: "2026-02-10",
     readTime: "3 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["AC repair Naples FL", "Naples HVAC service", "air conditioning repair Naples"],
+    ctaTopic: "AC Breakdowns",
     content: [
       "Naples, Florida is one of the most desirable places to live in Southwest Florida — but the heat and humidity put serious demands on your air conditioning system. When your AC stops working or starts underperforming, you need a repair team that understands the local climate and can respond fast.",
       "AC Assurance provides professional AC repair throughout Naples and Collier County. Our licensed technicians are experienced with every major HVAC brand and arrive prepared with diagnostic tools and common replacement parts to resolve most issues in a single visit.",
@@ -29,6 +35,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Everything Fort Myers homeowners need to know about installing a new AC system — from sizing to financing.",
     date: "2026-02-20",
     readTime: "3 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["AC installation Fort Myers", "new AC system Fort Myers", "HVAC installation Southwest Florida"],
+    ctaTopic: "Inefficient Cooling",
     content: [
       "If your air conditioning system in Fort Myers is over 10 years old, breaking down frequently, or driving up your energy bills, it may be time for a new installation. Choosing the right system and the right installer makes all the difference in your long-term comfort and costs.",
       "The first step in any AC installation is proper sizing. In Fort Myers, where homes face extreme heat from April through October, an undersized system will run constantly without adequately cooling your home, while an oversized system will short-cycle and fail to control humidity. AC Assurance performs detailed Manual J load calculations to get it right.",
@@ -44,6 +53,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Cape Coral's salt air and humidity make regular AC maintenance essential. Here's what every homeowner should know.",
     date: "2026-03-01",
     readTime: "3 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["AC maintenance Cape Coral", "HVAC tune-up Cape Coral", "Cape Coral AC service"],
+    ctaTopic: "Neglected Maintenance",
     content: [
       "Cape Coral's unique environment — surrounded by canals, exposed to Gulf salt air, and baking in year-round humidity — creates conditions that are especially tough on HVAC equipment. That's why we recommend Cape Coral homeowners schedule professional AC maintenance twice a year, not just once.",
       "Salt air accelerates corrosion on outdoor condenser units, coils, and electrical connections. High humidity means your system's condensate drain line is working overtime and is more prone to clogs. And because your AC runs nearly year-round in Cape Coral, components wear faster than in milder climates.",
@@ -59,6 +71,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover why AC Assurance is proud to be an Independent Trane Dealer and how Trane systems are built to handle Southwest Florida's demanding climate.",
     date: "2026-03-05",
     readTime: "4 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["Trane dealer Southwest Florida", "Trane AC systems", "best AC brand Florida"],
+    ctaTopic: "Equipment Failure",
     content: [
       "At AC Assurance, we're proud to be an Independent Trane Dealer serving Naples, Fort Myers, Cape Coral, and all of Southwest Florida. Choosing which HVAC brands to install and recommend is one of the most important decisions an HVAC company can make — and for us, Trane was the clear choice.",
       "Southwest Florida's climate is uniquely demanding on air conditioning systems. The combination of extreme heat, relentless humidity, and salt air from the Gulf creates conditions that can shorten the lifespan of lesser equipment. Trane systems are engineered specifically to handle these challenges, with corrosion-resistant components and designs that maintain performance even under the most punishing conditions.",
@@ -75,6 +90,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Before scheduling a service call, try these seven troubleshooting steps that could get your AC working again.",
     date: "2026-02-20",
     readTime: "4 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["AC not cooling Cape Coral", "AC troubleshooting", "Cape Coral AC problems"],
+    ctaTopic: "Cooling Problems",
     content: [
       "When your AC stops cooling in Cape Coral, it's easy to panic — especially during the hottest months. But before you pick up the phone, there are a few simple things you can check that might resolve the issue without a service call.",
       "1. Check Your Thermostat Settings — Make sure your thermostat is set to 'cool' and the temperature is set below the current room temperature. It sounds simple, but thermostat settings get accidentally changed more often than you'd think.",
@@ -93,6 +111,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn why regular AC maintenance matters in Florida's demanding climate and how often to schedule tune-ups.",
     date: "2026-02-14",
     readTime: "3 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["AC service frequency Florida", "HVAC maintenance schedule", "Southwest Florida AC tune-up"],
+    ctaTopic: "Skipped Maintenance",
     content: [
       "In Southwest Florida, your air conditioning system works harder than almost anywhere else in the country. The combination of heat, humidity, and nearly year-round usage puts significant stress on your HVAC equipment.",
       "The general recommendation is to have your AC serviced at least once a year. However, in Cape Coral and the surrounding areas, many HVAC professionals — including our team at AC Assurance — recommend twice-yearly maintenance: once in early spring before peak cooling season, and once in early fall.",
@@ -108,6 +129,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "How to decide whether to repair your existing AC or invest in a new system. Key factors Cape Coral homeowners should consider.",
     date: "2026-02-07",
     readTime: "5 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["repair vs replace AC", "new AC Cape Coral", "when to replace air conditioner"],
+    ctaTopic: "Aging Equipment",
     content: [
       "Every Cape Coral homeowner eventually faces this question: should I repair my aging AC system one more time, or is it time to invest in a replacement? It's a significant decision, and the right answer depends on several factors.",
       "Age of Your System — Most air conditioning systems last 10-15 years in Florida. If your system is approaching or past this range, replacement becomes increasingly practical. Newer systems are significantly more energy-efficient, which can offset the upfront cost through lower monthly bills.",
@@ -125,6 +149,9 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Explore financing options for HVAC projects in Cape Coral. Learn how to make a new AC system manageable.",
     date: "2026-01-30",
     readTime: "4 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["HVAC financing Cape Coral", "AC financing Florida", "Synchrony HVAC financing"],
+    ctaTopic: "High Repair Costs",
     content: [
       "A new air conditioning system is a significant investment. For many Cape Coral homeowners, financing makes it possible to get the system they need without a large upfront payment.",
       "At AC Assurance, we offer financing through Synchrony, a trusted name in consumer financing. This allows qualified homeowners to spread the cost of a new HVAC system over manageable monthly payments.",
@@ -132,6 +159,44 @@ export const blogPosts: BlogPost[] = [
       "What to Consider — When evaluating financing, consider the total cost over the life of the loan, the monthly payment amount and whether it fits your budget, and any promotional terms that may be available. Also factor in the energy savings a new system can provide — a more efficient system can meaningfully reduce your monthly utility bills.",
       "Why Financing Makes Sense — Rather than waiting and paying for repeated repairs on an aging system, financing a new installation can be a better long-term investment. You get improved comfort, lower energy bills, and the peace of mind of a new manufacturer's warranty.",
       "To learn more about financing options for your HVAC project, contact AC Assurance at 239-365-3090. We serve Cape Coral, Fort Myers, Naples, Estero, Bonita Springs, and all of Southwest Florida.",
+    ],
+  },
+  {
+    slug: "coastal-corrosion-defense-swfl-ac",
+    title: "Coastal Corrosion Defense for SWFL AC Units",
+    excerpt: "Salt air is silently destroying AC systems across Southwest Florida. Learn how to protect your investment from coastal corrosion.",
+    date: "2026-03-15",
+    readTime: "4 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["salt air AC damage Florida", "coastal corrosion HVAC", "protect AC from salt air", "SWFL AC corrosion"],
+    ctaTopic: "Salt Air Corrosion",
+    content: [
+      "Living near the Gulf Coast comes with incredible benefits — but it also exposes your air conditioning system to one of its worst enemies: salt air. In Southwest Florida, salt-laden moisture accelerates corrosion on condenser coils, copper refrigerant lines, and electrical connections, often cutting years off a system's lifespan.",
+      "The science is straightforward. Salt particles carried by Gulf breezes settle on your outdoor AC unit's aluminum fins and copper tubing. When combined with Florida's constant humidity, this creates a corrosive environment that eats through metal components far faster than in inland regions. Homeowners within 5 miles of the coast are especially vulnerable.",
+      "The first sign of trouble is usually reduced cooling performance. As condenser coils corrode, their ability to release heat diminishes. Your system runs longer, works harder, and your energy bills climb — all before you notice any visible damage. By the time you see white or green oxidation on your outdoor unit, significant damage has already occurred.",
+      "Defense starts with regular coil rinsing. We recommend hosing down your outdoor unit with fresh water every 2-4 weeks during peak season. This simple step washes away salt deposits before they can cause permanent damage. Use a gentle spray — high-pressure water can bend the delicate aluminum fins.",
+      "For homes closest to the water, consider upgrading to a system with corrosion-resistant components. Trane's Spine Fin™ coil technology, for example, uses an all-aluminum coil design that eliminates the copper-aluminum junction where galvanic corrosion typically begins. As an Independent Trane Dealer, AC Assurance installs these systems specifically because they're engineered for coastal environments like ours.",
+      "Professional maintenance is your second line of defense. During our twice-yearly tune-ups, we inspect coils for early corrosion, apply protective coatings when appropriate, check electrical connections for oxidation, and ensure your system is operating at peak efficiency despite the coastal conditions.",
+      "Don't let salt air silently destroy your HVAC investment. A proactive approach combining regular rinsing, professional maintenance, and corrosion-resistant equipment can add years to your system's life and save thousands in premature replacement costs. Call AC Assurance at (239) 365-3090 for a corrosion assessment.",
+    ],
+  },
+  {
+    slug: "preventing-mold-hvac-humidity-control",
+    title: "Preventing Mold with HVAC Humidity Control",
+    excerpt: "Florida's humidity creates the perfect environment for mold growth. Your HVAC system is your first line of defense.",
+    date: "2026-03-20",
+    readTime: "4 min read",
+    author: "Jason Rizzo",
+    seoKeywords: ["mold prevention HVAC Florida", "humidity control AC", "SWFL mold prevention", "dehumidification air conditioning"],
+    ctaTopic: "Mold & Mildew",
+    content: [
+      "In Southwest Florida, outdoor humidity regularly exceeds 80%. When that moisture finds its way into your home — through doors, windows, or even your ductwork — it creates the perfect breeding ground for mold and mildew. Your HVAC system isn't just about temperature; it's your primary tool for controlling indoor humidity and preventing mold growth.",
+      "Mold needs three things to thrive: moisture, warmth, and organic material. Florida provides the first two in abundance. Your home's drywall, wood framing, carpet, and even dust provide the third. The only variable you can effectively control is moisture, and that's where your air conditioning system becomes critical.",
+      "A properly functioning AC system dehumidifies as it cools. As warm, humid air passes over the cold evaporator coil, moisture condenses and drains away through the condensate line. A well-maintained system can maintain indoor humidity between 45-55% — the sweet spot for comfort and mold prevention.",
+      "Problems arise when your AC can't keep up with humidity demands. An oversized system is one of the most common culprits. It cools the air quickly and shuts off before running long enough to adequately dehumidify. The result is a cold, clammy home that's still humid enough for mold growth. This is why proper system sizing through Manual J calculations is so important in Florida.",
+      "Your condensate drain line is another critical component. In Florida's humidity, your AC produces gallons of condensation daily. If the drain line clogs — which is common due to algae and biofilm buildup — water can back up into your system and overflow into your home. We recommend treating the drain line with a vinegar flush monthly and having it professionally cleared during maintenance visits.",
+      "For homes with persistent humidity issues, supplemental dehumidification may be the answer. Whole-home dehumidifiers work alongside your AC system to maintain optimal humidity levels even during the shoulder seasons when you might not be running your AC as frequently. AC Assurance can assess your home's humidity levels and recommend the right solution.",
+      "Don't ignore the warning signs: musty odors, condensation on windows, or visible mold spots near vents or in closets. These indicate your HVAC system isn't adequately controlling humidity. Call AC Assurance at (239) 365-3090 for a humidity and indoor air quality assessment before mold becomes a serious — and expensive — problem.",
     ],
   },
 ];
