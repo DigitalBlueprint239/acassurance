@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!--
+      Retired copy. The live site is https://www.acassurancefl.com (Next.js app,
+      separate repo). This Lovable deployment must never compete with it in
+      search: noindex it, and send any visitor on a *.lovable.app host to the
+      same path on the real domain.
+    -->
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      if (/\.lovable\.app$/i.test(location.hostname)) {
+        location.replace("https://www.acassurancefl.com" + location.pathname + location.search + location.hash);
+      }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZ23BREHEL"></script>
     <script>
